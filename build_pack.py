@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.20.0'
-NOTICE_SHA256 = 'ed73867cce573db9a0f4b0a5834c7a041115b766e6bcda89a21bf8311cd11300'
+VERSION = '0.21.0'
+NOTICE_SHA256 = '09f5e69f6c0bbdfbf069a9688d92df5037b283130eda531b306db601488a605b'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -610,7 +610,11 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'mininggadgets': {'version': '1.19.3',
                    'jar_sha256': '40423957c456cd17e833413baf72749cdf9ff72ed443ce2141bb9467c55811fb',
                    'jar_entry': 'assets/mininggadgets/lang/en_us.json',
-                   'source_sha256': 'ba93c4ee8e6b4b79cce8c80ede93d1a9499a7f856a70d8e90528827dfc821e75'}}
+                   'source_sha256': 'ba93c4ee8e6b4b79cce8c80ede93d1a9499a7f856a70d8e90528827dfc821e75'},
+ 'balm': {'version': '26.1.2.13',
+          'jar_sha256': 'aeb1d1962e9d2e1bc6345bd91bef9a6b3ab88cdff1495c8a360a6e711313fa37',
+          'jar_entry': 'assets/balm/lang/en_us.json',
+          'source_sha256': '8ca908bfbb1e13521004ac3ce9f1e499173c9ad12b3bf53e92e23cdbaf83630f'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -664,7 +668,8 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'matc': (40, '831e3f35c21e5bfd5d916edc6d49421f476c5f475d0742fe1a18197d93f27f83'),
  'ae2wtlib': (44, '0675310a8c56a6662d6e29447ff018f6c3ece14aac39bbfc1336474f3288aca4'),
  'measurements': (21, '8047458ebed154364b00808a67539f10a8ae9dbc9fac10d5350ebf4b9d6033a9'),
- 'mininggadgets': (86, '90ca5207f6d593dd8786ad93b2a10de8d11c6e423b8826ea59606fd9e74feca2')}
+ 'mininggadgets': (86, '90ca5207f6d593dd8786ad93b2a10de8d11c6e423b8826ea59606fd9e74feca2'),
+ 'balm': (53, 'cd75f07dde765ab106baa0afa77974c874f8417db5f8cb15d7930c524cec868a')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -729,11 +734,16 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'matc': [],
  'ae2wtlib': [],
  'measurements': ['_comment'],
- 'mininggadgets': []}
+ 'mininggadgets': [],
+ 'balm': []}
 PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
                                'language entries revised or supplied. Original project: Simple Backups by '
                                'MelanX; Apache-2.0. See NOTICE.md and '
-                               'LICENSES/SimpleBackups-Apache-2.0.txt.'}}
+                               'LICENSES/SimpleBackups-Apache-2.0.txt.'},
+ 'balm': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese language '
+                      'entries revised or supplied. Original project: Balm by BlayTheNinth; Apache-2.0 with '
+                      'exceptions in upstream NOTICE. See NOTICE.md, LICENSES/Balm-Apache-2.0.txt and '
+                      'LICENSES/Balm-NOTICE.txt.'}}
 LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba69450ff1dbf4b1e0fed3bbc08c',
  'LICENSES/Transmog-MIT.txt': 'a366506974a46752dbf54c187288b5d5de7f4570422b0cbacd4f5cd1dcb8f099',
  'LICENSES/JEI-MIT.txt': '108c93a97f3011c196b8226f5019a9c09ade318fe3a802be2f7f5ddb2c3a0d04',
@@ -793,7 +803,9 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt': '285d661d5a712ee320753bd6e33319bbc95ad947cf97c35844552d3817b070e1',
  'LICENSES/AE2WTLib-MIT.txt': 'd61e8472fd606169227d467eae0fc46341256dc54ed05837df050b29ad0297ba',
  'LICENSES/Measurements-MIT.txt': 'ded3792ee1ef728cec734993688f87ec6bf8cd050cdee99ed46613433becfa18',
- 'LICENSES/MiningGadgets-MIT.txt': '42b3f44053eb125558a79195b0e143272895c83123c06bd7166b50195e2822c1'}
+ 'LICENSES/MiningGadgets-MIT.txt': '42b3f44053eb125558a79195b0e143272895c83123c06bd7166b50195e2822c1',
+ 'LICENSES/Balm-Apache-2.0.txt': 'cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30',
+ 'LICENSES/Balm-NOTICE.txt': '661f5b7d10e98d3ab3bddc0a4c8925bba074d62ae6efbbccf2c43da9039b081d'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -850,11 +862,12 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'matc': ('LICENSES/MysticalAgricultureTieredCrystals-MIT.txt',),
  'ae2wtlib': ('LICENSES/AE2WTLib-MIT.txt',),
  'measurements': ('LICENSES/Measurements-MIT.txt',),
- 'mininggadgets': ('LICENSES/MiningGadgets-MIT.txt',)}
+ 'mininggadgets': ('LICENSES/MiningGadgets-MIT.txt',),
+ 'balm': ('LICENSES/Balm-Apache-2.0.txt', 'LICENSES/Balm-NOTICE.txt')}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.20.0.zip',
+                'filename': 'ATM11-Japanese-0.21.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -907,7 +920,8 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'matc',
                                'ae2wtlib',
                                'measurements',
-                               'mininggadgets'),
+                               'mininggadgets',
+                               'balm'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -967,8 +981,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt',
                              'LICENSES/AE2WTLib-MIT.txt',
                              'LICENSES/Measurements-MIT.txt',
-                             'LICENSES/MiningGadgets-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.20.0: 53 namespaces / 3916 entries',
+                             'LICENSES/MiningGadgets-MIT.txt',
+                             'LICENSES/Balm-Apache-2.0.txt',
+                             'LICENSES/Balm-NOTICE.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.21.0: 54 namespaces / 3969 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -1164,7 +1180,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.20.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.21.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

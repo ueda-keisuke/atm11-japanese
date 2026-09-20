@@ -1,0 +1,80 @@
+{
+  "language_sha256": "48f54516904adc17e16b560284f297149e6d4d96c1f9300c56c2cb5b489a4deb",
+  "namespace": "balm",
+  "project_notices": {
+    "_comment": "Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese language entries revised or supplied. Original project: Balm by BlayTheNinth; Apache-2.0 with exceptions in upstream NOTICE. See NOTICE.md, LICENSES/Balm-Apache-2.0.txt and LICENSES/Balm-NOTICE.txt."
+  },
+  "reviews": [
+    {
+      "accepted_keys": [
+        "balm.configuration.exampleBoolean",
+        "balm.configuration.exampleCategory",
+        "balm.configuration.exampleCategory.exampleFloat",
+        "balm.configuration.exampleCategory.innerField",
+        "balm.configuration.exampleEnum",
+        "balm.configuration.exampleEnumList",
+        "balm.configuration.exampleIdentifierSet",
+        "balm.configuration.exampleInt",
+        "balm.configuration.exampleIntList",
+        "balm.configuration.exampleMultilineString",
+        "balm.configuration.exampleString",
+        "balm.configuration.exampleStringList",
+        "config.jade.plugin_balm.jade",
+        "disconnect.balm.mod_missing_on_client",
+        "disconnect.balm.mod_missing_on_server",
+        "disconnect.balm.mod_version_mismatch",
+        "gui.balm.configuration.edit",
+        "gui.balm.configuration.title",
+        "gui.balm.configuration.validation.negative_infinity",
+        "gui.balm.configuration.validation.positive_infinity",
+        "gui.balm.configuration.validation.range",
+        "tag.item.c.chests.chests",
+        "tag.item.c.cooking_oil",
+        "tag.item.c.dyes",
+        "tag.item.c.dyes.black",
+        "tag.item.c.dyes.blue",
+        "tag.item.c.dyes.brown",
+        "tag.item.c.dyes.cyan",
+        "tag.item.c.dyes.gray",
+        "tag.item.c.dyes.green",
+        "tag.item.c.dyes.light_blue",
+        "tag.item.c.dyes.light_gray",
+        "tag.item.c.dyes.lime",
+        "tag.item.c.dyes.magenta",
+        "tag.item.c.dyes.orange",
+        "tag.item.c.dyes.pink",
+        "tag.item.c.dyes.purple",
+        "tag.item.c.dyes.red",
+        "tag.item.c.dyes.white",
+        "tag.item.c.dyes.yellow",
+        "tag.item.c.eggs",
+        "tag.item.c.gems",
+        "tag.item.c.gems.diamond",
+        "tag.item.c.gems.emerald",
+        "tag.item.c.ingots",
+        "tag.item.c.ingots.iron",
+        "tag.item.c.nuggets",
+        "tag.item.c.nuggets.gold",
+        "tag.item.c.nuggets.iron",
+        "tag.item.c.ores",
+        "tag.item.c.rods.wooden",
+        "tag.item.c.stones"
+      ],
+      "batch_id": "lang-balm-neoforge-26.1.2-26.1.2.13-balm-d9e71eff0d-0001",
+      "decision": "accepted",
+      "review_sha256": "fccbf9cf3e42b2d8abc29d7c1eb8d9f56d7b02cd5a283a9fd2b6d06bb7672ed3",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "8541c8ae5964da2da43e511f9c1b58b198ba34b5a9303fd263f3ef4cacb33d3d"
+    }
+  ],
+  "schema_version": 4,
+  "source": {
+    "jar_entry": "assets/balm/lang/en_us.json",
+    "jar_sha256": "aeb1d1962e9d2e1bc6345bd91bef9a6b3ab88cdff1495c8a360a6e711313fa37",
+    "source_sha256": "8ca908bfbb1e13521004ac3ce9f1e499173c9ad12b3bf53e92e23cdbaf83630f",
+    "version": "26.1.2.13"
+  }
+}

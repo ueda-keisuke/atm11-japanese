@@ -42,6 +42,15 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "d208ae2c084b808dc7d1874dfd3dbd8bf13730e187d940797661181ed9ab3858"
     },
+    "balm": {
+      "key_count": 53,
+      "language_sha256": "48f54516904adc17e16b560284f297149e6d4d96c1f9300c56c2cb5b489a4deb",
+      "preserved_metadata_keys": [],
+      "project_notice_keys": [
+        "_comment"
+      ],
+      "review_evidence_sha256": "18478626319cb3898795fc7dbb19e3736b08ebcdf83ebe9eb343666ee8ca0a35"
+    },
     "betteradvancedtooltips": {
       "key_count": 5,
       "language_sha256": "6a808111ee94e3edd18047fe381e41e1a10cc6a2c69b0b67c6301b074a019a32",
@@ -349,5 +358,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.20.0"
+  "version": "0.21.0"
 }
