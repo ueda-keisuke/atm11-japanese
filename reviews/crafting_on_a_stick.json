@@ -1,0 +1,39 @@
+{
+  "language_sha256": "9ccb98fa2d26c7a6557fdcb79d6e769e6c7c14123c11fae1a445f55463febec1",
+  "namespace": "crafting_on_a_stick",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "crafting_on_a_stick.key.open_curios",
+        "curios.identifier.crafting_on_a_stick",
+        "gui.crafting_on_a_stick.selection_wheel.no_tool",
+        "item.crafting_on_a_stick.anvil",
+        "item.crafting_on_a_stick.cartography_table",
+        "item.crafting_on_a_stick.chipped_anvil",
+        "item.crafting_on_a_stick.crafting_table",
+        "item.crafting_on_a_stick.damaged_anvil",
+        "item.crafting_on_a_stick.grindstone",
+        "item.crafting_on_a_stick.loom",
+        "item.crafting_on_a_stick.smithing_table",
+        "item.crafting_on_a_stick.stonecutter",
+        "item.crafting_on_a_stick.template",
+        "itemGroup.crafting_on_a_stick"
+      ],
+      "batch_id": "lang-crafting_on_a_stick-neoforge-26.1-1.1-crafting_on_a_stick-b135063336-0001",
+      "decision": "accepted",
+      "review_sha256": "7d93fcdb3b5616fa6c2de406a0783a74eba3bf7fc0e16242115f87df7650bc3f",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "6de0dc7ff844b5c3f27802a80d60a17647253f1cd3da7ce42f2e0e4e62ed71db"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/crafting_on_a_stick/lang/en_us.json",
+    "jar_sha256": "9dca3e70948d916cc3aa3f0dad78601158459022a657d30efeb0a805af97ca74",
+    "source_sha256": "c5b31af2e30db8265842ceb77c49864606687f32b88d9d6f05f6951e65cbafb0",
+    "version": "26.1-1.1"
+  }
+}

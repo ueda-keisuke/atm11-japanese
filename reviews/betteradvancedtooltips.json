@@ -1,0 +1,30 @@
+{
+  "language_sha256": "6a808111ee94e3edd18047fe381e41e1a10cc6a2c69b0b67c6301b074a019a32",
+  "namespace": "betteradvancedtooltips",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "betteradvancedtooltips.configuration.component_tooltip",
+        "betteradvancedtooltips.configuration.fuel_tooltip",
+        "betteradvancedtooltips.configuration.remove_component_count_tooltip",
+        "betteradvancedtooltips.configuration.remove_creative_tab_tooltip",
+        "betteradvancedtooltips.configuration.tag_tooltip"
+      ],
+      "batch_id": "lang-better-advanced-tooltips-2601.1.0-build.9-betteradvancedtooltips-4ca3987e5c-0001",
+      "decision": "accepted",
+      "review_sha256": "7de671d56dc42d7557b94e88158aee9c3be42ea085dae5a5b7a84cd2fb2cdadb",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "a090ec1a7e520c662664e9da83095629d5353832cb3749c87b140ea5b9c73769"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/betteradvancedtooltips/lang/en_us.json",
+    "jar_sha256": "1aef8ecc6f1b6c1952fed84c0302101019b2eb43c27d254152913b05a675143f",
+    "source_sha256": "2b7e12c60a5ab2179773bc68a85747605c657eed02627197a2c4eca05f7a2f9e",
+    "version": "2601.1.0-build.9"
+  }
+}

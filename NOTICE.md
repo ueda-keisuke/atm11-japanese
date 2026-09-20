@@ -1,6 +1,6 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.6.0 contains 1955 keys across 23 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.7.0 contains 2060 keys across 27 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -232,8 +232,40 @@ Original Japanese: https://github.com/GlodBlock/ExtendedAE/blob/333be17a2b936c4b
 
 The complete modified, human-readable source is `assets/extendedae/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository), under LGPL 3.0. The existing upstream Japanese values are retained where applicable and are not claimed as wholly new work. Original and modified hashes are recorded in `reviews/extendedae.json` and `release.json`. GuideME in-game guide pages (45 pages), hardcoded display text, and image/model assets are outside this 253-key language scope.
 
+## Comforts — `assets/comforts/lang/ja_jp.json`
+
+**Copyright (C) 2017–2022 Illusive Soulworks.** LGPL **3.0-or-later**. The original `LICENSE`, GPL `COPYING`, and LGPL `COPYING.LESSER` are retained as `LICENSES/Comforts-LGPL-3.0-or-later.txt`, `LICENSES/Comforts-COPYING.txt`, and `LICENSES/Comforts-COPYING.LESSER.txt`. The original SpectreLib notice remains separate in `LICENSES/SpectreLib-Original-Notice.txt`.
+
+Source: https://github.com/illusivesoulworks/comforts/tree/eadbf86be195ec384341a8944b8d717164d52805
+
+Target: **15.0.0+26.1.2**, 84 current English keys. The upstream Japanese asset has 83 keys; existing Japanese provenance is retained and current missing keys are supplied. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. Only the editable language asset is included; no Comforts or SpectreLib JAR, code, textures or models are included.
+
+## Crafting on a Stick — `assets/crafting_on_a_stick/lang/ja_jp.json`
+
+**OfekN.** GNU **GPL 3.0**; the original full license is `LICENSES/CraftingOnAStick-GPL-3.0.txt`.
+
+Source: https://github.com/OfekN-mods/crafting-on-a-stick/tree/fa2f0470bbca0528046583fc8d1c58b95f390f5e
+
+Target: **26.1-1.1**, 14 current English keys. Four existing Japanese values from the upstream asset are retained as provenance and reviewed; the remaining current values are supplied or revised. Modified **2026-09-20 (UTC)**. Only the language asset is included; no MOD JAR, code or other assets are included.
+
+## Toast Control — `assets/toastcontrol/lang/ja_jp.json`
+
+**Brennan Ward (Shadows_of_Fire).** MIT: `LICENSES/ToastControl-MIT.txt`.
+
+Source: https://github.com/Shadows-of-Fire/Toast-Control/tree/7ff041c7bb4a5bb113f3bea0568f9e986b800af9
+
+Target: **26.1.2-10.0.0**, 2 keys. No upstream Japanese asset was found; Japanese values are supplied by ATM11 Japanese project / ueda-keisuke, modified **2026-09-20 (UTC)**. Only the language asset is included.
+
+## Better Advanced Tooltips — `assets/betteradvancedtooltips/lang/ja_jp.json`
+
+**Latvian DEV.** MIT: `LICENSES/BetterAdvancedTooltips-MIT.txt`.
+
+Source: https://github.com/latvian-dev/better-advanced-tooltips/tree/feed1c23eba70c56fd5560336b2785cd6ff969f9
+
+Target: **2601.1.0-build.9**, 5 keys. No upstream Japanese asset was found; Japanese values are supplied by ATM11 Japanese project / ueda-keisuke, modified **2026-09-20 (UTC)**. Only the language asset is included; no code or other assets are included.
+
 ## Project contributions and provenance
 
-`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib), plus the AppleSkin additions as described above. It **does not** apply to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
+`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips), plus the AppleSkin additions as described above. It **does not** apply to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.

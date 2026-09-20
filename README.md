@@ -1,10 +1,10 @@
 # ATM11 日本語改善
 
-ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパックです。**0.6.0 は23のMOD・内包ライブラリを対象に、1,955項目を1つのZIPへ収録します。** ATM11 全体の翻訳は進行中で、クエストや下表以外の MOD は含みません。
+ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパックです。**0.7.0 は27のMOD・内包ライブラリを対象に、2,060項目を1つのZIPへ収録します。** ATM11 全体の翻訳は進行中で、クエストや下表以外の MOD は含みません。
 
 ## 導入・解除
 
-1. [リリース](https://github.com/ueda-keisuke/atm11-japanese/releases/latest)から **`ATM11-Japanese-0.6.0.zip`** をダウンロードします。非営利条件付きの Jade・Better Advancements 素材を含みます。再配布・改変時は下記の個別条件を確認してください。
+1. [リリース](https://github.com/ueda-keisuke/atm11-japanese/releases/latest)から **`ATM11-Japanese-0.7.0.zip`** をダウンロードします。非営利条件付きの Jade・Better Advancements 素材を含みます。再配布・改変時は下記の個別条件を確認してください。
 2. 使用するインスタンスの `resourcepacks` フォルダへ、解凍せずに置きます。Prism Launcher ではインスタンス内の `minecraft/resourcepacks` です。
 3. Minecraft の「設定」→「リソースパック」で有効にし、選択中の一覧の**一番上（最高優先度）、特に「MOD のリソース（MOD Resources）」より上**へ移動します。旧版の日本語改善パックを無効にします。0.3.0 を使っていた場合は、基本パックと Jade 専用パックの両方を無効にします。
 4. 言語を「日本語」にして読み込みを完了します。
@@ -38,6 +38,10 @@ ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパ
 | SpectreLib / `spectrelib` | 0.21.0+26.1.2 | 1 | LGPL 2.1-only |
 | Advanced AE / `advanced_ae` | 26.1.7 | 245 | LGPL 3.0 |
 | ExtendedAE / `extendedae` | 26.1-1.0.4-neoforge | 253 | LGPL 3.0 |
+| Comforts / `comforts` | 15.0.0+26.1.2 | 84 | LGPL 3.0-or-later |
+| Crafting on a Stick / `crafting_on_a_stick` | 26.1-1.1 | 14 | GPL 3.0 |
+| Toast Control / `toastcontrol` | 26.1.2-10.0.0 | 2 | MIT |
+| Better Advanced Tooltips / `betteradvancedtooltips` | 2601.1.0-build.9 | 5 | MIT |
 
 件数は現行英語に対応する **キー・項目数**で、表示文、ナレーション、検索補助語、保持した metadata を含みます。画面数や目視確認済みの文字列数ではありません。JEI 1・Jade 2・QuarryPlus 1の計4 metadataキーは翻訳件数には数えず、原文または既存日本語の機能設定を保持します。
 
@@ -47,7 +51,7 @@ EnderIOは **Modded Conduits内の `conduit.enderio.rs` 1キーだけ**が対象
 
 ## 対応範囲と制限
 
-構文エラーのある **低優先の `transmog:lang/ja_jp.json` だけ**を遮断して同梱の日本語を読み込みます。同じファイルを使う低優先パックの差分も遮断されます。他の22 namespace は通常のキー上書きで、filter は使いません。英語原文にない既存日本語キーは、基底リソースから残る場合があります。元 MOD の JAR は変更しません。ExtendedAE のゲーム内ガイド45ページ、開発中のQuarryPlus補助MOD、画像・モデルは収録しません。
+構文エラーのある **低優先の `transmog:lang/ja_jp.json` だけ**を遮断して同梱の日本語を読み込みます。同じファイルを使う低優先パックの差分も遮断されます。他の26 namespace は通常のキー上書きで、filter は使いません。英語原文にない既存日本語キーは、基底リソースから残る場合があります。元 MOD の JAR は変更しません。ExtendedAE のゲーム内ガイド45ページ、開発中のQuarryPlus補助MOD、画像・モデルは収録しません。FTB UltimineはARR（All Rights Reserved）で公開許諾を確認できないため収録しません。
 
 **QuarryPlusの直書きGUI・診断チャットの一部は未対応です。** 言語JSONを参照しない `Size`、`Top+` / `Bottom+` 系のボタン、`Modules`、プレイサーモード、発電機の通知等は、このパックでは置換できません。表の件数は対象言語JSONのキー数で、MODの全表示文を網羅した件数ではありません。
 
@@ -62,7 +66,10 @@ EnderIOは **Modded Conduits内の `conduit.enderio.rs` 1キーだけ**が対象
 - **Code Defined GUI / Magic Particles Libの言語資産**: CC BY 4.0。作者への帰属、出典・ライセンス・改変の表示を保持します。コード側のMITとは適用範囲が異なります。
 - **Sodium とその日本語改変**: PolyForm Shield 1.0.0。競合用途を除く許容目的など、全文の条件が適用されます。本パックは原版 Sodium を必要とする日本語補助資産です。
 - **Better Advancements とその日本語改変**: 原作の Don't Be a Jerk ライセンス。非営利条件などを保持します。
-- **MITライセンスの言語資産**: 原作のMIT表示と作者表示を保持します。
+- **MITライセンスの言語資産**: 原作のMIT表示と作者表示を保持します。Toast Control と Better Advanced Tooltips を含みます。
+- **Comforts**: LGPL 3.0-or-later。原文のLICENSE、GPLのCOPYING、LGPLのCOPYING.LESSER、SpectreLibの通知を保持します。
+- **Crafting on a Stick**: GPL 3.0。原文LICENSEと作者表示を保持します。
+- **FTB Ultimine**: ARRのため本版には収録しません。
 - **AppleSkin**: 原作のUnlicenseと作者表示を保持します。
 - **EnderIOの対象言語資産**: 内包metadataのCC0表示、原作のUnlicense、作者表示を保持します。本プロジェクトの追加分の適用範囲は [NOTICE.md](NOTICE.md) に記載しています。
 
@@ -77,14 +84,14 @@ python3 build_pack.py --check
 python3 build_pack.py
 ```
 
-`release.json` が `pending` の間はビルドを拒否します。訳文・独立レビュー要約・元 JAR と内包 chain の識別情報・完全なキー集合・ライセンスの hash、件数、pack format 84.0 と限定 filter を検証し、`dist/ATM11-Japanese-0.6.0.zip` を生成します。レビュー要約は `reviews/` にあります。元 MOD の JAR や外部ライブラリは再ビルドに不要です。
+`release.json` が `pending` の間はビルドを拒否します。訳文・独立レビュー要約・元 JAR と内包 chain の識別情報・完全なキー集合・ライセンスの hash、件数、pack format 84.0 と限定 filter を検証し、`dist/ATM11-Japanese-0.7.0.zip` を生成します。レビュー要約は `reviews/` にあります。元 MOD の JAR や外部ライブラリは再ビルドに不要です。
 
 ファイル順と日時を固定し、同じ入力と圧縮環境なら同じ ZIP を再生成できます。異なる bytes の既存 ZIP は上書きしません。以前の公開 ZIP・タグは変更しません。
 
 ## English
 
-Unofficial Japanese improvements for **23 language namespaces / 1955 keys**, collected into **one ZIP**. Counts include narration, search terms and preserved metadata, not visually tested screens. ATM11 quests and other MODs are outside this release. Target: Minecraft 26.1.2 / NeoForge 26.1.2.106, with the exact MOD versions above.
+Unofficial Japanese improvements for **27 language namespaces / 2060 keys**, collected into **one ZIP**. Counts include narration, search terms and preserved metadata, not visually tested screens. ATM11 quests and other MODs are outside this release. Target: Minecraft 26.1.2 / NeoForge 26.1.2.106, with the exact MOD versions above.
 
-Download `ATM11-Japanese-0.6.0.zip` from [Releases](https://github.com/ueda-keisuke/atm11-japanese/releases/latest), place it in `resourcepacks` without extracting, enable it **at the top, above MOD Resources**, disable previous editions (including both 0.3.0 packs), and select Japanese. Disable/remove the pack to uninstall. Only the malformed lower-priority Transmog Japanese file is filtered; no MOD JAR is changed.
+Download `ATM11-Japanese-0.7.0.zip` from [Releases](https://github.com/ueda-keisuke/atm11-japanese/releases/latest), place it in `resourcepacks` without extracting, enable it **at the top, above MOD Resources**, disable previous editions (including both 0.3.0 packs), and select Japanese. Disable/remove the pack to uninstall. Only the malformed lower-priority Transmog Japanese file is filtered; no MOD JAR is changed.
 
-Each namespace remains a separate work under its own license. **There is no blanket MIT grant.** The collection contains noncommercial Jade and Better Advancements material; Jade also requires attribution and ShareAlike. GPL/LGPL assets include readable modified JSON and their applicable full license texts; SpectreLib retains LGPL 2.1-only and original notices. Code Defined GUI and Magic Particles language assets use CC BY 4.0. Sodium retains PolyForm Shield conditions. These conditions do not relicense unrelated namespace files. See `NOTICE.md` and `LICENSES/` for the individual scopes, credits and full terms. Only accepted review inputs pass the builder. **Game-screen visual checks for this version: 0.** Review and loader checks are separate from visual QA. ExtendedAE in-game guide pages (45 pages), the experimental QuarryPlus helper MOD, and images/models are excluded. QuarryPlus hardcoded GUI labels and diagnostic messages remain partly untranslated; this language-only pack cannot replace them. EnderIO scope is only `conduit.enderio.rs` from its Modded Conduits child; the rest of EnderIO is outside this release.
+Each namespace remains a separate work under its own license. **There is no blanket MIT grant.** The collection contains noncommercial Jade and Better Advancements material; Jade also requires attribution and ShareAlike. GPL/LGPL assets include readable modified JSON and their applicable full license texts; SpectreLib retains LGPL 2.1-only and original notices. Code Defined GUI and Magic Particles language assets use CC BY 4.0. Sodium retains PolyForm Shield conditions. These conditions do not relicense unrelated namespace files. See `NOTICE.md` and `LICENSES/` for the individual scopes, credits and full terms. Only accepted review inputs pass the builder. **Game-screen visual checks for this version: 0.** Review and loader checks are separate from visual QA. ExtendedAE in-game guide pages (45 pages), the experimental QuarryPlus helper MOD, FTB Ultimine (ARR without public redistribution permission), and images/models are excluded. QuarryPlus hardcoded GUI labels and diagnostic messages remain partly untranslated; this language-only pack cannot replace them. EnderIO scope is only `conduit.enderio.rs` from its Modded Conduits child; the rest of EnderIO is outside this release.

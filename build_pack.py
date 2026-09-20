@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.6.0'
+VERSION = '0.7.0'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': r'^lang/ja_jp\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -190,7 +190,23 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'extendedae': {'version': '26.1-1.0.4-neoforge',
                 'jar_sha256': '0201b58f5bdd33b2edffc786fbea7fbdbae06861f5beea1e6144ce4774e66e21',
                 'jar_entry': 'assets/extendedae/lang/en_us.json',
-                'source_sha256': 'e179f160074aa4d920d915ae407361f52a95f2488879a521c6f2215916361915'}}
+                'source_sha256': 'e179f160074aa4d920d915ae407361f52a95f2488879a521c6f2215916361915'},
+ 'comforts': {'version': '15.0.0+26.1.2',
+             'jar_sha256': '23b7a63b3729dc590174ca0ca5740c22ddc93718ead6fa579a921d3e7fa5ac83',
+             'jar_entry': 'assets/comforts/lang/en_us.json',
+             'source_sha256': '2e5684aa3ef4c81a71483f87aa7e3bc0cc506b60a85c65e617ccf2a9c22015a8'},
+ 'crafting_on_a_stick': {'version': '26.1-1.1',
+             'jar_sha256': '9dca3e70948d916cc3aa3f0dad78601158459022a657d30efeb0a805af97ca74',
+             'jar_entry': 'assets/crafting_on_a_stick/lang/en_us.json',
+             'source_sha256': 'c5b31af2e30db8265842ceb77c49864606687f32b88d9d6f05f6951e65cbafb0'},
+ 'toastcontrol': {'version': '26.1.2-10.0.0',
+             'jar_sha256': '49360b62f67194edac35342fc44d3413ae84392cafe341ba4de1ebac6fa95242',
+             'jar_entry': 'assets/toastcontrol/lang/en_us.json',
+             'source_sha256': '44bbd0c2ade0837af7320755e9b6f8ac2e8b80005ffecef5baa7dd9ef00aefb5'},
+ 'betteradvancedtooltips': {'version': '2601.1.0-build.9',
+             'jar_sha256': '1aef8ecc6f1b6c1952fed84c0302101019b2eb43c27d254152913b05a675143f',
+             'jar_entry': 'assets/betteradvancedtooltips/lang/en_us.json',
+             'source_sha256': '2b7e12c60a5ab2179773bc68a85747605c657eed02627197a2c4eca05f7a2f9e'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -213,7 +229,11 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'magicparticleslib': (2, '3e0e053f7741f2238a3a75c47518047524cf2114caefae6aaaf382fd1fa75635'),
  'spectrelib': (1, 'e468fbd829e841aec05cf72412d7470d806a74817acfc3bec0f5beb9dcf2e16b'),
  'advanced_ae': (245, 'db020a473aba0ed24a3498b219d75f5ad47a49ac069fecc139407ca8bae53774'),
- 'extendedae': (253, '617a9617e002fa13ed9e1f469a05c68e4ac5b0d8c088f56081fe5123edee07c2')}
+ 'extendedae': (253, '617a9617e002fa13ed9e1f469a05c68e4ac5b0d8c088f56081fe5123edee07c2'),
+ 'comforts': (84, '8b7e5b99c3567710c38e3c018ce2403ad6fa90567c43f3afb30cbfc14836a631'),
+ 'crafting_on_a_stick': (14, 'dc7eb09f7d91088d2ab87c9cecfdca4099c91510c3c64406dc43ce1b18de1e81'),
+ 'toastcontrol': (2, '52d71e9e1e5d64b49ed5072bcb695885afbe469b612b6f63e6a53a7390a9a6c1'),
+ 'betteradvancedtooltips': (5, '2aa164afe03073e3b01048d93a8abc21365dba77310d9fadc9247720ad1f9094')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -236,7 +256,11 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'magicparticleslib': [],
  'spectrelib': [],
  'advanced_ae': [],
- 'extendedae': []}
+ 'extendedae': [],
+ 'comforts': [],
+ 'crafting_on_a_stick': [],
+ 'toastcontrol': [],
+ 'betteradvancedtooltips': []}
 LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba69450ff1dbf4b1e0fed3bbc08c',
  'LICENSES/Transmog-MIT.txt': 'a366506974a46752dbf54c187288b5d5de7f4570422b0cbacd4f5cd1dcb8f099',
  'LICENSES/JEI-MIT.txt': '108c93a97f3011c196b8226f5019a9c09ade318fe3a802be2f7f5ddb2c3a0d04',
@@ -262,7 +286,13 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/SpectreLib-Original-Notice.txt': '0c32ff90345592abc45b827a582a6cb0911accefe9cb3c9342c388e1e5cef458',
  'LICENSES/GNU-LGPL-2.1.txt': '5749785c8bdefafcb5d798270ed0a967036fe2ca63dcedade1627565dfef81d2',
  'LICENSES/AdvancedAE-LGPL-3.0.md': 'dfd18396dbca8237050f4c2cd9295c1a01a1c5ae78d17829e55842508a2c7f77',
- 'LICENSES/ExtendedAE-LGPL-3.0.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118'}
+ 'LICENSES/ExtendedAE-LGPL-3.0.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118',
+ 'LICENSES/Comforts-LGPL-3.0-or-later.txt': '76673eefd330bf57418d1688204b38b33912546e698dfb8940b8dbb7e3d85770',
+ 'LICENSES/Comforts-COPYING.txt': '8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b',
+ 'LICENSES/Comforts-COPYING.LESSER.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118',
+ 'LICENSES/CraftingOnAStick-GPL-3.0.txt': '3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986',
+ 'LICENSES/ToastControl-MIT.txt': '418c2a244f332d6f802e3a8785aa3d431e05e42788ca49e60e214ca3beb02b1f',
+ 'LICENSES/BetterAdvancedTooltips-MIT.txt': '9edb55b1a18dd84104002f0299ce42f6bf3dbf10269e3e288c80e57db46d1b90'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -285,11 +315,15 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'magicparticleslib': ('LICENSES/CC-BY-4.0.txt', 'LICENSES/MagicParticlesLib-MIT-Code.txt'),
  'spectrelib': ('LICENSES/SpectreLib-Original-Notice.txt', 'LICENSES/GNU-LGPL-2.1.txt'),
  'advanced_ae': ('LICENSES/AdvancedAE-LGPL-3.0.md', 'LICENSES/GPL-3.0.txt'),
- 'extendedae': ('LICENSES/ExtendedAE-LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt')}
+ 'extendedae': ('LICENSES/ExtendedAE-LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt'),
+ 'comforts': ('LICENSES/Comforts-LGPL-3.0-or-later.txt', 'LICENSES/Comforts-COPYING.txt', 'LICENSES/Comforts-COPYING.LESSER.txt'),
+ 'crafting_on_a_stick': ('LICENSES/CraftingOnAStick-GPL-3.0.txt',),
+ 'toastcontrol': ('LICENSES/ToastControl-MIT.txt',),
+ 'betteradvancedtooltips': ('LICENSES/BetterAdvancedTooltips-MIT.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.6.0.zip',
+                'filename': 'ATM11-Japanese-0.7.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -312,7 +346,11 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'magicparticleslib',
                                'spectrelib',
                                'advanced_ae',
-                               'extendedae'),
+                               'extendedae',
+                               'comforts',
+                               'crafting_on_a_stick',
+                               'toastcontrol',
+                               'betteradvancedtooltips'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -338,8 +376,14 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/SpectreLib-Original-Notice.txt',
                              'LICENSES/GNU-LGPL-2.1.txt',
                              'LICENSES/AdvancedAE-LGPL-3.0.md',
-                             'LICENSES/ExtendedAE-LGPL-3.0.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.6.0: 23 namespaces / 1955 keys',
+                             'LICENSES/ExtendedAE-LGPL-3.0.txt',
+                             'LICENSES/Comforts-LGPL-3.0-or-later.txt',
+                             'LICENSES/Comforts-COPYING.txt',
+                             'LICENSES/Comforts-COPYING.LESSER.txt',
+                             'LICENSES/CraftingOnAStick-GPL-3.0.txt',
+                             'LICENSES/ToastControl-MIT.txt',
+                             'LICENSES/BetterAdvancedTooltips-MIT.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.7.0: 27 namespaces / 2060 keys',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -438,7 +482,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.6.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.7.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

@@ -36,6 +36,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "d208ae2c084b808dc7d1874dfd3dbd8bf13730e187d940797661181ed9ab3858"
     },
+    "betteradvancedtooltips": {
+      "key_count": 5,
+      "language_sha256": "6a808111ee94e3edd18047fe381e41e1a10cc6a2c69b0b67c6301b074a019a32",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "d4ee7ac4076dc05f76f0882600a2d06f9860b20a29adcc2b52f415baac83d92e"
+    },
     "betteradvancements": {
       "key_count": 3,
       "language_sha256": "b4eeb0b90d8dac2678caaedc8299766c542b253cb807c09123f79f9311dfb7f8",
@@ -48,11 +54,23 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "5e33681f375f024105e647dbf1c7378c44376af6ce61353489e02c12d5f34e0e"
     },
+    "comforts": {
+      "key_count": 84,
+      "language_sha256": "349ea6371ba9beda96ae926dd3645edaf6fdaadd47d44dd73294559a9f721b1d",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "d781f45a29fe975c3dde765f1a6156fb6ffb520dfff204db00629c805d7ea84e"
+    },
     "controlling": {
       "key_count": 12,
       "language_sha256": "e10ac3b8b9e7b1b64c3e706957ca279e39aff815c00f2f417a99ec5410433661",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "f8d98a3e63b1357d5fe3ac401b47e80ef9f5e149d52749089891270687d41491"
+    },
+    "crafting_on_a_stick": {
+      "key_count": 14,
+      "language_sha256": "9ccb98fa2d26c7a6557fdcb79d6e769e6c7c14123c11fae1a445f55463febec1",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "ec06ba0124a3daaabacd7da8d51ec4cde65614dcdc3e2e4da5fd783038a58099"
     },
     "cumulus_menus": {
       "key_count": 35,
@@ -139,6 +157,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "94d0b05837e44e2bf7c8aa106e44dbf31c359cd1e75645d6f39386ea6e252a99"
     },
+    "toastcontrol": {
+      "key_count": 2,
+      "language_sha256": "471b1a2621ee50069904b062186e3bf76fac4c2470479b9a8a0879be10df8cfd",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "3c3655097dbaf6e3a033e8e71f1234e04cbfaa800b9c0465384cc66a2bb25f52"
+    },
     "transmog": {
       "key_count": 25,
       "language_sha256": "0118fe14b9864d722781bceb5b5e92c76ad3b4a49970f2b09674220c4ec641c9",
@@ -148,5 +172,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.6.0"
+  "version": "0.7.0"
 }

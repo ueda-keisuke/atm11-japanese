@@ -1,0 +1,27 @@
+{
+  "language_sha256": "471b1a2621ee50069904b062186e3bf76fac4c2470479b9a8a0879be10df8cfd",
+  "namespace": "toastcontrol",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "key.category.toastcontrol.category",
+        "key.toastcontrol.clear"
+      ],
+      "batch_id": "lang-ToastControl-26.1.2-10.0.0-toastcontrol-da791a7afb-0001",
+      "decision": "accepted",
+      "review_sha256": "a120852cc1e30f2de3e00212a54e7bb9a238bc1da22481560d25057672924c78",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "c654bf12fe1fbe0251664a1021d8351b6207035f72bc52612712274b6f75fc15"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/toastcontrol/lang/en_us.json",
+    "jar_sha256": "49360b62f67194edac35342fc44d3413ae84392cafe341ba4de1ebac6fa95242",
+    "source_sha256": "44bbd0c2ade0837af7320755e9b6f8ac2e8b80005ffecef5baa7dd9ef00aefb5",
+    "version": "26.1.2-10.0.0"
+  }
+}
