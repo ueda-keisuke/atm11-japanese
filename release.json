@@ -179,6 +179,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "89ec06a59073e8d3e84e0de0f0d1238d54ff8d8e1eb9e6b83886da7c00119600"
     },
+    "guideme": {
+      "key_count": 36,
+      "language_sha256": "122e3905723c5ae607257320ad87b3ba051a0e3d3cceb621b174193a7f67516f",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "9426b69faba133c818d6a8bbefd9023ff6bccd9b39dbe77327bf8f414bdb3066"
+    },
     "interdimensionalwirelesstransmitter": {
       "key_count": 10,
       "language_sha256": "4854eee6e5b07f62f636f89ebc12b717d15d2aa7046ffa7a827178e99b82d29d",
@@ -364,5 +370,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.26.0"
+  "version": "0.27.0"
 }

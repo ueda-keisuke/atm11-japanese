@@ -1,10 +1,10 @@
 # ATM11 日本語改善
 
-ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパックです。**0.26.0は55のMOD・ライブラリなど、4,987項目（日本語訳4,966、保持メタデータ19、プロジェクト改変通知2件）を収録しています。** ATM11全体の翻訳は進行中です。下の一覧にないMODやクエストは収録していません。
+ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパックです。**0.27.0は56のMOD・ライブラリなど、5,023項目（日本語訳5,002、保持メタデータ19、プロジェクト改変通知2件）を収録しています。** ATM11全体の翻訳は進行中です。下の一覧にないMODやクエストは収録していません。
 
 ## 導入・解除
 
-1. [リリース](https://github.com/ueda-keisuke/atm11-japanese/releases/latest)から **`ATM11-Japanese-0.26.0.zip`** をダウンロードします。非営利条件付きの Jade・Nature's Compass・Better Advancements 素材を含みます。再配布・改変時は下記の個別条件を確認してください。
+1. [リリース](https://github.com/ueda-keisuke/atm11-japanese/releases/latest)から **`ATM11-Japanese-0.27.0.zip`** をダウンロードします。非営利条件付きの Jade・Nature's Compass・Better Advancements 素材を含みます。再配布・改変時は下記の個別条件を確認してください。
 2. 使用するインスタンスの `resourcepacks` フォルダへ、解凍せずに置きます。Prism Launcher ではインスタンス内の `minecraft/resourcepacks` です。
 3. Minecraft の「設定」→「リソースパック」で有効にし、選択中の一覧の**一番上（最高優先度）、特に「MOD のリソース（MOD Resources）」より上**へ移動します。旧版の日本語改善パックを無効にします。0.3.0 を使っていた場合は、基本パックと Jade 専用パックの両方を無効にします。
 4. 言語を「日本語」にして読み込みを完了します。
@@ -24,6 +24,7 @@ ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパ
 | Resourceful Config / `resourcefulconfig` | 4.0.1 | 32 | MIT |
 | AE2 Network Analyzer / `ae2netanalyser` | 26.1-1.0.0-neoforge | 38 | LGPL 3.0 |
 | Applied Energistics 2 / `ae2` | 26.1.10-beta | 1,018 | CC0 1.0（言語JSONのみ） |
+| GuideME / `guideme` | 26.1.12-beta | 36 | LGPL 3.0（言語JSONのみ） |
 | Cumulus Menus / `cumulus_menus` | 2.0.15 | 35 | LGPL 3.0 |
 | Sodium / `sodium` | 0.9.1 | 105 | PolyForm Shield 1.0.0 |
 | Better Advancements / `betteradvancements` | 0.6.0.76 | 3 | Don't Be a Jerk 非営利ライセンス |
@@ -71,7 +72,7 @@ ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパ
 | Measurements / `measurements` | 4.0.0（MC 26.1） | 21（通常15＋設定説明6、原文メタデータ1項目を含む） | MIT |
 | Mining Gadgets / `mininggadgets` | 1.19.3 | 86 | MIT |
 
-収録範囲は全4,987件です（言語4,966件＋保持メタデータ19件＋プロジェクト改変通知2件）。表の件数には表示文、ナレーション、検索補助語のほか、保持したメタデータとプロジェクト改変通知も含みます。FML64件は独立レビュー済みです。画面数や目視確認済みの文字列数ではありません。JEI 1・Jade 2・QuarryPlus 1の計4メタデータと、Nature's Compassの原文メタデータ1項目、Enchantment Descriptionsの出典・区切りなど13項目は翻訳せず保持します（計18項目）。加えてMeasurementsの区切りコメント1項目を保持し、メタデータは計19項目です。Simple BackupsとBalmの改変通知各1項目は翻訳項目ではありません。
+収録範囲は全5,023件です（言語5,002件＋保持メタデータ19件＋プロジェクト改変通知2件）。表の件数には表示文、ナレーション、検索補助語のほか、保持したメタデータとプロジェクト改変通知も含みます。FML64件は独立レビュー済みです。画面数や目視確認済みの文字列数ではありません。JEI 1・Jade 2・QuarryPlus 1の計4メタデータと、Nature's Compassの原文メタデータ1項目、Enchantment Descriptionsの出典・区切りなど13項目は翻訳せず保持します（計18項目）。加えてMeasurementsの区切りコメント1項目を保持し、メタデータは計19項目です。Simple BackupsとBalmの改変通知各1項目は翻訳項目ではありません。
 
 対応環境は ATM11 **0.8.0-beta** / Minecraft **26.1.2** / NeoForge **26.1.2.106**。対象 MOD 本体は別途必要です。他の版は未確認です。独立レビューで受理された言語データだけを収録しています。通常の言語資産読み込みとformatterの確認はPASSですが、FML初期ローダーでのパック適用可否は未検証です。**本版のゲーム画面による実表示確認は0件**です。言語データのレビューやnative読み込み検証と、ゲーム画面の目視確認を区別しています。
 
@@ -79,9 +80,11 @@ EnderIOは **Modded Conduits内の `conduit.enderio.rs` 1キーだけ**が対象
 
 ## 対応範囲と制限
 
-AE2は299項目を追加し、対象バージョンの英語言語ファイルにある全1,018キーを収録しました。言語ファイルの範囲を揃えたもので、AE2やATM11のすべての表示が日本語になることを保証するものではありません。チャージャーのレシピ画面に出る「10 turns or 1600 AE」はコード内の固定文なので、このパックでは置き換わりません。今回の追加分は41の書式検査と18の結合検査を通しています。ゲーム画面の目視確認は未実施です。補助MOD 0.5.0-devは引き続き別配布です。
+0.27.0ではGuideMEの36項目を追加しました。ガイド画面の設定、検索、履歴移動、ズーム、注釈、全幅表示などの操作を日本語化しています。ガイド本文と画像は含みません。36項目は独立レビュー済みです。
 
-構文エラーのある **低優先の `transmog:lang/ja_jp.json` だけ**を遮断して同梱の日本語を読み込みます。同じファイルを使う低優先パックの差分も遮断されます。残りの54対象は通常のキー上書きで、読み込みフィルターは使いません。Iron Jetpacksの派生14キーは通常41キーとは別出典・別レビューです。英語原文にない既存日本語キーは、基底リソースから残る場合があります。元 MOD の JAR は変更しません。ExtendedAE のゲーム内ガイド45ページ、別配布の日本語表示補助MOD、画像・モデルは収録しません。FTB Ultimine、Simple Magnets、CraftingTweaks、DefaultOptionsは、翻訳派生物の公開許諾を確認できないARR（All Rights Reserved）または同等の制限のため収録しません。Charging Gadgetsの設定4項目は0.11で本体ラベルと説明を追加し、0.12ではNeoForge共通設定46項目にRange表示の日本語を追加しています。コードに直接書かれたメニュー名や、言語JSON以外の表示は今回の翻訳対象外です。NeoForgeは既存78項目、FML64項目、0.20.0で追加された7グループ124項目を合わせた266項目です。FML64項目と124項目は独立レビュー済みです。通常の言語資産読み込みとformatterの確認はPASSですが、FML初期ローダーでのパック適用可否は未検証です。実ゲーム画面の目視確認は0件です。チャンク生成の進捗エラー文は現行GenerationBarがエラー引数なしで呼び出すため、言語ファイルだけでは修正できません。別配布の公開済みのhelper-0.5.0-devがこのサーバー側修正を提供します。ネットワークflow 4項目は固定consumerの実引数順に基づく補正を行い、根拠は固定されたconsumerの実引数順に基づいています。固定ソースで呼出し元を確認できないキーや、コメントアウトされた表示経路も含まれます。Mod一覧の状態表示ではコードから渡されるLOADEDがformatterでloadedになる動的値が残ります。Simple BackupsとBalmの改変通知は表示用翻訳ではなく、Apache 4(b)の通知です。
+0.26.0でAE2は299項目を追加し、対象バージョンの英語言語ファイルにある全1,018キーを収録しました。言語ファイルの範囲を揃えたもので、AE2やATM11のすべての表示が日本語になることを保証するものではありません。チャージャーのレシピ画面に出る「10 turns or 1600 AE」はコード内の固定文なので、このパックでは置き換わりません。今回の追加分は41の書式検査と18の結合検査を通しています。ゲーム画面の目視確認は未実施です。補助MOD 0.5.0-devは引き続き別配布です。
+
+構文エラーのある **低優先の `transmog:lang/ja_jp.json` だけ**を遮断して同梱の日本語を読み込みます。同じファイルを使う低優先パックの差分も遮断されます。残りの55対象は通常のキー上書きで、読み込みフィルターは使いません。Iron Jetpacksの派生14キーは通常41キーとは別出典・別レビューです。英語原文にない既存日本語キーは、基底リソースから残る場合があります。元 MOD の JAR は変更しません。ExtendedAE のゲーム内ガイド45ページ、別配布の日本語表示補助MOD、画像・モデルは収録しません。FTB Ultimine、Simple Magnets、CraftingTweaks、DefaultOptionsは、翻訳派生物の公開許諾を確認できないARR（All Rights Reserved）または同等の制限のため収録しません。Charging Gadgetsの設定4項目は0.11で本体ラベルと説明を追加し、0.12ではNeoForge共通設定46項目にRange表示の日本語を追加しています。コードに直接書かれたメニュー名や、言語JSON以外の表示は今回の翻訳対象外です。NeoForgeは既存78項目、FML64項目、0.20.0で追加された7グループ124項目を合わせた266項目です。FML64項目と124項目は独立レビュー済みです。通常の言語資産読み込みとformatterの確認はPASSですが、FML初期ローダーでのパック適用可否は未検証です。実ゲーム画面の目視確認は0件です。チャンク生成の進捗エラー文は現行GenerationBarがエラー引数なしで呼び出すため、言語ファイルだけでは修正できません。別配布の公開済みのhelper-0.5.0-devがこのサーバー側修正を提供します。ネットワークflow 4項目は固定consumerの実引数順に基づく補正を行い、根拠は固定されたconsumerの実引数順に基づいています。固定ソースで呼出し元を確認できないキーや、コメントアウトされた表示経路も含まれます。Mod一覧の状態表示ではコードから渡されるLOADEDがformatterでloadedになる動的値が残ります。Simple BackupsとBalmの改変通知は表示用翻訳ではなく、Apache 4(b)の通知です。
 
 **QuarryPlusの直書きGUI・診断チャットの一部は未対応です。** 言語JSONを参照しない `Size`、`Top+` / `Bottom+` 系のボタン、`Modules`、プレイサーモード、発電機の通知等は、このパックでは置換できません。表の件数は対象言語JSONのキー数で、MODの全表示文を網羅した件数ではありません。
 
@@ -139,15 +142,15 @@ python3 build_pack.py --check
 python3 build_pack.py
 ```
 
-レビュー済みの訳文と確認記録、元JARと内包JARの識別情報、翻訳キーの一覧、ライセンスのハッシュ、項目数、パック形式84.0と対象を限定したフィルターを検証し、`dist/ATM11-Japanese-0.26.0.zip`を生成します。レビュー要約は`reviews/`にあります。元MODのJARや外部ライブラリは再ビルドに不要です。
+レビュー済みの訳文と確認記録、元JARと内包JARの識別情報、翻訳キーの一覧、ライセンスのハッシュ、項目数、パック形式84.0と対象を限定したフィルターを検証し、`dist/ATM11-Japanese-0.27.0.zip`を生成します。レビュー要約は`reviews/`にあります。元MODのJARや外部ライブラリは再ビルドに不要です。
 
 ファイル順と日時を固定し、同じ入力と圧縮環境なら同じ ZIP を再生成できます。内容の異なる既存 ZIP は上書きしません。以前の公開 ZIP・タグは変更しません。
 
 ## English
 
-Unofficial Japanese improvements for **55 language namespaces / 4,987 entries** (4,966 translations, 19 preserved original metadata entries and 2 project notices). Counts include narration and search terms, not visually tested screens. ATM11 quests and other MODs are outside this release. Target: Minecraft 26.1.2 / NeoForge 26.1.2.106, with the exact MOD versions above.
+Unofficial Japanese improvements for **56 language namespaces / 5,023 entries** (5,002 translations, 19 preserved original metadata entries and 2 project notices). Counts include narration and search terms, not visually tested screens. ATM11 quests and other MODs are outside this release. Target: Minecraft 26.1.2 / NeoForge 26.1.2.106, with the exact MOD versions above.
 
-Download `ATM11-Japanese-0.26.0.zip` from [Releases](https://github.com/ueda-keisuke/atm11-japanese/releases/latest), place it in `resourcepacks` without extracting, enable it **at the top, above MOD Resources**, disable previous editions, and select Japanese. Disable/remove the pack to uninstall. Only the malformed lower-priority Transmog Japanese file is filtered; no MOD JAR is changed. Iron Jetpacks normal and derived sources are reviewed separately.
+Download `ATM11-Japanese-0.27.0.zip` from [Releases](https://github.com/ueda-keisuke/atm11-japanese/releases/latest), place it in `resourcepacks` without extracting, enable it **at the top, above MOD Resources**, disable previous editions, and select Japanese. Disable/remove the pack to uninstall. Only the malformed lower-priority Transmog Japanese file is filtered; no MOD JAR is changed. Iron Jetpacks normal and derived sources are reviewed separately.
 
 Each namespace remains a separate work under its own license. **There is no blanket MIT grant.** The collection contains noncommercial Jade, Nature's Compass and Better Advancements material; Jade and Nature's Compass also require attribution, modification notices and ShareAlike. GPL/LGPL/AGPL assets include readable modified JSON and their applicable full license texts; SpectreLib retains LGPL 2.1-only and original notices. Code Defined GUI and Magic Particles language assets use CC BY 4.0. Sodium retains PolyForm Shield conditions. Balm's 52 language entries are Apache-2.0 language source only, with its full LICENSE and NOTICE; no Balm JAR, code, icons or binaries are included. These conditions do not relicense unrelated namespace files. See `NOTICE.md` and `LICENSES/` for the individual scopes, credits and full terms. Only accepted review inputs pass the builder. **Game-screen visual checks for this release scope: 0.** Runtime review and loader checks are separate from visual QA. ExtendedAE in-game guide pages (45 pages), the separately distributed Japanese display helper MOD, FTB Ultimine, Simple Magnets, CraftingTweaks and DefaultOptions (permission for translated redistribution not established), and other MOD-derived configuration strings remain outside scope; the NeoForge entries in this release scope have passed independent review; images/models are excluded. ElevatorID and Mystical Automation are included as MIT language assets with their original full licenses. QuarryPlus hardcoded GUI labels and diagnostic messages remain partly untranslated; this language-only pack cannot replace them. EnderIO scope is only `conduit.enderio.rs` from its Modded Conduits child; the rest of EnderIO is outside this release. DimStorage also retains hardcoded connection, collection-toggle, disconnected and list-operation messages from Java code; the 36 language keys do not cover those screens.
 
@@ -176,3 +179,5 @@ Version 0.17 adds 86 Mining Gadgets entries and six Measurements configuration d
 Version 0.21.0 adds 52 Balm language entries under Apache 2.0 language-only conditions; it carries the 124 NeoForge entries from the prior scope. Balm JARs, code, icons and binaries are excluded.
 
 Version 0.26.0 adds 299 independently reviewed AE2 entries, bringing the overlay to all 1,018 keys in the fixed English language JSON for AE2 26.1.10-beta. This is language-file coverage, not complete runtime or ATM11 coverage. The Charger recipe label "10 turns or 1600 AE" is hardcoded and remains English. The added scope passes 41 offline formatting checks and 18 composition checks. These distinguish actual Minecraft/AE2 consumer methods from source-shaped fixtures; they do not establish game-screen, world or full MOD lifecycle verification. The separate helper 0.5.0-dev is unchanged and is not bundled. Positive h/m/s literals and Side-list punctuation remain source behavior; several legacy keys have no confirmed current direct caller. The helper retains its existing 46 captions and optional Fluix-material repair.
+
+Version 0.27.0 adds all 36 keys from the fixed GuideME 26.1.12-beta English language JSON, including settings, search, history, zoom, annotations and full-width controls. The addition was independently reviewed. Guide pages and images are outside this language-file scope. The existing helper 0.5.0-dev is unchanged, the hardcoded Charger label remains unresolved in this release, and game-screen visual QA remains 0. GuideME attribution, LGPL 3.0 and retained notices are supplied in NOTICE.md and LICENSES/.

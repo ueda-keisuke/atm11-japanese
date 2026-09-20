@@ -1,6 +1,20 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.26.0 additions / 今回の追加範囲
+## 0.27.0 additions / 今回の追加範囲
+
+GuideME 26.1.12-betaの言語JSON全36項目を追加しました。設定とガイド画面の操作を対象とし、ガイド本文・画像・MOD本体は含みません。翻訳者とは別の担当によるレビュー済みです。ゲーム画面の目視確認は0件です。
+
+### GuideME / `guideme`
+
+- Upstream: [Applied Energistics / GuideME](https://github.com/AppliedEnergistics/GuideME), author **shartte**.
+- Fixed tag: `v26.1.12-beta`; commit [`6a5f4d413f7ce845d5b5fd4336e434dad419045b`](https://github.com/AppliedEnergistics/GuideME/tree/6a5f4d413f7ce845d5b5fd4336e434dad419045b).
+- Original JAR SHA-256: `14a71c082ba176f5dab58f8bae9edd8baa8f3c636aed4356335fe5855494b2cd`.
+- Original English language member: `assets/guideme/lang/en_us.json`, SHA-256 `e79f58c75cbb760ca14f0ae11a389f6e3c0ffad1e67f47ac03f680cab37a3a17`; byte-identical to the fixed source file. No upstream Japanese language JSON was present in this version.
+- Our modified, editable source: `assets/guideme/lang/ja_jp.json`, 36 entries. Japanese translation by ATM11 Japanese project / ueda-keisuke, **2026-09-20 (UTC)**; original keys and format placeholders retained.
+- The GuideME language adaptation is supplied under **GNU LGPL version 3**. Complete texts: `LICENSES/GuideME-LGPL-3.0.txt` and the incorporated `LICENSES/GPL-3.0.txt`. Upstream notices are retained in `LICENSES/GuideME-NOTICE.txt`, `LICENSES/GuideME-markdown-LICENSE.txt`, `LICENSES/GuideME-META-INF-LICENSE.txt`, and `LICENSES/GuideME-META-INF-NOTICE.txt`. These dependency notices do not mean dependency code is bundled.
+- Scope: language JSON only. GuideME binaries, Java code, guide Markdown, logos, images and other assets are not included. This language-only distribution does not claim a license for unrelated assets. Game-screen visual QA remains 0.
+
+## 0.26.0 additions / 前版の追加範囲
 
 AE2は299項目を追加し、対象バージョンの英語言語ファイルにある全1,018キーを収録しました。言語ファイルの範囲を揃えたもので、AE2やATM11のすべての表示が日本語になることを保証するものではありません。チャージャーのレシピ画面に出る「10 turns or 1600 AE」はコード内の固定文なので、このパックでは置き換わりません。今回の追加分は41の書式検査と18の結合検査を通しています。ゲーム画面の目視確認は未実施です。補助MOD 0.5.0-devは引き続き別配布です。
 
@@ -8,8 +22,8 @@ Version 0.26.0 adds 299 independently reviewed AE2 entries, bringing the overlay
 
 
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.26.0 contains 4,987 entries across 55 namespaces: 4,966 translations, 19 preserved original metadata entries and two project notices. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries, plus Measurements `_comment`. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
-This is the 0.26.0 release documentation. Game-screen visual QA remains 0, and FML early-loader pack application is unverified.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.27.0 contains 5,023 entries across 56 namespaces: 5,002 translations, 19 preserved original metadata entries and two project notices. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries, plus Measurements `_comment`. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
+This is the 0.27.0 release documentation. Game-screen visual QA remains 0, and FML early-loader pack application is unverified.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 

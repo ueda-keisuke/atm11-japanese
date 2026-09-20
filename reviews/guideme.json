@@ -1,0 +1,61 @@
+{
+  "language_sha256": "122e3905723c5ae607257320ad87b3ba051a0e3d3cceb621b174193a7f67516f",
+  "namespace": "guideme",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "guideme.configuration.adaptiveScaling",
+        "guideme.configuration.debug",
+        "guideme.configuration.debug.tooltip",
+        "guideme.configuration.fullWidthLayout",
+        "guideme.configuration.gui",
+        "guideme.configuration.guide",
+        "guideme.configuration.ignoreTranslatedGuides",
+        "guideme.configuration.ignoreTranslatedGuides.tooltip",
+        "guideme.configuration.showDebugGuiOverlays",
+        "guideme.configuration.title",
+        "guideme.guidebook.Blasting",
+        "guideme.guidebook.Close",
+        "guideme.guidebook.CloseFullWidthView",
+        "guideme.guidebook.CommandOnlyWorksInSinglePlayer",
+        "guideme.guidebook.ContentFrom",
+        "guideme.guidebook.Crafting",
+        "guideme.guidebook.FullWidthView",
+        "guideme.guidebook.HideAnnotations",
+        "guideme.guidebook.HistoryGoBack",
+        "guideme.guidebook.HistoryGoForward",
+        "guideme.guidebook.HoldToShow",
+        "guideme.guidebook.ItemInvalidGuideId",
+        "guideme.guidebook.ItemNoGuideId",
+        "guideme.guidebook.ResetView",
+        "guideme.guidebook.RunsCommand",
+        "guideme.guidebook.Search",
+        "guideme.guidebook.SearchNoQuery",
+        "guideme.guidebook.SearchNoResults",
+        "guideme.guidebook.ShapelessCrafting",
+        "guideme.guidebook.ShowAnnotations",
+        "guideme.guidebook.Smelting",
+        "guideme.guidebook.ZoomIn",
+        "guideme.guidebook.ZoomOut",
+        "item.guideme.guide",
+        "key.category.guideme.category",
+        "key.guideme.guide"
+      ],
+      "batch_id": "lang-guideme-26.1.12-beta-guideme-85661983ea-0001",
+      "decision": "accepted",
+      "review_sha256": "93b0390f0ebb03addfd69a92d6b8c5240f6cb46b429157607cbaa170587be8ae",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "9f882348fb137a7ae6e40ea6001429b307b330cbea90edaaef6ba765fb3f0d7b"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/guideme/lang/en_us.json",
+    "jar_sha256": "14a71c082ba176f5dab58f8bae9edd8baa8f3c636aed4356335fe5855494b2cd",
+    "source_sha256": "e79f58c75cbb760ca14f0ae11a389f6e3c0ffad1e67f47ac03f680cab37a3a17",
+    "version": "26.1.12-beta"
+  }
+}
