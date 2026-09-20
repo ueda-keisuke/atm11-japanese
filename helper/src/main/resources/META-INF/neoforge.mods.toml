@@ -4,9 +4,9 @@ license="LGPL-3.0-only"
 
 [[mods]]
 modId="atm11_japanese_helper"
-version="0.4.0-dev"
+version="0.5.0-dev"
 displayName="ATM11 Japanese Helper (development)"
-description='''Provides translated client display names for QuarryPlus, Mining Gadgets and Measurements, and repairs NeoForge chunk-generation error-count arguments on the server running the command. Each feature independently checks its exact supported class bytes. Development artifact; no in-game visual QA yet.'''
+description='''Provides independently guarded Japanese display helpers for existing features and a Fluix smithing-template material-row repair for fixed AE2 26.1.10-beta. No new language keys are added. Development release; no in-game visual QA.'''
 
 [[mixins]]
 config="atm11_japanese_helper.mixins.json"
@@ -19,6 +19,9 @@ config="atm11_japanese_helper.measurements.mixins.json"
 
 [[mixins]]
 config="atm11_japanese_helper.neoforge.mixins.json"
+
+[[mixins]]
+config="atm11_japanese_helper.ae2.fluix.mixins.json"
 
 [[dependencies.atm11_japanese_helper]]
 modId="minecraft"
@@ -49,3 +52,9 @@ modId="measurements"
 type="optional"
 versionRange="[0,)"
 side="CLIENT"
+
+[[dependencies.atm11_japanese_helper]]
+modId="ae2"
+type="optional"
+versionRange="[0,)"
+side="BOTH"

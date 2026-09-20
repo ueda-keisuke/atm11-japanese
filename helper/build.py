@@ -11,8 +11,8 @@ import sys
 import zipfile
 
 HERE = Path(__file__).resolve().parent
-RELEASE_INPUTS_SHA256 = '332d60e2e58ff912c2e707badc3350ab4648f76e47b8aa2b6630d76a8732f275'
-HELPER_VERSION = '0.4.0-dev'
+RELEASE_INPUTS_SHA256 = '3ff6fce757ff28db2cf30b2eec19cf1a1759a62e47168b6836c879199d25cc38'
+HELPER_VERSION = '0.5.0-dev'
 
 
 def sha(data):
@@ -167,7 +167,78 @@ def check_generation_runtime(libraries):
             'english_contract': language, 'runtime_guard_scope': 'Consumer class hashes and callsite shape; English asset checked separately at build time.'}
 
 
-def checked_inputs(prism, quarry, mining, measurements, java_home=None):
+def check_fluix_runtime(contract, libraries, ae2):
+    """Pin the optional AE2/Minecraft consumer pair and the five fixed recipes."""
+    require(contract.get('schema_version') == 1, 'Unsupported Fluix repair contract')
+    require(contract.get('kind') == 'consumer_component_repair_no_new_translation_keys',
+            'Wrong Fluix repair contract')
+    require(sha(ae2.read_bytes()) == contract['source_jar_sha256'],
+            'Applied Energistics 2 JAR SHA256 differs')
+    classes = contract.get('classes')
+    require(isinstance(classes, dict) and len(classes) == 2,
+            'Fluix contract must bind exactly two production classes')
+    observed = {}
+    with zipfile.ZipFile(ae2) as archive:
+        ae2_classes = {name: expected for name, expected in classes.items() if name.startswith('appeng/')}
+        require(len(ae2_classes) == 1, 'Fluix contract must bind one AE2 target class')
+        for member, expected in ae2_classes.items():
+            require(archive.namelist().count(member) == 1,
+                    'Missing/duplicate AE2 runtime class: ' + member)
+            actual = sha(archive.read(member))
+            require(actual == expected, 'AE2 runtime class SHA256 differs: ' + member)
+            observed[member] = actual
+        for locale, row in contract['language_sources'].items():
+            require(archive.namelist().count(row['entry']) == 1,
+                    'Missing/duplicate AE2 language source: ' + locale)
+            require(sha(archive.read(row['entry'])) == row['sha256'],
+                    'AE2 language source SHA256 differs: ' + locale)
+        recipe_observed = []
+        for recipe in contract['recipes']:
+            require(archive.namelist().count(recipe['entry']) == 1,
+                    'Missing/duplicate AE2 Fluix recipe: ' + recipe['entry'])
+            raw = archive.read(recipe['entry'])
+            require(sha(raw) == recipe['sha256'], 'AE2 recipe SHA256 differs: ' + recipe['entry'])
+            payload = json.loads(raw)
+            require(payload.get('type') == recipe['type'], 'AE2 recipe type differs: ' + recipe['entry'])
+            def ingredient(field):
+                value = payload.get(field)
+                if isinstance(value, dict):
+                    if 'item' in value:
+                        return value['item']
+                    if 'tag' in value:
+                        return '#' + value['tag']
+                return value
+            require(ingredient('template') == recipe['template']
+                    and ingredient('addition') == recipe['addition']
+                    and ingredient('base') == recipe['base'],
+                    'AE2 recipe ingredient contract differs: ' + recipe['entry'])
+            result = payload.get('result')
+            result_id = result.get('id') if isinstance(result, dict) else result
+            require(result_id == recipe['result_id'], 'AE2 recipe result contract differs: ' + recipe['entry'])
+            recipe_observed.append(recipe['result_id'])
+    runtime_jar = next((p for p in libraries if p.name == contract['minecraft_runtime_jar']), None)
+    require(runtime_jar is not None and sha(runtime_jar.read_bytes()) == contract['minecraft_runtime_jar_sha256'],
+            'Pinned Minecraft runtime JAR required for Fluix consumer guard')
+    mc_members = {name: expected for name, expected in classes.items() if name.startswith('net/')}
+    require(len(mc_members) == 1, 'Fluix contract must bind one Minecraft superclass')
+    with zipfile.ZipFile(runtime_jar) as archive:
+        for member, expected in mc_members.items():
+            require(archive.namelist().count(member) == 1 and sha(archive.read(member)) == expected,
+                    'Minecraft consumer class SHA256 differs: ' + member)
+            observed[member] = expected
+    recipes = contract.get('recipes')
+    require(isinstance(recipes, list) and len(recipes) == 5, 'Fluix contract must bind five recipes')
+    require(len(set(recipe_observed)) == 5 and all(x.startswith('ae2:fluix_') for x in recipe_observed),
+            'Fluix recipes must be five distinct AE2 Fluix tools')
+    return {'ae2_jar_sha256': contract['source_jar_sha256'], 'classes': observed,
+            'minecraft_runtime_jar': contract['minecraft_runtime_jar'],
+            'minecraft_runtime_jar_sha256': contract['minecraft_runtime_jar_sha256'],
+            'source_commit': contract['source_commit'], 'language_sources': contract['language_sources'],
+            'recipes': recipe_observed,
+            'runtime_scope': 'AE2 Fluix template consumer and fixed five recipe additions; no new language keys. Recipe and language SHA checks are build/verification checks and do not monitor runtime datapack reloads.'}
+
+
+def checked_inputs(prism, quarry, mining, measurements, ae2, java_home=None):
     release, contracts = checked_package()
     for feature, jar in (('quarryplus', quarry), ('mininggadgets', mining), ('measurements', measurements)):
         contract = contracts[feature]
@@ -209,7 +280,9 @@ def checked_inputs(prism, quarry, mining, measurements, java_home=None):
                  'acceptance': 'Final JAR SHA256 must match the frozen reference regardless of toolchain platform.'}
     runtime = check_measurements_runtime(contracts['measurements'], libraries)
     generation_runtime = check_generation_runtime(libraries)
-    return java, libraries, quarry, mining, measurements, version, toolchain, runtime, generation_runtime
+    fluix_contract = strict(HERE / 'fluix-repair-contract.json')
+    fluix_runtime = check_fluix_runtime(fluix_contract, libraries, ae2)
+    return java, libraries, quarry, mining, measurements, version, toolchain, runtime, generation_runtime, ae2, fluix_runtime
 
 
 def jar_bytes(classes):
@@ -234,8 +307,9 @@ def jar_bytes(classes):
                 'assets/atm11_japanese_helper/lang/en_us.json', 'assets/atm11_japanese_helper/lang/ja_jp.json'}
     expected.update('dev/atm11/japanesehelper/' + name + '.class' for name in (
             'JapaneseHelper', 'Labels', 'ExactQuarryGuard', 'ExactMiningGuard', 'ExactMeasurementsGuard', 'ExactGenerationGuard', 'mixin/GenerationBarMixin',
-            'mixin/MiningSettingScreenMixin', 'mixin/ChunkMarkerScreenMixin', 'mixin/ModuleScreenMixin',
+            'ExactFluixGuard', 'mixin/FluixTemplateMixin', 'mixin/MiningSettingScreenMixin', 'mixin/ChunkMarkerScreenMixin', 'mixin/ModuleScreenMixin',
             'mixin/PlacerScreenMixin', 'mixin/MeasurementsLineColorMixin', 'mixin/MeasurementsTextColorMixin'))
+    expected.add('atm11_japanese_helper.ae2.fluix.mixins.json')
     if set(entries) != expected:
         raise ValueError('Unexpected or missing helper JAR members: ' + str(set(entries) ^ expected))
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_STORED) as z:
@@ -253,15 +327,16 @@ def main():
     parser.add_argument('--quarry-jar', type=Path, required=True, help='Original QuarryPlus 26.12.160 JAR obtained separately')
     parser.add_argument('--mining-jar', type=Path, required=True, help='Original Mining Gadgets 1.19.3 JAR obtained separately')
     parser.add_argument('--measurements-jar', type=Path, required=True, help='Original Measurements 4.0.0 JAR obtained separately')
+    parser.add_argument('--ae2-jar', type=Path, required=True, help='Original Applied Energistics 2 26.1.10-beta JAR obtained separately')
     parser.add_argument('--java-home', type=Path, help='Existing JDK 25.0.1 home (needed outside reference macOS layout)')
     parser.add_argument('--verify', action='store_true', help='Run the offline real-Mixin transform harness after building')
-    parser.add_argument('--language-pack', type=Path, help='Separately downloaded ATM11-Japanese-0.21.0.zip; required with --verify')
+    parser.add_argument('--language-pack', type=Path, help='Separately downloaded ATM11-Japanese-0.24.0.zip; required with --verify')
     args = parser.parse_args()
     if args.verify and args.language_pack is None:
         parser.error('--verify requires --language-pack for accepted Japanese consumer fixtures')
-    java, libraries, quarry, mining, measurements, version, toolchain, runtime, generation_runtime = checked_inputs(
+    java, libraries, quarry, mining, measurements, version, toolchain, runtime, generation_runtime, ae2, fluix_runtime = checked_inputs(
         args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(),
-        args.measurements_jar.resolve(), args.java_home.resolve() if args.java_home else None)
+        args.measurements_jar.resolve(), args.ae2_jar.resolve(), args.java_home.resolve() if args.java_home else None)
     build = HERE / 'build'
     build.mkdir(exist_ok=True)
     classes = build / 'classes'
@@ -284,6 +359,8 @@ def main():
               'measurements_jar_sha256': sha(measurements.read_bytes()),
               'measurements_runtime_guards': runtime,
               'generation_repair_runtime_contract': generation_runtime,
+              'ae2_jar_sha256': sha(ae2.read_bytes()),
+              'fluix_runtime_guards': fluix_runtime,
               'label_count': 46,
               'source_files': {p.relative_to(HERE).as_posix(): sha(p.read_bytes())
                                for base in ('src', 'LICENSES') for p in sorted((HERE / base).rglob('*')) if p.is_file()},
@@ -294,6 +371,7 @@ def main():
         command = [sys.executable, str(HERE / 'verify.py'), '--prism-root', str(args.prism_root.resolve()),
                    '--quarry-jar', str(args.quarry_jar.resolve()), '--mining-jar', str(args.mining_jar.resolve()),
                    '--measurements-jar', str(args.measurements_jar.resolve()),
+                   '--ae2-jar', str(args.ae2_jar.resolve()),
                    '--language-pack', str(args.language_pack.resolve())]
         if args.java_home:
             command += ['--java-home', str(args.java_home.resolve())]

@@ -29,9 +29,9 @@
     ]
   },
   "verification_overlay": {
-    "filename": "ATM11-Japanese-0.21.0.zip",
-    "sha256": "68aa986b5742390acf354a45e2bc9961c2cda7f1d66da0bcd6b2edd754a98022",
-    "url": "https://github.com/ueda-keisuke/atm11-japanese/releases/download/v0.21.0/ATM11-Japanese-0.21.0.zip",
+    "filename": "ATM11-Japanese-0.24.0.zip",
+    "sha256": "6fc49ec4a647b107ca8c80400604ca0d11e919d0ebb7b12635bee7224ce8bcc5",
+    "url": "https://github.com/ueda-keisuke/atm11-japanese/releases/download/v0.24.0/ATM11-Japanese-0.24.0.zip",
     "purpose": "Separately obtained accepted Japanese language fixture; not bundled in helper source or binary."
   }
 }

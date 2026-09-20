@@ -181,6 +181,10 @@
     {
       "path": "com/electronwill/night-config/toml/3.8.3/toml-3.8.3.jar",
       "sha256": "ccb92882264bf071e3916ab122fe5ea3e211b8ebf199201698a1324f151f928f"
+    },
+    {
+      "path": "org/apache/maven/maven-artifact/3.9.9/maven-artifact-3.9.9.jar",
+      "sha256": "30f015d1c1a393e19c18cd4f43532089c36d4ca328608ce3dda78b74d3d31515"
     }
   ],
   "javac_version": "javac 25.0.1",

@@ -84,7 +84,7 @@ public final class GenerationHarness {
     public static void main(String[] args)throws Exception{
         Path out=Path.of(args[0]);Files.createDirectories(out);String side=args[1];String mode=args.length>4?args[4]:"normal";
         MixinBootstrap.init();var physical=MixinEnvironment.Side.valueOf(side);MixinEnvironment.getDefaultEnvironment().setSide(physical);MixinEnvironment.getCurrentEnvironment().setSide(physical);
-        if(mode.equals("all-configs"))for(String config:List.of("atm11_japanese_helper.mixins.json","atm11_japanese_helper.mining.mixins.json","atm11_japanese_helper.measurements.mixins.json"))Mixins.addConfiguration(config);
+        if(mode.equals("all-configs"))for(String config:List.of("atm11_japanese_helper.mixins.json","atm11_japanese_helper.mining.mixins.json","atm11_japanese_helper.measurements.mixins.json","atm11_japanese_helper.ae2.fluix.mixins.json"))Mixins.addConfiguration(config);
         Mixins.addConfiguration("atm11_japanese_helper.neoforge.mixins.json");var transformer=((OfflineMixinService)MixinService.getService()).transformer();
         new dev.atm11.japanesehelper.JapaneseHelper();
         var sides=(net.neoforged.api.distmarker.Dist[])net.neoforged.fml.common.Mod.class.getMethod("dist").getDefaultValue();

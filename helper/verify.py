@@ -2,6 +2,7 @@
 """Apply the actual Mixin engine to upstream class bytes without starting Minecraft."""
 import argparse
 import json
+import hashlib
 import os
 from pathlib import Path
 import shutil
@@ -66,15 +67,29 @@ def main():
     parser.add_argument('--measurements-jar', type=Path, required=True)
     parser.add_argument('--java-home', type=Path)
     parser.add_argument('--language-pack', type=Path, required=True)
+    parser.add_argument('--ae2-jar', type=Path, required=True)
     args = parser.parse_args()
-    java, libraries, quarry, mining, measurements, version, toolchain, measurements_runtime, generation_runtime = checked_inputs(
+    java, libraries, quarry, mining, measurements, version, toolchain, measurements_runtime, generation_runtime, ae2, fluix_runtime = checked_inputs(
         args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(),
-        args.measurements_jar.resolve(), args.java_home.resolve() if args.java_home else None)
+        args.measurements_jar.resolve(), args.ae2_jar.resolve(),
+        args.java_home.resolve() if args.java_home else None)
     build = HERE / 'build'
     repair = json.loads((HERE / 'neoforge-repair-contract.json').read_bytes())
     overlay = args.language_pack.resolve()
-    if sha(overlay.read_bytes()) != repair['verification_overlay']['sha256']:
-        raise ValueError('Expected the separately obtained, fixed public Japanese language pack')
+    # Resolve the vanilla Japanese asset directly from the contract-pinned Prism
+    # object path; metadata/index contents are not an authority for this fixture.
+    vanilla_contract = strict_bytes((HERE / 'fluix-repair-contract.json').read_bytes())['vanilla_japanese']
+    if vanilla_contract.get('asset_key') != 'minecraft/lang/ja_jp.json':
+        raise ValueError('Unexpected vanilla Japanese asset key')
+    vanilla_ja = args.prism_root.resolve() / 'assets/objects' / vanilla_contract['sha1'][:2] / vanilla_contract['sha1']
+    vanilla_raw = vanilla_ja.read_bytes() if vanilla_ja.is_file() else b''
+    if (not vanilla_ja.is_file() or len(vanilla_raw) != vanilla_contract['bytes'] or
+            hashlib.sha1(vanilla_raw).hexdigest() != vanilla_contract['sha1'] or
+            sha(vanilla_raw) != vanilla_contract['sha256']):
+        raise ValueError('Contract-pinned vanilla Japanese language asset is missing or changed')
+    expected_overlay = '6fc49ec4a647b107ca8c80400604ca0d11e919d0ebb7b12635bee7224ce8bcc5'
+    if sha(overlay.read_bytes()) != expected_overlay or repair['verification_overlay']['sha256'] != expected_overlay:
+        raise ValueError('Expected the separately obtained, fixed public 0.24 Japanese language pack')
     neoforge = next(p for p in libraries if p.name == 'neoforge-26.1.2.106-universal.jar')
     release_inputs = json.loads((HERE / 'release-inputs.json').read_text())
     jar = build / release_inputs['artifact']
@@ -97,7 +112,7 @@ def main():
                     '-classpath', compile_cp, '-d', str(test_classes),
                     *map(str, sorted((HERE / 'src/test/java').rglob('*.java')))], check=True, cwd=build)
     shutil.copytree(HERE / 'src/test/resources', test_classes, dirs_exist_ok=True)
-    cp = os.pathsep.join(map(str, [test_classes, jar, quarry, mining, *libraries]))
+    cp = os.pathsep.join(map(str, [test_classes, jar, quarry, mining, ae2, *libraries]))
     flags = ['-Datm11.helper.offline=true', '-Dmixin.service=helpertest.OfflineMixinService',
              '-Dmixin.env.disableRefMap=true']
     def run(name, main, extra=(), classpath=cp, expected_error=None, jvm_args=()):
@@ -109,7 +124,8 @@ def main():
         for local, label in ((HERE, '<SOURCE_ROOT>'), (build.resolve(), '<BUILD_ROOT>'),
                              (args.prism_root.resolve(), '<PRISM_ROOT>'),
                              (quarry, '<QUARRY_JAR>'), (mining, '<MINING_JAR>'),
-                             (measurements, '<MEASUREMENTS_JAR>'), (overlay, '<LANGUAGE_PACK>'), (java.parent, '<JAVA_HOME>')):
+                             (measurements, '<MEASUREMENTS_JAR>'), (ae2, '<AE2_JAR>'),
+                             (vanilla_ja, '<VANILLA_JA>'), (overlay, '<LANGUAGE_PACK>'), (java.parent, '<JAVA_HOME>')):
             output = output.replace(quote(str(local)), label).replace(str(local), label)
         (build / (name + '.log')).write_text(output)
         if expected_error:
@@ -124,7 +140,7 @@ def main():
                 raise SystemExit(result.returncode)
         return {'exit_code': result.returncode, 'log_sha256': sha(output.encode()), 'expected_failure': bool(expected_error)}
 
-    inputs = {str(p): sha(p.read_bytes()) for p in [jar, quarry, mining, measurements, overlay, *libraries]}
+    inputs = {str(p): sha(p.read_bytes()) for p in [jar, quarry, mining, measurements, ae2, overlay, vanilla_ja, *libraries]}
     results = {}
     results['transform'] = run('transform', 'helpertest.TransformHarness', [build / 'transformed'])
     transform_log = (build / 'transform.log').read_text()
@@ -275,6 +291,48 @@ def main():
                 if feature == 'measurements' and active and record.get('transformed'):
                     if record.get('get_translated_name_count') != 1 or not record.get('translatable_enum_interface'):
                         raise ValueError('Measurements transformed enum contract missing in ' + mode)
+    # The pre-Fluix verifier remains exactly the frozen 35-case surface.
+    # Applied Energistics 2 Fluix template repair: nine isolated cases from prototype-v2.
+    fluix_cp = os.pathsep.join(map(str, [test_classes, jar, quarry, mining, measurements, ae2, *libraries]))
+    fluix_results = {}
+    def fluix_case(name, side='CLIENT', mode='normal', extra=(), expected_error=None, classpath=fluix_cp):
+        fluix_results[name] = run('fluix-' + name, 'helpertest.FluixHarness',
+                                  [build / ('fluix-' + name), side, mode,
+                                   next(p for p in libraries if p.name == 'minecraft-26.1.2-client.jar'),
+                                   ae2, vanilla_ja, overlay],
+                                  classpath=classpath, expected_error=expected_error, jvm_args=extra)
+        if expected_error is None:
+            detail = strict_bytes((build / ('fluix-' + name) / 'result.json').read_bytes())
+            if detail.get('pass') is not True:
+                raise ValueError('Fluix harness report failed: ' + name)
+            fluix_results[name]['report_sha256'] = sha((build / ('fluix-' + name) / 'result.json').read_bytes())
+            fluix_results[name]['scope'] = detail.get('registry_fixture')
+    fluix_case('client', side='CLIENT')
+    fluix_case('server', side='SERVER')
+    fluix_case('target-missing', side='CLIENT', mode='guard-disabled',
+               extra=['-Datm11.helper.hideResourcePrefix=appeng/items/tools/fluix/FluixSmithingTemplateItem'])
+    fluix_case('super-missing', side='CLIENT', mode='guard-disabled',
+               extra=['-Datm11.helper.hideResourcePrefix=net/minecraft/world/item/SmithingTemplateItem'])
+    fluix_case('ctor-call-changed', mode='changed-call', expected_error='Fluix constructor changed before transformation')
+    fluix_case('ctor-key-changed', mode='changed-key', expected_error='Fluix constructor changed before transformation')
+    # Raw class changes are isolated as unsupported fixtures: no transformed target is accepted.
+    def fluix_raw_fixture(name, jar_path, member, old, new):
+        with zipfile.ZipFile(jar_path) as archive:
+            raw = archive.read(member)
+        if raw.count(old) != 1:
+            raise ValueError('Unexpected Fluix raw fixture: ' + member)
+        root = build / ('fluix-' + name + '-fixture')
+        target = root / member
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(raw.replace(old, new))
+        fluix_case(name, mode='guard-disabled', classpath=os.pathsep.join(map(str, [root, fluix_cp])))
+    fluix_raw_fixture('target-rawchanged', ae2,
+                      'appeng/items/tools/fluix/FluixSmithingTemplateItem.class', b'\x00\x04item', b'\x00\x04ITEM')
+    fluix_raw_fixture('super-rawchanged', next(p for p in libraries if p.name == 'minecraft-client-patched-26.1.2.106.jar'),
+                      'net/minecraft/world/item/SmithingTemplateItem.class', b'SmithingTemplateItem.java', b'SmithingTemplateItem.javX')
+    fluix_case('ae2-absent', side='SERVER', mode='ae2-absent', classpath=os.pathsep.join(map(str, [test_classes, jar, *libraries])))
+    if len(fluix_results) != 9:
+        raise ValueError('Expected exactly nine Fluix verification scenarios')
     generation_cp = os.pathsep.join(map(str, [test_classes, jar, *libraries]))
     generation_details = {}
     def generation_case(name, side='SERVER', mode='normal', prefix=(), jvm_args=(), expected_error=None):
@@ -308,6 +366,9 @@ def main():
             archive.writestr(member, changed)
         generation_case('generation-changed-'+target.lower(), mode='guard-disabled', prefix=[fixture_jar])
     generation_case('generation-server-no-client-mods', mode='all-configs')
+    legacy_case_count = len(results)
+    if legacy_case_count != 35:
+        raise ValueError('Legacy helper verification case count changed: ' + str(legacy_case_count))
     checked_package()
     for path, digest in inputs.items():
         if sha(Path(path).read_bytes()) != digest:
@@ -319,7 +380,9 @@ def main():
     if inputs_after != inputs:
         raise ValueError('Verification input changed during verification')
     input_labels = {str(jar): '<HELPER_JAR>', str(quarry): '<QUARRY_JAR>',
-                    str(mining): '<MINING_JAR>', str(measurements): '<MEASUREMENTS_JAR>', str(overlay): '<LANGUAGE_PACK>'}
+                    str(mining): '<MINING_JAR>', str(measurements): '<MEASUREMENTS_JAR>',
+                    str(ae2): '<AE2_JAR>', str(overlay): '<LANGUAGE_PACK>',
+                    str(vanilla_ja): '<VANILLA_JA>'}
     for library in libraries:
         input_labels[str(library)] = '<PRISM_LIBRARY>/' + library.name
     before_sanitized = {input_labels[path]: digest for path, digest in inputs.items()}
@@ -331,9 +394,12 @@ def main():
                'generation_language_pack_sha256': sha(overlay.read_bytes()),
                'independently_reviewed_helper_labels': 46, 'quarry_label_injection_sites': 12,
                'mining_precision_injection_sites': 2, 'measurements_enum_labels': 35,
+               'fluix_scenarios': fluix_results, 'fluix_scenario_count': len(fluix_results),
+               'ae2_jar_sha256': sha(ae2.read_bytes()), 'fluix_runtime_guards': fluix_runtime,
                'optional_feature_isolation_modes': list(modes),
                'measurements_guard_modes': list(measurements_modes),
-               'case_count': len(results),
+               'legacy_case_count': legacy_case_count, 'legacy_case_count_expected': 35,
+               'case_count': legacy_case_count + len(fluix_results), 'fluix_case_count': len(fluix_results),
                'input_files_unchanged': True,
                'input_hashes_before': before_sanitized, 'input_hashes_after': after_sanitized,
 

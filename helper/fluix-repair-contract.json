@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "feature": "ae2_fluix_smithing_material",
+  "kind": "consumer_component_repair_no_new_translation_keys",
+  "mod_id": "ae2",
+  "mod_version": "26.1.10-beta",
+  "source_jar_sha256": "8412a2208e56989b90e783e0a594c91a955ab8785d7d020fa4d8f342346110f2",
+  "minecraft_version": "26.1.2",
+  "minecraft_runtime_jar": "minecraft-client-patched-26.1.2.106.jar",
+  "minecraft_runtime_jar_sha256": "1019f5b66ff06d8b5f25fbd76dc89c5da514fdaf7a2211c87b855701f6067a4f",
+  "classes": {
+    "appeng/items/tools/fluix/FluixSmithingTemplateItem.class": "8dc05256c85429b1e4df18e36e5c8bdb93fc4171056cd1eb21a55461ad2b7e1c",
+    "net/minecraft/world/item/SmithingTemplateItem.class": "bd22e7bf41ed0f44b61808bb350489be81b463b68de429fc806ae9811d646b83"
+  },
+  "source_commit": "3a051bb473de0b8fd329b39db4262f731d17e7e5",
+  "source_url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/tree/3a051bb473de0b8fd329b39db4262f731d17e7e5",
+  "target_class": "appeng.items.tools.fluix.FluixSmithingTemplateItem",
+  "target_constructor": "(Lnet/minecraft/world/item/Item$Properties;)V",
+  "super_constructor": "(Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Component;Ljava/util/List;Ljava/util/List;Lnet/minecraft/world/item/Item$Properties;)V",
+  "argument_index": 1,
+  "unchanged_item_name_key": "item.ae2.fluix_upgrade_smithing_template",
+  "replacement_ingredient_key": "block.ae2.fluix_block",
+  "replacement_style": "BLUE",
+  "language_assets_changed": false,
+  "new_translation_keys": 0,
+  "language_sources": {
+    "en_us": {
+      "entry": "assets/ae2/lang/en_us.json",
+      "sha256": "0d9f11ad01d411f780a81fce45e73ef76bb7802abb2a628dc3feb8c37e33a880"
+    },
+    "ja_jp": {
+      "entry": "assets/ae2/lang/ja_jp.json",
+      "sha256": "405239e3613f55ac56e71ce62835d8fc33e9bb7d5c0c5c646f90840b86322aa8"
+    }
+  },
+  "recipes": [
+    {
+      "entry": "data/ae2/recipe/tools/fluix_axe.json",
+      "sha256": "538600482bb0913b28d22735aa45d9bc8ab799165ca45e6892a350435c7ae60d",
+      "type": "minecraft:smithing_transform",
+      "template": "ae2:fluix_upgrade_smithing_template",
+      "addition": "ae2:fluix_block",
+      "base": "#ae2:quartz_axe",
+      "result_id": "ae2:fluix_axe"
+    },
+    {
+      "entry": "data/ae2/recipe/tools/fluix_hoe.json",
+      "sha256": "0b20c706909618215dfe7a30dd5b232fef69016b06b10cd74486a10d5cfadff6",
+      "type": "minecraft:smithing_transform",
+      "template": "ae2:fluix_upgrade_smithing_template",
+      "addition": "ae2:fluix_block",
+      "base": "#ae2:quartz_hoe",
+      "result_id": "ae2:fluix_hoe"
+    },
+    {
+      "entry": "data/ae2/recipe/tools/fluix_pickaxe.json",
+      "sha256": "8121dd1e99f315246158b1a5c1e3c1e67f02394ec90e4f54725309aee66d5902",
+      "type": "minecraft:smithing_transform",
+      "template": "ae2:fluix_upgrade_smithing_template",
+      "addition": "ae2:fluix_block",
+      "base": "#ae2:quartz_pickaxe",
+      "result_id": "ae2:fluix_pickaxe"
+    },
+    {
+      "entry": "data/ae2/recipe/tools/fluix_shovel.json",
+      "sha256": "88e71a0e8e074f0e538a8dbc81c25fb1792ae67863ae6896743752feb3e747a2",
+      "type": "minecraft:smithing_transform",
+      "template": "ae2:fluix_upgrade_smithing_template",
+      "addition": "ae2:fluix_block",
+      "base": "#ae2:quartz_shovel",
+      "result_id": "ae2:fluix_shovel"
+    },
+    {
+      "entry": "data/ae2/recipe/tools/fluix_sword.json",
+      "sha256": "8cd0ce0db8d8ff509d475d250f6c81655ed4f9ecc472d45ec22cdc00911f757a",
+      "type": "minecraft:smithing_transform",
+      "template": "ae2:fluix_upgrade_smithing_template",
+      "addition": "ae2:fluix_block",
+      "base": "#ae2:quartz_sword",
+      "result_id": "ae2:fluix_sword"
+    }
+  ],
+  "verification_overlay": {
+    "filename": "ATM11-Japanese-0.24.0.zip",
+    "sha256": "6fc49ec4a647b107ca8c80400604ca0d11e919d0ebb7b12635bee7224ce8bcc5",
+    "url": "https://github.com/ueda-keisuke/atm11-japanese/releases/download/v0.24.0/ATM11-Japanese-0.24.0.zip",
+    "purpose": "Separately obtained accepted Japanese language fixture; not bundled in helper source or binary."
+  },
+  "vanilla_japanese": {
+    "asset_key": "minecraft/lang/ja_jp.json",
+    "sha1": "93054df00419a33c4336b14c05c8896177556621",
+    "bytes": 678394,
+    "sha256": "5e3497ff73ff44b7467f87f79b731f089b0ea3bc41053df537ed8c94ed9334a3",
+    "source": "Existing Prism Minecraft26.1.2 asset cache; not bundled."
+  },
+  "runtime_guard_scope": "Independent raw target/superclass SHA256 and exact constructor shape. Recipe and language source hashes are build/verification checks, not runtime recipe reload enforcement."
+}
