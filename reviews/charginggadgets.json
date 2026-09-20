@@ -1,0 +1,31 @@
+{
+  "language_sha256": "c76250631a93dc171e101329965af9c97583618472671459d652943cd8b66bf0",
+  "namespace": "charginggadgets",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "block.charginggadgets.charging_station",
+        "item.charginggadgets.charging_station",
+        "itemGroup.charginggadgets",
+        "screen.charginggadgets.burn_time",
+        "screen.charginggadgets.energy",
+        "screen.charginggadgets.no_fuel"
+      ],
+      "batch_id": "lang-charginggadgets-1.16.1-charginggadgets-74380f08f3-0001",
+      "decision": "accepted",
+      "review_sha256": "0bacb8b61557937624692060961f134ae0d8fb240c633bcf73befb5465e7e766",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "60a647fdb649d03351ea141df15e5463afb02d143d106a2961904206fe8a104e"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/charginggadgets/lang/en_us.json",
+    "jar_sha256": "ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1",
+    "source_sha256": "8339631abc45e840c01fa7cbf5875256052ed5ebaa7af458c8fba1ae6141daa5",
+    "version": "1.16.1"
+  }
+}

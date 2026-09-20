@@ -1,12 +1,12 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.8.0 additions / 追加内容
+## 0.9.0 additions / 追加内容
 
-Version 0.8.0 adds four language-only, editable JSON files under four independently licensed scopes. ToolBelt 2.9.5 remains under BSD-3-Clause; Cucumber 26.1.2-9.0.6, Iron Jetpacks 9.0.3 and Functional Storage 1.6.1 retain their original MIT terms. The complete applicable license texts, fixed source identities and accepted review records are included. Iron Jetpacks normal and derived sources remain separate; the derived entries are bound to the fixed class contract described below.
+0.9.0では、Building Gadgets 2（1.4.6）の113項目とCharging Gadgets（1.16.1）の6項目を追加します。各言語JSONには原作のMIT条件が適用されます。原作の著作権表示とライセンス全文、出典、変更日、編集可能な日本語JSON、受理済みレビューの記録を同梱します。
 
-0.8.0では、4つの独立したライセンス範囲に対応する編集可能な言語JSONを追加します。ToolBelt 2.9.5にはBSD-3-Clause、Cucumber 26.1.2-9.0.6、Iron Jetpacks 9.0.3、Functional Storage 1.6.1には各原作のMIT条件が適用されます。適用されるライセンス全文、固定sourceの識別情報、受理済みreview記録を同梱します。Iron Jetpacksの通常sourceとderived sourceは分離し、derivedの項目は下記の固定クラス契約に結び付けています。
+Version 0.9.0 adds 113 Building Gadgets 2 keys and six Charging Gadgets keys in two separate editable language assets under their original MIT terms. Original copyright/license notices, pinned sources, modification date and accepted review provenance are included. Earlier namespaces and their individual license scopes are retained.
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.8.0 includes 2,321 keys across 31 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.9.0 includes 2,440 keys across 33 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -312,8 +312,28 @@ Source: https://github.com/latvian-dev/better-advanced-tooltips/tree/feed1c23eba
 
 Target: **2601.1.0-build.9**, 5 keys. No upstream Japanese asset was found; Japanese values are supplied by ATM11 Japanese project / ueda-keisuke, modified **2026-09-20 (UTC)**. Only the language asset is included; no code or other assets are included.
 
+## Building Gadgets 2 — `assets/buildinggadgets2/lang/ja_jp.json`
+
+**Copyright (c) 2023 Direwolf20-MC.** MIT: the full original notice is preserved in `LICENSES/BuildingGadgets2-MIT.txt`. This language adaptation retains MIT terms.
+
+Source: https://github.com/Direwolf20-MC/BuildingGadgets2/tree/f669d20cebe287202421d2d83ddb9906baafeeab
+
+Target: **1.4.6**, 113 current English language keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: Japanese item names, action labels and explanations are revised or supplied. The current generated-client English source matches the installed MOD language bytes. The editable modified JSON and accepted review provenance are included; no MOD JAR, Java, images or private configuration is bundled.
+
+Existing Japanese from the same upstream tree is acknowledged and is not claimed as wholly original work. The original Japanese-only legacy key is outside this current English-key scope and may remain inherited from the base MOD.
+
+## Charging Gadgets — `assets/charginggadgets/lang/ja_jp.json`
+
+**Copyright © 2018 Direwolf20.** MIT: the full original notice is preserved in `LICENSES/ChargingGadgets-MIT.txt`. This language adaptation retains MIT terms.
+
+Source: https://github.com/Direwolf20-MC/ChargingGadgets/tree/9e464f1c5fcdb5f02cb8b1020f0fa9c2f5b0e97a
+
+Target: **1.16.1**, 6 current English language keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: Japanese item names, action labels and explanations are revised or supplied. The current generated-client English source matches the installed MOD language bytes. The editable modified JSON and accepted review provenance are included; no MOD JAR, Java, images or private configuration is bundled.
+
+This six-key language scope excludes ConfigSpec-derived labels and the hardcoded menu title. It does not claim to cover every screen in the MOD.
+
 ## Project contributions and provenance
 
-`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
+`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage, Building Gadgets 2, Charging Gadgets), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.

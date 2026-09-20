@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.8.0'
+VERSION = '0.9.0'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': r'^lang/ja_jp\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -273,7 +273,15 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'functionalstorage': {'version': '1.6.1',
                        'jar_sha256': 'cfd016afdc427f0ba6a3e11aad61112ee0458f43f32a33fa4f4fb576ea6c2254',
                        'jar_entry': 'assets/functionalstorage/lang/en_us.json',
-                       'source_sha256': '2b1c7483a10a3711a4acbbd605b420b0acc90ab066e1bd5532402308d9b9591e'}}
+                       'source_sha256': '2b1c7483a10a3711a4acbbd605b420b0acc90ab066e1bd5532402308d9b9591e'},
+ 'buildinggadgets2': {'version': '1.4.6',
+                      'jar_sha256': '67c02d3a822ddd785692c581ae05b93a1b88767846bb6c89d20498b5598b72ca',
+                      'jar_entry': 'assets/buildinggadgets2/lang/en_us.json',
+                      'source_sha256': '799f2d4149bf78c56437bd903802f3c4368194f4a6d7b844a02bc9732df1f8fc'},
+ 'charginggadgets': {'version': '1.16.1',
+                     'jar_sha256': 'ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1',
+                     'jar_entry': 'assets/charginggadgets/lang/en_us.json',
+                     'source_sha256': '8339631abc45e840c01fa7cbf5875256052ed5ebaa7af458c8fba1ae6141daa5'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -304,7 +312,9 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'toolbelt': (26, 'a6565085cec975fc3572244b15fff8999620d0b0bae9ab5fe5da3ae834ab1d38'),
  'cucumber': (16, '81383395782e852a51817af84ee8ef509aac51c605a324a8c47ecab80d0124cb'),
  'ironjetpacks': (55, '26847e092d60d1cdb6811364fa531fa3be736220baa74594ccda7ca8fe6fd92b'),
- 'functionalstorage': (164, '5cb38a402b107fcdd1e571945061be664faac471f30f330a8ac6e5dcc77781f6')}
+ 'functionalstorage': (164, '5cb38a402b107fcdd1e571945061be664faac471f30f330a8ac6e5dcc77781f6'),
+ 'buildinggadgets2': (113, '86fa833b2f9490bac7e9be9a71410f45e143584d2bbc75b95151db02b4606dc1'),
+ 'charginggadgets': (6, 'a835f0e45a8f7adc97ad0a6467e7119ff78df0f419e777ec38a871340ac70aed')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -335,7 +345,9 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'toolbelt': [],
  'cucumber': [],
  'ironjetpacks': [],
- 'functionalstorage': []}
+ 'functionalstorage': [],
+ 'buildinggadgets2': [],
+ 'charginggadgets': []}
 LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba69450ff1dbf4b1e0fed3bbc08c',
  'LICENSES/Transmog-MIT.txt': 'a366506974a46752dbf54c187288b5d5de7f4570422b0cbacd4f5cd1dcb8f099',
  'LICENSES/JEI-MIT.txt': '108c93a97f3011c196b8226f5019a9c09ade318fe3a802be2f7f5ddb2c3a0d04',
@@ -371,7 +383,9 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/ToolBelt-BSD-3-Clause.txt': 'fc522363d94e4b83668ead1e71a90fc89d8e4fc60f2263fa4162089783ef2c1b',
  'LICENSES/Cucumber-MIT.txt': 'b39f78eb5c0ea06ffd89f824925c86f712f27f663f976cd50727df6856f037a2',
  'LICENSES/IronJetpacks-MIT.txt': 'b39f78eb5c0ea06ffd89f824925c86f712f27f663f976cd50727df6856f037a2',
- 'LICENSES/FunctionalStorage-MIT.txt': 'b64ac86da57a720bed3d42256d4ed88cfca541b22c3f3167e0ab86b689c0072a'}
+ 'LICENSES/FunctionalStorage-MIT.txt': 'b64ac86da57a720bed3d42256d4ed88cfca541b22c3f3167e0ab86b689c0072a',
+ 'LICENSES/BuildingGadgets2-MIT.txt': '85c1d2f248062d5a9d86f408a95ff453cce2da66da9983f4f2264b4f080c379f',
+ 'LICENSES/ChargingGadgets-MIT.txt': '950d1ff370fd55e2dde8de824c0e2ed6cac7a656a7be9afc417b61ed6732347d'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -404,11 +418,13 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'toolbelt': ('LICENSES/ToolBelt-BSD-3-Clause.txt',),
  'cucumber': ('LICENSES/Cucumber-MIT.txt',),
  'ironjetpacks': ('LICENSES/IronJetpacks-MIT.txt',),
- 'functionalstorage': ('LICENSES/FunctionalStorage-MIT.txt',)}
+ 'functionalstorage': ('LICENSES/FunctionalStorage-MIT.txt',),
+ 'buildinggadgets2': ('LICENSES/BuildingGadgets2-MIT.txt',),
+ 'charginggadgets': ('LICENSES/ChargingGadgets-MIT.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.8.0.zip',
+                'filename': 'ATM11-Japanese-0.9.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -439,7 +455,9 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'toolbelt',
                                'cucumber',
                                'ironjetpacks',
-                               'functionalstorage'),
+                               'functionalstorage',
+                               'buildinggadgets2',
+                               'charginggadgets'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -475,8 +493,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/ToolBelt-BSD-3-Clause.txt',
                              'LICENSES/Cucumber-MIT.txt',
                              'LICENSES/IronJetpacks-MIT.txt',
-                             'LICENSES/FunctionalStorage-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.8.0: 31 namespaces / 2321 keys',
+                             'LICENSES/FunctionalStorage-MIT.txt',
+                             'LICENSES/BuildingGadgets2-MIT.txt',
+                             'LICENSES/ChargingGadgets-MIT.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.9.0: 33 namespaces / 2440 keys',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -605,7 +625,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.8.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.9.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

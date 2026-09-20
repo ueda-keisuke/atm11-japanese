@@ -48,6 +48,18 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "de1b36b6d2120f197e15f3e5487057cf859adb33a996a77e72d6b15c42a2f4f0"
     },
+    "buildinggadgets2": {
+      "key_count": 113,
+      "language_sha256": "58f81499054afcf81cc384fcb7d1595970423f449a7deae7ab34da80a2cb4b5f",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "ac888eedb8946f2fdf203257a5e4e497dd849c87662203bf60c87c96c9541524"
+    },
+    "charginggadgets": {
+      "key_count": 6,
+      "language_sha256": "c76250631a93dc171e101329965af9c97583618472671459d652943cd8b66bf0",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "3cc7ce0fb52e535e92c06b0d9323f9057d17ca3bdd97e4ad36dc6f843cbeb3b8"
+    },
     "codedefinedgui": {
       "key_count": 63,
       "language_sha256": "16cc78432039369d11e5dc428aef30536a0e1a98bb83823f679af5d65b1851e2",
@@ -196,5 +208,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.8.0"
+  "version": "0.9.0"
 }
