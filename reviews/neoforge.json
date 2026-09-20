@@ -1,5 +1,5 @@
 {
-  "language_sha256": "9ea239131b65d2bbd515c677fe7999706aabde98068c21559f222e40e58c515f",
+  "language_sha256": "b445365ead256efa997b8c47639deb1076be68ee2316eb5eff1b1cc5374a6c8c",
   "namespace": "neoforge",
   "reviews": [
     {
@@ -60,6 +60,109 @@
       },
       "source_id": "configuration",
       "submission_sha256": "f95bf96458980d20660ecb5c0de899a3a343827875f93f069a093f7b692e0f2d"
+    },
+    {
+      "accepted_keys": [
+        "fml.menu.accessdenied.title",
+        "fml.menu.branding",
+        "fml.menu.multiplayer.clientoutdated",
+        "fml.menu.multiplayer.compatible",
+        "fml.menu.multiplayer.extraservermods",
+        "fml.menu.multiplayer.incompatible",
+        "fml.menu.multiplayer.incompatible.extra",
+        "fml.menu.multiplayer.missingdatapackregistries",
+        "fml.menu.multiplayer.modsincompatible",
+        "fml.menu.multiplayer.networkincompatible",
+        "fml.menu.multiplayer.serveroutdated",
+        "fml.menu.multiplayer.truncated",
+        "fml.menu.multiplayer.unknown",
+        "fml.menu.multiplayer.vanilla",
+        "fml.menu.multiplayer.vanilla.incompatible",
+        "fml.menu.notification.title"
+      ],
+      "batch_id": "runtime-neoforge-fml-connection-26.1.2.106-0004",
+      "decision": "accepted",
+      "review_sha256": "adc4141fba9d8e595dfc7b2d4b7a12d714b42a29a8b54f1549e30112454b61c8",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "fml_connection",
+      "submission_sha256": "8c0ce4931d53fbac8694e27c65f139bdff29128e36bb113f13157ed496177292"
+    },
+    {
+      "accepted_keys": [
+        "fml.button.continue.launch",
+        "fml.button.open.crashreport",
+        "fml.button.open.file",
+        "fml.button.open.log",
+        "fml.button.open.mods.folder",
+        "fml.menu.accessdenied.message",
+        "fml.menu.backupfailed.message",
+        "fml.menu.backupfailed.title",
+        "fml.modloadingissue.feature_flags.file_not_found",
+        "fml.modloadingissue.feature_flags.loading_error",
+        "fml.modmismatchscreen.additional",
+        "fml.modmismatchscreen.homepage",
+        "fml.modmismatchscreen.mismatchedmods",
+        "fml.modmismatchscreen.missingmods.client",
+        "fml.modmismatchscreen.missingmods.server",
+        "fml.modmismatchscreen.simplifiedview",
+        "fml.modmismatchscreen.table.channelname",
+        "fml.modmismatchscreen.table.reason",
+        "fml.modmismatchscreen.table.serverhas",
+        "fml.modmismatchscreen.table.visit.mod_page",
+        "fml.modmismatchscreen.table.youhave",
+        "fml.modmismatchscreen.table.youneed",
+        "fml.resources.moddata",
+        "fml.resources.modresources"
+      ],
+      "batch_id": "runtime-neoforge-fml-loading-26.1.2.106-0005",
+      "decision": "accepted",
+      "review_sha256": "0250faeb35acf5b097b523dd064e101ea6bf40a77a7586fae40f4470f775d1b3",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "fml_loading",
+      "submission_sha256": "bf51e17da05c3909530dd69f5fbd4a340eb926a962494f90255cf81681200555"
+    },
+    {
+      "accepted_keys": [
+        "fml.menu.modoptions",
+        "fml.menu.mods",
+        "fml.menu.mods.a_to_z",
+        "fml.menu.mods.config",
+        "fml.menu.mods.info.authors",
+        "fml.menu.mods.info.changelogheader",
+        "fml.menu.mods.info.childmods",
+        "fml.menu.mods.info.credits",
+        "fml.menu.mods.info.displayurl",
+        "fml.menu.mods.info.idstate",
+        "fml.menu.mods.info.license",
+        "fml.menu.mods.info.nochildmods",
+        "fml.menu.mods.info.securejardisabled",
+        "fml.menu.mods.info.signature",
+        "fml.menu.mods.info.signature.unsigned",
+        "fml.menu.mods.info.trust",
+        "fml.menu.mods.info.trust.noauthority",
+        "fml.menu.mods.info.updateavailable",
+        "fml.menu.mods.info.version",
+        "fml.menu.mods.normal",
+        "fml.menu.mods.openmodsfolder",
+        "fml.menu.mods.search",
+        "fml.menu.mods.title",
+        "fml.menu.mods.z_to_a"
+      ],
+      "batch_id": "runtime-neoforge-fml-modlist-26.1.2.106-0003",
+      "decision": "accepted",
+      "review_sha256": "a6f24e9e6176b27d4be23828c04093c3d797a9978c9a8550d6fce193a2cc9d9f",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "fml_modlist",
+      "submission_sha256": "fd5f074c839938230b14b3c94fb9e7a9c6e171f635fac7c294822f7a1c21cbfb"
     },
     {
       "accepted_keys": [
@@ -136,6 +239,51 @@
       },
       "scope_prefix": "neoforge.configuration.",
       "source_contract_sha256": "dc0e107016382faffd4c49a632b0f3a3a821a498b94917cd0c8b4198e69ad45f",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "fml_connection": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "fml.",
+      "source_contract_sha256": "137b54b9187b1aec83b45711df6bbbaaf66712d3caa3532b5fbad12a2e6eebb7",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "fml_loading": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "fml.",
+      "source_contract_sha256": "e5e87ce17826d9310bce237da4227d38640a4eeb4b3c6b3d6f7a7ee6d660f636",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "fml_modlist": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "fml.",
+      "source_contract_sha256": "74b9f9cf1b0cb7f98a6a43769bab573b83b5a2a4f11d1de6ae09ff3c2a3f9ff6",
       "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
       "source_type": "runtime_jar_lang"
     }

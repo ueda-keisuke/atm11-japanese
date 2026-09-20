@@ -258,10 +258,10 @@
       "review_evidence_sha256": "1e3700b4685b54b0026d7a7d32309a9012210811058be413c18a8e53fd4d9896"
     },
     "neoforge": {
-      "key_count": 78,
-      "language_sha256": "9ea239131b65d2bbd515c677fe7999706aabde98068c21559f222e40e58c515f",
+      "key_count": 142,
+      "language_sha256": "b445365ead256efa997b8c47639deb1076be68ee2316eb5eff1b1cc5374a6c8c",
       "preserved_metadata_keys": [],
-      "review_evidence_sha256": "56e64db41b0ed5a769d31bb2b5ac496ff5a1bf9caba86df32392688e5c5c3c5c"
+      "review_evidence_sha256": "c2df6dc574fd64ff81d092751ffa94965bdba193b5e9952003d849d1881fcb0f"
     },
     "quarryplus": {
       "key_count": 240,
@@ -349,5 +349,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.18.0"
+  "version": "0.19.0"
 }
