@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "batch_id": "helper-measurements-enums-0001",
+  "submission": "localization/translations/helper/measurements_enums_01_v3.json",
+  "submission_sha256": "95bc96c00bf050eeb8e24d00c9948d34960b1d0c32790f05a83b0b685289a4ee",
+  "source_sha256": "efa0649861dda68eb35d0391c79b27e962d6323da44f3cd0bc4027866f12753e",
+  "reviewer": {
+    "agent": "/root/comforts_review",
+    "model": "gpt-5.6-luna"
+  },
+  "decision": "accepted",
+  "accepted_keys": [
+    "atm11_japanese_helper.measurements.enum.LineColor.RANDOM",
+    "atm11_japanese_helper.measurements.enum.LineColor.WHITE",
+    "atm11_japanese_helper.measurements.enum.LineColor.ORANGE",
+    "atm11_japanese_helper.measurements.enum.LineColor.MAGENTA",
+    "atm11_japanese_helper.measurements.enum.LineColor.LIGHT_BLUE",
+    "atm11_japanese_helper.measurements.enum.LineColor.YELLOW",
+    "atm11_japanese_helper.measurements.enum.LineColor.LIME",
+    "atm11_japanese_helper.measurements.enum.LineColor.PINK",
+    "atm11_japanese_helper.measurements.enum.LineColor.GRAY",
+    "atm11_japanese_helper.measurements.enum.LineColor.LIGHT_GRAY",
+    "atm11_japanese_helper.measurements.enum.LineColor.CYAN",
+    "atm11_japanese_helper.measurements.enum.LineColor.PURPLE",
+    "atm11_japanese_helper.measurements.enum.LineColor.BLUE",
+    "atm11_japanese_helper.measurements.enum.LineColor.BROWN",
+    "atm11_japanese_helper.measurements.enum.LineColor.GREEN",
+    "atm11_japanese_helper.measurements.enum.LineColor.RED",
+    "atm11_japanese_helper.measurements.enum.LineColor.BLACK",
+    "atm11_japanese_helper.measurements.enum.TextColor.RANDOM",
+    "atm11_japanese_helper.measurements.enum.TextColor.XYZRGB",
+    "atm11_japanese_helper.measurements.enum.TextColor.WHITE",
+    "atm11_japanese_helper.measurements.enum.TextColor.ORANGE",
+    "atm11_japanese_helper.measurements.enum.TextColor.MAGENTA",
+    "atm11_japanese_helper.measurements.enum.TextColor.LIGHT_BLUE",
+    "atm11_japanese_helper.measurements.enum.TextColor.YELLOW",
+    "atm11_japanese_helper.measurements.enum.TextColor.LIME",
+    "atm11_japanese_helper.measurements.enum.TextColor.PINK",
+    "atm11_japanese_helper.measurements.enum.TextColor.GRAY",
+    "atm11_japanese_helper.measurements.enum.TextColor.LIGHT_GRAY",
+    "atm11_japanese_helper.measurements.enum.TextColor.CYAN",
+    "atm11_japanese_helper.measurements.enum.TextColor.PURPLE",
+    "atm11_japanese_helper.measurements.enum.TextColor.BLUE",
+    "atm11_japanese_helper.measurements.enum.TextColor.BROWN",
+    "atm11_japanese_helper.measurements.enum.TextColor.GREEN",
+    "atm11_japanese_helper.measurements.enum.TextColor.RED",
+    "atm11_japanese_helper.measurements.enum.TextColor.BLACK"
+  ],
+  "issues": [],
+  "notes": [
+    "v3はv2からnotesの件数表現だけを訂正しており、35件のentries、英語fallback、キー順序、source proof、XYZRGBの訳値「座標軸別カラー」は完全一致する。",
+    "固定色32件、RANDOM 2件、XYZRGB 1件というv3 notesの内訳は実enumと一致する。",
+    "「座標軸別カラー」はMeasurementBoxのX=赤、Y=緑、Z=青の軸別処理を短い設定ラベルで示し、通常の単色設定と誤認させない。",
+    "RANDOMは測定ボックス生成時に染料色を選び保持する実装と整合する。選択値やenum識別子を変更しない。",
+    "visual QAは未実施であり、選択ボタン幅・折返しは別確認とする。"
+  ],
+  "proof": {
+    "contract": "localization/helper-0.3-candidate/measurements-language-contract.json",
+    "contract_sha256": "efa0649861dda68eb35d0391c79b27e962d6323da44f3cd0bc4027866f12753e",
+    "measurements_jar_sha256": "e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11",
+    "measurement_box_source_sha256": "410b0538230a689f03432cbdbd5a1022b60a63f44099e8b28f2d2f2e689dfa7cdf",
+    "line_color_class_sha256": "4dd94a59b5d8f9771ba7663b6db9ba28dbb34f54b683e0ba6a1d5dc1df4411f4",
+    "text_color_class_sha256": "73323c37550ecb90efa4aba76d8c4015cb5b27c8c75a9c0a28fab74b3bc551d4",
+    "consumer_class_sha256": "5e7c94bf81f50a8395f2b9aefb3ddc2530d87cd914293b94f29da776a2a86aeb"
+  },
+  "supersedes": [
+    "localization/reviews/measurements_enums_01.review.json",
+    "localization/reviews/measurements_enums_01_v2.review.json"
+  ]
+}

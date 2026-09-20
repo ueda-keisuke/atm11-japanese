@@ -38,10 +38,29 @@
         "sha256": "61af3bc90510f063620678c53af61e366c3e10e1aae67b13962ff3b604c7a57b",
         "original_reference": "localization/reviews/mininggadgets_precision_01.review.json"
       }
+    },
+    "measurements": {
+      "batch_id": "helper-measurements-enums-0001",
+      "original_contract": "localization/helper-0.3-candidate/measurements-language-contract.json",
+      "key_count": 35,
+      "contract": {
+        "path": "measurements-language-contract.json",
+        "sha256": "efa0649861dda68eb35d0391c79b27e962d6323da44f3cd0bc4027866f12753e"
+      },
+      "submission": {
+        "path": "reviews/measurements-submission.json",
+        "sha256": "95bc96c00bf050eeb8e24d00c9948d34960b1d0c32790f05a83b0b685289a4ee",
+        "original_reference": "localization/translations/helper/measurements_enums_01_v3.json"
+      },
+      "review": {
+        "path": "reviews/measurements-review.json",
+        "sha256": "55b3f2b70c86e805888d7051f7fd939c1b692803e857fe280b2325b6c9f0e90e",
+        "original_reference": "localization/reviews/measurements_enums_01_v3.review.json"
+      }
     }
   },
   "assets": {
-    "src/main/resources/assets/atm11_japanese_helper/lang/en_us.json": "0bb0ee527d6271d0d16a62d1f6349b1695e87a87c24a8585278bf0454450bc2f",
-    "src/main/resources/assets/atm11_japanese_helper/lang/ja_jp.json": "3dc986866b9d4a17dc5046bdc8f216be877ca2249d5650f70d23296a84a9443b"
+    "src/main/resources/assets/atm11_japanese_helper/lang/en_us.json": "d8aee82e12e8e646eb7a68ca771ba606733e5b3b0aa7b2acf1f5928181df7534",
+    "src/main/resources/assets/atm11_japanese_helper/lang/ja_jp.json": "1580168f99c31f12992b5667f424236db3b975df0352a8172f638c87f02caf75"
   }
 }

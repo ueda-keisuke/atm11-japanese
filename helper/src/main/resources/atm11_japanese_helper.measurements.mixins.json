@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.atm11.japanesehelper.mixin",
+  "plugin": "dev.atm11.japanesehelper.ExactMeasurementsGuard",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["MeasurementsLineColorMixin", "MeasurementsTextColorMixin"],
+  "injectors": {"defaultRequire": 1}
+}

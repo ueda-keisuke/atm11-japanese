@@ -11,20 +11,71 @@ import zipfile
 from build import HERE, checked_inputs, sha
 
 
+def strict_bytes(raw):
+    def pairs(items):
+        result = {}
+        for key, value in items:
+            if key in result:
+                raise ValueError('Duplicate JSON key: ' + key)
+            result[key] = value
+        return result
+    return json.loads(raw.decode('utf-8'), object_pairs_hook=pairs)
+
+
+def measurements_language_checks(jar):
+    """Validate the exact 35-key derived language surface and no feature collision."""
+    contract = json.loads((HERE / 'measurements-language-contract.json').read_text())
+    expected = {row['key']: row['en_us'] for row in contract['english_contract']}
+    def require(ok, message):
+        if not ok:
+            raise ValueError(message)
+    with zipfile.ZipFile(jar) as archive:
+        en = strict_bytes(archive.read('assets/atm11_japanese_helper/lang/en_us.json'))
+        ja = strict_bytes(archive.read('assets/atm11_japanese_helper/lang/ja_jp.json'))
+    require(set(expected).issubset(en) and set(expected).issubset(ja),
+            'Measurements language keys missing from built assets')
+    require(all(en[key] == value for key, value in expected.items()),
+            'Measurements English contract differs from built asset')
+    require(all(isinstance(ja[key], str) and ja[key].strip() for key in expected),
+            'Measurements Japanese labels contain an empty value')
+    evidence = json.loads((HERE / 'translation-evidence.json').read_text())
+    contribution_keys = []
+    for contribution in evidence['contributions'].values():
+        path = HERE / contribution['contract']['path']
+        contract_data = json.loads(path.read_text())
+        contribution_keys.extend(row['key'] for row in contract_data['english_contract'])
+    require(len(contribution_keys) == len(set(contribution_keys)) == 46,
+            'Accepted helper contributions contain a key collision')
+    require(set(en) == set(contribution_keys) and set(ja) == set(contribution_keys),
+            'Built helper assets are not the exact 46-key set')
+    return {
+        'english_key_count': len(en),
+        'japanese_key_count': len(ja),
+        'measurements_key_count': len(expected),
+        'measurements_english_contract_match': True,
+        'measurements_japanese_nonempty': True,
+        'feature_key_collision': False,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--prism-root', type=Path, required=True)
     parser.add_argument('--quarry-jar', type=Path, required=True)
     parser.add_argument('--mining-jar', type=Path, required=True)
+    parser.add_argument('--measurements-jar', type=Path, required=True)
     parser.add_argument('--java-home', type=Path)
     args = parser.parse_args()
-    java, libraries, quarry, mining, version, toolchain = checked_inputs(args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(), args.java_home.resolve() if args.java_home else None)
+    java, libraries, quarry, mining, measurements, version, toolchain, measurements_runtime = checked_inputs(
+        args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(),
+        args.measurements_jar.resolve(), args.java_home.resolve() if args.java_home else None)
     build = HERE / 'build'
-    jar = build / 'atm11-japanese-helper-0.2.0-dev.jar'
+    release_inputs = json.loads((HERE / 'release-inputs.json').read_text())
+    jar = build / release_inputs['artifact']
     if not jar.is_file():
         raise ValueError('Run build.py first')
     report = json.loads((build / 'build-report.json').read_text())
-    if sha(jar.read_bytes()) != report['sha256']:
+    if sha(jar.read_bytes()) != report['sha256'] or report['sha256'] != release_inputs['artifact_sha256']:
         raise ValueError('Built helper JAR changed')
     for relative, expected in report['source_files'].items():
         if sha((HERE / relative).read_bytes()) != expected:
@@ -49,8 +100,10 @@ def main():
         output = result.stdout + result.stderr
         # Generated local diagnostics retain no host-specific absolute paths.
         from urllib.parse import quote
-        for local, label in ((HERE, '<SOURCE_ROOT>'), (args.prism_root.resolve(), '<PRISM_ROOT>'),
-                             (quarry, '<QUARRY_JAR>'), (mining, '<MINING_JAR>'), (java.parent, '<JAVA_HOME>')):
+        for local, label in ((HERE, '<SOURCE_ROOT>'), (build.resolve(), '<BUILD_ROOT>'),
+                             (args.prism_root.resolve(), '<PRISM_ROOT>'),
+                             (quarry, '<QUARRY_JAR>'), (mining, '<MINING_JAR>'),
+                             (measurements, '<MEASUREMENTS_JAR>'), (java.parent, '<JAVA_HOME>')):
             output = output.replace(quote(str(local)), label).replace(str(local), label)
         (build / (name + '.log')).write_text(output)
         if expected_error:
@@ -65,13 +118,27 @@ def main():
                 raise SystemExit(result.returncode)
         return {'exit_code': result.returncode, 'log_sha256': sha(output.encode()), 'expected_failure': bool(expected_error)}
 
-    inputs = {str(p): sha(p.read_bytes()) for p in [jar, quarry, mining, *libraries]}
+    inputs = {str(p): sha(p.read_bytes()) for p in [jar, quarry, mining, measurements, *libraries]}
     results = {}
     results['transform'] = run('transform', 'helpertest.TransformHarness', [build / 'transformed'])
     transform_log = (build / 'transform.log').read_text()
     if transform_log.count('ATM11_JAPANESE_HELPER_SOURCE_OK:') != 1 or transform_log.count('ATM11_JAPANESE_HELPER_APPLIED target=') != 3:
         raise ValueError('Runtime diagnostic distinction is missing')
     results['language'] = run('language', 'helpertest.LanguageHarness')
+    language_observation = measurements_language_checks(jar)
+    measurement_cp = os.pathsep.join(map(str, [test_classes, jar, quarry, mining, measurements, *libraries]))
+    results['measurements-transform'] = run('measurements-transform', 'helpertest.MeasurementsTransformHarness',
+            [build / 'measurements-transformed'], classpath=measurement_cp)
+    results['measurements-collision'] = run('measurements-collision', 'helpertest.MeasurementsTransformHarness',
+            [build / 'measurements-method-collision', 'method-collision'], classpath=measurement_cp,
+            expected_error='Measurements enum shape or display method changed before transformation')
+    results['measurements-language'] = run('measurements-language', 'helpertest.MeasurementsLanguageHarness',
+            [build / 'measurements-transformed', HERE / 'reviews/measurements-submission.json',
+             build / 'measurements-language-report.json'], classpath=measurement_cp)
+    consumer_report = strict_bytes((build / 'measurements-language-report.json').read_bytes())
+    if consumer_report.get('pass') is not True:
+        raise ValueError('Measurements real consumer language harness did not pass')
+    results['measurements-language']['report_sha256'] = sha((build / 'measurements-language-report.json').read_bytes())
     results['missing-injection-site'] = run('missing-injection-site', 'helpertest.TransformHarness',
             [build / 'fixture-missing-site', 'missing-site'], expected_error='InvalidInjectionException')
     fixture = build / 'fixture-changed-class'
@@ -110,6 +177,30 @@ def main():
     mining_target = mining_fixture / mining_member
     mining_target.parent.mkdir(parents=True, exist_ok=True)
     mining_target.write_bytes(modified_mining)
+
+    measurement_fixtures = {}
+    measurement_members = {
+        'line-mismatch': 'com/mrbysco/measurements/config/LineColor.class',
+        'text-mismatch': 'com/mrbysco/measurements/config/TextColor.class',
+        'consumer-mismatch': 'net/neoforged/neoforge/client/gui/ConfigurationScreen$ConfigurationSectionScreen.class',
+        'interface-mismatch': 'net/neoforged/neoforge/common/TranslatableEnum.class',
+    }
+    neoforge = next(p for p in libraries if p.name == 'neoforge-26.1.2.106-universal.jar')
+    for mode, member in measurement_members.items():
+        fixture_root = build / ('fixture-' + mode)
+        fixture_target = fixture_root / member
+        fixture_target.parent.mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(measurements if member.startswith('com/mrbysco/') else neoforge) as archive:
+            original_measurements = archive.read(member)
+        source_name = member.rsplit('/', 1)[1].split('$', 1)[0].replace('.class', '') + '.java'
+        pattern = source_name.encode()
+        if original_measurements.count(pattern) != 1:
+            raise ValueError('Unexpected source-file constant in fixture: ' + member)
+        # Preserve class validity and method behavior; only the SourceFile value changes.
+        altered_measurements = original_measurements.replace(pattern, pattern[:-1] + b'X')
+        fixture_target.write_bytes(altered_measurements)
+        measurement_fixtures[mode] = fixture_root
+
     modes = {
         'both': [quarry, mining],
         'mining-absent': [quarry],
@@ -133,18 +224,80 @@ def main():
             raise ValueError('Missing Quarry unsupported diagnostic')
         if not mining_expected and 'UNSUPPORTED Mining Gadgets:' not in guard_log:
             raise ValueError('Missing Mining unsupported diagnostic')
+
+    measurements_modes = {
+        'all': [quarry, mining, measurements],
+        'measurements-absent': [quarry, mining],
+        'line-mismatch': [quarry, mining, measurement_fixtures['line-mismatch'], measurements],
+        'text-mismatch': [quarry, mining, measurement_fixtures['text-mismatch'], measurements],
+        'consumer-mismatch': [quarry, mining, measurement_fixtures['consumer-mismatch'], measurements],
+        'interface-mismatch': [quarry, mining, measurement_fixtures['interface-mismatch'], measurements],
+        'quarry-absent': [mining, measurements],
+        'quarry-mismatch': [fixture, quarry, mining, measurements],
+        'mining-absent': [quarry, measurements],
+        'mining-mismatch': [mining_fixture, mining, quarry, measurements],
+        'all-absent': [],
+    }
+    for mode, feature_paths in measurements_modes.items():
+        feature_cp = os.pathsep.join(map(str, [test_classes, jar, *feature_paths, *libraries]))
+        result_name = 'measurements-guard-' + mode
+        results[result_name] = run(result_name, 'helpertest.MeasurementsGuardHarness',
+                [build / result_name, mode], classpath=feature_cp)
+        report_path = build / result_name / 'measurements-guard-report.json'
+        guard_report = json.loads(report_path.read_text())
+        measurement_active = mode not in {'measurements-absent', 'line-mismatch', 'text-mismatch',
+                                          'consumer-mismatch', 'interface-mismatch', 'all-absent'}
+        quarry_active = mode not in {'quarry-absent', 'quarry-mismatch', 'all-absent'}
+        mining_active = mode not in {'mining-absent', 'mining-mismatch', 'all-absent'}
+        if guard_report.get('measurements_supported_expected') != measurement_active:
+            raise ValueError('Measurements support expectation differs for ' + mode)
+        for feature, active in (('quarry', quarry_active), ('mining', mining_active),
+                                ('measurements', measurement_active)):
+            feature_records = [record for record in guard_report['records'] if record['feature'] == feature]
+            if feature == 'measurements':
+                require_count = 2
+            elif feature == 'quarry':
+                require_count = 3
+            else:
+                require_count = 1
+            if len(feature_records) != require_count:
+                raise ValueError('Unexpected ' + feature + ' record count for ' + mode)
+            for record in feature_records:
+                expected = active and bool(record.get('resource_present_to_harness'))
+                if bool(record.get('transformed')) != expected:
+                    raise ValueError('Feature result differs for ' + feature + ' in ' + mode)
+                if feature == 'measurements' and active and record.get('transformed'):
+                    if record.get('get_translated_name_count') != 1 or not record.get('translatable_enum_interface'):
+                        raise ValueError('Measurements transformed enum contract missing in ' + mode)
     for path, digest in inputs.items():
         if sha(Path(path).read_bytes()) != digest:
             raise ValueError('Verification input changed: ' + path)
     for relative, expected in report['source_files'].items():
         if sha((HERE / relative).read_bytes()) != expected:
             raise ValueError('Source changed during verification: ' + relative)
-    summary = {'schema_version': 2, 'helper_sha256': sha(jar.read_bytes()), 'results': results,
-               'independently_reviewed_helper_labels': 11, 'quarry_label_injection_sites': 12,
-               'mining_precision_injection_sites': 2, 'optional_feature_isolation_modes': list(modes),
+    inputs_after = {path: sha(Path(path).read_bytes()) for path in inputs}
+    if inputs_after != inputs:
+        raise ValueError('Verification input changed during verification')
+    input_labels = {str(jar): '<HELPER_JAR>', str(quarry): '<QUARRY_JAR>',
+                    str(mining): '<MINING_JAR>', str(measurements): '<MEASUREMENTS_JAR>'}
+    for library in libraries:
+        input_labels[str(library)] = '<PRISM_LIBRARY>/' + library.name
+    before_sanitized = {input_labels[path]: digest for path, digest in inputs.items()}
+    after_sanitized = {input_labels[path]: digest for path, digest in inputs_after.items()}
+    summary = {'schema_version': 3, 'helper_sha256': sha(jar.read_bytes()), 'results': results,
+               'independently_reviewed_helper_labels': 46, 'quarry_label_injection_sites': 12,
+               'mining_precision_injection_sites': 2, 'measurements_enum_labels': 35,
+               'optional_feature_isolation_modes': list(modes),
+               'measurements_guard_modes': list(measurements_modes),
+               'case_count': len(results),
                'input_files_unchanged': True,
+               'input_hashes_before': before_sanitized, 'input_hashes_after': after_sanitized,
 
-               'quarry_jar_sha256': sha(quarry.read_bytes()), 'mining_jar_sha256': sha(mining.read_bytes()), 'no_game_launch': True,
+               'quarry_jar_sha256': sha(quarry.read_bytes()), 'mining_jar_sha256': sha(mining.read_bytes()),
+               'measurements_jar_sha256': sha(measurements.read_bytes()),
+               'measurements_runtime_guards': measurements_runtime,
+               'measurements_asset_checks': language_observation,
+               'no_game_launch': True,
                'no_installation': True, 'visual_qa': False}
     (build / 'verification-report.json').write_text(json.dumps(summary, indent=2) + '\n')
 

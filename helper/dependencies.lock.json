@@ -173,6 +173,14 @@
     {
       "path": "net/neoforged/bus/8.0.5/bus-8.0.5.jar",
       "sha256": "705e24f37752809499a5cd0c7dd31eaabf3d933c5d3b2060168e94e9ef62593a"
+    },
+    {
+      "path": "com/electronwill/night-config/core/3.8.3/core-3.8.3.jar",
+      "sha256": "971dc88c1c22085611ee1c300f5bbf8595938178e819befbb5e98c3cbd272b79"
+    },
+    {
+      "path": "com/electronwill/night-config/toml/3.8.3/toml-3.8.3.jar",
+      "sha256": "ccb92882264bf071e3916ab122fe5ea3e211b8ebf199201698a1324f151f928f"
     }
   ],
   "javac_version": "javac 25.0.1",

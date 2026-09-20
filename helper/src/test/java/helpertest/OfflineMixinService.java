@@ -39,7 +39,8 @@ public final class OfflineMixinService extends MixinServiceAbstract
     @Override public URL[] getClassPath() { return new URL[0]; }
     @Override public Class<?> findClass(String name) throws ClassNotFoundException { return findClass(name, false); }
     @Override public Class<?> findClass(String name, boolean initialize) throws ClassNotFoundException {
-        if (name.startsWith("com.yogpc.qp.machine.") || name.startsWith("com.direwolf20.mininggadgets.client.screens.MiningSettingScreen")) throw new ClassNotFoundException("Target loading forbidden in offline test: " + name);
+        if (name.startsWith("com.yogpc.qp.machine.") || name.startsWith("com.direwolf20.mininggadgets.client.screens.MiningSettingScreen")
+                || name.equals("com.mrbysco.measurements.config.LineColor") || name.equals("com.mrbysco.measurements.config.TextColor")) throw new ClassNotFoundException("Target loading forbidden in offline test: " + name);
         return Class.forName(name, initialize, LOADER);
     }
     @Override public Class<?> findAgentClass(String name, boolean initialize) throws ClassNotFoundException { return findClass(name, initialize); }

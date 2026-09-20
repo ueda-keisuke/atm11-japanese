@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Portable reproduction of the eleven-label development helper; no game launch/download/install."""
+"""Portable reproduction of the 46-label development helper; no game launch/download/install."""
 import argparse
 import hashlib
 import json
@@ -11,7 +11,8 @@ import sys
 import zipfile
 
 HERE = Path(__file__).resolve().parent
-RELEASE_INPUTS_SHA256 = '8db2517adce222a520ad25362f949abbe7547d278849cb6f95d3cadcba2cee9c'
+RELEASE_INPUTS_SHA256 = '80c566c1bf279745b43b62f3b108e06a03d7ef45b275f12831a53359f30768ca'
+HELPER_VERSION = '0.3.0-dev'
 
 
 def sha(data):
@@ -46,10 +47,17 @@ def relative(base, name):
 
 
 def checked_package():
+    package = strict(HERE / 'SOURCE_PACKAGE_FILES.json')
+    require(package.get('schema_version') == 1, 'Unsupported source-package schema')
+    for name, digest in package['files'].items():
+        require(sha(relative(HERE, name).read_bytes()) == digest,
+                'Source-package file changed: ' + name)
     release_path = HERE / 'release-inputs.json'
     require(sha(release_path.read_bytes()) == RELEASE_INPUTS_SHA256, 'Release-input manifest changed')
     release = strict(release_path)
     require(release.get('schema_version') == 2, 'Unsupported release-input schema')
+    require(set(package['files']) == set(release['files']) | {'build.py', 'release-inputs.json', '.gitignore'},
+            'Wrong source-package file set')
     for name, digest in release['files'].items():
         require(sha(relative(HERE, name).read_bytes()) == digest, 'Frozen source/evidence changed: ' + name)
     actual = {p.relative_to(HERE).as_posix() for folder in ('src', 'LICENSES', 'reviews')
@@ -57,10 +65,14 @@ def checked_package():
     expected = {name for name in release['files'] if name.split('/')[0] in ('src', 'LICENSES', 'reviews')}
     require(actual == expected, 'Unlisted or missing source/license/evidence file')
     evidence = strict(HERE / 'translation-evidence.json')
-    require(evidence.get('schema_version') == 2 and set(evidence['contributions']) == {'quarryplus', 'mininggadgets'}, 'Wrong feature evidence')
+    require(evidence.get('schema_version') == 2
+            and set(evidence['contributions']) == {'quarryplus', 'mininggadgets', 'measurements'},
+            'Wrong feature evidence')
     identities = {
         'quarryplus': ('helper-quarryplus-gui-0001', 'localization/helper-mod/language-contract.json', 9),
         'mininggadgets': ('helper-mininggadgets-precision-0001', 'localization/helper-0.2-candidate/mining-language-contract.json', 2),
+        'measurements': ('helper-measurements-enums-0001',
+                         'localization/helper-0.3-candidate/measurements-language-contract.json', 35),
     }
     contracts, english, japanese = {}, {}, {}
     for feature, contribution in evidence['contributions'].items():
@@ -72,6 +84,10 @@ def checked_package():
             require(sha(path.read_bytes()) == row['sha256'], feature + ': ' + kind + ' changed')
             values[kind] = strict(path)
         contract, submission, review = (values[k] for k in ('contract', 'submission', 'review'))
+        if feature == 'measurements':
+            require(contract.get('batch_id') == 'helper-measurements-enums-0001', 'Wrong Measurements batch')
+            require(contract.get('source_jar_sha256') and contract.get('consumer'),
+                    'Measurements source/JVM contract is incomplete')
         keys = {row['key'] for row in contract['english_contract']}
         require(len(keys) == len(contract['english_contract']) == count, 'Wrong contract key set')
         require(not keys.intersection(english), 'Feature key collision')
@@ -99,7 +115,7 @@ def checked_package():
         english.update(source)
         japanese.update(submission['entries'])
         contracts[feature] = contract
-    require(len(english) == len(japanese) == 11, 'Expected exactly eleven labels')
+    require(len(english) == len(japanese) == 46, 'Expected exactly forty-six labels')
     expected_assets = {f'src/main/resources/assets/atm11_japanese_helper/lang/{locale}.json' for locale in ('en_us', 'ja_jp')}
     require(set(evidence['assets']) == expected_assets, 'Wrong asset set')
     for name, digest in evidence['assets'].items():
@@ -109,17 +125,41 @@ def checked_package():
     return release, contracts
 
 
-def checked_inputs(prism, quarry, mining, java_home=None):
+def check_measurements_runtime(contract, libraries):
+    consumer = contract['consumer']
+    required = {
+        consumer['class']: consumer['class_sha256'],
+        consumer['interface']: consumer['interface_sha256'],
+    }
+    neoforge = next((p for p in libraries if p.name == 'neoforge-26.1.2.106-universal.jar'), None)
+    require(neoforge is not None, 'Pinned NeoForge universal JAR is required for Measurements API guard')
+    observed = {}
+    with zipfile.ZipFile(neoforge) as archive:
+        for name, expected in required.items():
+            member = name.replace('.', '/') + '.class'
+            require(archive.namelist().count(member) == 1, 'Missing/duplicate Measurements runtime class: ' + name)
+            actual = sha(archive.read(member))
+            require(actual == expected, 'Measurements runtime class SHA256 differs: ' + name)
+            observed[name] = actual
+    return {'neoforge_universal_jar_sha256': sha(neoforge.read_bytes()), 'classes': observed}
+
+
+def checked_inputs(prism, quarry, mining, measurements, java_home=None):
     release, contracts = checked_package()
-    for feature, jar in (('quarryplus', quarry), ('mininggadgets', mining)):
+    for feature, jar in (('quarryplus', quarry), ('mininggadgets', mining), ('measurements', measurements)):
         contract = contracts[feature]
         require(jar.is_file(), 'Specify the separately obtained original JAR: ' + feature)
         require(sha(jar.read_bytes()) == contract['source_jar_sha256'], feature + ' JAR SHA256 differs')
         with zipfile.ZipFile(jar) as archive:
+            expected_classes = {}
             for row in contract['english_contract']:
-                member = row['target_class'].replace('.', '/') + '.class'
+                expected_classes[row['target_class']] = row['target_class_sha256']
+            if feature == 'measurements':
+                require(len(expected_classes) == 2, 'Measurements contract must bind exactly two enum classes')
+            for target_class, target_sha in expected_classes.items():
+                member = target_class.replace('.', '/') + '.class'
                 require(archive.namelist().count(member) == 1, 'Missing/duplicate target class')
-                require(sha(archive.read(member)) == row['target_class_sha256'], 'Target class SHA256 differs')
+                require(sha(archive.read(member)) == target_sha, 'Target class SHA256 differs: ' + target_class)
     lock = strict(HERE / 'dependencies.lock.json')
     libraries = []
     for row in lock['libraries']:
@@ -144,13 +184,14 @@ def checked_inputs(prism, quarry, mining, java_home=None):
     toolchain = {'javac': version, 'jdk_file_sha256': observed,
                  'matches_reference_jdk': observed == lock['jdk_files'],
                  'acceptance': 'Final JAR SHA256 must match the frozen reference regardless of toolchain platform.'}
-    return java, libraries, quarry, mining, version, toolchain
+    runtime = check_measurements_runtime(contracts['measurements'], libraries)
+    return java, libraries, quarry, mining, measurements, version, toolchain, runtime
 
 
 def jar_bytes(classes):
     import io
     output = io.BytesIO()
-    entries = {'META-INF/MANIFEST.MF': b'Manifest-Version: 1.0\r\nImplementation-Version: 0.2.0-dev\r\n\r\n'}
+    entries = {'META-INF/MANIFEST.MF': f'Manifest-Version: 1.0\r\nImplementation-Version: {HELPER_VERSION}\r\n\r\n'.encode()}
     for base in (classes, HERE / 'src/main/resources'):
         for p in sorted(base.rglob('*')):
             if p.is_file():
@@ -163,11 +204,14 @@ def jar_bytes(classes):
     entries['NOTICE.md'] = (HERE / 'NOTICE.md').read_bytes()
     expected = {'META-INF/MANIFEST.MF', 'META-INF/neoforge.mods.toml', 'NOTICE.md',
                 'LICENSES/LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt', 'LICENSES/MiningGadgets-MIT.txt',
+                'LICENSES/Measurements-MIT.txt',
                 'atm11_japanese_helper.mixins.json', 'atm11_japanese_helper.mining.mixins.json',
+                'atm11_japanese_helper.measurements.mixins.json',
                 'assets/atm11_japanese_helper/lang/en_us.json', 'assets/atm11_japanese_helper/lang/ja_jp.json'}
     expected.update('dev/atm11/japanesehelper/' + name + '.class' for name in (
-            'JapaneseHelper', 'Labels', 'ExactQuarryGuard', 'ExactMiningGuard', 'mixin/MiningSettingScreenMixin', 'mixin/ChunkMarkerScreenMixin',
-            'mixin/ModuleScreenMixin', 'mixin/PlacerScreenMixin'))
+            'JapaneseHelper', 'Labels', 'ExactQuarryGuard', 'ExactMiningGuard', 'ExactMeasurementsGuard',
+            'mixin/MiningSettingScreenMixin', 'mixin/ChunkMarkerScreenMixin', 'mixin/ModuleScreenMixin',
+            'mixin/PlacerScreenMixin', 'mixin/MeasurementsLineColorMixin', 'mixin/MeasurementsTextColorMixin'))
     if set(entries) != expected:
         raise ValueError('Unexpected or missing helper JAR members: ' + str(set(entries) ^ expected))
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_STORED) as z:
@@ -184,10 +228,13 @@ def main():
     parser.add_argument('--prism-root', type=Path, required=True, help='Existing PrismLauncher data directory containing libraries/')
     parser.add_argument('--quarry-jar', type=Path, required=True, help='Original QuarryPlus 26.12.160 JAR obtained separately')
     parser.add_argument('--mining-jar', type=Path, required=True, help='Original Mining Gadgets 1.19.3 JAR obtained separately')
+    parser.add_argument('--measurements-jar', type=Path, required=True, help='Original Measurements 4.0.0 JAR obtained separately')
     parser.add_argument('--java-home', type=Path, help='Existing JDK 25.0.1 home (needed outside reference macOS layout)')
     parser.add_argument('--verify', action='store_true', help='Run the offline real-Mixin transform harness after building')
     args = parser.parse_args()
-    java, libraries, quarry, mining, version, toolchain = checked_inputs(args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(), args.java_home.resolve() if args.java_home else None)
+    java, libraries, quarry, mining, measurements, version, toolchain, runtime = checked_inputs(
+        args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(),
+        args.measurements_jar.resolve(), args.java_home.resolve() if args.java_home else None)
     build = HERE / 'build'
     build.mkdir(exist_ok=True)
     classes = build / 'classes'
@@ -201,18 +248,24 @@ def main():
     raw = jar_bytes(classes)
     release = strict(HERE / 'release-inputs.json')
     require(sha(raw) == release['artifact_sha256'], 'Output differs from frozen reference; do not publish/install it')
-    jar = build / 'atm11-japanese-helper-0.2.0-dev.jar'
+    jar = build / release['artifact']
     jar.write_bytes(raw)
-    report = {'schema_version': 1, 'artifact': jar.name, 'sha256': sha(raw), 'javac': version,
+    report = {'schema_version': 2, 'artifact': jar.name, 'version': HELPER_VERSION, 'sha256': sha(raw), 'javac': version,
               'translation_evidence_sha256': sha((HERE / 'translation-evidence.json').read_bytes()),
               'dependencies_lock_sha256': sha((HERE / 'dependencies.lock.json').read_bytes()),
+              'measurements_contract_sha256': sha((HERE / 'measurements-language-contract.json').read_bytes()),
+              'measurements_jar_sha256': sha(measurements.read_bytes()),
+              'measurements_runtime_guards': runtime,
+              'label_count': 46,
               'source_files': {p.relative_to(HERE).as_posix(): sha(p.read_bytes())
                                for base in ('src', 'LICENSES') for p in sorted((HERE / base).rglob('*')) if p.is_file()},
               'toolchain': toolchain, 'matches_frozen_binary': True, 'installed': False, 'in_game_visual_qa': False}
     (build / 'build-report.json').write_text(json.dumps(report, indent=2) + '\n')
     print('BUILT', jar.name, sha(raw))
     if args.verify:
-        command = [sys.executable, str(HERE / 'verify.py'), '--prism-root', str(args.prism_root.resolve()), '--quarry-jar', str(args.quarry_jar.resolve()), '--mining-jar', str(args.mining_jar.resolve())]
+        command = [sys.executable, str(HERE / 'verify.py'), '--prism-root', str(args.prism_root.resolve()),
+                   '--quarry-jar', str(args.quarry_jar.resolve()), '--mining-jar', str(args.mining_jar.resolve()),
+                   '--measurements-jar', str(args.measurements_jar.resolve())]
         if args.java_home:
             command += ['--java-home', str(args.java_home.resolve())]
         subprocess.run(command, check=True, cwd=build)

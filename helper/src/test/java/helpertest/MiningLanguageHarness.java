@@ -30,7 +30,7 @@ public final class MiningLanguageHarness {
     private static final String MOD_KEY = "mininggadgets." + SOURCE_KEY;
     private static final String ENABLED = "atm11_japanese_helper.mininggadgets.precision_mode.enabled";
     private static final String DISABLED = "atm11_japanese_helper.mininggadgets.precision_mode.disabled";
-    private static final Set<String> BUILT_KEYS = Set.of(
+    private static final Set<String> LEGACY_KEYS = Set.of(
             "atm11_japanese_helper.quarryplus.chunk_marker.size",
             "atm11_japanese_helper.quarryplus.chunk_marker.top_increase",
             "atm11_japanese_helper.quarryplus.chunk_marker.top_decrease",
@@ -41,6 +41,19 @@ public final class MiningLanguageHarness {
             "atm11_japanese_helper.quarryplus.placer.break_only",
             "atm11_japanese_helper.quarryplus.placer.place_only",
             ENABLED, DISABLED);
+    private static final Set<String> BUILT_KEYS = builtKeys();
+
+    private static Set<String> builtKeys() {
+        Set<String> keys = new java.util.HashSet<>(LEGACY_KEYS);
+        for (String type : List.of("LineColor", "TextColor")) {
+            for (String name : List.of("RANDOM", "WHITE", "ORANGE", "MAGENTA", "LIGHT_BLUE", "YELLOW", "LIME",
+                    "PINK", "GRAY", "LIGHT_GRAY", "CYAN", "PURPLE", "BLUE", "BROWN", "GREEN", "RED", "BLACK")) {
+                keys.add("atm11_japanese_helper.measurements.enum." + type + "." + name);
+            }
+        }
+        keys.add("atm11_japanese_helper.measurements.enum.TextColor.XYZRGB");
+        return Set.copyOf(keys);
+    }
 
     private static void require(boolean ok, String message) {
         if (!ok) throw new AssertionError(message);
@@ -102,7 +115,7 @@ public final class MiningLanguageHarness {
             Map<String, String> values = new LinkedHashMap<>();
             Language.loadFromJson(input, values::put);
             require(values.size() == BUILT_KEYS.size() && values.keySet().equals(BUILT_KEYS),
-                    "Built helper asset key set is not the frozen 11-key set: " + locale);
+                    "Built helper asset key set is not the exact 46-key set: " + locale);
             return values;
         }
     }
@@ -220,6 +233,6 @@ public final class MiningLanguageHarness {
         report.put("visual_qa", false);
         Files.writeString(transformedClass.getParent().resolve("mining-language-report.json"),
                 new GsonBuilder().setPrettyPrinting().create().toJson(report) + "\n");
-        System.out.println("PASS actual transformed precision handler: built 11-key assets, English/Japanese retained transitions, and wrong-key/type/arity/null fallback");
+        System.out.println("PASS actual transformed precision handler: built 46-key assets, English/Japanese retained transitions, and wrong-key/type/arity/null fallback");
     }
 }

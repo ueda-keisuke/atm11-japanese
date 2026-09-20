@@ -1,4 +1,4 @@
-# ATM11 Japanese Helper 0.2.0-dev — notices and source scope
+# ATM11 Japanese Helper 0.3.0-dev — notices and source scope
 
 Modified by ATM11 Japanese project / ueda-keisuke, 2026-09-20 (UTC).
 New helper Java source is provided under LGPL-3.0-only. Complete LGPL-3.0 and
@@ -25,10 +25,22 @@ ErrorMikey. Upstream credits: Direwolf20, ErrorMikey, CPW and the entire neoforg
 team. Its two derived language captions retain the MIT terms and original notice
 in `LICENSES/MiningGadgets-MIT.txt`; no blanket MIT grant applies to this helper.
 
-Both features are client-only and independently check exact upstream class
+The Measurements contribution provides translated names for the 17 LineColor and
+18 TextColor enum choices through the existing NeoForge TranslatableEnum API.
+It adds no new enum constants and preserves serialization, random selection and
+axis-based color behavior. Measurements 4.0.0, by Mrbysco, fixed source commit
+`72406856f7e26e83e38f220def86a7d3a69246b0`:
+https://github.com/Mrbysco/Measurements/tree/72406856f7e26e83e38f220def86a7d3a69246b0
+Copyright (c) 2021 Mrbysco. The derived captions retain the complete MIT notice
+in `LICENSES/Measurements-MIT.txt`. The helper Java remains LGPL-3.0-only.
+NeoForge's API and configuration consumer are runtime dependencies; their original
+source and class bytes are not included. This feature is separate from the
+Measurements primary language overlay and ConfigSpec tooltips.
+
+All three features are client-only and independently check exact upstream class
 hashes. A missing or changed target disables that feature. The original MOD JARs
-are neither modified nor included. English fallback and eleven independently
-reviewed Japanese labels are included; `translation-evidence.json` binds the two
+are neither modified nor included. English fallback and forty-six independently
+reviewed Japanese labels are included; `translation-evidence.json` binds the three
 separate source contracts and reviews in the corresponding source package.
 
 Build-time/runtime dependencies are referenced, not bundled: Minecraft/NeoForge,

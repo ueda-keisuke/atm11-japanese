@@ -4,15 +4,18 @@ license="LGPL-3.0-only"
 
 [[mods]]
 modId="atm11_japanese_helper"
-version="0.2.0-dev"
+version="0.3.0-dev"
 displayName="ATM11 Japanese Helper (development)"
-description='''Localizes nine QuarryPlus GUI labels and both Mining Gadgets precision-mode states. Each feature independently checks its exact supported class bytes. Includes English fallback and eleven independently reviewed Japanese labels. Development artifact; no in-game visual QA yet.'''
+description='''Provides translated display names for QuarryPlus GUI labels, Mining Gadgets precision-mode states and Measurements color selections. Each feature independently checks its exact supported class bytes. Development artifact; no in-game visual QA yet.'''
 
 [[mixins]]
 config="atm11_japanese_helper.mixins.json"
 
 [[mixins]]
 config="atm11_japanese_helper.mining.mixins.json"
+
+[[mixins]]
+config="atm11_japanese_helper.measurements.mixins.json"
 
 [[dependencies.atm11_japanese_helper]]
 modId="minecraft"
@@ -34,6 +37,12 @@ side="CLIENT"
 
 [[dependencies.atm11_japanese_helper]]
 modId="mininggadgets"
+type="optional"
+versionRange="[0,)"
+side="CLIENT"
+
+[[dependencies.atm11_japanese_helper]]
+modId="measurements"
 type="optional"
 versionRange="[0,)"
 side="CLIENT"
