@@ -1,16 +1,23 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.19.0 additions / 追加内容
+## 0.20.0 additions / 追加範囲
 
-0.19.0では、既存のNeoForge78項目にFMLのMOD一覧24項目、接続状態16項目、読み込み・不一致画面24項目を追加しました。FML64項目の独立レビューと通常の言語資産読み込み検証は完了しています。FML初期ローダー経路でのパック適用、実ゲーム画面の目視確認、固定ソースで呼出し元を確認できないキーは別の制限として残ります。他の52対象の言語データと既存レビューは保持します。収録は全53対象・3,792項目（翻訳3,772、原文メタデータ19、Apache 4(b)改変通知1）です。ゲーム画面の目視確認は0件で、初期ロード時のパック適用も未検証です。
+0.20.0では、既存のNeoForge142項目に残り124項目を7グループ（コマンド基礎17、追跡/タグ19、チャンク生成11、データ/時間20、UI値19、ネットワーク同期23、ネットワーク値15）として追加します。FML64項目は独立レビュー済みですが、今回の124項目は7グループすべて独立レビューで受理済みです。通常の言語資産読み込みとformatterの確認はPASSですが、FML初期ローダーでのパック適用可否は未検証です。実ゲーム画面の目視確認と、固定ソースで呼出し元を確認できないキーは別々の制限として残ります。他の52対象の言語データと既存レビューは保持します。対象範囲は全53対象・3,916項目（翻訳3,896、原文メタデータ19、Apache 4(b)改変通知1）です。ネットワークflow 4項目は固定consumerの実引数順に基づく補正を行い、根拠は固定されたconsumerの実引数順に基づいています。ゲーム画面の目視確認は0件です。
 
-Version 0.19.0 adds 64 independently reviewed NeoForge FML language entries in addition to the existing 78. Ordinary language-asset loading is verified; FML early-loader resourcepack application and visual game-screen checks remain unverified. The other 52 namespaces retain their existing language bytes and review evidence. Game-screen visual checks remain at 0, and initial-loading resourcepack application is unverified.
+Version 0.20.0 is a release-scope expansion of the existing 0.19 scope: 124 remaining NeoForge language entries are grouped as 17 command basics, 19 tracking/tags, 11 chunk generation, 20 data/time, 19 UI values, 23 network synchronization and 15 network/value entries. All 124 entries have been accepted in the independent reviews. Native ordinary language-asset loading and formatter checks pass; FML early-loader pack application remains unverified, and visual game-screen checks remain 0. The existing 64 FML entries retain their review evidence. Four flow entries record an approved fixed-consumer argument-order correction.
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.19.0 contains 3,792 entries across 53 namespaces: 3,772 translations, 19 preserved original metadata entries and one Apache 4(b) project notice. The additional 64 entries have completed independent language review. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries, plus Measurements `_comment`. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.20.0 contains 3,916 entries across 53 namespaces: 3,896 translations, 19 preserved original metadata entries and one Apache 4(b) project notice. The release adds 124 NeoForge entries in seven fixed scopes; all seven independent reviews are accepted. Native ordinary language-asset loading and formatter checks pass; FML early-loader pack application remains unverified, and visual game-screen checks remain 0. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries, plus Measurements `_comment`. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
+This is the 0.20.0 release documentation. Game-screen visual QA remains 0, and FML early-loader pack application is unverified.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
 This is not an official release or endorsement by the original authors or translators. No MOD JARs, Java code, quests, worlds, images, logos, private logs or backups are included. The parent JAR identities below establish provenance only; they grant no rights to unrelated parent assets.
+
+## NeoForge 0.20.0 scope / 対象範囲
+
+This release adds 124 entries from seven fixed source scopes: command basics (17), tracking and tags (19), chunk generation (11), data and time (20), UI and values (19), network synchronization (23), and network/value formatting (15). The existing 78 and independently reviewed FML64 remain included, for 266 NeoForge language entries. All 124 new entries have been accepted in independent reviews. Native ordinary language-asset loading and formatter checks pass; FML early-loader pack application remains unverified, and visual game-screen checks remain 0. Four flow messages use the fixed consumer argument order rather than the mislabeled source prose; the correction is described in this release documentation. No NeoForge JAR, source archive, Java code, or visual-screen verification is included.
+
+今回の公開版では、NeoForgeの残り124項目を7つの固定した出典（コマンド基礎17、追跡/タグ19、チャンク生成11、データ/時間20、UI/値19、ネットワーク同期23、ネットワーク/値15）から追加します。既存78項目とFML64項目を合わせて266項目です。124項目は7グループすべて独立レビューで受理済みです。flow 4項目は原文ラベルではなく固定consumerの実引数順に基づき補正し、この文書に補正内容を記載しています。NeoForge本体JAR・source archive・Javaコードは同梱せず、画面目視確認も含みません。
 
 ## ToolBelt — `assets/toolbelt/lang/ja_jp.json`
 
@@ -354,7 +361,7 @@ Target: **26.1-3.3.0-neoforge**, 44 entries: 43 Japanese language values and one
 
 Source: https://github.com/ChaoticTrials/SimpleBackups/tree/e2fa606f297031a50dd569f53c94623a72168fd5
 
-Target: **26.1.5**, 43 entries: 42 Japanese language values and one project notice `_comment`. The notice reads: `Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese language entries revised or supplied. Original project: Simple Backups by MelanX; Apache-2.0. See NOTICE.md and LICENSES/SimpleBackups-Apache-2.0.txt.` It is an Apache 4(b) modification notice, not a translated game string. No upstream NOTICE file was found in the fixed JAR/source context. No Simple Backups JAR, code, saves, images or configuration is bundled.
+Target: **26.1.5**, 43 entries: 42 Japanese language values and one project notice `_comment`. The notice reads: `Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese language entries revised or supplied. Original project: Simple Backups by MelanX; Apache-2.0. See NOTICE.md and LICENSES/SimpleBackups-Apache-2.0.txt.` It is an Apache 4(b) modification notice, not a translated game string. No upstream NOTICE file was found in the fixed JAR/fixed source context. No Simple Backups JAR, code, saves, images or configuration is bundled.
 
 ## ElevatorID — `assets/elevatorid/lang/ja_jp.json`
 

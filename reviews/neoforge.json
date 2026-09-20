@@ -1,7 +1,126 @@
 {
-  "language_sha256": "b445365ead256efa997b8c47639deb1076be68ee2316eb5eff1b1cc5374a6c8c",
+  "language_sha256": "0299f53b94f70ff866677f42057ce9a795c37d712f1ffdac702884643a47e674",
   "namespace": "neoforge",
   "reviews": [
+    {
+      "accepted_keys": [
+        "commands.neoforge.arguments.enum.invalid",
+        "commands.neoforge.dimensions.list",
+        "commands.neoforge.dump.error.unknown_registry",
+        "commands.neoforge.dump.failure",
+        "commands.neoforge.dump.success",
+        "commands.neoforge.entity.list.invalid",
+        "commands.neoforge.entity.list.invalidworld",
+        "commands.neoforge.entity.list.multiple.header",
+        "commands.neoforge.entity.list.none",
+        "commands.neoforge.entity.list.single.header",
+        "commands.neoforge.mods.list",
+        "commands.neoforge.tps.dimension",
+        "commands.neoforge.tps.dimension.tooltip",
+        "commands.neoforge.tps.overall",
+        "commands.neoforge.tps.tooltip",
+        "loadwarning.neoforge.onlyin",
+        "loadwarning.neoforge.prbuild"
+      ],
+      "batch_id": "runtime-neoforge-commands-basics-26.1.2.106-0006",
+      "decision": "accepted",
+      "review_sha256": "e647fcfec6bb0dbc1beccbdf831cf0ef655cd6d8ac90a99a5304e9f03408195c",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "commands_basics",
+      "submission_sha256": "95113a20438035a20325a3a63819ae5c4b44685229822fe81942b44aac8ae816"
+    },
+    {
+      "accepted_keys": [
+        "commands.neoforge.chunkgen.already_running",
+        "commands.neoforge.chunkgen.error",
+        "commands.neoforge.chunkgen.help_line",
+        "commands.neoforge.chunkgen.not_running",
+        "commands.neoforge.chunkgen.progress_bar_errors",
+        "commands.neoforge.chunkgen.progress_bar_progress",
+        "commands.neoforge.chunkgen.progress_bar_title",
+        "commands.neoforge.chunkgen.started",
+        "commands.neoforge.chunkgen.status",
+        "commands.neoforge.chunkgen.stopped",
+        "commands.neoforge.chunkgen.success"
+      ],
+      "batch_id": "runtime-neoforge-commands-chunkgen-26.1.2.106-0008",
+      "decision": "accepted",
+      "review_sha256": "1b4f2f42acb76d0ba88dfc39402108711b9d87dedea5e09d0e42d7c278f45c0d",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "commands_chunkgen",
+      "submission_sha256": "d2d5b783554247b2225f6f6cd108d6d8ae36e51792d671c4c8cd3a7d82774ae0"
+    },
+    {
+      "accepted_keys": [
+        "commands.config.getwithtype",
+        "commands.config.noconfig",
+        "commands.neoforge.data_components.list.entry",
+        "commands.neoforge.data_components.list.entry.key_value",
+        "commands.neoforge.data_components.list.error.held_stack_empty",
+        "commands.neoforge.data_components.list.title",
+        "commands.neoforge.data_components.list.tooltip.added",
+        "commands.neoforge.data_components.list.tooltip.default",
+        "commands.neoforge.data_components.list.tooltip.deleted",
+        "commands.neoforge.data_components.list.tooltip.modified",
+        "commands.neoforge.debug_class_loading_transformations.message",
+        "commands.neoforge.timespeed.query",
+        "commands.neoforge.timespeed.query.default",
+        "commands.neoforge.timespeed.set",
+        "commands.neoforge.timespeed.set.default",
+        "commands.neoforge.vanilla.resource_key.no_recipes_on_client",
+        "neoforge.menu.updatescreen.title",
+        "neoforge.update.beta.1",
+        "neoforge.update.beta.2",
+        "neoforge.update.newversion"
+      ],
+      "batch_id": "runtime-neoforge-commands-data-time-26.1.2.106-0009",
+      "decision": "accepted",
+      "review_sha256": "5c4c631b905079d59163caa49c51a2a4dcbfe1f8bb3491374307b51e96bc0563",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "commands_data_time",
+      "submission_sha256": "a30b40e8dcc9c5b92df9130eff039f475622cea78864ec0a7c475fe97d69b8ba"
+    },
+    {
+      "accepted_keys": [
+        "commands.neoforge.tags.containing_tag_count",
+        "commands.neoforge.tags.copy_element_names",
+        "commands.neoforge.tags.copy_tag_names",
+        "commands.neoforge.tags.element",
+        "commands.neoforge.tags.element_count",
+        "commands.neoforge.tags.error.unknown_element",
+        "commands.neoforge.tags.error.unknown_registry",
+        "commands.neoforge.tags.error.unknown_tag",
+        "commands.neoforge.tags.page_info",
+        "commands.neoforge.tags.registry_key",
+        "commands.neoforge.tags.tag_count",
+        "commands.neoforge.tags.tag_key",
+        "commands.neoforge.tracking.be.enabled",
+        "commands.neoforge.tracking.be.reset",
+        "commands.neoforge.tracking.entity.enabled",
+        "commands.neoforge.tracking.entity.reset",
+        "commands.neoforge.tracking.invalid",
+        "commands.neoforge.tracking.no_data",
+        "commands.neoforge.tracking.timing_entry"
+      ],
+      "batch_id": "runtime-neoforge-commands-tracking-tags-26.1.2.106-0007",
+      "decision": "accepted",
+      "review_sha256": "b310fa96d93c6b5bb08d6b770a183c58934df484faf850d87e2335e59b2fc0de",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "commands_tracking_tags",
+      "submission_sha256": "1f88ff7e6fb06274e3205a589c625660b9ab2e88a178f05eb13e04c38540c74f"
+    },
     {
       "accepted_keys": [
         "neoforge.configuration.section.neoforge.client.toml",
@@ -208,10 +327,166 @@
       },
       "source_id": "configgui",
       "submission_sha256": "876d90932776b3145e25fb9bc07f0a310efa41d810a56d02a35765eaedf661cc"
+    },
+    {
+      "accepted_keys": [
+        "neoforge.network.advanced_add_entity.failed",
+        "neoforge.network.advanced_open_screen.failed",
+        "neoforge.network.aux_light_data.failed",
+        "neoforge.network.data_maps.failed",
+        "neoforge.network.data_maps.missing_our",
+        "neoforge.network.data_maps.missing_their",
+        "neoforge.network.invalid_flow",
+        "neoforge.network.negotiation.failure.flow.client.mismatch",
+        "neoforge.network.negotiation.failure.flow.client.missing",
+        "neoforge.network.negotiation.failure.flow.server.mismatch",
+        "neoforge.network.negotiation.failure.flow.server.missing",
+        "neoforge.network.negotiation.failure.missing.client.server",
+        "neoforge.network.negotiation.failure.missing.server.client",
+        "neoforge.network.negotiation.failure.mod",
+        "neoforge.network.negotiation.failure.vanilla.client.not_supported",
+        "neoforge.network.negotiation.failure.vanilla.server.not_supported",
+        "neoforge.network.negotiation.failure.version.client.missing",
+        "neoforge.network.negotiation.failure.version.mismatch",
+        "neoforge.network.negotiation.failure.version.server.missing",
+        "neoforge.network.packet_splitter.unknown",
+        "neoforge.network.registries.sync.failed",
+        "neoforge.network.registries.sync.missing",
+        "neoforge.network.registries.sync.server-with-unknown-keys"
+      ],
+      "batch_id": "runtime-neoforge-network-sync-26.1.2.106-0011",
+      "decision": "accepted",
+      "review_sha256": "405a3095f7be1ab1dd6e0ebce9c89cb93b54f3a8a0ba177f91688938024dde40",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "network_sync",
+      "submission_sha256": "09c953045519c0cf702c85410e61006e7a542975443f92c4c325d71a61648cbc"
+    },
+    {
+      "accepted_keys": [
+        "neoforge.attribute.debug.base",
+        "neoforge.modifier.bool",
+        "neoforge.modifier.plus",
+        "neoforge.modifier.take",
+        "neoforge.network.extensible_enums.enum_entry_mismatch",
+        "neoforge.network.extensible_enums.no_vanilla_server",
+        "neoforge.network.feature_flags.entry_mismatch",
+        "neoforge.network.feature_flags.no_vanilla_server",
+        "neoforge.value.boolean.disable",
+        "neoforge.value.boolean.disabled",
+        "neoforge.value.boolean.enable",
+        "neoforge.value.boolean.enabled",
+        "neoforge.value.boolean.invalid",
+        "neoforge.value.flat",
+        "neoforge.value.percent"
+      ],
+      "batch_id": "runtime-neoforge-network-values-26.1.2.106-0012",
+      "decision": "accepted",
+      "review_sha256": "fce9e87516d1bb1ed5cbf2f4ea3189eb7361f5601a5c2c6fe3c60fa2b2036b7b",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "network_values",
+      "submission_sha256": "a5e0de2ce9c3b6330f7c7bfb7ca59049f24509385eebc74c2d5431734caf64d7"
+    },
+    {
+      "accepted_keys": [
+        "fluid_type.minecraft.flowing_milk",
+        "fluid_type.minecraft.milk",
+        "neoforge.chatType.system",
+        "neoforge.container.enchant.limitedEnchantability",
+        "neoforge.controlsgui.alt",
+        "neoforge.controlsgui.control",
+        "neoforge.controlsgui.control.mac",
+        "neoforge.controlsgui.shift",
+        "neoforge.creative_flight",
+        "neoforge.experimentalsettings.tooltip",
+        "neoforge.froge.supportWarning",
+        "neoforge.froge.warningScreen.text",
+        "neoforge.froge.warningScreen.title",
+        "neoforge.gui.exit",
+        "neoforge.name_tag_distance",
+        "neoforge.selectWorld.backupWarning.experimental.additional",
+        "neoforge.swim_speed",
+        "pack.neoforge.description",
+        "pack.neoforge.source.child"
+      ],
+      "batch_id": "runtime-neoforge-ui-values-26.1.2.106-0010",
+      "decision": "accepted",
+      "review_sha256": "23d7ff1fa1902f41916c85bd3e44ed5453b24d22b022f5a32d4b7cf28e964dae",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "ui_values",
+      "submission_sha256": "5970ee3ddee7e5d80db712389819d18e1e2f322b07cab69d7814f950094f77e3"
     }
   ],
   "schema_version": 3,
   "sources": {
+    "commands_basics": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "",
+      "source_contract_sha256": "a7617e5469c14928cb656d6cf13e93708268160aa32af420aeb650d9ddd94c79",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "commands_chunkgen": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "commands.neoforge.chunkgen.",
+      "source_contract_sha256": "4cdf22436bad02397ed0ac9790117072dfed436872edebd81fbb3c7985291d79",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "commands_data_time": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "",
+      "source_contract_sha256": "b4e5576a2d7361de4a31c5eb1d0cae73ff6b8b0ff879027a01d373d274927ea5",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "commands_tracking_tags": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "commands.neoforge.",
+      "source_contract_sha256": "9a00a5a450a34d597fa657435800eb1acca87fdb21f9dd90f33d4338b91fe4d7",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
     "configgui": {
       "jar_entry": "assets/neoforge/lang/en_us.json",
       "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
@@ -284,6 +559,51 @@
       },
       "scope_prefix": "fml.",
       "source_contract_sha256": "74b9f9cf1b0cb7f98a6a43769bab573b83b5a2a4f11d1de6ae09ff3c2a3f9ff6",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "network_sync": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "neoforge.network.",
+      "source_contract_sha256": "200a66a1ed68992f6fc3dff740d97833285b1aa797a8c985f66a017a0a5dc8bb",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "network_values": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "neoforge.",
+      "source_contract_sha256": "9d5d3e3afe530460c8ea68b4eed42df10c9a329e0db3d8897cbc978e57898b34",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    },
+    "ui_values": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "",
+      "source_contract_sha256": "58ca112bcf9350677ca5dd54b496115a60210195d7d14bc9c754291ffe9c2967",
       "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
       "source_type": "runtime_jar_lang"
     }
