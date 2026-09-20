@@ -55,10 +55,10 @@
       "review_evidence_sha256": "ac888eedb8946f2fdf203257a5e4e497dd849c87662203bf60c87c96c9541524"
     },
     "charginggadgets": {
-      "key_count": 6,
-      "language_sha256": "c76250631a93dc171e101329965af9c97583618472671459d652943cd8b66bf0",
+      "key_count": 10,
+      "language_sha256": "222f412de5880264f6c9453867a0ae975edb7f391a03d3da383b2ed65e37b1b8",
       "preserved_metadata_keys": [],
-      "review_evidence_sha256": "3cc7ce0fb52e535e92c06b0d9323f9057d17ca3bdd97e4ad36dc6f843cbeb3b8"
+      "review_evidence_sha256": "a858a8ba6e1f8234e8897af69cf1822d86950a29532d51c4534e51dbb06c3201"
     },
     "codedefinedgui": {
       "key_count": 63,
@@ -101,6 +101,12 @@
       "language_sha256": "9310cfff7d59b4a13e4946c41013227822d26b70dc1d256359fe166d34fff8d9",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "f6e3f8ecaec89e587927dff2de53a875ffbf042238ef3b0692031e07cf368ea7"
+    },
+    "elevatorid": {
+      "key_count": 29,
+      "language_sha256": "7b40513b4731dac81c9dfd385d1c854b44461da2c26b04995fcce585fcc20757",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "38bf9eea34163e48e3565af14c181c898a499d90e2248764b42cccb1a996c0c0"
     },
     "enderio": {
       "key_count": 1,
@@ -154,6 +160,12 @@
       "language_sha256": "c5e90b1322784b2ddb6e3474669e13d805f163bbfdf942c98b9afe6f5d803914",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "d6cd6c2afd626dbc52c570d8d8ede1d689b607103853d6328f62f393c72de138"
+    },
+    "mysticalautomation": {
+      "key_count": 42,
+      "language_sha256": "057898fa2bdf977e6d83521cef907bfc40c0298d27ce87f63d0751d142849291",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "be95c93cce8dd451a7ef76ac858ad9bfd8040a69112068abcf19ca4ad1be3ba1"
     },
     "naturescompass": {
       "key_count": 44,
@@ -231,5 +243,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.10.0"
+  "version": "0.11.0"
 }

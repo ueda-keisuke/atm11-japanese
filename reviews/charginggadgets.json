@@ -1,7 +1,24 @@
 {
-  "language_sha256": "c76250631a93dc171e101329965af9c97583618472671459d652943cd8b66bf0",
+  "language_sha256": "222f412de5880264f6c9453867a0ae975edb7f391a03d3da383b2ed65e37b1b8",
   "namespace": "charginggadgets",
   "reviews": [
+    {
+      "accepted_keys": [
+        "charginggadgets.configuration.chargerMaxEnergy",
+        "charginggadgets.configuration.chargerMaxEnergy.tooltip",
+        "charginggadgets.configuration.general",
+        "charginggadgets.configuration.general.tooltip"
+      ],
+      "batch_id": "derived-charginggadgets-config-0001",
+      "decision": "accepted",
+      "review_sha256": "f3923f7dc162770f7c7d960c2e8bc9b359b8c32a5b4a0e90e713310f736a8d8c",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "configuration",
+      "submission_sha256": "493fc95f55163e0069d85bc733e2abfc1d72f02e29a47fd99ab251bfd972451e"
+    },
     {
       "accepted_keys": [
         "block.charginggadgets.charging_station",
@@ -18,14 +35,65 @@
         "agent": "/root/extendedae_review",
         "model": "gpt-5.6-luna"
       },
+      "source_id": "lang",
       "submission_sha256": "60a647fdb649d03351ea141df15e5463afb02d143d106a2961904206fe8a104e"
     }
   ],
-  "schema_version": 1,
-  "source": {
-    "jar_entry": "assets/charginggadgets/lang/en_us.json",
-    "jar_sha256": "ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1",
-    "source_sha256": "8339631abc45e840c01fa7cbf5875256052ed5ebaa7af458c8fba1ae6141daa5",
-    "version": "1.16.1"
-  }
+  "schema_version": 3,
+  "sources": {
+    "configuration": {
+      "class_hashes": {
+        "com/direwolf20/charginggadgets/Config$CategoryGeneral.class": "a1785dd8559d71ff55c8f2b52e8786ebeaac337c320a4fe17258ecdaf8a51862",
+        "com/direwolf20/charginggadgets/Config.class": "c82bcf76444a36e3f527ddd7ae335e7b5a5673161681e3ed8fdddda6f48f09f6"
+      },
+      "english_contract": [
+        {
+          "en": "charginggadgets.configuration.general",
+          "key": "charginggadgets.configuration.general",
+          "name": "general"
+        },
+        {
+          "en": "General settings",
+          "key": "charginggadgets.configuration.general.tooltip",
+          "name": "general"
+        },
+        {
+          "en": "charginggadgets.configuration.chargerMaxEnergy",
+          "key": "charginggadgets.configuration.chargerMaxEnergy",
+          "name": "chargerMaxEnergy"
+        },
+        {
+          "en": "Maximum power for the Charging Station\n Default: 1000000",
+          "key": "charginggadgets.configuration.chargerMaxEnergy.tooltip",
+          "name": "chargerMaxEnergy"
+        }
+      ],
+      "jar_entry": "com/direwolf20/charginggadgets/Config$CategoryGeneral.class",
+      "jar_sha256": "ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1",
+      "runtime_dependencies": {
+        "neoforge": {
+          "class_hashes": {
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen$ConfigurationSectionScreen.class": "5e7c94bf81f50a8395f2b9aefb3ddc2530d87cd914293b94f29da776a2a86aeb",
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen$TranslationChecker.class": "881f89a229127ddf3a484b7591e8131b6a54014361d3379a19bb7c1cf2ecda32",
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen.class": "283430e120dc0157d645189b544652e875b72bc2c312a0acfe975a8a326343e4",
+            "net/neoforged/neoforge/common/ModConfigSpec$Builder.class": "a9dc9214b2758279c74321d673e5568e2214f52cb23e0fc6d5f08bd0a5c6610b",
+            "net/neoforged/neoforge/common/ModConfigSpec.class": "2070549e5f38a01747bd1e7e114f20a68c0813fe81f7bc65ee5cc5b90f4c0a4d"
+          },
+          "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+          "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+          "version": "26.1.2.106"
+        }
+      },
+      "source_contract_sha256": "aa9cb0b458859ea19d116a02113ac73da6205ad281e5700b3182e2c1ccbd952e",
+      "source_sha256": "a1785dd8559d71ff55c8f2b52e8786ebeaac337c320a4fe17258ecdaf8a51862",
+      "source_type": "derived_jar_lang"
+    },
+    "lang": {
+      "jar_entry": "assets/charginggadgets/lang/en_us.json",
+      "jar_sha256": "ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1",
+      "source_sha256": "8339631abc45e840c01fa7cbf5875256052ed5ebaa7af458c8fba1ae6141daa5",
+      "source_type": "jar_lang"
+    }
+  },
+  "version": "1.16.1"
 }

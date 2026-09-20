@@ -1,5 +1,9 @@
 {
   "block.charginggadgets.charging_station": "充電ステーション",
+  "charginggadgets.configuration.chargerMaxEnergy": "充電ステーションの最大蓄電量",
+  "charginggadgets.configuration.chargerMaxEnergy.tooltip": "充電ステーションに蓄えられる電力の上限です。\nデフォルト: 1000000",
+  "charginggadgets.configuration.general": "一般設定",
+  "charginggadgets.configuration.general.tooltip": "Charging Gadgets全般の設定です。",
   "item.charginggadgets.charging_station": "充電ステーション",
   "itemGroup.charginggadgets": "Charging Gadgets",
   "screen.charginggadgets.burn_time": "残り燃焼時間：%s秒",

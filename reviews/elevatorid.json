@@ -1,0 +1,54 @@
+{
+  "language_sha256": "7b40513b4731dac81c9dfd385d1c854b44461da2c26b04995fcce585fcc20757",
+  "namespace": "elevatorid",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "block.elevatorid.elevator_black",
+        "block.elevatorid.elevator_blue",
+        "block.elevatorid.elevator_brown",
+        "block.elevatorid.elevator_cyan",
+        "block.elevatorid.elevator_gray",
+        "block.elevatorid.elevator_green",
+        "block.elevatorid.elevator_light_blue",
+        "block.elevatorid.elevator_light_gray",
+        "block.elevatorid.elevator_lime",
+        "block.elevatorid.elevator_magenta",
+        "block.elevatorid.elevator_orange",
+        "block.elevatorid.elevator_pink",
+        "block.elevatorid.elevator_purple",
+        "block.elevatorid.elevator_red",
+        "block.elevatorid.elevator_white",
+        "block.elevatorid.elevator_yellow",
+        "elevatorid.message.missing_xp",
+        "elevatorid.subtitle.camouflage",
+        "elevatorid.subtitle.teleport",
+        "itemGroup.elevators_tab",
+        "screen.elevatorid.elevator",
+        "screen.elevatorid.elevator.directional",
+        "screen.elevatorid.elevator.directional_east",
+        "screen.elevatorid.elevator.directional_north",
+        "screen.elevatorid.elevator.directional_south",
+        "screen.elevatorid.elevator.directional_west",
+        "screen.elevatorid.elevator.hide_arrow",
+        "screen.elevatorid.elevator.reset_camo",
+        "tag.item.elevatorid.elevators"
+      ],
+      "batch_id": "lang-elevatorid-neoforge-26.1-1.16.2-elevatorid-9d02906603-0001",
+      "decision": "accepted",
+      "review_sha256": "03654cd6b90ac0ec001b3fa23d274ca4f0a8849322e00e75ef44a7d2d22c3815",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "8921f5c443ccd332e1747d150ab13cb7aebb71dea53c85f52da5756f35494349"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/elevatorid/lang/en_us.json",
+    "jar_sha256": "f367a6eb009c595fa051368d61473a028fa7f3e1c76d55300a06ab546d3b1bad",
+    "source_sha256": "a44258ae4164984f4a99f4688a448ac69d8dfa111dd89a8588fb167b5183da72",
+    "version": "26.1-1.16.2"
+  }
+}

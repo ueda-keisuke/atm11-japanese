@@ -13,9 +13,9 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.10.0'
-NOTICE_SHA256 = 'c5f7b263eb92e7c7cd2305434b74f6c0282e8549ff30d54a9244d2cc85478319'
-TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': r'^lang/ja_jp\.json$'}]}
+VERSION = '0.11.0'
+NOTICE_SHA256 = 'ce4b39723886a987f060cf5dff6da08e01b76cd2a536590f8bc9aceeb399abb1'
+TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
               'jar_entry': 'assets/transmog/lang/en_us.json',
@@ -280,9 +280,39 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
                       'jar_entry': 'assets/buildinggadgets2/lang/en_us.json',
                       'source_sha256': '799f2d4149bf78c56437bd903802f3c4368194f4a6d7b844a02bc9732df1f8fc'},
  'charginggadgets': {'version': '1.16.1',
-                     'jar_sha256': 'ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1',
-                     'jar_entry': 'assets/charginggadgets/lang/en_us.json',
-                     'source_sha256': '8339631abc45e840c01fa7cbf5875256052ed5ebaa7af458c8fba1ae6141daa5'},
+                     'sources': {'lang': {'jar_sha256': 'ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1',
+                                          'jar_entry': 'assets/charginggadgets/lang/en_us.json',
+                                          'source_sha256': '8339631abc45e840c01fa7cbf5875256052ed5ebaa7af458c8fba1ae6141daa5',
+                                          'source_type': 'jar_lang'},
+                                 'configuration': {'jar_sha256': 'ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1',
+                                                   'jar_entry': 'com/direwolf20/charginggadgets/Config$CategoryGeneral.class',
+                                                   'source_sha256': 'a1785dd8559d71ff55c8f2b52e8786ebeaac337c320a4fe17258ecdaf8a51862',
+                                                   'source_type': 'derived_jar_lang',
+                                                   'source_contract_sha256': 'aa9cb0b458859ea19d116a02113ac73da6205ad281e5700b3182e2c1ccbd952e',
+                                                   'class_hashes': {'com/direwolf20/charginggadgets/Config$CategoryGeneral.class': 'a1785dd8559d71ff55c8f2b52e8786ebeaac337c320a4fe17258ecdaf8a51862',
+                                                                    'com/direwolf20/charginggadgets/Config.class': 'c82bcf76444a36e3f527ddd7ae335e7b5a5673161681e3ed8fdddda6f48f09f6'},
+                                                   'english_contract': [{'key': 'charginggadgets.configuration.general',
+                                                                         'en': 'charginggadgets.configuration.general',
+                                                                         'name': 'general'},
+                                                                        {'key': 'charginggadgets.configuration.general.tooltip',
+                                                                         'en': 'General settings',
+                                                                         'name': 'general'},
+                                                                        {'key': 'charginggadgets.configuration.chargerMaxEnergy',
+                                                                         'en': 'charginggadgets.configuration.chargerMaxEnergy',
+                                                                         'name': 'chargerMaxEnergy'},
+                                                                        {'key': 'charginggadgets.configuration.chargerMaxEnergy.tooltip',
+                                                                         'en': 'Maximum power for the '
+                                                                               'Charging Station\n'
+                                                                               ' Default: 1000000',
+                                                                         'name': 'chargerMaxEnergy'}],
+                                                   'runtime_dependencies': {'neoforge': {'class_hashes': {'net/neoforged/neoforge/client/gui/ConfigurationScreen$ConfigurationSectionScreen.class': '5e7c94bf81f50a8395f2b9aefb3ddc2530d87cd914293b94f29da776a2a86aeb',
+                                                                                                          'net/neoforged/neoforge/client/gui/ConfigurationScreen$TranslationChecker.class': '881f89a229127ddf3a484b7591e8131b6a54014361d3379a19bb7c1cf2ecda32',
+                                                                                                          'net/neoforged/neoforge/client/gui/ConfigurationScreen.class': '283430e120dc0157d645189b544652e875b72bc2c312a0acfe975a8a326343e4',
+                                                                                                          'net/neoforged/neoforge/common/ModConfigSpec$Builder.class': 'a9dc9214b2758279c74321d673e5568e2214f52cb23e0fc6d5f08bd0a5c6610b',
+                                                                                                          'net/neoforged/neoforge/common/ModConfigSpec.class': '2070549e5f38a01747bd1e7e114f20a68c0813fe81f7bc65ee5cc5b90f4c0a4d'},
+                                                                                         'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776',
+                                                                                         'maven_coordinate': 'net.neoforged:neoforge:26.1.2.106:universal',
+                                                                                         'version': '26.1.2.106'}}}}},
  'curios': {'version': '15.0.0+26.1.2',
             'jar_sha256': 'ea1e92cd9dbfb93d2d363e2aced406a1749a4ed3e47bf06cce463903a99fd267',
             'jar_entry': 'assets/curios/lang/en_us.json',
@@ -294,7 +324,15 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'simplebackups': {'version': '26.1.5',
                    'jar_sha256': '0b42165d9fc5381c4e99ae568deaa6728ba883f59a9f8fb37427fc7fd63b3b43',
                    'jar_entry': 'assets/simplebackups/lang/en_us.json',
-                   'source_sha256': 'd19b811d572b077ae6d127be3d2fc94878a603cf470c2b85777482d0fe13f079'}}
+                   'source_sha256': 'd19b811d572b077ae6d127be3d2fc94878a603cf470c2b85777482d0fe13f079'},
+ 'elevatorid': {'version': '26.1-1.16.2',
+                'jar_sha256': 'f367a6eb009c595fa051368d61473a028fa7f3e1c76d55300a06ab546d3b1bad',
+                'jar_entry': 'assets/elevatorid/lang/en_us.json',
+                'source_sha256': 'a44258ae4164984f4a99f4688a448ac69d8dfa111dd89a8588fb167b5183da72'},
+ 'mysticalautomation': {'version': '2.0.6',
+                        'jar_sha256': '439e00d8b33ecbd7eff71df8814f3d7dc797e87e36fdcd4f4c9f3e4980c6e1df',
+                        'jar_entry': 'assets/mysticalautomation/lang/en_us.json',
+                        'source_sha256': 'f41e095e8ba6fab1c2ede01948d1e5be082169f171460490dc9e315092dda2bb'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -327,10 +365,12 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'ironjetpacks': (55, '26847e092d60d1cdb6811364fa531fa3be736220baa74594ccda7ca8fe6fd92b'),
  'functionalstorage': (164, '5cb38a402b107fcdd1e571945061be664faac471f30f330a8ac6e5dcc77781f6'),
  'buildinggadgets2': (113, '86fa833b2f9490bac7e9be9a71410f45e143584d2bbc75b95151db02b4606dc1'),
- 'charginggadgets': (6, 'a835f0e45a8f7adc97ad0a6467e7119ff78df0f419e777ec38a871340ac70aed'),
+ 'charginggadgets': (10, '92c9170e8df5543283f8377a59f3aef7a63ee5dc709ed191b73a747f01119155'),
  'curios': (48, '48448bd37c4568fa7ea4a8abd4132ce112169de66c9f2c0a79fc50edbfad10a9'),
  'naturescompass': (44, '778e3d9cedd84969f9b5afc49b046a73c72ae72c4fa15875b33dd033c4e3d201'),
- 'simplebackups': (43, '979b29e83d159105bfdeb7940003902c2de6ebbf8ecefc9c7b7057a191f026da')}
+ 'simplebackups': (43, '979b29e83d159105bfdeb7940003902c2de6ebbf8ecefc9c7b7057a191f026da'),
+ 'elevatorid': (29, 'f284bd5235b6e454a8c6c168b210b31e126a0ac206e116840c148dc3244dbc38'),
+ 'mysticalautomation': (42, '49b0b062ab7ac0b3c7bed6e7fb1e7f715977950a3a30611965d33d2b8cf97753')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -366,7 +406,9 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'charginggadgets': [],
  'curios': [],
  'naturescompass': ['_comment'],
- 'simplebackups': []}
+ 'simplebackups': [],
+ 'elevatorid': [],
+ 'mysticalautomation': []}
 PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
                                'language entries revised or supplied. Original project: Simple Backups by '
                                'MelanX; Apache-2.0. See NOTICE.md and '
@@ -413,7 +455,9 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/Curios-COPYING.txt': '8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b',
  'LICENSES/Curios-COPYING.LESSER.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118',
  'LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md': 'f32903cdd6843cbaf3c150b6e4e03f73d2c7e717dbdedc26b6cb399141c0bad3',
- 'LICENSES/SimpleBackups-Apache-2.0.txt': 'cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'}
+ 'LICENSES/SimpleBackups-Apache-2.0.txt': 'cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30',
+ 'LICENSES/ElevatorID-MIT.txt': '5463250e11d1f9515c17a6563244f6bc63820c264400dedde321f54dd348e36b',
+ 'LICENSES/MysticalAutomation-MIT.txt': '99c858766d01eef611a38b234a2bba5ca9fa2c015e3c12c6da2f80fe3515341e'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -453,11 +497,13 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
             'LICENSES/Curios-COPYING.txt',
             'LICENSES/Curios-COPYING.LESSER.txt'),
  'naturescompass': ('LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md',),
- 'simplebackups': ('LICENSES/SimpleBackups-Apache-2.0.txt',)}
+ 'simplebackups': ('LICENSES/SimpleBackups-Apache-2.0.txt',),
+ 'elevatorid': ('LICENSES/ElevatorID-MIT.txt',),
+ 'mysticalautomation': ('LICENSES/MysticalAutomation-MIT.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.10.0.zip',
+                'filename': 'ATM11-Japanese-0.11.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -493,7 +539,9 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'charginggadgets',
                                'curios',
                                'naturescompass',
-                               'simplebackups'),
+                               'simplebackups',
+                               'elevatorid',
+                               'mysticalautomation'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -536,8 +584,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/Curios-COPYING.txt',
                              'LICENSES/Curios-COPYING.LESSER.txt',
                              'LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md',
-                             'LICENSES/SimpleBackups-Apache-2.0.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.10.0: 36 namespaces / 2575 entries',
+                             'LICENSES/SimpleBackups-Apache-2.0.txt',
+                             'LICENSES/ElevatorID-MIT.txt',
+                             'LICENSES/MysticalAutomation-MIT.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.11.0: 38 namespaces / 2650 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -548,12 +598,15 @@ JADE_ORIGINAL_JA_SHA256 = '381f227a22a7eb5cbf69c864752bd4fe72ea00f77ceed54df6b57
 JADE_METADATA_VALUE_SHA256 = 'e3cf5492749f2d1c3f333017f1aa6094138d2b02cd308c41432e25e2c51ad89a'
 
 
-MULTISOURCE_KEY_SETS = {'ironjetpacks': {'lang': (41,
-                           '4b7816adcd5c0095ae9c4bd9ece59e54a00660e2ffec9ab89fc6cdc6553196b7'),
-                  'materials': (14,
-                                'b0760708c228ba12372bdb443ff216c737362b4ddfd1b19391a84e25e472caef')}}
+MULTISOURCE_KEY_SETS = {'ironjetpacks': {'lang': (41, '4b7816adcd5c0095ae9c4bd9ece59e54a00660e2ffec9ab89fc6cdc6553196b7'),
+                  'materials': (14, 'b0760708c228ba12372bdb443ff216c737362b4ddfd1b19391a84e25e472caef')},
+ 'charginggadgets': {'lang': (6, 'a835f0e45a8f7adc97ad0a6467e7119ff78df0f419e777ec38a871340ac70aed'),
+                     'configuration': (4,
+                                       'b60ea67d7f9865875bd666c410997e46545d61a68cff2147966b83288b7e923f')}}
 MULTISOURCE_BATCHES = {'lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0001': 'lang',
- 'derived-ironjetpacks-materials-0001': 'materials'}
+ 'derived-ironjetpacks-materials-0001': 'materials',
+ 'lang-charginggadgets-1.16.1-charginggadgets-74380f08f3-0001': 'lang',
+ 'derived-charginggadgets-config-0001': 'configuration'}
 
 
 def require(condition, message):
@@ -678,7 +731,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.10.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.11.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

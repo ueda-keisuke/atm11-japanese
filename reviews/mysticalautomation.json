@@ -1,0 +1,67 @@
+{
+  "language_sha256": "057898fa2bdf977e6d83521cef907bfc40c0298d27ce87f63d0751d142849291",
+  "namespace": "mysticalautomation",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "block.mysticalautomation.awakening_altarnator",
+        "block.mysticalautomation.crafter",
+        "block.mysticalautomation.enchanternator",
+        "block.mysticalautomation.farmer",
+        "block.mysticalautomation.fertilizer",
+        "block.mysticalautomation.infuser",
+        "block.mysticalautomation.infusion_altarnator",
+        "book.mysticalagriculture.category.automation.description",
+        "book.mysticalagriculture.category.automation.name",
+        "book.mysticalagriculture.entry.awakening_altarnator",
+        "book.mysticalagriculture.entry.awakening_altarnator.page.1",
+        "book.mysticalagriculture.entry.awakening_altarnator.page.2",
+        "book.mysticalagriculture.entry.crafter",
+        "book.mysticalagriculture.entry.crafter.page.1",
+        "book.mysticalagriculture.entry.crafter.page.2",
+        "book.mysticalagriculture.entry.enchanternator",
+        "book.mysticalagriculture.entry.enchanternator.page.1",
+        "book.mysticalagriculture.entry.enchanternator.page.2",
+        "book.mysticalagriculture.entry.farmer",
+        "book.mysticalagriculture.entry.farmer.page.1",
+        "book.mysticalagriculture.entry.farmer.page.2",
+        "book.mysticalagriculture.entry.fertilizer",
+        "book.mysticalagriculture.entry.fertilizer.page.1",
+        "book.mysticalagriculture.entry.fertilizer.page.2",
+        "book.mysticalagriculture.entry.infuser",
+        "book.mysticalagriculture.entry.infuser.page.1",
+        "book.mysticalagriculture.entry.infuser.page.2",
+        "book.mysticalagriculture.entry.infusion_altarnator",
+        "book.mysticalagriculture.entry.infusion_altarnator.page.1",
+        "book.mysticalagriculture.entry.infusion_altarnator.page.2",
+        "container.mysticalautomation.awakening_altarnator",
+        "container.mysticalautomation.crafter",
+        "container.mysticalautomation.enchanternator",
+        "container.mysticalautomation.farmer",
+        "container.mysticalautomation.fertilizer",
+        "container.mysticalautomation.infuser",
+        "container.mysticalautomation.infusion_altarnator",
+        "itemGroup.mysticalautomation",
+        "jei.category.mysticalautomation.farmer",
+        "jei.category.mysticalautomation.fertilizer",
+        "tooltip.mysticalautomation.stage",
+        "tooltip.mysticalautomation.stages"
+      ],
+      "batch_id": "lang-MysticalAutomation-26.1.2-2.0.6-mysticalautomation-68239611e5-0001",
+      "decision": "accepted",
+      "review_sha256": "6e95344425efa6e0533c42298c617323f7b76be417856ae5193b3e35fefbc6a1",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "7aecda48f036cd8119b1a657026df2103ea252e6b5e55117e8925498422967fe"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/mysticalautomation/lang/en_us.json",
+    "jar_sha256": "439e00d8b33ecbd7eff71df8814f3d7dc797e87e36fdcd4f4c9f3e4980c6e1df",
+    "source_sha256": "f41e095e8ba6fab1c2ede01948d1e5be082169f171460490dc9e315092dda2bb",
+    "version": "2.0.6"
+  }
+}

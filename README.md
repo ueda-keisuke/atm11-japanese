@@ -1,10 +1,10 @@
 # ATM11 日本語改善
 
-ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパックです。**0.10.0 は36のMOD・内包ライブラリを対象に、2,569項目の日本語訳を1つのZIPへ収録しています。** ATM11 全体の翻訳は進行中で、クエストや一覧以外の MOD は含みません。
+ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパックです。**0.11.0は38のMOD・内包ライブラリを対象に、2,644項目の日本語訳を1つのZIPへ収録しています。** ATM11 全体の翻訳は進行中で、クエストや一覧以外の MOD は含みません。
 
 ## 導入・解除
 
-1. [リリース](https://github.com/ueda-keisuke/atm11-japanese/releases/latest)から **`ATM11-Japanese-0.10.0.zip`** をダウンロードします。非営利条件付きの Jade・Nature's Compass・Better Advancements 素材を含みます。再配布・改変時は下記の個別条件を確認してください。
+1. [リリース](https://github.com/ueda-keisuke/atm11-japanese/releases/latest)から **`ATM11-Japanese-0.11.0.zip`** をダウンロードします。非営利条件付きの Jade・Nature's Compass・Better Advancements 素材を含みます。再配布・改変時は下記の個別条件を確認してください。
 2. 使用するインスタンスの `resourcepacks` フォルダへ、解凍せずに置きます。Prism Launcher ではインスタンス内の `minecraft/resourcepacks` です。
 3. Minecraft の「設定」→「リソースパック」で有効にし、選択中の一覧の**一番上（最高優先度）、特に「MOD のリソース（MOD Resources）」より上**へ移動します。旧版の日本語改善パックを無効にします。0.3.0 を使っていた場合は、基本パックと Jade 専用パックの両方を無効にします。
 4. 言語を「日本語」にして読み込みを完了します。
@@ -47,12 +47,14 @@ ATM11 で使う一部 MOD の日本語を改善する、非公式リソースパ
 | Iron Jetpacks / `ironjetpacks` | 9.0.3 | 55（素材名14種類を含む） | MIT |
 | Functional Storage / `functionalstorage` | 1.6.1 | 164 | MIT |
 | Building Gadgets 2 / `buildinggadgets2` | 1.4.6 | 113 | MIT |
-| Charging Gadgets / `charginggadgets` | 1.16.1 | 6 | MIT |
+| Charging Gadgets / `charginggadgets` | 1.16.1 | 10（通常6＋設定4） | MIT |
 | Curios / `curios` | 15.0.0+26.1.2 | 48 | LGPL-3.0-or-later |
 | Nature's Compass / `naturescompass` | 26.1-3.3.0-neoforge | 44（原文メタデータ1項目を含む） | CC BY-NC-SA 4.0 |
 | Simple Backups / `simplebackups` | 26.1.5 | 43（改変通知1項目を含む） | Apache-2.0 |
+| ElevatorID / `elevatorid` | 26.1-1.16.2 | 29 | MIT |
+| Mystical Automation / `mysticalautomation` | 2.0.6 | 42 | MIT |
 
-収録ファイルは全2,575項目です。表の件数には表示文、ナレーション、検索補助語のほか、保持したメタデータとApache 4(b)の改変通知も含みます。画面数や目視確認済みの文字列数ではありません。JEI 1・Jade 2・QuarryPlus 1の計4メタデータと、Nature's Compassの原文メタデータ1項目は翻訳せず保持します。Simple Backupsの改変通知1項目は翻訳項目ではありません。
+収録ファイルは全2,650項目です。表の件数には表示文、ナレーション、検索補助語のほか、保持したメタデータとApache 4(b)の改変通知も含みます。画面数や目視確認済みの文字列数ではありません。JEI 1・Jade 2・QuarryPlus 1の計4メタデータと、Nature's Compassの原文メタデータ1項目は翻訳せず保持します。Simple Backupsの改変通知1項目は翻訳項目ではありません。
 
 対応環境は ATM11 **0.8.0-beta** / Minecraft **26.1.2** / NeoForge **26.1.2.106**。対象 MOD 本体は別途必要です。他の版は未確認です。独立レビューで受理された言語データだけを収録し、**本版のゲーム画面による実表示確認は0件**です。言語データのレビューや読み込み検証と、ゲーム画面の目視確認を区別しています。
 
@@ -60,7 +62,7 @@ EnderIOは **Modded Conduits内の `conduit.enderio.rs` 1キーだけ**が対象
 
 ## 対応範囲と制限
 
-構文エラーのある **低優先の `transmog:lang/ja_jp.json` だけ**を遮断して同梱の日本語を読み込みます。同じファイルを使う低優先パックの差分も遮断されます。他の35 MOD・内包ライブラリは通常のキー上書きで、読み込みフィルターは使いません。Iron Jetpacksの派生14キーは通常41キーとは別出典・別レビューです。英語原文にない既存日本語キーは、基底リソースから残る場合があります。元 MOD の JAR は変更しません。ExtendedAE のゲーム内ガイド45ページ、開発中のQuarryPlus補助MOD、画像・モデルは収録しません。FTB UltimineとSimple MagnetsはARR（All Rights Reserved）で翻訳の公開許諾を確認できないため収録しません。Charging Gadgetsの設定画面と、コードに直接書かれたメニュー名は未対応です。Simple Backupsの改変通知は表示用翻訳ではなく、Apache 4(b)の通知です。
+構文エラーのある **低優先の `transmog:lang/ja_jp.json` だけ**を遮断して同梱の日本語を読み込みます。同じファイルを使う低優先パックの差分も遮断されます。他の37 MOD・内包ライブラリは通常のキー上書きで、読み込みフィルターは使いません。Iron Jetpacksの派生14キーは通常41キーとは別出典・別レビューです。英語原文にない既存日本語キーは、基底リソースから残る場合があります。元 MOD の JAR は変更しません。ExtendedAE のゲーム内ガイド45ページ、開発中のQuarryPlus補助MOD、画像・モデルは収録しません。FTB UltimineとSimple MagnetsはARR（All Rights Reserved）で翻訳の公開許諾を確認できないため収録しません。Charging Gadgetsは設定4項目を追加しましたが、設定画面全体とコードに直接書かれたメニュー名は未対応です。NeoForge共通設定画面の一部英語も未対応であり、MODの4項目を追加したことは共通UI全体の日本語化を意味しません。Simple Backupsの改変通知は表示用翻訳ではなく、Apache 4(b)の通知です。
 
 **QuarryPlusの直書きGUI・診断チャットの一部は未対応です。** 言語JSONを参照しない `Size`、`Top+` / `Bottom+` 系のボタン、`Modules`、プレイサーモード、発電機の通知等は、このパックでは置換できません。表の件数は対象言語JSONのキー数で、MODの全表示文を網羅した件数ではありません。
 
@@ -84,6 +86,8 @@ EnderIOは **Modded Conduits内の `conduit.enderio.rs` 1キーだけ**が対象
 - **Curios**: LGPL 3.0-or-later。`LICENSE`、`COPYING`、`COPYING.LESSER`の全文、C4 / TheIllusiveC4の作者表示、既存日本語の出典を保持します。
 - **Nature's Compass**: CC BY-NC-SA 4.0。ChaosTheDudeの作者表示、既存日本語の出典、非営利・ShareAlike・改変表示条件を保持します。原文メタデータ 1項目は翻訳しません。
 - **Simple Backups**: Apache-2.0。MelanXの作者表示、改変通知、ライセンス全文、固定出典を保持します。改変通知はApache 4(b)用で、翻訳キーとして扱いません。
+- **ElevatorID**: MIT。VsnGamer / Vascoの著作権表示、LICENSE全文、固定出典を保持します。
+- **Mystical Automation**: MIT。BlakeBr0の著作権表示、LICENSE全文、固定出典を保持します。
 
 元作者・既存訳者による公式版ではありません。作者、既存訳者、出典、変更内容、ライセンスの適用範囲は [NOTICE.md](NOTICE.md)、全文は [LICENSES/](LICENSES/) にあります。
 
@@ -96,14 +100,14 @@ python3 build_pack.py --check
 python3 build_pack.py
 ```
 
-レビュー済みの訳文と確認記録、元JARと内包JARの識別情報、翻訳キーの一覧、ライセンスのハッシュ、項目数、パック形式84.0と対象を限定したフィルターを検証し、`dist/ATM11-Japanese-0.10.0.zip`を生成します。レビュー要約は`reviews/`にあります。元MODのJARや外部ライブラリは再ビルドに不要です。
+レビュー済みの訳文と確認記録、元JARと内包JARの識別情報、翻訳キーの一覧、ライセンスのハッシュ、項目数、パック形式84.0と対象を限定したフィルターを検証し、`dist/ATM11-Japanese-0.11.0.zip`を生成します。レビュー要約は`reviews/`にあります。元MODのJARや外部ライブラリは再ビルドに不要です。
 
 ファイル順と日時を固定し、同じ入力と圧縮環境なら同じ ZIP を再生成できます。内容の異なる既存 ZIP は上書きしません。以前の公開 ZIP・タグは変更しません。
 
 ## English
 
-Unofficial Japanese improvements for **36 language namespaces / 2575 entries** (2569 translations, 5 preserved original metadata entries and 1 Apache 4(b) project notice), collected into **one ZIP**. Counts include narration and search terms, not visually tested screens. ATM11 quests and other MODs are outside this release. Target: Minecraft 26.1.2 / NeoForge 26.1.2.106, with the exact MOD versions above.
+Unofficial Japanese improvements for **38 language namespaces / 2650 entries** (2644 translations, 5 preserved original metadata entries and 1 Apache 4(b) project notice), collected into **one ZIP**. Counts include narration and search terms, not visually tested screens. ATM11 quests and other MODs are outside this release. Target: Minecraft 26.1.2 / NeoForge 26.1.2.106, with the exact MOD versions above.
 
-Download `ATM11-Japanese-0.10.0.zip` from [Releases](https://github.com/ueda-keisuke/atm11-japanese/releases/latest), place it in `resourcepacks` without extracting, enable it **at the top, above MOD Resources**, disable previous editions, and select Japanese. Disable/remove the pack to uninstall. Only the malformed lower-priority Transmog Japanese file is filtered; no MOD JAR is changed. Iron Jetpacks normal and derived sources are reviewed separately.
+Download `ATM11-Japanese-0.11.0.zip` from [Releases](https://github.com/ueda-keisuke/atm11-japanese/releases/latest), place it in `resourcepacks` without extracting, enable it **at the top, above MOD Resources**, disable previous editions, and select Japanese. Disable/remove the pack to uninstall. Only the malformed lower-priority Transmog Japanese file is filtered; no MOD JAR is changed. Iron Jetpacks normal and derived sources are reviewed separately.
 
-Each namespace remains a separate work under its own license. **There is no blanket MIT grant.** The collection contains noncommercial Jade, Nature's Compass and Better Advancements material; Jade and Nature's Compass also require attribution, modification notices and ShareAlike. GPL/LGPL assets include readable modified JSON and their applicable full license texts; SpectreLib retains LGPL 2.1-only and original notices. Code Defined GUI and Magic Particles language assets use CC BY 4.0. Sodium retains PolyForm Shield conditions. These conditions do not relicense unrelated namespace files. See `NOTICE.md` and `LICENSES/` for the individual scopes, credits and full terms. Only accepted review inputs pass the builder. **Game-screen visual checks for this version: 0.** Review and loader checks are separate from visual QA. ExtendedAE in-game guide pages (45 pages), the experimental QuarryPlus helper MOD, FTB Ultimine and Simple Magnets (ARR without translation redistribution permission), Charging Gadgets configuration labels and its hardcoded menu title, and images/models are excluded. QuarryPlus hardcoded GUI labels and diagnostic messages remain partly untranslated; this language-only pack cannot replace them. EnderIO scope is only `conduit.enderio.rs` from its Modded Conduits child; the rest of EnderIO is outside this release.
+Each namespace remains a separate work under its own license. **There is no blanket MIT grant.** The collection contains noncommercial Jade, Nature's Compass and Better Advancements material; Jade and Nature's Compass also require attribution, modification notices and ShareAlike. GPL/LGPL assets include readable modified JSON and their applicable full license texts; SpectreLib retains LGPL 2.1-only and original notices. Code Defined GUI and Magic Particles language assets use CC BY 4.0. Sodium retains PolyForm Shield conditions. These conditions do not relicense unrelated namespace files. See `NOTICE.md` and `LICENSES/` for the individual scopes, credits and full terms. Only accepted review inputs pass the builder. **Game-screen visual checks for this version: 0.** Review and loader checks are separate from visual QA. ExtendedAE in-game guide pages (45 pages), the experimental QuarryPlus helper MOD, FTB Ultimine and Simple Magnets (ARR without translation redistribution permission), Charging Gadgets configuration labels beyond the four derived entries, NeoForge common configuration UI strings, and its hardcoded menu title remain outside scope; images/models are excluded. ElevatorID and Mystical Automation are included as MIT language assets with their original full licenses. QuarryPlus hardcoded GUI labels and diagnostic messages remain partly untranslated; this language-only pack cannot replace them. EnderIO scope is only `conduit.enderio.rs` from its Modded Conduits child; the rest of EnderIO is outside this release.
