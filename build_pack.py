@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.17.0'
-NOTICE_SHA256 = '0b4832fdda2fe12549dbc77c126a5aac1fcd23635028edfc269d87ea998accb4'
+VERSION = '0.18.0'
+NOTICE_SHA256 = '5f748da5a8489d347211a9db5e1f67f42a3da4eb616a4df33ed2b98fa77534f5'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -334,17 +334,28 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
                         'jar_entry': 'assets/mysticalautomation/lang/en_us.json',
                         'source_sha256': 'f41e095e8ba6fab1c2ede01948d1e5be082169f171460490dc9e315092dda2bb'},
  'neoforge': {'version': '26.1.2.106',
-              'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776',
-              'jar_entry': 'assets/neoforge/lang/en_us.json',
-              'source_sha256': '0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6',
-              'source_type': 'runtime_jar_lang',
-              'source_contract_sha256': 'dc0e107016382faffd4c49a632b0f3a3a821a498b94917cd0c8b4198e69ad45f',
-              'namespace': 'neoforge',
-              'locale': 'ja_jp',
-              'runtime_artifact': {'maven_coordinate': 'net.neoforged:neoforge:26.1.2.106:universal',
-                                   'version': '26.1.2.106',
-                                   'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776'},
-              'scope_prefix': 'neoforge.configuration.'},
+              'sources': {'configuration': {'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776',
+                                            'jar_entry': 'assets/neoforge/lang/en_us.json',
+                                            'source_sha256': '0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6',
+                                            'source_type': 'runtime_jar_lang',
+                                            'source_contract_sha256': 'dc0e107016382faffd4c49a632b0f3a3a821a498b94917cd0c8b4198e69ad45f',
+                                            'namespace': 'neoforge',
+                                            'locale': 'ja_jp',
+                                            'runtime_artifact': {'maven_coordinate': 'net.neoforged:neoforge:26.1.2.106:universal',
+                                                                 'version': '26.1.2.106',
+                                                                 'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776'},
+                                            'scope_prefix': 'neoforge.configuration.'},
+                          'configgui': {'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776',
+                                        'jar_entry': 'assets/neoforge/lang/en_us.json',
+                                        'source_sha256': '0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6',
+                                        'source_type': 'runtime_jar_lang',
+                                        'source_contract_sha256': 'f05ed45b6088f435c054363bc621a115a6b2dff02668a8e8e0b7a0b6122c7ed5',
+                                        'namespace': 'neoforge',
+                                        'locale': 'ja_jp',
+                                        'runtime_artifact': {'maven_coordinate': 'net.neoforged:neoforge:26.1.2.106:universal',
+                                                             'version': '26.1.2.106',
+                                                             'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776'},
+                                        'scope_prefix': 'neoforge.configgui.'}}},
  'moreoverlays': {'version': '1.24.4',
                   'jar_sha256': 'c493dc1570d008c5a9fb55466fc3b35b25a43d4250956a837365ea3648dc9df1',
                   'jar_entry': 'assets/moreoverlays/lang/en_us.json',
@@ -528,7 +539,7 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'simplebackups': (43, '979b29e83d159105bfdeb7940003902c2de6ebbf8ecefc9c7b7057a191f026da'),
  'elevatorid': (29, 'f284bd5235b6e454a8c6c168b210b31e126a0ac206e116840c148dc3244dbc38'),
  'mysticalautomation': (42, '49b0b062ab7ac0b3c7bed6e7fb1e7f715977950a3a30611965d33d2b8cf97753'),
- 'neoforge': (46, '0fb199c160060a593de5238cf97c8e02cd9096a36120a9c5ee6dff87c45aa454'),
+ 'neoforge': (78, 'da5acb5e376306076ad391d87d133d26b6c23d54e173728314353dbf098f3a75'),
  'moreoverlays': (40, '1618b941ba6d309322d6d68f6e0ecb81896fa8472f2afafc64f67d59856ea0b2'),
  'interdimensionalwirelesstransmitter': (10,
                                          '38101869dc9d8dfcb8bc0105ca74eb29f1e6ece367a962f285ff8005d9963b62'),
@@ -733,7 +744,7 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.17.0.zip',
+                'filename': 'ATM11-Japanese-0.18.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -847,7 +858,7 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/AE2WTLib-MIT.txt',
                              'LICENSES/Measurements-MIT.txt',
                              'LICENSES/MiningGadgets-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.17.0: 53 namespaces / 3696 entries',
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.18.0: 53 namespaces / 3728 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -866,7 +877,9 @@ MULTISOURCE_KEY_SETS = {'ironjetpacks': {'lang': (41, '4b7816adcd5c0095ae9c4bd9e
  'keybindbundles': {'lang': (26, '62860b61aa47d370387753108c398e9216dca7f93c758c86504d6b6e632ec297'),
                     'configuration': (3, '6b47107a7220137579a20a4a61ffad7835f1749a2d033b332b1ad7e8d81561a2')},
  'measurements': {'lang': (15, '756adfd29c6caff22cb93740fe22c53ce74baa9bb07583c70f71a18e90427ac0'),
-                  'configuration': (6, '5c6a64be5f0313241f5bf239ab90424d1d5d9f19761559d2107737c03e146a41')}}
+                  'configuration': (6, '5c6a64be5f0313241f5bf239ab90424d1d5d9f19761559d2107737c03e146a41')},
+ 'neoforge': {'configuration': (46, '0fb199c160060a593de5238cf97c8e02cd9096a36120a9c5ee6dff87c45aa454'),
+              'configgui': (32, '695ba8666bcb3b74adbc98919c97fb501ee897732aab9cd2ed4f6923e14a6e8d')}}
 MULTISOURCE_BATCHES = {'lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0001': 'lang',
  'derived-ironjetpacks-materials-0001': 'materials',
  'lang-charginggadgets-1.16.1-charginggadgets-74380f08f3-0001': 'lang',
@@ -874,7 +887,9 @@ MULTISOURCE_BATCHES = {'lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0
  'lang-keybindbundles-2.0.0-keybindbundles-648c3aa5a9-0001': 'lang',
  'derived-keybindbundles-config-0001': 'configuration',
  'lang-Measurements-neoforge-26.1-4.0.0-measurements-7958c5666b-0001': 'lang',
- 'derived-measurements-config-0001': 'configuration'}
+ 'derived-measurements-config-0001': 'configuration',
+ 'runtime-neoforge-config-26.1.2.106-0001': 'configuration',
+ 'runtime-neoforge-language-configgui-26.1.2.106-0002': 'configgui'}
 
 
 SFM_BATCH_IDS = ('lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0001',
@@ -1018,7 +1033,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.17.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.18.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

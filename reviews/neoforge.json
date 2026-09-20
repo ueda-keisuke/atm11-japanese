@@ -1,5 +1,5 @@
 {
-  "language_sha256": "02cd449f5c36777ac690f0b298a193cd1bea7e7571a4e1fd49599128e1421da7",
+  "language_sha256": "9ea239131b65d2bbd515c677fe7999706aabde98068c21559f222e40e58c515f",
   "namespace": "neoforge",
   "reviews": [
     {
@@ -58,24 +58,87 @@
         "agent": "/root/comforts_review",
         "model": "gpt-5.6-luna"
       },
+      "source_id": "configuration",
       "submission_sha256": "f95bf96458980d20660ecb5c0de899a3a343827875f93f069a093f7b692e0f2d"
+    },
+    {
+      "accepted_keys": [
+        "neoforge.configgui.advertiseDedicatedServerToLan",
+        "neoforge.configgui.advertiseDedicatedServerToLan.tooltip",
+        "neoforge.configgui.attributeAdvancedTooltipDebugInfo",
+        "neoforge.configgui.attributeAdvancedTooltipDebugInfo.tooltip",
+        "neoforge.configgui.enableB3DValidationLayer",
+        "neoforge.configgui.enableB3DValidationLayer.tooltip",
+        "neoforge.configgui.forgeLightPipelineEnabled",
+        "neoforge.configgui.forgeLightPipelineEnabled.tooltip",
+        "neoforge.configgui.fullBoundingBoxLadders",
+        "neoforge.configgui.fullBoundingBoxLadders.tooltip",
+        "neoforge.configgui.handleAmbientOcclusionPerPart",
+        "neoforge.configgui.handleAmbientOcclusionPerPart.tooltip",
+        "neoforge.configgui.logUntranslatedConfigurationWarnings",
+        "neoforge.configgui.logUntranslatedConfigurationWarnings.tooltip",
+        "neoforge.configgui.logUntranslatedItemTagWarnings",
+        "neoforge.configgui.logUntranslatedItemTagWarnings.tooltip",
+        "neoforge.configgui.permissionHandler",
+        "neoforge.configgui.permissionHandler.tooltip",
+        "neoforge.configgui.reducedDepthStencilFormat",
+        "neoforge.configgui.reducedDepthStencilFormat.tooltip",
+        "neoforge.configgui.removeErroringBlockEntities",
+        "neoforge.configgui.removeErroringBlockEntities.tooltip",
+        "neoforge.configgui.removeErroringBlockEntities.tooltip.warning",
+        "neoforge.configgui.removeErroringEntities",
+        "neoforge.configgui.removeErroringEntities.tooltip",
+        "neoforge.configgui.removeErroringEntities.tooltip.warning",
+        "neoforge.configgui.showLoadWarnings",
+        "neoforge.configgui.showLoadWarnings.tooltip",
+        "neoforge.configgui.skipModdedSplashesIfVanillaModified",
+        "neoforge.configgui.skipModdedSplashesIfVanillaModified.tooltip",
+        "neoforge.configgui.useCombinedDepthStencilAttachment",
+        "neoforge.configgui.useCombinedDepthStencilAttachment.tooltip"
+      ],
+      "batch_id": "runtime-neoforge-language-configgui-26.1.2.106-0002",
+      "decision": "accepted",
+      "review_sha256": "b312b314eaf747a0f277c1a44d60a044ac718677117a5a731ed7d9803a9d6a5d",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "configgui",
+      "submission_sha256": "876d90932776b3145e25fb9bc07f0a310efa41d810a56d02a35765eaedf661cc"
     }
   ],
-  "schema_version": 1,
-  "source": {
-    "jar_entry": "assets/neoforge/lang/en_us.json",
-    "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
-    "locale": "ja_jp",
-    "namespace": "neoforge",
-    "runtime_artifact": {
+  "schema_version": 3,
+  "sources": {
+    "configgui": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
       "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
-      "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
-      "version": "26.1.2.106"
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "neoforge.configgui.",
+      "source_contract_sha256": "f05ed45b6088f435c054363bc621a115a6b2dff02668a8e8e0b7a0b6122c7ed5",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
     },
-    "scope_prefix": "neoforge.configuration.",
-    "source_contract_sha256": "dc0e107016382faffd4c49a632b0f3a3a821a498b94917cd0c8b4198e69ad45f",
-    "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
-    "source_type": "runtime_jar_lang",
-    "version": "26.1.2.106"
-  }
+    "configuration": {
+      "jar_entry": "assets/neoforge/lang/en_us.json",
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "locale": "ja_jp",
+      "namespace": "neoforge",
+      "runtime_artifact": {
+        "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+        "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+        "version": "26.1.2.106"
+      },
+      "scope_prefix": "neoforge.configuration.",
+      "source_contract_sha256": "dc0e107016382faffd4c49a632b0f3a3a821a498b94917cd0c8b4198e69ad45f",
+      "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+      "source_type": "runtime_jar_lang"
+    }
+  },
+  "version": "26.1.2.106"
 }
