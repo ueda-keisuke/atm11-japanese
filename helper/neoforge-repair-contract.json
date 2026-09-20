@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "feature": "neoforge_generation_error_count",
+  "kind": "consumer_argument_repair_no_new_translation_keys",
+  "runtime_version": "26.1.2.106",
+  "runtime_jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+  "source_commit": "dfe28573ea51212ebdc813783f3de80e8a8aa06c",
+  "classes": {
+    "net/neoforged/neoforge/server/command/generation/GenerationBar.class": "acfccf38fafaa0a7c760269d27c0f652e18ae301f417e10c1fda2539a42a7e2d",
+    "net/neoforged/neoforge/server/command/CommandUtils.class": "26b11c3499f28f2f6fbc094ed2be5e82404746954e2bf119664268994e63f450"
+  },
+  "target_method": "update(IIII)V",
+  "source_key": "commands.neoforge.chunkgen.progress_bar_errors",
+  "original_call_descriptor": "(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;",
+  "fixed_call_descriptor": "(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;",
+  "captured_argument": "error (second method parameter, JVM local slot 2)",
+  "sides": [
+    "CLIENT integrated server",
+    "SERVER dedicated server"
+  ],
+  "language_assets_changed": false,
+  "language_source": {
+    "entry": "assets/neoforge/lang/en_us.json",
+    "sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+    "key": "commands.neoforge.chunkgen.progress_bar_errors",
+    "english_value": "(%1$s errors!)",
+    "printf_arguments": [
+      "%1$s"
+    ]
+  },
+  "verification_overlay": {
+    "filename": "ATM11-Japanese-0.21.0.zip",
+    "sha256": "68aa986b5742390acf354a45e2bc9961c2cda7f1d66da0bcd6b2edd754a98022",
+    "url": "https://github.com/ueda-keisuke/atm11-japanese/releases/download/v0.21.0/ATM11-Japanese-0.21.0.zip",
+    "purpose": "Separately obtained accepted Japanese language fixture; not bundled in helper source or binary."
+  }
+}

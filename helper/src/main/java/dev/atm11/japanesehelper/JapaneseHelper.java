@@ -1,10 +1,9 @@
 package dev.atm11.japanesehelper;
 
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.Mod;
 
-/** Client-only entry point. All behavior is confined to the declared screen mixins. */
-@Mod(value = "atm11_japanese_helper", dist = Dist.CLIENT)
+/** Common entry point; each feature declares its physical-side scope in its mixin config. */
+@Mod("atm11_japanese_helper")
 public final class JapaneseHelper {
     public JapaneseHelper() {}
 }

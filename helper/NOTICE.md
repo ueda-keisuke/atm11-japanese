@@ -1,4 +1,4 @@
-# ATM11 Japanese Helper 0.3.0-dev — notices and source scope
+# ATM11 Japanese Helper 0.4.0-dev — notices and source scope
 
 Modified by ATM11 Japanese project / ueda-keisuke, 2026-09-20 (UTC).
 New helper Java source is provided under LGPL-3.0-only. Complete LGPL-3.0 and
@@ -37,8 +37,17 @@ NeoForge's API and configuration consumer are runtime dependencies; their origin
 source and class bytes are not included. This feature is separate from the
 Measurements primary language overlay and ConfigSpec tooltips.
 
-All three features are client-only and independently check exact upstream class
-hashes. A missing or changed target disables that feature. The original MOD JARs
+The NeoForge GenerationBar repair adds no language key. It supplies the missing error-count argument to the existing
+`commands.neoforge.chunkgen.progress_bar_errors` message for fixed NeoForge 26.1.2.106. It is a common-side runtime
+repair for the server that runs the chunk-generation command: an integrated server can use the client installation, while
+a dedicated server requires this helper on the dedicated server. A client-only installation cannot change a remote server.
+The target `GenerationBar` and `CommandUtils` class hashes, fixed source commit, and callsite contract are recorded in
+`neoforge-repair-contract.json`. The helper patch is our LGPL-3.0-only source; the upstream NeoForge implementation is
+not bundled. NeoForged contributors retain their LGPL-2.1 credit and the complete text is in
+`LICENSES/NeoForge-LGPL-2.1.txt`.
+
+All four features are independently guarded by exact upstream class
+hashes. A missing or changed target disables only that feature. The original MOD JARs
 are neither modified nor included. English fallback and forty-six independently
 reviewed Japanese labels are included; `translation-evidence.json` binds the three
 separate source contracts and reviews in the corresponding source package.

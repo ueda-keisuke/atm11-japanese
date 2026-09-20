@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import sys
 import zipfile
-from build import HERE, checked_inputs, sha
+from build import HERE, checked_inputs, checked_package, sha
 
 
 def strict_bytes(raw):
@@ -65,11 +65,17 @@ def main():
     parser.add_argument('--mining-jar', type=Path, required=True)
     parser.add_argument('--measurements-jar', type=Path, required=True)
     parser.add_argument('--java-home', type=Path)
+    parser.add_argument('--language-pack', type=Path, required=True)
     args = parser.parse_args()
-    java, libraries, quarry, mining, measurements, version, toolchain, measurements_runtime = checked_inputs(
+    java, libraries, quarry, mining, measurements, version, toolchain, measurements_runtime, generation_runtime = checked_inputs(
         args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(),
         args.measurements_jar.resolve(), args.java_home.resolve() if args.java_home else None)
     build = HERE / 'build'
+    repair = json.loads((HERE / 'neoforge-repair-contract.json').read_bytes())
+    overlay = args.language_pack.resolve()
+    if sha(overlay.read_bytes()) != repair['verification_overlay']['sha256']:
+        raise ValueError('Expected the separately obtained, fixed public Japanese language pack')
+    neoforge = next(p for p in libraries if p.name == 'neoforge-26.1.2.106-universal.jar')
     release_inputs = json.loads((HERE / 'release-inputs.json').read_text())
     jar = build / release_inputs['artifact']
     if not jar.is_file():
@@ -94,8 +100,8 @@ def main():
     cp = os.pathsep.join(map(str, [test_classes, jar, quarry, mining, *libraries]))
     flags = ['-Datm11.helper.offline=true', '-Dmixin.service=helpertest.OfflineMixinService',
              '-Dmixin.env.disableRefMap=true']
-    def run(name, main, extra=(), classpath=cp, expected_error=None):
-        command = [str(java / ('java.exe' if os.name == 'nt' else 'java')), *flags, '-cp', classpath, main, *map(str, extra)]
+    def run(name, main, extra=(), classpath=cp, expected_error=None, jvm_args=()):
+        command = [str(java / ('java.exe' if os.name == 'nt' else 'java')), *flags, *jvm_args, '-cp', classpath, main, *map(str, extra)]
         result = subprocess.run(command, cwd=build, capture_output=True, text=True, timeout=60)
         output = result.stdout + result.stderr
         # Generated local diagnostics retain no host-specific absolute paths.
@@ -103,7 +109,7 @@ def main():
         for local, label in ((HERE, '<SOURCE_ROOT>'), (build.resolve(), '<BUILD_ROOT>'),
                              (args.prism_root.resolve(), '<PRISM_ROOT>'),
                              (quarry, '<QUARRY_JAR>'), (mining, '<MINING_JAR>'),
-                             (measurements, '<MEASUREMENTS_JAR>'), (java.parent, '<JAVA_HOME>')):
+                             (measurements, '<MEASUREMENTS_JAR>'), (overlay, '<LANGUAGE_PACK>'), (java.parent, '<JAVA_HOME>')):
             output = output.replace(quote(str(local)), label).replace(str(local), label)
         (build / (name + '.log')).write_text(output)
         if expected_error:
@@ -118,7 +124,7 @@ def main():
                 raise SystemExit(result.returncode)
         return {'exit_code': result.returncode, 'log_sha256': sha(output.encode()), 'expected_failure': bool(expected_error)}
 
-    inputs = {str(p): sha(p.read_bytes()) for p in [jar, quarry, mining, measurements, *libraries]}
+    inputs = {str(p): sha(p.read_bytes()) for p in [jar, quarry, mining, measurements, overlay, *libraries]}
     results = {}
     results['transform'] = run('transform', 'helpertest.TransformHarness', [build / 'transformed'])
     transform_log = (build / 'transform.log').read_text()
@@ -269,6 +275,40 @@ def main():
                 if feature == 'measurements' and active and record.get('transformed'):
                     if record.get('get_translated_name_count') != 1 or not record.get('translatable_enum_interface'):
                         raise ValueError('Measurements transformed enum contract missing in ' + mode)
+    generation_cp = os.pathsep.join(map(str, [test_classes, jar, *libraries]))
+    generation_details = {}
+    def generation_case(name, side='SERVER', mode='normal', prefix=(), jvm_args=(), expected_error=None):
+        classpath = os.pathsep.join([*map(str, prefix), generation_cp])
+        results[name] = run(name, 'helpertest.GenerationHarness',
+                            [build/name, side, neoforge, overlay, mode], classpath=classpath,
+                            jvm_args=jvm_args, expected_error=expected_error)
+        if expected_error is None:
+            path = build/name/'result.json'; detail = strict_bytes(path.read_bytes())
+            if detail.get('pass') is not True:
+                raise ValueError('Generation harness report failed: ' + name)
+            if mode in ('normal', 'all-configs') and len(detail['actual_native_consumer_cases']) != 15:
+                raise ValueError('Generation native consumer case count differs')
+            generation_details[name] = dict(report_sha256=sha(path.read_bytes()), **detail)
+    generation_case('generation-client', side='CLIENT')
+    generation_case('generation-server')
+    generation_case('generation-missing-site', mode='missing-site',
+                    expected_error='Generation error consumer shape changed before transformation')
+    for target in ['GenerationBar', 'CommandUtils']:
+        member = next(n for n in repair['classes'] if n.endswith('/'+target+'.class'))
+        generation_case('generation-missing-'+target.lower(), mode='guard-disabled',
+                        jvm_args=['-Datm11.helper.hideResourcePrefix='+member])
+        with zipfile.ZipFile(neoforge) as archive:
+            raw = archive.read(member)
+        old = (target+'.java').encode()
+        if raw.count(old) != 1:
+            raise ValueError('Unexpected GenerationBar SourceFile fixture')
+        changed = raw.replace(old, b'X'+old[1:])
+        fixture_jar = build/('changed-'+target.lower()+'.jar')
+        with zipfile.ZipFile(fixture_jar, 'w') as archive:
+            archive.writestr(member, changed)
+        generation_case('generation-changed-'+target.lower(), mode='guard-disabled', prefix=[fixture_jar])
+    generation_case('generation-server-no-client-mods', mode='all-configs')
+    checked_package()
     for path, digest in inputs.items():
         if sha(Path(path).read_bytes()) != digest:
             raise ValueError('Verification input changed: ' + path)
@@ -279,12 +319,16 @@ def main():
     if inputs_after != inputs:
         raise ValueError('Verification input changed during verification')
     input_labels = {str(jar): '<HELPER_JAR>', str(quarry): '<QUARRY_JAR>',
-                    str(mining): '<MINING_JAR>', str(measurements): '<MEASUREMENTS_JAR>'}
+                    str(mining): '<MINING_JAR>', str(measurements): '<MEASUREMENTS_JAR>', str(overlay): '<LANGUAGE_PACK>'}
     for library in libraries:
         input_labels[str(library)] = '<PRISM_LIBRARY>/' + library.name
     before_sanitized = {input_labels[path]: digest for path, digest in inputs.items()}
     after_sanitized = {input_labels[path]: digest for path, digest in inputs_after.items()}
-    summary = {'schema_version': 3, 'helper_sha256': sha(jar.read_bytes()), 'results': results,
+    summary = {'schema_version': 4, 'pass': True, 'status': 'completed', 'helper_sha256': sha(jar.read_bytes()), 'results': results,
+               'generation_repair_runtime_contract': generation_runtime,
+               'generation_details': generation_details,
+               'generation_native_consumer_cases': sum(len(d.get('actual_native_consumer_cases', [])) for d in generation_details.values()),
+               'generation_language_pack_sha256': sha(overlay.read_bytes()),
                'independently_reviewed_helper_labels': 46, 'quarry_label_injection_sites': 12,
                'mining_precision_injection_sites': 2, 'measurements_enum_labels': 35,
                'optional_feature_isolation_modes': list(modes),
@@ -303,4 +347,11 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    out = HERE/'build/verification-report.json'
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps({'pass':False,'status':'started'})+'\n')
+    try:
+        main()
+    except BaseException as error:
+        out.write_text(json.dumps({'pass':False,'status':'failed','error':str(error)})+'\n')
+        raise

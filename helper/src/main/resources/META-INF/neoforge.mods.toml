@@ -4,9 +4,9 @@ license="LGPL-3.0-only"
 
 [[mods]]
 modId="atm11_japanese_helper"
-version="0.3.0-dev"
+version="0.4.0-dev"
 displayName="ATM11 Japanese Helper (development)"
-description='''Provides translated display names for QuarryPlus GUI labels, Mining Gadgets precision-mode states and Measurements color selections. Each feature independently checks its exact supported class bytes. Development artifact; no in-game visual QA yet.'''
+description='''Provides translated client display names for QuarryPlus, Mining Gadgets and Measurements, and repairs NeoForge chunk-generation error-count arguments on the server running the command. Each feature independently checks its exact supported class bytes. Development artifact; no in-game visual QA yet.'''
 
 [[mixins]]
 config="atm11_japanese_helper.mixins.json"
@@ -17,17 +17,20 @@ config="atm11_japanese_helper.mining.mixins.json"
 [[mixins]]
 config="atm11_japanese_helper.measurements.mixins.json"
 
+[[mixins]]
+config="atm11_japanese_helper.neoforge.mixins.json"
+
 [[dependencies.atm11_japanese_helper]]
 modId="minecraft"
 type="required"
 versionRange="[26.1.2]"
-side="CLIENT"
+side="BOTH"
 
 [[dependencies.atm11_japanese_helper]]
 modId="neoforge"
 type="required"
 versionRange="[26.1.2.106]"
-side="CLIENT"
+side="BOTH"
 
 [[dependencies.atm11_japanese_helper]]
 modId="quarryplus"

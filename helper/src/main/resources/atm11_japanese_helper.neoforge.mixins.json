@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.atm11.japanesehelper.mixin",
+  "plugin": "dev.atm11.japanesehelper.ExactGenerationGuard",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "GenerationBarMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
