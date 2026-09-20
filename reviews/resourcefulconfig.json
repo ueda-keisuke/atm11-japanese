@@ -1,0 +1,68 @@
+{
+  "language_sha256": "8000de98cbda25fe01fc6fc26314723bccd7daf4f4c3f8b4417cc94726ee6a76",
+  "namespace": "resourcefulconfig",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "rconfig.color.preset.defaults",
+        "rconfig.color.preset.mc_colors",
+        "rconfig.color.preset.recents",
+        "rconfig.server.desc",
+        "rconfig.server.properties.allow-flight",
+        "rconfig.server.properties.allow-flight.desc",
+        "rconfig.server.properties.enforce-whitelist",
+        "rconfig.server.properties.enforce-whitelist.desc",
+        "rconfig.server.properties.max-players",
+        "rconfig.server.properties.max-players.desc",
+        "rconfig.server.properties.motd",
+        "rconfig.server.properties.motd.desc",
+        "rconfig.server.properties.pvp",
+        "rconfig.server.properties.pvp.desc",
+        "rconfig.server.properties.white-list",
+        "rconfig.server.properties.white-list.desc",
+        "rconfig.server.title",
+        "rconfig.server.wiki",
+        "rconfig.ui.constant.add_item",
+        "rconfig.ui.constant.add_item.tooltip",
+        "rconfig.ui.constant.choose_item",
+        "rconfig.ui.constant.close",
+        "rconfig.ui.constant.edit",
+        "rconfig.ui.constant.edit.list",
+        "rconfig.ui.constant.edit.object",
+        "rconfig.ui.constant.edit.string",
+        "rconfig.ui.constant.mod_configs",
+        "rconfig.ui.constant.mod_configs.description",
+        "rconfig.ui.constant.move_down",
+        "rconfig.ui.constant.move_up",
+        "rconfig.ui.constant.remove_item",
+        "rconfig.ui.constant.reset"
+      ],
+      "batch_id": "nested-resourcefulconfig-de7d57b27cd61b07-0001",
+      "decision": "accepted",
+      "review_sha256": "4197426be81a916ca1013c201ab3c6603c4d37135211cf4b35f1f8e104aebf35",
+      "reviewer": {
+        "agent": "/root/nested_language_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "3f297556815f36cb08df4e575ee46b1580179858ca247f8b72a788e3e603c530"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/resourcefulconfig-neoforge-26.1-4.0.1.jar",
+        "sha256": "c2725f7f2f077f2746acfc5fad997d8510319425c45ee4c1a2ea8d968db324f1"
+      }
+    ],
+    "catalog_source_id": "de7d57b27cd61b07933432ff973d0c45d4d2a55cd356c61e2e645fc0ff74259e",
+    "jar_entry": "assets/resourcefulconfig/lang/en_us.json",
+    "jar_sha256": "2a1c188deaf52f3c0e8baab0ba2c0bdd76c326a1184f8945d6f56f45a7a24521",
+    "locale": "ja_jp",
+    "namespace": "resourcefulconfig",
+    "source": "minecraft/mods/lootr-neoforge-26.1.2-1.23.38.120.jar",
+    "source_sha256": "477bdad1482cddac869c98c2e1570ff2e348334e974feb24e1b8f5c298b848cd",
+    "source_type": "nested_jar_lang",
+    "version": "4.0.1"
+  }
+}

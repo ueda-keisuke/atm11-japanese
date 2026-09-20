@@ -1,0 +1,71 @@
+{
+  "language_sha256": "2530dc371ed96cda4e9e78962e3ef8d593b5064b858786befd26c03e3b7cb524",
+  "namespace": "cumulus_menus",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "config.cumulus_menus.client.menu.active_menu",
+        "config.cumulus_menus.client.menu.active_menu.tooltip",
+        "config.cumulus_menus.client.menu.enable_menu_api",
+        "config.cumulus_menus.client.menu.enable_menu_api.tooltip",
+        "config.cumulus_menus.client.menu.enable_menu_list_button",
+        "config.cumulus_menus.client.menu.enable_menu_list_button.tooltip",
+        "config.cumulus_menus.client.world_preview.enable_quick_load_button",
+        "config.cumulus_menus.client.world_preview.enable_quick_load_button.tooltip",
+        "config.cumulus_menus.client.world_preview.enable_world_preview",
+        "config.cumulus_menus.client.world_preview.enable_world_preview.tooltip",
+        "config.cumulus_menus.client.world_preview.enable_world_preview_button",
+        "config.cumulus_menus.client.world_preview.enable_world_preview_button.tooltip",
+        "cumulus_menus.configuration.Menu",
+        "cumulus_menus.configuration.Menu.button",
+        "cumulus_menus.configuration.Menu.tooltip",
+        "cumulus_menus.configuration.World Preview",
+        "cumulus_menus.configuration.World Preview.button",
+        "cumulus_menus.configuration.World Preview.tooltip",
+        "cumulus_menus.configuration.section.cumulus.menus.client.toml",
+        "cumulus_menus.configuration.section.cumulus.menus.client.toml.title",
+        "cumulus_menus.configuration.title",
+        "cumulus_menus.menu_title.minecraft",
+        "cumulus_menus.world_preview.toast.description",
+        "cumulus_menus.world_preview.toast.title",
+        "gui.cumulus_menus.button.menu_launch",
+        "gui.cumulus_menus.button.menu_list",
+        "gui.cumulus_menus.menu.button.quick_load",
+        "gui.cumulus_menus.menu.button.world_preview",
+        "gui.cumulus_menus.menu.load",
+        "gui.cumulus_menus.menu.preview",
+        "gui.cumulus_menus.selectWorld.previewActive.delete",
+        "gui.cumulus_menus.selectWorld.previewActive.edit",
+        "gui.cumulus_menus.selectWorld.previewActive.recreate",
+        "gui.cumulus_menus.title.menu_selection",
+        "pack.cumulus_menus.mod.description"
+      ],
+      "batch_id": "nested-cumulus_menus-ec02354331ac976f-0001",
+      "decision": "accepted",
+      "review_sha256": "68c0f9ff81def78b873c17cbfd899a2e5369cef68640f954d90ac31d6d711e95",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "08c0c3188c02128555462778d0060fc169c1b1d0f5b1d0683d2ee0fd889fe92a"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/cumulus_menus-26.1.2-2.0.15-neoforge.jar",
+        "sha256": "9cff5f97963c247aa810f5b23a712dc7e6d288b5c06732d07776d79417eb3dbd"
+      }
+    ],
+    "catalog_source_id": "ec02354331ac976f2206aa0816d2f535a9ce305c36415820cc7f749616453a1c",
+    "jar_entry": "assets/cumulus_menus/lang/en_us.json",
+    "jar_sha256": "97760dd75e2dcdf4ecde83a0006d5b3682090e104a3c7bd6d7e4681e33b3f0e6",
+    "locale": "ja_jp",
+    "namespace": "cumulus_menus",
+    "source": "minecraft/mods/aether_ii-26.1.2-alpha.4.1-neoforge.jar",
+    "source_sha256": "181edddff82f182f5208b0d3693872164153464429bcc6b48a5e17eb0693dca2",
+    "source_type": "nested_jar_lang",
+    "version": "2.0.15"
+  }
+}

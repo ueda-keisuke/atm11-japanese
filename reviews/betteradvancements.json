@@ -1,0 +1,28 @@
+{
+  "language_sha256": "b4eeb0b90d8dac2678caaedc8299766c542b253cb807c09123f79f9311dfb7f8",
+  "namespace": "betteradvancements",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "betteradvancements.remaining",
+        "betteradvancements.title_separator",
+        "title.betteradvancements.config"
+      ],
+      "batch_id": "lang-BetterAdvancements-NeoForge-26.1.2-0.6.0.76-betteradvancements-8533c8c1ea-0001",
+      "decision": "accepted",
+      "review_sha256": "d89333870b3eaa2fc23bf8354242c03315fa631d35839407aba48fa3a7d6e4bf",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "735ba090c7748bd6f381c449cdeb207aa486540aabacab9cf19e9b7b1e3f08c0"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/betteradvancements/lang/en_us.json",
+    "jar_sha256": "6399badfcb0677afd01dfa345b743d41b43cdb146b7c9732a72d20be2f7dad05",
+    "source_sha256": "cc556d46058c7c2555984349a976ae2e87b322bcd0877eb4d883be500d7bce3f",
+    "version": "0.6.0.76"
+  }
+}

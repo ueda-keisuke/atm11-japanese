@@ -1,0 +1,63 @@
+{
+  "language_sha256": "5c58508c67ede0066dcb7449209697655d52def5b575be93ebb51e52dcfba4f5",
+  "namespace": "ae2netanalyser",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "chat.ae2netanalyser.tick_analyser.begin",
+        "chat.ae2netanalyser.tick_analyser.cannel",
+        "chat.ae2netanalyser.tick_analyser.finish",
+        "chat.ae2netanalyser.tick_analyser.no_cannel",
+        "chat.ae2netanalyser.tick_analyser.user_control",
+        "chat.ae2netanalyser.tick_analyser.waiting",
+        "gui.ae2netanalyser.network_analyser.LINK.COMPRESSED",
+        "gui.ae2netanalyser.network_analyser.LINK.DENSE",
+        "gui.ae2netanalyser.network_analyser.LINK.NORMAL",
+        "gui.ae2netanalyser.network_analyser.NODE.DENSE",
+        "gui.ae2netanalyser.network_analyser.NODE.MISSING",
+        "gui.ae2netanalyser.network_analyser.NODE.NORMAL",
+        "gui.ae2netanalyser.network_analyser.channel.DEFAULT",
+        "gui.ae2netanalyser.network_analyser.channel.INFINITE",
+        "gui.ae2netanalyser.network_analyser.channel.X2",
+        "gui.ae2netanalyser.network_analyser.channel.X3",
+        "gui.ae2netanalyser.network_analyser.channel.X4",
+        "gui.ae2netanalyser.network_analyser.mode",
+        "gui.ae2netanalyser.network_analyser.mode.CHANNELS",
+        "gui.ae2netanalyser.network_analyser.mode.FULL",
+        "gui.ae2netanalyser.network_analyser.mode.NODES",
+        "gui.ae2netanalyser.network_analyser.mode.NONUM",
+        "gui.ae2netanalyser.network_analyser.mode.P2P",
+        "gui.ae2netanalyser.network_analyser.node_size",
+        "gui.ae2netanalyser.network_analyser.reset",
+        "gui.ae2netanalyser.network_analyser.state.dense_nodes",
+        "gui.ae2netanalyser.network_analyser.state.missing_nodes",
+        "gui.ae2netanalyser.network_analyser.state.normal_nodes",
+        "gui.ae2netanalyser.tick_analyser.begin",
+        "gui.ae2netanalyser.tick_analyser.cancel",
+        "gui.ae2netanalyser.tick_analyser.range1",
+        "gui.ae2netanalyser.tick_analyser.range2",
+        "gui.ae2netanalyser.tick_analyser.range3",
+        "gui.ae2netanalyser.tick_analyser.range4",
+        "gui.ae2netanalyser.tick_analyser.set_duration",
+        "item.ae2netanalyser.network_analyser",
+        "item.ae2netanalyser.tick_analyser",
+        "itemGroup.ae2netanalyser"
+      ],
+      "batch_id": "lang-AE2NetworkAnalyzer-26.1-1.0.0-neoforge-ae2netanalyser-a34b147a8e-0001",
+      "decision": "accepted",
+      "review_sha256": "55696804291cec2dbedbd513a9abc31d882cb6aa02d6887f6887b5c92e3ae390",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "9dcca91015e97c31143b3c1bbc5b6f703f8d0ddcffbcc83e5880023491cd1406"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/ae2netanalyser/lang/en_us.json",
+    "jar_sha256": "ef3c4c7c326e429d725108226299da0fe91bbff0bf9fe8fe2bfc287a2c66fca3",
+    "source_sha256": "0d3de4617d24f082e8e633e02e7884fea695449b3783d662cdc2dceb92bc4e5c",
+    "version": "26.1-1.0.0-neoforge"
+  }
+}

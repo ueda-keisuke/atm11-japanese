@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the separate base and Jade Japanese packs from pinned release evidence."""
+"""Build a collection of independently licensed Japanese language assets from pinned evidence."""
 from __future__ import annotations
 
 import argparse
@@ -13,82 +13,151 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.3.0'
+VERSION = '0.4.0'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': r'^lang/ja_jp\.json$'}]}
-POLICIES = {
-    'transmog': {
-        'version': '1.8.0+26.1',
-        'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
-        'jar_entry': 'assets/transmog/lang/en_us.json',
-        'source_sha256': '89ebb4d6af7d4da87fafaa8e69534b29534a68e6af8532f6d5bc2ea88412be5f',
-    },
-    'jei': {
-        'version': '29.36.0.96',
-        'jar_sha256': 'a4ac2d91b2f86e56275316ac185208d275edcca6d975998a93cc6e604910c07d',
-        'jar_entry': 'assets/jei/lang/en_us.json',
-        'source_sha256': 'b39dc5633aeadb953a671ac50e58a26951b20593473995bbf93a389caae108e1',
-    },
-    'appleskin': {
-        'version': '3.0.9',
-        'jar_sha256': '32bfe1ed3dea0684259568dbf2b6fe02e939bf398e54af383238bb3b8cac4da6',
-        'jar_entry': 'assets/appleskin/lang/en_us.json',
-        'source_sha256': 'e4ecdf6e503c5e9a63277b1092c7221671724959907152ac18cef12cc59f7075',
-    },
-    'controlling': {
-        'version': '26.1.2.4',
-        'jar_sha256': '16289226a72a8709d77e2f477beaf276d4a90583efc712c6114811fd1a3a3f51',
-        'jar_entry': 'assets/controlling/lang/en_us.json',
-        'source_sha256': 'ddd09483c4b6c3b898ca28e3b22e8fb4b042abc402bdef50c1a12cb49fe27725',
-    },
-    'jade': {
-        'version': '26.1.10',
-        'jar_sha256': 'd1e477ed030f96605a2471c0d2003846a90cc12c4059782e62cdee2d4c529fc7',
-        'jar_entry': 'assets/jade/lang/en_us.json',
-        'source_sha256': '799373d21b23e9a8fda3158ff4d098e4d1e6cf99eb2b935836650dce4a459153',
-    },
-}
-# Exact current English key sets: SHA-256 of compact UTF-8 JSON of sorted keys.
-# These are counts of keys, including search terms and preserved metadata, not screens.
-KEY_SETS = {
-    'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
-    'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
-    'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
-    'controlling': (12, 'bd5a753a17d7eb4acf894cf43b58d4a4c3f7b25a35f18e754d839c18d18207b1'),
-    'jade': (496, '2abacb74df2a08a3058933548c1bb1418fe401c8c62f4338a409cedf3852cb44'),
-}
-PRESERVED_METADATA_KEYS = {
-    'transmog': [], 'jei': ['_comment'], 'appleskin': [], 'controlling': [],
-    'jade': ['__comment', 'jade.metadata'],
-}
-LICENSES = {
-    'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba69450ff1dbf4b1e0fed3bbc08c',
-    'LICENSES/Transmog-MIT.txt': 'a366506974a46752dbf54c187288b5d5de7f4570422b0cbacd4f5cd1dcb8f099',
-    'LICENSES/JEI-MIT.txt': '108c93a97f3011c196b8226f5019a9c09ade318fe3a802be2f7f5ddb2c3a0d04',
-    'LICENSES/AppleSkin-Unlicense.txt': '88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd',
-    'LICENSES/Controlling-MIT.txt': 'bd03ec3e3879605835ea5239cb6304b0d5694074d924b050c7099acbb89a5813',
-    'LICENSES/Jade-CC-BY-NC-SA-4.0.md': '03d7d5b3f4b37a576d52db87542ac248e161fc47412192e9543c6a71a82b0ff3',
-}
-PACKAGES = {
-    'base': {
-        'directory': 'resourcepack', 'release': 'release.json', 'notice': 'NOTICE.md',
-        'filename': 'ATM11-Japanese-0.3.0.zip',
-        'namespaces': ('transmog', 'jei', 'appleskin', 'controlling'),
-        'licenses': ('LICENSES/Project-MIT.txt', 'LICENSES/Transmog-MIT.txt', 'LICENSES/JEI-MIT.txt',
-                     'LICENSES/AppleSkin-Unlicense.txt', 'LICENSES/Controlling-MIT.txt'),
-        'pack': {
-            'pack': {'description': 'ATM11 日本語改善: Transmog / JEI / AppleSkin / Controlling',
-                     'min_format': [84, 0], 'max_format': [84, 0]},
-            'filter': TRANSMOG_FILTER,
-        },
-    },
-    'jade': {
-        'directory': 'resourcepack-jade', 'release': 'release-jade.json', 'notice': 'NOTICE-Jade.md',
-        'filename': 'ATM11-Japanese-Jade-0.3.0.zip', 'namespaces': ('jade',),
-        'licenses': ('LICENSES/Jade-CC-BY-NC-SA-4.0.md',),
-        'pack': {'pack': {'description': 'ATM11 日本語改善: Jade (CC BY-NC-SA 4.0)',
-                         'min_format': [84, 0], 'max_format': [84, 0]}},
-    },
-}
+POLICIES = {'transmog': {'version': '1.8.0+26.1',
+              'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
+              'jar_entry': 'assets/transmog/lang/en_us.json',
+              'source_sha256': '89ebb4d6af7d4da87fafaa8e69534b29534a68e6af8532f6d5bc2ea88412be5f'},
+ 'jei': {'version': '29.36.0.96',
+         'jar_sha256': 'a4ac2d91b2f86e56275316ac185208d275edcca6d975998a93cc6e604910c07d',
+         'jar_entry': 'assets/jei/lang/en_us.json',
+         'source_sha256': 'b39dc5633aeadb953a671ac50e58a26951b20593473995bbf93a389caae108e1'},
+ 'appleskin': {'version': '3.0.9',
+               'jar_sha256': '32bfe1ed3dea0684259568dbf2b6fe02e939bf398e54af383238bb3b8cac4da6',
+               'jar_entry': 'assets/appleskin/lang/en_us.json',
+               'source_sha256': 'e4ecdf6e503c5e9a63277b1092c7221671724959907152ac18cef12cc59f7075'},
+ 'controlling': {'version': '26.1.2.4',
+                 'jar_sha256': '16289226a72a8709d77e2f477beaf276d4a90583efc712c6114811fd1a3a3f51',
+                 'jar_entry': 'assets/controlling/lang/en_us.json',
+                 'source_sha256': 'ddd09483c4b6c3b898ca28e3b22e8fb4b042abc402bdef50c1a12cb49fe27725'},
+ 'jade': {'version': '26.1.10',
+          'jar_sha256': 'd1e477ed030f96605a2471c0d2003846a90cc12c4059782e62cdee2d4c529fc7',
+          'jar_entry': 'assets/jade/lang/en_us.json',
+          'source_sha256': '799373d21b23e9a8fda3158ff4d098e4d1e6cf99eb2b935836650dce4a459153'},
+ 'searchables': {'version': '1.0.2',
+                 'jar_sha256': '85466d9b55239f5a13afcd41ec7eef816074427c5cd1080e740205ab8d7825b3',
+                 'jar_entry': 'assets/searchables/lang/en_us.json',
+                 'source_sha256': '48de13a3fd577126aab0b5f46d18d4320472000fc7688af4da03b8918c9db42c'},
+ 'resourcefulconfig': {'version': '4.0.1',
+                       'source_type': 'nested_jar_lang',
+                       'source': 'minecraft/mods/lootr-neoforge-26.1.2-1.23.38.120.jar',
+                       'jar_sha256': '2a1c188deaf52f3c0e8baab0ba2c0bdd76c326a1184f8945d6f56f45a7a24521',
+                       'archive_chain': [{'entry': 'META-INF/jarjar/resourcefulconfig-neoforge-26.1-4.0.1.jar',
+                                          'sha256': 'c2725f7f2f077f2746acfc5fad997d8510319425c45ee4c1a2ea8d968db324f1'}],
+                       'jar_entry': 'assets/resourcefulconfig/lang/en_us.json',
+                       'source_sha256': '477bdad1482cddac869c98c2e1570ff2e348334e974feb24e1b8f5c298b848cd',
+                       'namespace': 'resourcefulconfig',
+                       'locale': 'ja_jp',
+                       'catalog_source_id': 'de7d57b27cd61b07933432ff973d0c45d4d2a55cd356c61e2e645fc0ff74259e'},
+ 'ae2netanalyser': {'version': '26.1-1.0.0-neoforge',
+                    'jar_sha256': 'ef3c4c7c326e429d725108226299da0fe91bbff0bf9fe8fe2bfc287a2c66fca3',
+                    'jar_entry': 'assets/ae2netanalyser/lang/en_us.json',
+                    'source_sha256': '0d3de4617d24f082e8e633e02e7884fea695449b3783d662cdc2dceb92bc4e5c'},
+ 'cumulus_menus': {'version': '2.0.15',
+                   'source_type': 'nested_jar_lang',
+                   'source': 'minecraft/mods/aether_ii-26.1.2-alpha.4.1-neoforge.jar',
+                   'jar_sha256': '97760dd75e2dcdf4ecde83a0006d5b3682090e104a3c7bd6d7e4681e33b3f0e6',
+                   'archive_chain': [{'entry': 'META-INF/jarjar/cumulus_menus-26.1.2-2.0.15-neoforge.jar',
+                                      'sha256': '9cff5f97963c247aa810f5b23a712dc7e6d288b5c06732d07776d79417eb3dbd'}],
+                   'jar_entry': 'assets/cumulus_menus/lang/en_us.json',
+                   'source_sha256': '181edddff82f182f5208b0d3693872164153464429bcc6b48a5e17eb0693dca2',
+                   'namespace': 'cumulus_menus',
+                   'locale': 'ja_jp',
+                   'catalog_source_id': 'ec02354331ac976f2206aa0816d2f535a9ce305c36415820cc7f749616453a1c'},
+ 'sodium': {'version': '0.9.1',
+            'source_type': 'nested_jar_lang',
+            'source': 'minecraft/mods/sodium-neoforge-0.9.1+mc26.1.2.jar',
+            'jar_sha256': 'ec907b646997d1f04ccc53ed6b48b9b343c096fdf17212b640e5fb54e3c1b200',
+            'archive_chain': [{'entry': 'META-INF/jarjar/net.caffeinemc.sodium-neoforge-0.9.1+mc26.1.2-mod.jar',
+                               'sha256': '73780c4ee946bf7c4be7ee8ba8feaf0cd573b8df46b88d7b65e15ab9135ddde1'}],
+            'jar_entry': 'assets/sodium/lang/en_us.json',
+            'source_sha256': '86bd13ad78a86878c1cf6bd900ad076db2d471fab6058352e6ef66eb0b75618e',
+            'namespace': 'sodium',
+            'locale': 'ja_jp',
+            'catalog_source_id': 'e88743903cdc5005590f0e301b0c773004dee26e33573875abbaa46a44a6bd9a'},
+ 'betteradvancements': {'version': '0.6.0.76',
+                        'jar_sha256': '6399badfcb0677afd01dfa345b743d41b43cdb146b7c9732a72d20be2f7dad05',
+                        'jar_entry': 'assets/betteradvancements/lang/en_us.json',
+                        'source_sha256': 'cc556d46058c7c2555984349a976ae2e87b322bcd0877eb4d883be500d7bce3f'}}
+KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
+ 'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
+ 'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
+ 'controlling': (12, 'bd5a753a17d7eb4acf894cf43b58d4a4c3f7b25a35f18e754d839c18d18207b1'),
+ 'jade': (496, '2abacb74df2a08a3058933548c1bb1418fe401c8c62f4338a409cedf3852cb44'),
+ 'searchables': (2, 'b897804392acbe7e4160dfcb321d51970637690d2830640a75c35bca9e87cc0e'),
+ 'resourcefulconfig': (32, 'd599c4e7fabeac66b14d77b9a8a9cd70a8209edc3a93f6eb16e42fa5be79f1d2'),
+ 'ae2netanalyser': (38, 'aa51ab5a9986cbfb47e635637baad22e68291bbf778f332b19fb2cee393bf30e'),
+ 'cumulus_menus': (35, '72ac5f03af805e3bdd88450fb66650f753ff71edcb93fe6273cfdf3bae1856d9'),
+ 'sodium': (105, 'd3d280e364521c640fc551a85233b94a01c6e95ad4579b6c68c8dba85b864464'),
+ 'betteradvancements': (3, '5145441ad0d99e9b99bc9ac9d4533768ccbe0ca5c819c5cc5d6f11c70afe1657')}
+PRESERVED_METADATA_KEYS = {'transmog': [],
+ 'jei': ['_comment'],
+ 'appleskin': [],
+ 'controlling': [],
+ 'jade': ['__comment', 'jade.metadata'],
+ 'searchables': [],
+ 'resourcefulconfig': [],
+ 'ae2netanalyser': [],
+ 'cumulus_menus': [],
+ 'sodium': [],
+ 'betteradvancements': []}
+LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba69450ff1dbf4b1e0fed3bbc08c',
+ 'LICENSES/Transmog-MIT.txt': 'a366506974a46752dbf54c187288b5d5de7f4570422b0cbacd4f5cd1dcb8f099',
+ 'LICENSES/JEI-MIT.txt': '108c93a97f3011c196b8226f5019a9c09ade318fe3a802be2f7f5ddb2c3a0d04',
+ 'LICENSES/AppleSkin-Unlicense.txt': '88d9b4eb60579c191ec391ca04c16130572d7eedc4a86daa58bf28c6e14c9bcd',
+ 'LICENSES/Controlling-MIT.txt': 'bd03ec3e3879605835ea5239cb6304b0d5694074d924b050c7099acbb89a5813',
+ 'LICENSES/Jade-CC-BY-NC-SA-4.0.md': '03d7d5b3f4b37a576d52db87542ac248e161fc47412192e9543c6a71a82b0ff3',
+ 'LICENSES/Searchables-MIT.txt': '3e8e9a2f792e603fea1bdcf62d1ef51c8b21090db2b1546c254315661ea1fef2',
+ 'LICENSES/ResourcefulConfig-MIT.txt': 'a8e7410d85c405cab5d1a51e198e51495c2ca6447b509eec540cfaff80bba8ea',
+ 'LICENSES/AE2NetworkAnalyzer-LGPL-3.0.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118',
+ 'LICENSES/CumulusMenus-LGPL-3.0.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118',
+ 'LICENSES/GPL-3.0.txt': '3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986',
+ 'LICENSES/Sodium-PolyForm-Shield-1.0.0.md': '67530f8e9adfcc5d2e9d72b804500cebb7472ff84c34a6729a80a2a9be901ee6',
+ 'LICENSES/BetterAdvancements-Dont-Be-a-Jerk.md': '5629128d1f6d0eeec510074078e63a5478f3460dca879bd56d44e41e02da29be'}
+NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
+ 'jei': ('LICENSES/JEI-MIT.txt',),
+ 'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
+ 'controlling': ('LICENSES/Controlling-MIT.txt',),
+ 'jade': ('LICENSES/Jade-CC-BY-NC-SA-4.0.md',),
+ 'searchables': ('LICENSES/Searchables-MIT.txt',),
+ 'resourcefulconfig': ('LICENSES/ResourcefulConfig-MIT.txt',),
+ 'ae2netanalyser': ('LICENSES/AE2NetworkAnalyzer-LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt'),
+ 'cumulus_menus': ('LICENSES/CumulusMenus-LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt'),
+ 'sodium': ('LICENSES/Sodium-PolyForm-Shield-1.0.0.md',),
+ 'betteradvancements': ('LICENSES/BetterAdvancements-Dont-Be-a-Jerk.md',)}
+PACKAGES = {'collection': {'directory': 'resourcepack',
+                'release': 'release.json',
+                'notice': 'NOTICE.md',
+                'filename': 'ATM11-Japanese-0.4.0.zip',
+                'namespaces': ('transmog',
+                               'jei',
+                               'appleskin',
+                               'controlling',
+                               'jade',
+                               'searchables',
+                               'resourcefulconfig',
+                               'ae2netanalyser',
+                               'cumulus_menus',
+                               'sodium',
+                               'betteradvancements'),
+                'licenses': ('LICENSES/Project-MIT.txt',
+                             'LICENSES/Transmog-MIT.txt',
+                             'LICENSES/JEI-MIT.txt',
+                             'LICENSES/AppleSkin-Unlicense.txt',
+                             'LICENSES/Controlling-MIT.txt',
+                             'LICENSES/Jade-CC-BY-NC-SA-4.0.md',
+                             'LICENSES/Searchables-MIT.txt',
+                             'LICENSES/ResourcefulConfig-MIT.txt',
+                             'LICENSES/AE2NetworkAnalyzer-LGPL-3.0.txt',
+                             'LICENSES/CumulusMenus-LGPL-3.0.txt',
+                             'LICENSES/GPL-3.0.txt',
+                             'LICENSES/Sodium-PolyForm-Shield-1.0.0.md',
+                             'LICENSES/BetterAdvancements-Dont-Be-a-Jerk.md'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.4.0: 11 MOD / 1105 keys',
+                                  'min_format': [84, 0],
+                                  'max_format': [84, 0]},
+                         'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
 JEI_METADATA_VALUE = 'Debug (for a debug mode, do not need translation)'
 # The whole original JAR is pinned above. This is the original JA runtime setting,
 # not the English metadata or prose. No source JAR is needed to rebuild this pack.
@@ -128,13 +197,26 @@ def valid_hash(value):
     return isinstance(value, str) and re.fullmatch('[0-9a-f]{64}', value) is not None
 
 
+def validate_nested_identity(namespace, source):
+    """Recheck the public nested identity without requiring private JARs to rebuild."""
+    if 'archive_chain' not in POLICIES[namespace]:
+        return  # Flat schema 1 remains byte-compatible with earlier public evidence.
+    require(source['source_type'] == 'nested_jar_lang' and source['namespace'] == namespace and
+            source['locale'] == 'ja_jp' and source['jar_entry'] == f'assets/{namespace}/lang/en_us.json',
+            f'{namespace}: Wrong nested source kind/namespace/member')
+    core = {key: value for key, value in source.items() if key not in {'version', 'catalog_source_id'}}
+    identity_hash = digest(json.dumps(core, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8'))
+    require(identity_hash == source['catalog_source_id'], f'{namespace}: Nested parent/chain identity digest differs')
+
+
 def validate_evidence(raw, namespace, language, language_sha256):
     evidence = parse(raw)
     require(isinstance(evidence, dict) and set(evidence) == {
         'schema_version', 'namespace', 'source', 'language_sha256', 'reviews',
-    } and type(evidence['schema_version']) is int and evidence['schema_version'] == 1, f'{namespace}: Unexpected review evidence schema')
+    } and type(evidence['schema_version']) is int and evidence['schema_version'] == (2 if 'archive_chain' in POLICIES[namespace] else 1), f'{namespace}: Unexpected review evidence schema')
     require(evidence['namespace'] == namespace and evidence['source'] == POLICIES[namespace],
             f'{namespace}: Review source/version/hash does not match the pinned MOD')
+    validate_nested_identity(namespace, evidence['source'])
     require(evidence['language_sha256'] == language_sha256, f'{namespace}: Review evidence language hash mismatch')
     reviews = evidence['reviews']
     require(isinstance(reviews, list) and bool(reviews), f'{namespace}: No independent review evidence')
@@ -163,7 +245,7 @@ def validate_evidence(raw, namespace, language, language_sha256):
     require(accepted == set(language), f'{namespace}: Language keys must exactly match the independently accepted key union')
 
 
-def validated_files(root, package='base'):
+def validated_files(root, package='collection'):
     config = PACKAGES[package]
     release_raw = read_file(root, config['release'])
     release = parse(release_raw)
@@ -171,7 +253,7 @@ def validated_files(root, package='base'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.3.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.4.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']
@@ -219,6 +301,9 @@ def validated_files(root, package='base'):
         if path.is_file():
             pack_files.add(str(path.relative_to(root / directory)))
     require(pack_files == allowed_pack_files, 'Unexpected file in resourcepack; refusing to include it')
+    require(set(NAMESPACE_LICENSES) == set(config['namespaces']), 'License scope differs from namespace allowlist')
+    license_union = {'LICENSES/Project-MIT.txt'} | {name for names in NAMESPACE_LICENSES.values() for name in names}
+    require(license_union == set(LICENSES) == set(config['licenses']), 'License allowlist does not match collection scopes')
     for name in config['licenses']:
         raw = read_file(root, name)
         require(digest(raw) == LICENSES[name], f'Upstream license bytes changed: {name}')
@@ -226,7 +311,7 @@ def validated_files(root, package='base'):
     return release, files
 
 
-def package_bytes(root, package='base'):
+def package_bytes(root, package='collection'):
     release, files = validated_files(root, package)
     output = io.BytesIO()
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
@@ -261,9 +346,8 @@ def write_new_zip(directory, filename, raw):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Validate release inputs without producing a ZIP')
-    parser.add_argument('--pack', choices=('base', 'jade', 'all'), default='all', help='Which independent pack to validate/build')
     args = parser.parse_args()
-    selected = tuple(PACKAGES) if args.pack == 'all' else (args.pack,)
+    selected = ('collection',)
     try:
         if args.check:
             for package in selected:

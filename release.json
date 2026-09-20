@@ -1,16 +1,43 @@
 {
   "languages": {
+    "ae2netanalyser": {
+      "key_count": 38,
+      "language_sha256": "5c58508c67ede0066dcb7449209697655d52def5b575be93ebb51e52dcfba4f5",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "9e29212dfdfee402a3c3c1742fd67a20267d98bf87cd1e5f3713dfd81c046795"
+    },
     "appleskin": {
       "key_count": 22,
       "language_sha256": "b3fbdd408a4fa064448336d478f0d8deb4c7dfbb8995121e2a96d8bfdb2c456a",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "d208ae2c084b808dc7d1874dfd3dbd8bf13730e187d940797661181ed9ab3858"
     },
+    "betteradvancements": {
+      "key_count": 3,
+      "language_sha256": "b4eeb0b90d8dac2678caaedc8299766c542b253cb807c09123f79f9311dfb7f8",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "de1b36b6d2120f197e15f3e5487057cf859adb33a996a77e72d6b15c42a2f4f0"
+    },
     "controlling": {
       "key_count": 12,
       "language_sha256": "e10ac3b8b9e7b1b64c3e706957ca279e39aff815c00f2f417a99ec5410433661",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "f8d98a3e63b1357d5fe3ac401b47e80ef9f5e149d52749089891270687d41491"
+    },
+    "cumulus_menus": {
+      "key_count": 35,
+      "language_sha256": "2530dc371ed96cda4e9e78962e3ef8d593b5064b858786befd26c03e3b7cb524",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "5022349d232e103648edf7eae9ec7f44bba457a19bac526b9810499c17c92c21"
+    },
+    "jade": {
+      "key_count": 496,
+      "language_sha256": "6262c680db3819b706262e5ab31f69c5fb600e691ebf9960cf43b2b1ca3402e4",
+      "preserved_metadata_keys": [
+        "__comment",
+        "jade.metadata"
+      ],
+      "review_evidence_sha256": "2b69deee566ff72db06074e286e29da1760c428182c5f46354674619c2149c90"
     },
     "jei": {
       "key_count": 335,
@@ -19,6 +46,24 @@
         "_comment"
       ],
       "review_evidence_sha256": "a1a7b6dd295e1eec5283dbf6a7df4883f4fd7140d23199758880d54ea47fdec1"
+    },
+    "resourcefulconfig": {
+      "key_count": 32,
+      "language_sha256": "8000de98cbda25fe01fc6fc26314723bccd7daf4f4c3f8b4417cc94726ee6a76",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "8727acc0cd61d24555872f4c0320a6dde61040e50aeeb12acb2e73c363bb0072"
+    },
+    "searchables": {
+      "key_count": 2,
+      "language_sha256": "c6a58ef5cc32bc5878b4d7d33bc674d3e80f4fb18e3995f1f110e3ebddc2f418",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "0f759e07b592f849df429b9d725a41da5ab93a3fd6f0ef23c2d205784db88f8d"
+    },
+    "sodium": {
+      "key_count": 105,
+      "language_sha256": "819d53c55f73dc64c00ff499c0e558fb8bf5a07eba9a111a15ce905a4d1bf78b",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "11a3425772572591b8b5c884a919b5b1c0f396500b1b1af15447a56f5b4934af"
     },
     "transmog": {
       "key_count": 25,
@@ -29,5 +74,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.3.0"
+  "version": "0.4.0"
 }
