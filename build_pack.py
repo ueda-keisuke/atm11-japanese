@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.14.0'
-NOTICE_SHA256 = '225248388a63155e5bc402e73459cc1774a3b543669090f1a98d630ef201dd33'
+VERSION = '0.15.0'
+NOTICE_SHA256 = '5074d75ef59d6115085eabeb596bc9d5aae36b0c48c38ca7095cda80ade4d13c'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -376,7 +376,19 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'refinedstorage_quartz_arsenal': {'version': '2.0.6',
                                    'jar_sha256': '4e1bd12aa644320195553e76edbdb159150dd51db6268f532544206567ef165a',
                                    'jar_entry': 'assets/refinedstorage_quartz_arsenal/lang/en_us.json',
-                                   'source_sha256': '83bb43ab5a611522ace3a4ac70f099a28c82b1a70fea3ab571dfffad84eb5f39'}}
+                                   'source_sha256': '83bb43ab5a611522ace3a4ac70f099a28c82b1a70fea3ab571dfffad84eb5f39'},
+ 'keybindbundles': {'version': '2.0.0',
+                    'jar_sha256': '8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b',
+                    'jar_entry': 'assets/keybindbundles/lang/en_us.json',
+                    'source_sha256': '12c471f276b91698b06356a395275aaa02ddd49b46febd8e9e7610e90673da68'},
+ 'inworldrecipes': {'version': '2.5.1',
+                    'jar_sha256': '1fd0898a0e593368828e652be86857216e569479514893eae7233051d0d96876',
+                    'jar_entry': 'assets/inworldrecipes/lang/en_us.json',
+                    'source_sha256': '12ae6572529309fd0aa656c047657040d435a65e61f6475d543bd33af44c3e01'},
+ 'matc': {'version': '1.8.0',
+          'jar_sha256': 'e38d08da7a43249d281dbc4aabae37cca59e980a925c4a52f5a830950386c777',
+          'jar_entry': 'assets/matc/lang/en_us.json',
+          'source_sha256': '112e94d9717a11e2db109f91724c53b44ce1cbc82ac805665397659a2ad9471d'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -424,7 +436,10 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'sfm': (277, '12961d780fd822177c6d9f7a9e72520e1b289a6a798e9c60e8e894c4e349bc78'),
  'dimstorage': (36, 'e189469735447e92ccb27207644b6cc5493f7b6ab797816ffd4f6b8a2048fc10'),
  'stepcrafter': (80, 'd874eee788d8af8267292a7659b2dbab94a6c7b090bc162f7bef7af25ad864d1'),
- 'refinedstorage_quartz_arsenal': (23, '3a0235d95e238a19fbd7e969fb24fbae3978ff9993b11efd21d91893abed3463')}
+ 'refinedstorage_quartz_arsenal': (23, '3a0235d95e238a19fbd7e969fb24fbae3978ff9993b11efd21d91893abed3463'),
+ 'keybindbundles': (26, '62860b61aa47d370387753108c398e9216dca7f93c758c86504d6b6e632ec297'),
+ 'inworldrecipes': (38, 'fe114c770cfdc5a174e14fa805d0a53621c774706129215b45c43910d9c04597'),
+ 'matc': (40, '831e3f35c21e5bfd5d916edc6d49421f476c5f475d0742fe1a18197d93f27f83')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -483,7 +498,10 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'sfm': [],
  'dimstorage': [],
  'stepcrafter': [],
- 'refinedstorage_quartz_arsenal': []}
+ 'refinedstorage_quartz_arsenal': [],
+ 'keybindbundles': [],
+ 'inworldrecipes': [],
+ 'matc': []}
 PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
                                'language entries revised or supplied. Original project: Simple Backups by '
                                'MelanX; Apache-2.0. See NOTICE.md and '
@@ -541,7 +559,10 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/SuperFactoryManager-MPL-2.0.txt': '1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5',
  'LICENSES/DimStorage-AGPL-3.0.txt': '8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef',
  'LICENSES/StepCrafter-MIT.txt': '976da1a41c4b86061101f101832ac3d904d95c6836554f5a260c202338b5427d',
- 'LICENSES/RefinedStorageQuartzArsenal-MIT.md': '4f332ed10b4b214c0397a37b0344aa5fd4517ea5631e580c6b43676f92ad9f4e'}
+ 'LICENSES/RefinedStorageQuartzArsenal-MIT.md': '4f332ed10b4b214c0397a37b0344aa5fd4517ea5631e580c6b43676f92ad9f4e',
+ 'LICENSES/KeyBindBundles-MIT.txt': '39b326c42567abc3d4273a67b062c3434fdfc7fa29a2b86a76f9cf41d30171d5',
+ 'LICENSES/InWorldRecipes-MIT.txt': '46daa0bbd05e4249dc930a44059f7abe1e4d36d8a355d8cb840fd190f6df430b',
+ 'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt': '285d661d5a712ee320753bd6e33319bbc95ad947cf97c35844552d3817b070e1'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -592,11 +613,14 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'sfm': ('LICENSES/SuperFactoryManager-MPL-2.0.txt',),
  'dimstorage': ('LICENSES/DimStorage-AGPL-3.0.txt',),
  'stepcrafter': ('LICENSES/StepCrafter-MIT.txt',),
- 'refinedstorage_quartz_arsenal': ('LICENSES/RefinedStorageQuartzArsenal-MIT.md',)}
+ 'refinedstorage_quartz_arsenal': ('LICENSES/RefinedStorageQuartzArsenal-MIT.md',),
+ 'keybindbundles': ('LICENSES/KeyBindBundles-MIT.txt',),
+ 'inworldrecipes': ('LICENSES/InWorldRecipes-MIT.txt',),
+ 'matc': ('LICENSES/MysticalAgricultureTieredCrystals-MIT.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.14.0.zip',
+                'filename': 'ATM11-Japanese-0.15.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -643,7 +667,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'sfm',
                                'dimstorage',
                                'stepcrafter',
-                               'refinedstorage_quartz_arsenal'),
+                               'refinedstorage_quartz_arsenal',
+                               'keybindbundles',
+                               'inworldrecipes',
+                               'matc'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -697,8 +724,11 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/SuperFactoryManager-MPL-2.0.txt',
                              'LICENSES/DimStorage-AGPL-3.0.txt',
                              'LICENSES/StepCrafter-MIT.txt',
-                             'LICENSES/RefinedStorageQuartzArsenal-MIT.md'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.14.0: 47 namespaces / 3438 entries',
+                             'LICENSES/RefinedStorageQuartzArsenal-MIT.md',
+                             'LICENSES/KeyBindBundles-MIT.txt',
+                             'LICENSES/InWorldRecipes-MIT.txt',
+                             'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.15.0: 50 namespaces / 3542 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -861,7 +891,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.14.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.15.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

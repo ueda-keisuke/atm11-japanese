@@ -1,0 +1,63 @@
+{
+  "language_sha256": "d685c71ae203ad577186f49b874ba837073a7958df35fe9b2f123305187b1ead",
+  "namespace": "inworldrecipes",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "jei.inworldrecipes.block_landed",
+        "jei.inworldrecipes.block_state",
+        "jei.inworldrecipes.block_target",
+        "jei.inworldrecipes.chance",
+        "jei.inworldrecipes.chance_results",
+        "jei.inworldrecipes.chat_message",
+        "jei.inworldrecipes.click_type",
+        "jei.inworldrecipes.conditions",
+        "jei.inworldrecipes.consume_dropped_items",
+        "jei.inworldrecipes.consume_held_item",
+        "jei.inworldrecipes.consume_inventory_items",
+        "jei.inworldrecipes.damage",
+        "jei.inworldrecipes.damage_held_item",
+        "jei.inworldrecipes.dropped_item",
+        "jei.inworldrecipes.dropped_items",
+        "jei.inworldrecipes.entity",
+        "jei.inworldrecipes.held_item",
+        "jei.inworldrecipes.ignore_block_state",
+        "jei.inworldrecipes.inventory_items",
+        "jei.inworldrecipes.left_click",
+        "jei.inworldrecipes.lightning",
+        "jei.inworldrecipes.message",
+        "jei.inworldrecipes.output_block_state",
+        "jei.inworldrecipes.pop_items",
+        "jei.inworldrecipes.results",
+        "jei.inworldrecipes.right_click",
+        "jei.inworldrecipes.standing_on",
+        "jei.inworldrecipes.target_block",
+        "jei.inworldrecipes.target_block_tag",
+        "jei.inworldrecipes.to_inventory",
+        "jei.inworldrecipes.triggers",
+        "jei.inworldrecipes.weather",
+        "jei.inworldrecipes.weather_condition",
+        "jei.inworldrecipes.world_recipe",
+        "weather.inworldrecipes.clear",
+        "weather.inworldrecipes.rain",
+        "weather.inworldrecipes.snow",
+        "weather.inworldrecipes.thunder"
+      ],
+      "batch_id": "lang-inworldrecipes-26.1.2-2.5.1-inworldrecipes-66b75a296c-0001",
+      "decision": "accepted",
+      "review_sha256": "4836d3db3e5165d8951483cfb4b4161f24810312d972d183e74246d90da2dc21",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "366f4eef3b7074256aab5ed292d91876d726596ab45e58e496ce8d6daf159186"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/inworldrecipes/lang/en_us.json",
+    "jar_sha256": "1fd0898a0e593368828e652be86857216e569479514893eae7233051d0d96876",
+    "source_sha256": "12ae6572529309fd0aa656c047657040d435a65e61f6475d543bd33af44c3e01",
+    "version": "2.5.1"
+  }
+}

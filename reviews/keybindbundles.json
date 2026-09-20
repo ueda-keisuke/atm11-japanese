@@ -1,0 +1,51 @@
+{
+  "language_sha256": "5fe83378139a30f1c744dc328c8787f43fb8b68202af6d52e698594445e45d75",
+  "namespace": "keybindbundles",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "box.keybindbundles.bundle_name",
+        "box.keybindbundles.key_icon",
+        "box.keybindbundles.key_icon_id",
+        "box.keybindbundles.key_title",
+        "button.keybindbundles.add_bundle",
+        "button.keybindbundles.delete",
+        "button.keybindbundles.edit",
+        "button.keybindbundles.select",
+        "button.keybindbundles.selected",
+        "key.category.keybindbundles.keybindbundles",
+        "key.keybindbundles.bundle",
+        "key.keybindbundles.open_radial_menu",
+        "key.keybindbundles.open_screen",
+        "keybindbundles.configuration.clipMouseToMenu",
+        "keybindbundles.configuration.ignoreInvalidKeyChecks",
+        "keybindbundles.configuration.triggerKeymappingOnRelease",
+        "message.keybindbundles.confirm_deletion",
+        "title.keybindbundles.adding_bundle",
+        "title.keybindbundles.confirm_deletion",
+        "title.keybindbundles.editing_key",
+        "title.keybindbundles.editing_keybundle",
+        "tooltip.keybindbundles.bundle.delete_entry",
+        "tooltip.keybindbundles.bundle.edit_entry",
+        "tooltip.keybindbundles.bundle.move_clockwise",
+        "tooltip.keybindbundles.bundle.move_counterclockwise",
+        "tooltip.keybindbundles.delete_bundle"
+      ],
+      "batch_id": "lang-keybindbundles-2.0.0-keybindbundles-648c3aa5a9-0001",
+      "decision": "accepted",
+      "review_sha256": "aa22394de80b96f5a2a42239962af8da7b2853233d1b40c4c9c0262302df2b52",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "3ded5dfeca833b14a05585a9e7125bc7438eabeadc5355b696376c3f7ac8dc9b"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/keybindbundles/lang/en_us.json",
+    "jar_sha256": "8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b",
+    "source_sha256": "12c471f276b91698b06356a395275aaa02ddd49b46febd8e9e7610e90673da68",
+    "version": "2.0.0"
+  }
+}

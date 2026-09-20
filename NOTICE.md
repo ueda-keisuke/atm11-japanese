@@ -1,12 +1,12 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.14.0 additions / 追加内容
+## 0.15.0 additions / 追加内容
 
-0.14.0では、DimStorageの36項目、Step Crafterの80項目、Refined Storage - Quartz Arsenalの23項目を追加しています。既存の44対象は保持します。全47対象・3,438項目（翻訳3,419、原文メタデータ18、Apache 4(b)改変通知1）を収録します。ゲーム画面の目視確認は0件です。
+0.15.0では、KeyBind Bundlesの26項目、In World Recipesの38項目、Mystical Agriculture Tiered Crystalsの40項目を追加しています。既存の47対象は保持します。全50対象・3,542項目（翻訳3,523、原文メタデータ18、Apache 4(b)改変通知1）を収録します。ゲーム画面の目視確認は0件です。
 
-Version 0.14.0 adds 36 DimStorage entries, 80 Step Crafter entries and 23 Refined Storage - Quartz Arsenal entries. Earlier language/review files and their individual license scopes are retained. Independent language review, format checks and native resource-loader checks are separate from game-screen visual checks, which remain at 0.
+Version 0.15.0 adds 26 KeyBind Bundles entries, 38 In World Recipes entries and 40 Mystical Agriculture Tiered Crystals entries. Earlier language/review files and their individual license scopes are retained. Independent language review, format checks and native resource-loader checks are separate from game-screen visual checks, which remain at 0.
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.14.0 contains 3,438 entries across 47 namespaces: 3,419 translations, 18 preserved original metadata entries and one Apache 4(b) project notice. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.15.0 contains 3,542 entries across 50 namespaces: 3,523 translations, 18 preserved original metadata entries and one Apache 4(b) project notice. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -463,3 +463,47 @@ Upstream language sources: [English](https://github.com/refinedmods/refinedstora
 Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: revised or supplied the 23 Japanese language entries, checking capacity and per-operation energy descriptions against their consumers. Existing Japanese language contributors remain credited through the fixed source above. Installed version: 2.0.6. JAR SHA-256: `4e1bd12aa644320195553e76edbdb159150dd51db6268f532544206567ef165a`. English entry SHA-256: `83bb43ab5a611522ace3a4ac70f099a28c82b1a70fea3ab571dfffad84eb5f39`. Existing Japanese entry SHA-256: `32cc7fbb3739ae203fa69ffb034a4d6ea2a0684799c2f7e14cb564b1d2170bf9`. Both language entries match the fixed source byte-for-byte. Full license SHA-256: `4f332ed10b4b214c0397a37b0344aa5fd4517ea5631e580c6b43676f92ad9f4e`.
 
 Only the editable language overlay is included; Refined Storage parent assets, JARs, Java code, textures and models are not distributed. The 23 keys do not claim coverage of every inherited or hardcoded interface.
+
+## KeyBind Bundles — `assets/keybindbundles/lang/ja_jp.json`
+
+**Copyright (c) 2024 Matyrobbrt.** MIT: the full original text is retained at `LICENSES/KeyBindBundles-MIT.txt`. This Japanese language adaptation retains MIT.
+
+Fixed source: https://github.com/MatyrobbrtMods/KeyBindBundles/tree/6bb50828ff552a719dc0a472d53be4bb3740ee45
+
+Upstream [English language source](https://github.com/MatyrobbrtMods/KeyBindBundles/blob/6bb50828ff552a719dc0a472d53be4bb3740ee45/src/main/resources/assets/keybindbundles/lang/en_us.json). The installed JAR contains no Japanese language file. Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: supplied 26 Japanese language entries after checking their source and consumer context. The modified source is the readable, editable JSON in this ZIP and in `resourcepack/assets/keybindbundles/lang/ja_jp.json` in the repository.
+
+Installed version: 2.0.0. JAR SHA-256: `8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b`. Installed English entry SHA-256: `12c471f276b91698b06356a395275aaa02ddd49b46febd8e9e7610e90673da68`. Fixed source English SHA-256: `7d0e6644c7b0ae0722e2cb505e69f97c120d62a2899b9fd49903ae60380b51ac`. Parsed English keys and values match; serialization bytes differ. Full license SHA-256: `39b326c42567abc3d4273a67b062c3434fdfc7fa29a2b86a76f9cf41d30171d5`.
+
+Only this language overlay is included. MOD JARs, Java code, textures, models and unrelated upstream assets are not distributed. The listed language keys do not establish complete coverage of every screen.
+
+The three NeoForge configuration descriptions derived from ConfigSpec comments are outside these 26 English language-file keys and remain pending. Their configuration labels are included.
+
+## In World Recipes — `assets/inworldrecipes/lang/ja_jp.json`
+
+**Copyright (c) 2026.** Original author: **benbenlaw**. The copyright line is retained exactly as published in the upstream license. MIT: the full original text is retained at `LICENSES/InWorldRecipes-MIT.txt`. This Japanese language adaptation retains MIT.
+
+Fixed source: https://github.com/benbenlaw/InWorldRecipes/tree/5ec90dd8ae023090e171f4f93fbe5f5f1981aa8f
+
+Upstream [English language source](https://github.com/benbenlaw/InWorldRecipes/blob/5ec90dd8ae023090e171f4f93fbe5f5f1981aa8f/src/main/resources/assets/inworldrecipes/lang/en_us.json). The installed JAR contains no Japanese language file. Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: supplied 38 Japanese language entries after checking their source and consumer context. The modified source is the readable, editable JSON in this ZIP and in `resourcepack/assets/inworldrecipes/lang/ja_jp.json` in the repository.
+
+Installed version: 2.5.1. JAR SHA-256: `1fd0898a0e593368828e652be86857216e569479514893eae7233051d0d96876`. Installed English entry SHA-256: `12ae6572529309fd0aa656c047657040d435a65e61f6475d543bd33af44c3e01`. Fixed source English SHA-256: `12ae6572529309fd0aa656c047657040d435a65e61f6475d543bd33af44c3e01`. Both English language files match byte-for-byte. Full license SHA-256: `46daa0bbd05e4249dc930a44059f7abe1e4d36d8a355d8cb840fd190f6df430b`.
+
+Only this language overlay is included. MOD JARs, Java code, textures, models and unrelated upstream assets are not distributed. The listed language keys do not establish complete coverage of every screen.
+
+配布根拠は、上記の固定GitHubソースに含まれる言語JSONとMIT LICENSEです。言語ファイルに別条件や除外指定は確認されませんでした。一方、[CurseForgeの2.5.1配布ページ](https://www.curseforge.com/minecraft/mc-mods/in-world-recipes/files/8587663/dependencies)にはAll Rights Reservedと表示されています。本プロジェクトは、その表記との差を記録したうえで、MITで提供されたソース言語ファイルに基づく日本語改変を配布します。元の配布JARの再配布許可を主張するものではありません。
+
+Distribution of this language adaptation relies on the MIT grant attached to the fixed GitHub source, including this language JSON; no file-specific language exception was found. The CurseForge 2.5.1 download page separately displays All Rights Reserved. This difference is recorded here: this project distributes a modified language work derived from the MIT source and does not claim permission to redistribute the original download JAR.
+
+## Mystical Agriculture Tiered Crystals — `assets/matc/lang/ja_jp.json`
+
+**Copyright (c) 2024 Electrolyte220.** Upstream credits: **BlakeBr0**. MIT: the full original text is retained at `LICENSES/MysticalAgricultureTieredCrystals-MIT.txt`. This Japanese language adaptation retains MIT.
+
+Fixed source: https://github.com/Electrolyte220/MysticalAgricultureTieredCrystals/tree/d3e9cd34de26a945be17d8810f37443411d9d49e
+
+Upstream [English language source](https://github.com/Electrolyte220/MysticalAgricultureTieredCrystals/blob/d3e9cd34de26a945be17d8810f37443411d9d49e/src/main/resources/assets/matc/lang/en_us.json). The installed JAR contains no Japanese language file. Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: supplied 40 Japanese language entries after checking their source and consumer context. The modified source is the readable, editable JSON in this ZIP and in `resourcepack/assets/matc/lang/ja_jp.json` in the repository.
+
+Installed version: 1.8.0. JAR SHA-256: `e38d08da7a43249d281dbc4aabae37cca59e980a925c4a52f5a830950386c777`. Installed English entry SHA-256: `112e94d9717a11e2db109f91724c53b44ce1cbc82ac805665397659a2ad9471d`. Fixed source English SHA-256: `112e94d9717a11e2db109f91724c53b44ce1cbc82ac805665397659a2ad9471d`. Both English language files match byte-for-byte. Full license SHA-256: `285d661d5a712ee320753bd6e33319bbc95ad947cf97c35844552d3817b070e1`.
+
+Only this language overlay is included. MOD JARs, Java code, textures, models and unrelated upstream assets are not distributed. The listed language keys do not establish complete coverage of every screen.
+
+The crystal item tooltips build translation keys by concatenating formatting, English tier-conversion text or a remaining-use label with a value. Those generated strings are outside these 40 fixed language keys; the normal language overlay does not translate them. No crystal behavior or source code is changed.

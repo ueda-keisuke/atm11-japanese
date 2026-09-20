@@ -164,6 +164,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "b5e854ba40eefba57bb563f5010ebba684dd0681aa600dd9ca16188e9cf08de8"
     },
+    "inworldrecipes": {
+      "key_count": 38,
+      "language_sha256": "d685c71ae203ad577186f49b874ba837073a7958df35fe9b2f123305187b1ead",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "8046c8c1fa0a49c67d7d579ef07a41b3b6a8edfff1c3e82c463f7279dedc8bb5"
+    },
     "ironjetpacks": {
       "key_count": 55,
       "language_sha256": "221ca737483d1be6755cf9e4b24ca9b5801d5ec85412795444abb4096377c99c",
@@ -187,6 +193,12 @@
       ],
       "review_evidence_sha256": "a1a7b6dd295e1eec5283dbf6a7df4883f4fd7140d23199758880d54ea47fdec1"
     },
+    "keybindbundles": {
+      "key_count": 26,
+      "language_sha256": "5fe83378139a30f1c744dc328c8787f43fb8b68202af6d52e698594445e45d75",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "9e6e956a8d45b0fd2c167e011d39afab899185414be3e4f3270689bbc3c8ee22"
+    },
     "kuma_api": {
       "key_count": 4,
       "language_sha256": "207e0856c59b6b08011add4320fa018eee7da5ddc222ed54b88fe70f39f749b4",
@@ -198,6 +210,12 @@
       "language_sha256": "c5e90b1322784b2ddb6e3474669e13d805f163bbfdf942c98b9afe6f5d803914",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "d6cd6c2afd626dbc52c570d8d8ede1d689b607103853d6328f62f393c72de138"
+    },
+    "matc": {
+      "key_count": 40,
+      "language_sha256": "f9eb79a690eb6f69136e0e35e7ade9d0618c367f339877d755ebf72fbe8f6853",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "c8c1b1153cf8fe0d50f47c3f20eb6fac619390c75ca2a0970bc9f2e8eead8d40"
     },
     "moreoverlays": {
       "key_count": 40,
@@ -311,5 +329,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.14.0"
+  "version": "0.15.0"
 }

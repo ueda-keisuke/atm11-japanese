@@ -1,0 +1,65 @@
+{
+  "language_sha256": "f9eb79a690eb6f69136e0e35e7ade9d0618c367f339877d755ebf72fbe8f6853",
+  "namespace": "matc",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "item.matc.imperium_crystal",
+        "item.matc.inferium_crystal",
+        "item.matc.prudentium_crystal",
+        "item.matc.supremium_crystal",
+        "item.matc.tertium_crystal",
+        "itemGroup.matc",
+        "matc.configuration.durability",
+        "matc.configuration.durability.tooltip",
+        "matc.configuration.durabilityEnabled",
+        "matc.configuration.durabilityEnabled.tooltip",
+        "matc.configuration.imperiumDurability",
+        "matc.configuration.imperiumDurability.tooltip",
+        "matc.configuration.imperiumDurabilityEnabled",
+        "matc.configuration.imperiumDurabilityEnabled.tooltip",
+        "matc.configuration.inferiumDurability",
+        "matc.configuration.inferiumDurability.tooltip",
+        "matc.configuration.inferiumDurabilityEnabled",
+        "matc.configuration.inferiumDurabilityEnabled.tooltip",
+        "matc.configuration.prudentiumDurability",
+        "matc.configuration.prudentiumDurability.tooltip",
+        "matc.configuration.prudentiumDurabilityEnabled",
+        "matc.configuration.prudentiumDurabilityEnabled.tooltip",
+        "matc.configuration.section.matc.client.toml",
+        "matc.configuration.section.matc.client.toml.title",
+        "matc.configuration.section.matc.server.toml",
+        "matc.configuration.section.matc.server.toml.title",
+        "matc.configuration.supremiumDurability",
+        "matc.configuration.supremiumDurability.tooltip",
+        "matc.configuration.supremiumDurabilityEnabled",
+        "matc.configuration.supremiumDurabilityEnabled.tooltip",
+        "matc.configuration.tertiumDurability",
+        "matc.configuration.tertiumDurability.tooltip",
+        "matc.configuration.tertiumDurabilityEnabled",
+        "matc.configuration.tertiumDurabilityEnabled.tooltip",
+        "matc.configuration.title",
+        "matc.configuration.tooltips",
+        "matc.configuration.upgradeTooltip",
+        "matc.configuration.upgradeTooltip.tooltip",
+        "matc.configuration.usesTooltip",
+        "matc.configuration.usesTooltip.tooltip"
+      ],
+      "batch_id": "lang-matc-1.8.0-matc-630e440672-0001",
+      "decision": "accepted",
+      "review_sha256": "1056cfcdb3de259441c3b5b0423bd887ccbdcd93dd34159b4460c5d97e1b342c",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "5dcecea984657d209eecd9415546fe61081ea0fba200f8c8393c59b117e1e05f"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/matc/lang/en_us.json",
+    "jar_sha256": "e38d08da7a43249d281dbc4aabae37cca59e980a925c4a52f5a830950386c777",
+    "source_sha256": "112e94d9717a11e2db109f91724c53b44ce1cbc82ac805665397659a2ad9471d",
+    "version": "1.8.0"
+  }
+}
