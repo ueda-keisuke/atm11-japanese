@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.12.0'
-NOTICE_SHA256 = '6a753d47dbf73f148a92bb597b87a339747c43ae57c7be1ec5f4031a2c7a2948'
+VERSION = '0.13.0'
+NOTICE_SHA256 = '4a65967204bda1311f62318fbe0604e8ede560b62f4154d9ab7ff18a563a9d66'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -352,7 +352,19 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'interdimensionalwirelesstransmitter': {'version': '26.1.2-1.0.1',
                                          'jar_sha256': '9466a3992f0f27cc1faf0f560c260e1e5741d27977fe4f032ac7079f15f7a01b',
                                          'jar_entry': 'assets/interdimensionalwirelesstransmitter/lang/en_us.json',
-                                         'source_sha256': '9f766ecb36ed67d014bbff30741bd8ea3c9e1aaea901de0d43b6ba6c771bee18'}}
+                                         'source_sha256': '9f766ecb36ed67d014bbff30741bd8ea3c9e1aaea901de0d43b6ba6c771bee18'},
+ 'enchdesc': {'version': '26.1.2.6',
+              'jar_sha256': 'cc86e80d23fb771097441dee77be5d971b4955cafa604690e61cc010083e5dd8',
+              'jar_entry': 'assets/enchdesc/lang/en_us.json',
+              'source_sha256': 'ff1e03874d39f9e3011bf30afc3e88b754a9b3544470459c38b9b0603faf3591'},
+ 'extremesoundmuffler': {'version': '4.03',
+                         'jar_sha256': '5b44c2dad9b0e371748287fed299933dd58d015a42f0860d8c59d29d14764c77',
+                         'jar_entry': 'assets/extremesoundmuffler/lang/en_us.json',
+                         'source_sha256': '77dd7b0e7f33659e0e9bbd30eb7cb077403f4c70271f4309907bfa6513eaae93'},
+ 'sfm': {'version': '4.34.0',
+         'jar_sha256': 'cace8809600cea007dbe5c73dc04c2f780375547ec0717a1ec8c25d991140bf1',
+         'jar_entry': 'assets/sfm/lang/en_us.json',
+         'source_sha256': '64189966cbcaf6714a4d56f0dcca9e057e70ce7a413fc466325d2bf1cdb0b090'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -394,7 +406,10 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'neoforge': (46, '0fb199c160060a593de5238cf97c8e02cd9096a36120a9c5ee6dff87c45aa454'),
  'moreoverlays': (40, '1618b941ba6d309322d6d68f6e0ecb81896fa8472f2afafc64f67d59856ea0b2'),
  'interdimensionalwirelesstransmitter': (10,
-                                         '38101869dc9d8dfcb8bc0105ca74eb29f1e6ece367a962f285ff8005d9963b62')}
+                                         '38101869dc9d8dfcb8bc0105ca74eb29f1e6ece367a962f285ff8005d9963b62'),
+ 'enchdesc': (183, '8f93f7f6d72674769987ed1d0c46cfc17eb9c0c8389c9b95a2e40cace11001dc'),
+ 'extremesoundmuffler': (93, 'ae57eb6617344d60e2c8c265c3033bf6c62103a62b0570f958419b60c083fdfb'),
+ 'sfm': (277, '12961d780fd822177c6d9f7a9e72520e1b289a6a798e9c60e8e894c4e349bc78')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -435,7 +450,22 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'mysticalautomation': [],
  'neoforge': [],
  'moreoverlays': [],
- 'interdimensionalwirelesstransmitter': []}
+ 'interdimensionalwirelesstransmitter': [],
+ 'enchdesc': ['__comment_jei',
+              '__support_betterarcheology',
+              '__support_create_stuff',
+              '__support_deeperdarker',
+              '__support_dungeonsenchantments',
+              '__support_endlessbiomes',
+              '__support_gofish',
+              '__support_grapplemod',
+              '__support_hunterillager',
+              '__support_improved_exp',
+              '__support_shield+',
+              '__support_stalwart_dungeons',
+              '_comment'],
+ 'extremesoundmuffler': [],
+ 'sfm': []}
 PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
                                'language entries revised or supplied. Original project: Simple Backups by '
                                'MelanX; Apache-2.0. See NOTICE.md and '
@@ -487,7 +517,10 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/MysticalAutomation-MIT.txt': '99c858766d01eef611a38b234a2bba5ca9fa2c015e3c12c6da2f80fe3515341e',
  'LICENSES/NeoForge-LGPL-2.1.txt': 'a8746534d481c0d1046a1c6c02acc034231ad45b56f04ca35212e1f23e3f2712',
  'LICENSES/MoreOverlays-MIT.txt': '63ea7f78b45a1c18732a34d272b7dc6bc501e708386354b2dbdba68bc6e0b5de',
- 'LICENSES/InterdimensionalWirelessTransmitter-MIT.txt': '132234f0de1d6bcd91e41a6b9d995d9022d1da093c2c94d131ba1adf4117fcc2'}
+ 'LICENSES/InterdimensionalWirelessTransmitter-MIT.txt': '132234f0de1d6bcd91e41a6b9d995d9022d1da093c2c94d131ba1adf4117fcc2',
+ 'LICENSES/EnchantmentDescriptions-LGPL-2.1.txt': 'a7bb85ecc913dadfba4cef7af27d2789094bdfb9e46d86b0cd8f917ba4e64e23',
+ 'LICENSES/ExtremeSoundMuffler-LGPL-3.0.txt': 'ca25c1e642be3f3fc0576de17a5003df44305d5282a5e0c6cf0999cc75438ec0',
+ 'LICENSES/SuperFactoryManager-MPL-2.0.txt': '1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -532,11 +565,14 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'mysticalautomation': ('LICENSES/MysticalAutomation-MIT.txt',),
  'neoforge': ('LICENSES/NeoForge-LGPL-2.1.txt',),
  'moreoverlays': ('LICENSES/MoreOverlays-MIT.txt',),
- 'interdimensionalwirelesstransmitter': ('LICENSES/InterdimensionalWirelessTransmitter-MIT.txt',)}
+ 'interdimensionalwirelesstransmitter': ('LICENSES/InterdimensionalWirelessTransmitter-MIT.txt',),
+ 'enchdesc': ('LICENSES/EnchantmentDescriptions-LGPL-2.1.txt',),
+ 'extremesoundmuffler': ('LICENSES/ExtremeSoundMuffler-LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt'),
+ 'sfm': ('LICENSES/SuperFactoryManager-MPL-2.0.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.12.0.zip',
+                'filename': 'ATM11-Japanese-0.13.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -577,7 +613,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'mysticalautomation',
                                'neoforge',
                                'moreoverlays',
-                               'interdimensionalwirelesstransmitter'),
+                               'interdimensionalwirelesstransmitter',
+                               'enchdesc',
+                               'extremesoundmuffler',
+                               'sfm'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -625,8 +664,11 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/MysticalAutomation-MIT.txt',
                              'LICENSES/NeoForge-LGPL-2.1.txt',
                              'LICENSES/MoreOverlays-MIT.txt',
-                             'LICENSES/InterdimensionalWirelessTransmitter-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.12.0: 41 namespaces / 2746 entries',
+                             'LICENSES/InterdimensionalWirelessTransmitter-MIT.txt',
+                             'LICENSES/EnchantmentDescriptions-LGPL-2.1.txt',
+                             'LICENSES/ExtremeSoundMuffler-LGPL-3.0.txt',
+                             'LICENSES/SuperFactoryManager-MPL-2.0.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.13.0: 44 namespaces / 3299 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -647,6 +689,21 @@ MULTISOURCE_BATCHES = {'lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0
  'lang-charginggadgets-1.16.1-charginggadgets-74380f08f3-0001': 'lang',
  'derived-charginggadgets-config-0001': 'configuration'}
 
+
+SFM_BATCH_IDS = ('lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0001', 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0002', 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0003', 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0004', 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0005')
+ENCHDESC_METADATA_VALUES = {'__comment_jei': 'JEI Compat',
+ '__support_betterarcheology': 'https://www.curseforge.com/minecraft/mc-mods/better-archeology',
+ '__support_create_stuff': 'https://www.curseforge.com/minecraft/mc-mods/create-stuff-additions',
+ '__support_deeperdarker': 'https://www.curseforge.com/minecraft/mc-mods/deeperdarker',
+ '__support_dungeonsenchantments': 'https://www.curseforge.com/minecraft/mc-mods/dungeons-enchantments',
+ '__support_endlessbiomes': 'https://www.curseforge.com/minecraft/mc-mods/endless-biomes',
+ '__support_gofish': 'Go Fish support https://www.curseforge.com/minecraft/mc-mods/go-fish',
+ '__support_grapplemod': 'Grapple Mod https://www.curseforge.com/minecraft/mc-mods/grappling-hook-mod',
+ '__support_hunterillager': 'https://www.curseforge.com/minecraft/mc-mods/huntersreturn',
+ '__support_improved_exp': 'https://www.curseforge.com/minecraft/mc-mods/improved-exp',
+ '__support_shield+': 'Shields+ https://www.curseforge.com/minecraft/mc-mods/shieldsplus',
+ '__support_stalwart_dungeons': 'https://www.curseforge.com/minecraft/mc-mods/stalwart-dungeons',
+ '_comment': 'Vanilla Enchantment Descriptions'}
 
 def require(condition, message):
     if not condition:
@@ -728,7 +785,7 @@ def validate_evidence(raw, namespace, language, language_sha256):
             fields.add('source_id')
         require(isinstance(review, dict) and set(review) == fields, f'{namespace}: Unexpected review record schema')
         batch = review['batch_id']
-        require(isinstance(batch, str) and re.fullmatch('[A-Za-z0-9_.+-]+', batch) and batch not in seen_batches,
+        require(isinstance(batch, str) and (batch in SFM_BATCH_IDS if namespace == 'sfm' else re.fullmatch('[A-Za-z0-9_.+-]+', batch)) and batch not in seen_batches,
                 f'{namespace}: Invalid/duplicate review batch')
         seen_batches.add(batch)
         require(valid_hash(review['review_sha256']) and valid_hash(review['submission_sha256']),
@@ -770,7 +827,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.12.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.13.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']
@@ -808,6 +865,9 @@ def validated_files(root, package='collection'):
         if namespace in PROJECT_NOTICES:
             require(record['project_notice_keys'] == list(PROJECT_NOTICES[namespace]),
                     f'{namespace}: Project notice key declaration changed')
+        if namespace == 'enchdesc':
+            require(all(language.get(k) == v for k, v in ENCHDESC_METADATA_VALUES.items()),
+                    'Enchantment Descriptions original metadata must remain verbatim')
         if namespace == 'jei':
             require(language['_comment'] == JEI_METADATA_VALUE, 'JEI metadata must remain verbatim')
         if namespace == 'naturescompass':

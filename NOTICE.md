@@ -1,12 +1,12 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.12.0 additions / 追加内容
+## 0.13.0 additions / 追加内容
 
-0.12.0では、NeoForge共通設定46項目、More Overlays Updatedの40項目、Interdimensional Wireless Transmitterの10項目を追加しています。既存範囲は保持します。41のMOD・ライブラリなど、2,746項目（翻訳2,740、原文メタデータ5、Apache 4(b)改変通知1）を収録します。独立レビューとNeoForgeの実装検証を完了し、ゲーム画面の目視確認は0件です。
+0.13.0では、Enchantment Descriptionsの訳文170項目と原文メタデータ13項目、Extreme Sound Mufflerの93項目、Super Factory Managerの277項目を追加しています。既存の41対象は保持します。全44対象・3,299項目（翻訳3,280、原文メタデータ18、Apache 4(b)改変通知1）を収録します。ゲーム画面の目視確認は0件です。
 
-Version 0.12.0 adds 46 NeoForge configuration keys, 40 More Overlays Updated keys, and 10 Interdimensional Wireless Transmitter keys. Earlier namespaces and their individual license scopes are retained. Independent review and NeoForge implementation checks are complete; game-screen visual checks remain at 0.
+Version 0.13.0 adds 183 Enchantment Descriptions entries (170 translations and 13 original metadata entries), 93 Extreme Sound Muffler entries, and 277 Super Factory Manager entries. Earlier language/review files and their individual license scopes are retained. Independent language review, format checks and native resource-loader checks are separate from game-screen visual checks, which remain at 0.
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.12.0 contains 2,746 entries across 41 namespaces: 2,740 translations, five preserved original metadata entries and one Apache 4(b) project notice. The five original metadata entries are JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, and Nature's Compass `_comment`. Game-screen visual checks for this release: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.13.0 contains 3,299 entries across 44 namespaces: 3,280 translations, 18 preserved original metadata entries and one Apache 4(b) project notice. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -398,8 +398,32 @@ Fixed source: https://github.com/starforcraft/Interdimensional-Wireless-Transmit
 
 Target: **26.1.2-1.0.1**, 10 language keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. The transmitter requires Refined Storage and provides cross-dimensional, unlimited-range network access; no Refined Storage assets, JAR, Java source, logo or textures are included. The editable modified Japanese JSON and accepted review provenance are included.
 
+## Enchantment Descriptions — `assets/enchdesc/lang/ja_jp.json`
+
+**Darkhax.** LGPL-2.1-only: the complete original license is preserved as `LICENSES/EnchantmentDescriptions-LGPL-2.1.txt`. This Japanese language adaptation is provided under the same terms.
+
+Fixed source: https://github.com/Darkhax-Minecraft/Enchantment-Descriptions/tree/20c67ad705944c9721355a2049d11563c61cf208
+
+Target: **26.1.2.6**, 183 current English-corresponding keys: 170 language entries and 13 verbatim original metadata entries. The fixed source English and Japanese assets match the installed JAR as parsed JSON; serialization differs. Existing Japanese from the same project is acknowledged and is not claimed as wholly original work. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. The complete modified, human-readable source is `assets/enchdesc/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository). The original support links and metadata remain unchanged. Third-party integrations named by the descriptions are not bundled. Description availability depends on the actual lookup route and installed integrations; original keys are retained, including the source `enchantment.endlessbiomes.shared_pain` key without a description suffix.
+
+## Extreme Sound Muffler — `assets/extremesoundmuffler/lang/ja_jp.json`
+
+**LeoBeliik.** LGPL-3.0-only: the full original LGPL text is `LICENSES/ExtremeSoundMuffler-LGPL-3.0.txt`, with the incorporated GPLv3 terms in `LICENSES/GPL-3.0.txt`. This Japanese language adaptation is provided under LGPL-3.0-only.
+
+Fixed source: https://github.com/LeoBeliik/ExtremeSoundMuffler/tree/6ec1ead220b7703c2a0f3537e625b4033239f557
+
+Target: **4.03**, 93 current English language keys. The fixed English source and installed JAR asset match byte-for-byte. The upstream Japanese `lang/needUpdate/ja_jp.json` file is legacy context, not a runtime language asset or an extra file in this release. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. The complete editable modified source is `assets/extremesoundmuffler/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository). An unresolved volume-slider narration consumer issue is outside this language-only modification.
+
+## Super Factory Manager — `assets/sfm/lang/ja_jp.json`
+
+**TeamDman.** Mozilla Public License **2.0**: the full original license is `LICENSES/SuperFactoryManager-MPL-2.0.txt`. This modified language file is Covered Software supplied in Source Code Form under MPL 2.0. The complete, editable modified source is `assets/sfm/lang/ja_jp.json` in this ZIP and `resourcepack/assets/sfm/lang/ja_jp.json` in the public repository. Recipients may obtain and modify it under the MPL 2.0 terms; no additional restriction applies to this file.
+
+Fixed source: https://github.com/TeamDman/SuperFactoryManager/tree/fe32b29453b13b4f3050ad441677c7eb79e80814 (tag `4.34.0-26.1.2`).
+
+Target: **4.34.0**, 277 current English language keys from the installed JAR. English language generation is defined in upstream Java localization declarations; this release does not claim byte identity with a tracked source English JSON file. The original generated language asset and JAR hashes are pinned in `reviews/sfm.json`. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: Japanese names, action labels, diagnostics and explanations are supplied. For `gui.sfm.item_inspector.copied_to_clipboard`, the original `Copied {} characters to clipboard!` uses a placeholder incompatible with the actual Minecraft translatable-component consumer. The Japanese value uses `%s` for the supplied character-count component; native composition was checked with 0, 1, 127 and 1024 characters. Other identifiers, DSL syntax and argument contracts retain their source meanings. No SFM JAR, Java implementation, DSL program, model, texture or other third-party asset is bundled.
+
 ## Project contributions and provenance
 
-`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage, Building Gadgets 2, Charging Gadgets, ElevatorID, Mystical Automation, More Overlays Updated, Interdimensional Wireless Transmitter), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to NeoForge, Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, Curios, Nature's Compass, Simple Backups, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
+`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage, Building Gadgets 2, Charging Gadgets, ElevatorID, Mystical Automation, More Overlays Updated, Interdimensional Wireless Transmitter), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to NeoForge, Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, Curios, Nature's Compass, Simple Backups, Enchantment Descriptions, Extreme Sound Muffler, Super Factory Manager, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.

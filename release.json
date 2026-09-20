@@ -108,6 +108,26 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "38bf9eea34163e48e3565af14c181c898a499d90e2248764b42cccb1a996c0c0"
     },
+    "enchdesc": {
+      "key_count": 183,
+      "language_sha256": "df4a86eaaa80c05ff2d92a0a7820eff75a3ddffc2743f7a1ab28843b3f56e656",
+      "preserved_metadata_keys": [
+        "__comment_jei",
+        "__support_betterarcheology",
+        "__support_create_stuff",
+        "__support_deeperdarker",
+        "__support_dungeonsenchantments",
+        "__support_endlessbiomes",
+        "__support_gofish",
+        "__support_grapplemod",
+        "__support_hunterillager",
+        "__support_improved_exp",
+        "__support_shield+",
+        "__support_stalwart_dungeons",
+        "_comment"
+      ],
+      "review_evidence_sha256": "eee151925e312bb4218c25071a7db00cfb5b1a74d53d1708fc739b31c3c7dae3"
+    },
     "enderio": {
       "key_count": 1,
       "language_sha256": "686ca776305255efe3890cdb7b33977c8cbfa8a4b159951004c28ab897d908b3",
@@ -119,6 +139,12 @@
       "language_sha256": "469fc3207341db636b92ce3b3dd7936bbb7553d6252b9c9c0b973a0691a6f37a",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "0157efe651f98ac895bc6a0778f55a8c90483c7d602f69bd5f6083b2c55584fe"
+    },
+    "extremesoundmuffler": {
+      "key_count": 93,
+      "language_sha256": "3bfd89b8c7d7f4a535012e646596c05fa1444d1a17f1874ba8b596ae80feea77",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "098414cb8bd82ae715a5081f313fc890b21f01e3132576f7e88c85e9916365ac"
     },
     "functionalstorage": {
       "key_count": 164,
@@ -219,6 +245,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "0f759e07b592f849df429b9d725a41da5ab93a3fd6f0ef23c2d205784db88f8d"
     },
+    "sfm": {
+      "key_count": 277,
+      "language_sha256": "e6ba5a39d9c59a2303bbd65144d5c780209452537fac9fecfcdc13a3d2ce2e26",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "400713cf54171c82611c4ed666f6e7f04799775dde790627f579cfbcf92d574d"
+    },
     "simplebackups": {
       "key_count": 43,
       "language_sha256": "2a903d256777cb6d0b91cc7d6dec767bb5fba7ee88546bd4575fd9b207b09e21",
@@ -261,5 +293,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.12.0"
+  "version": "0.13.0"
 }
