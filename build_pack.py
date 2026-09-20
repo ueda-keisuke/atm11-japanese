@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.23.0'
-NOTICE_SHA256 = '07ed192fd754d043a65feadc0afad179597ec7471cde3c28f29401721e68ddc8'
+VERSION = '0.24.0'
+NOTICE_SHA256 = 'e3488a0f166e133ebd220f94209679a4515686f20e130f490410d8da9f3ff0a6'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -674,7 +674,7 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'measurements': (21, '8047458ebed154364b00808a67539f10a8ae9dbc9fac10d5350ebf4b9d6033a9'),
  'mininggadgets': (86, '90ca5207f6d593dd8786ad93b2a10de8d11c6e423b8826ea59606fd9e74feca2'),
  'balm': (53, 'cd75f07dde765ab106baa0afa77974c874f8417db5f8cb15d7930c524cec868a'),
- 'ae2': (300, 'f7dec96c9a52c811df72618d85c15d7f5eace941194086f75dbc0f6644fd1597')}
+ 'ae2': (538, '7c2e8e5e9288ce0652195b8acba478119e2927558dffd61ac1ef0314e15eb6df')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -874,7 +874,7 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.23.0.zip',
+                'filename': 'ATM11-Japanese-0.24.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -992,7 +992,7 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/MiningGadgets-MIT.txt',
                              'LICENSES/Balm-Apache-2.0.txt',
                              'LICENSES/Balm-NOTICE.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.23.0: 55 namespaces / 4269 entries',
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.24.0: 55 namespaces / 4507 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -1188,7 +1188,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.23.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.24.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

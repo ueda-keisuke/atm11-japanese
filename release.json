@@ -7,10 +7,10 @@
       "review_evidence_sha256": "2b82dcf59f1f06f4eeede0f80c14281a84af020d4f688dd7d058313189b0be8f"
     },
     "ae2": {
-      "key_count": 300,
-      "language_sha256": "e28a368ea4b7456ac8db8b2c616b6108d851a94f2bc0445801a995b6ef65045b",
+      "key_count": 538,
+      "language_sha256": "8c3d757122460c944700e4a1f1da940074b1228816f12dc31b76c948b484bcb4",
       "preserved_metadata_keys": [],
-      "review_evidence_sha256": "b1f3f5b817e8bb97cefcb275ded397b34e5041a8547e762e426298c7c60123e7"
+      "review_evidence_sha256": "0299b5b26173d16609af9b0493b1e09fec0a7f2f61a077135da586a9ca45ead1"
     },
     "ae2addonlib": {
       "key_count": 11,
@@ -364,5 +364,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.23.0"
+  "version": "0.24.0"
 }
