@@ -1,0 +1,15 @@
+{
+  "pack": {
+    "description": "ATM11 日本語改善: Transmog（25項目）",
+    "min_format": [84, 0],
+    "max_format": [84, 0]
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "^transmog$",
+        "path": "^lang/ja_jp\\.json$"
+      }
+    ]
+  }
+}
