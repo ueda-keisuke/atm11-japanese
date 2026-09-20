@@ -66,6 +66,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "36bf98ef4317096d72ac40e4a4308ca6d15aff2b36ef267be5b77758111cbbd1"
     },
+    "extendedae": {
+      "key_count": 253,
+      "language_sha256": "469fc3207341db636b92ce3b3dd7936bbb7553d6252b9c9c0b973a0691a6f37a",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "0157efe651f98ac895bc6a0778f55a8c90483c7d602f69bd5f6083b2c55584fe"
+    },
     "jade": {
       "key_count": 496,
       "language_sha256": "6262c680db3819b706262e5ab31f69c5fb600e691ebf9960cf43b2b1ca3402e4",
@@ -142,5 +148,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.5.0"
+  "version": "0.6.0"
 }

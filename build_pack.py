@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.5.0'
+VERSION = '0.6.0'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': r'^lang/ja_jp\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -186,7 +186,11 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'advanced_ae': {'version': '26.1.7',
                  'jar_sha256': 'fae810b62ecd1746ab9b74ba6e0b5242ab7c0e92d291704e4ea755c83230b233',
                  'jar_entry': 'assets/advanced_ae/lang/en_us.json',
-                 'source_sha256': '5e51d65570442553dc00fe35d4fec9a2f9083a4fd519ca344692125238cb032e'}}
+                 'source_sha256': '5e51d65570442553dc00fe35d4fec9a2f9083a4fd519ca344692125238cb032e'},
+ 'extendedae': {'version': '26.1-1.0.4-neoforge',
+                'jar_sha256': '0201b58f5bdd33b2edffc786fbea7fbdbae06861f5beea1e6144ce4774e66e21',
+                'jar_entry': 'assets/extendedae/lang/en_us.json',
+                'source_sha256': 'e179f160074aa4d920d915ae407361f52a95f2488879a521c6f2215916361915'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -208,7 +212,8 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'enderio': (1, 'afe1b8102499b70c49e209a79bf72e5ad0c7d5df9af73d71bcf62cb41bc67960'),
  'magicparticleslib': (2, '3e0e053f7741f2238a3a75c47518047524cf2114caefae6aaaf382fd1fa75635'),
  'spectrelib': (1, 'e468fbd829e841aec05cf72412d7470d806a74817acfc3bec0f5beb9dcf2e16b'),
- 'advanced_ae': (245, 'db020a473aba0ed24a3498b219d75f5ad47a49ac069fecc139407ca8bae53774')}
+ 'advanced_ae': (245, 'db020a473aba0ed24a3498b219d75f5ad47a49ac069fecc139407ca8bae53774'),
+ 'extendedae': (253, '617a9617e002fa13ed9e1f469a05c68e4ac5b0d8c088f56081fe5123edee07c2')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -230,7 +235,8 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'enderio': [],
  'magicparticleslib': [],
  'spectrelib': [],
- 'advanced_ae': []}
+ 'advanced_ae': [],
+ 'extendedae': []}
 LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba69450ff1dbf4b1e0fed3bbc08c',
  'LICENSES/Transmog-MIT.txt': 'a366506974a46752dbf54c187288b5d5de7f4570422b0cbacd4f5cd1dcb8f099',
  'LICENSES/JEI-MIT.txt': '108c93a97f3011c196b8226f5019a9c09ade318fe3a802be2f7f5ddb2c3a0d04',
@@ -255,7 +261,8 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/MagicParticlesLib-MIT-Code.txt': 'b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5',
  'LICENSES/SpectreLib-Original-Notice.txt': '0c32ff90345592abc45b827a582a6cb0911accefe9cb3c9342c388e1e5cef458',
  'LICENSES/GNU-LGPL-2.1.txt': '5749785c8bdefafcb5d798270ed0a967036fe2ca63dcedade1627565dfef81d2',
- 'LICENSES/AdvancedAE-LGPL-3.0.md': 'dfd18396dbca8237050f4c2cd9295c1a01a1c5ae78d17829e55842508a2c7f77'}
+ 'LICENSES/AdvancedAE-LGPL-3.0.md': 'dfd18396dbca8237050f4c2cd9295c1a01a1c5ae78d17829e55842508a2c7f77',
+ 'LICENSES/ExtendedAE-LGPL-3.0.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -277,11 +284,12 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'enderio': ('LICENSES/EnderIO-Unlicense.txt', 'LICENSES/CC0-1.0.txt'),
  'magicparticleslib': ('LICENSES/CC-BY-4.0.txt', 'LICENSES/MagicParticlesLib-MIT-Code.txt'),
  'spectrelib': ('LICENSES/SpectreLib-Original-Notice.txt', 'LICENSES/GNU-LGPL-2.1.txt'),
- 'advanced_ae': ('LICENSES/AdvancedAE-LGPL-3.0.md', 'LICENSES/GPL-3.0.txt')}
+ 'advanced_ae': ('LICENSES/AdvancedAE-LGPL-3.0.md', 'LICENSES/GPL-3.0.txt'),
+ 'extendedae': ('LICENSES/ExtendedAE-LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt')}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.5.0.zip',
+                'filename': 'ATM11-Japanese-0.6.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -303,7 +311,8 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'enderio',
                                'magicparticleslib',
                                'spectrelib',
-                               'advanced_ae'),
+                               'advanced_ae',
+                               'extendedae'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -328,8 +337,9 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/MagicParticlesLib-MIT-Code.txt',
                              'LICENSES/SpectreLib-Original-Notice.txt',
                              'LICENSES/GNU-LGPL-2.1.txt',
-                             'LICENSES/AdvancedAE-LGPL-3.0.md'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.5.0: 22 namespaces / 1702 keys',
+                             'LICENSES/AdvancedAE-LGPL-3.0.md',
+                             'LICENSES/ExtendedAE-LGPL-3.0.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.6.0: 23 namespaces / 1955 keys',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -428,7 +438,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.5.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.6.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

@@ -1,6 +1,6 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.5.0 contains 1702 keys across 22 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.6.0 contains 1955 keys across 23 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -218,8 +218,22 @@ Source: https://github.com/pedroksl/AdvancedAE/tree/03d04eb70717591c33aeafbdb336
 
 Target: **26.1.7**, 245 keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: Japanese names, settings, explanations and search terms are revised/supplied. Existing Japanese originates in the same upstream source; it is not claimed as wholly new work. The complete modified, human-readable source is `assets/advanced_ae/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository), under LGPL 3.0. The separately identified AE2AddonLib child has its own GPL scope above. No JAR, Java code, model or texture is included.
 
+## ExtendedAE — `assets/extendedae/lang/ja_jp.json`
+
+**GlodBlock.** Original metadata credits: **Sea_Kerman** (model), **Ridanisaurus** (new texture), **gt147532689** (Chinese Simplified), and **nekitbrush** (Russian). Those image, model and other visual assets are not included. GNU Lesser General Public License **3.0**: `LICENSES/ExtendedAE-LGPL-3.0.txt`; the LGPL incorporates GPLv3 terms, and the full GPL is also included in `LICENSES/GPL-3.0.txt`. This Japanese adaptation remains under LGPL 3.0, not MIT.
+
+Target: **26.1-1.0.4-neoforge**, 253 keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: Japanese names, settings, explanations and search terms are revised/supplied. No executable code is changed.
+
+Exact source: https://github.com/GlodBlock/ExtendedAE/tree/333be17a2b936c4b20f24edff6fd9fa61743ecc0
+
+Original English: https://github.com/GlodBlock/ExtendedAE/blob/333be17a2b936c4b20f24edff6fd9fa61743ecc0/src/main/resources/assets/extendedae/lang/en_us.json
+
+Original Japanese: https://github.com/GlodBlock/ExtendedAE/blob/333be17a2b936c4b20f24edff6fd9fa61743ecc0/src/main/resources/assets/extendedae/lang/ja_jp.json
+
+The complete modified, human-readable source is `assets/extendedae/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository), under LGPL 3.0. The existing upstream Japanese values are retained where applicable and are not claimed as wholly new work. Original and modified hashes are recorded in `reviews/extendedae.json` and `release.json`. GuideME in-game guide pages (45 pages), hardcoded display text, and image/model assets are outside this 253-key language scope.
+
 ## Project contributions and provenance
 
-`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib), plus the AppleSkin additions as described above. It **does not** apply to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
+`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib), plus the AppleSkin additions as described above. It **does not** apply to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.
