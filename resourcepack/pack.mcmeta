@@ -1,8 +1,14 @@
 {
   "pack": {
-    "description": "ATM11 日本語改善: Transmog / JEI",
-    "min_format": [84, 0],
-    "max_format": [84, 0]
+    "description": "ATM11 日本語改善: Transmog / JEI / AppleSkin / Controlling",
+    "min_format": [
+      84,
+      0
+    ],
+    "max_format": [
+      84,
+      0
+    ]
   },
   "filter": {
     "block": [

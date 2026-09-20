@@ -1,0 +1,14 @@
+{
+  "options.availableKeys": "使用可能なキー",
+  "options.confirmReset": "リセットしますか？",
+  "options.showAll": "すべて表示",
+  "options.showConflicts": "競合しているキーを表示",
+  "options.showNone": "未割り当てのキーを表示",
+  "options.sort": "並べ替え",
+  "options.sortAZ": "A→Z順",
+  "options.sortKeyAZ": "キー名：A→Z順",
+  "options.sortKeyZA": "キー名：Z→A順",
+  "options.sortNone": "並べ替えなし",
+  "options.sortZA": "Z→A順",
+  "options.toggleFree": "未割り当てキーの表示切替"
+}

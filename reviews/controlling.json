@@ -1,0 +1,37 @@
+{
+  "language_sha256": "e10ac3b8b9e7b1b64c3e706957ca279e39aff815c00f2f417a99ec5410433661",
+  "namespace": "controlling",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "options.availableKeys",
+        "options.confirmReset",
+        "options.showAll",
+        "options.showConflicts",
+        "options.showNone",
+        "options.sort",
+        "options.sortAZ",
+        "options.sortKeyAZ",
+        "options.sortKeyZA",
+        "options.sortNone",
+        "options.sortZA",
+        "options.toggleFree"
+      ],
+      "batch_id": "lang-Controlling-neoforge-26.1.2-26.1.2.4-controlling-e6bd7bfc3e-0001",
+      "decision": "accepted",
+      "review_sha256": "44b118def7e0ce80fe20fd23c432077c2c7670493e8bf2a7ba0af7407212b30c",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "87cae6de68ae590ddd51b8b88e1b34d92c3a1a44c40dfcdfe31be71ef3c8c423"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/controlling/lang/en_us.json",
+    "jar_sha256": "16289226a72a8709d77e2f477beaf276d4a90583efc712c6114811fd1a3a3f51",
+    "source_sha256": "ddd09483c4b6c3b898ca28e3b22e8fb4b042abc402bdef50c1a12cb49fe27725",
+    "version": "26.1.2.4"
+  }
+}
