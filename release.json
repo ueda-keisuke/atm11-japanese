@@ -96,6 +96,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "5022349d232e103648edf7eae9ec7f44bba457a19bac526b9810499c17c92c21"
     },
+    "curios": {
+      "key_count": 48,
+      "language_sha256": "9310cfff7d59b4a13e4946c41013227822d26b70dc1d256359fe166d34fff8d9",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "f6e3f8ecaec89e587927dff2de53a875ffbf042238ef3b0692031e07cf368ea7"
+    },
     "enderio": {
       "key_count": 1,
       "language_sha256": "686ca776305255efe3890cdb7b33977c8cbfa8a4b159951004c28ab897d908b3",
@@ -149,6 +155,14 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "d6cd6c2afd626dbc52c570d8d8ede1d689b607103853d6328f62f393c72de138"
     },
+    "naturescompass": {
+      "key_count": 44,
+      "language_sha256": "c586d5fb2c6be76039fd5800afca89d49339eb9965d9d97fe16df0cbfc3544e0",
+      "preserved_metadata_keys": [
+        "_comment"
+      ],
+      "review_evidence_sha256": "1e3700b4685b54b0026d7a7d32309a9012210811058be413c18a8e53fd4d9896"
+    },
     "quarryplus": {
       "key_count": 240,
       "language_sha256": "5b2ca6b32762edb3fc539cffcf3fcc21616a0656cf103ca4b09a13df61b9d6af",
@@ -174,6 +188,15 @@
       "language_sha256": "c6a58ef5cc32bc5878b4d7d33bc674d3e80f4fb18e3995f1f110e3ebddc2f418",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "0f759e07b592f849df429b9d725a41da5ab93a3fd6f0ef23c2d205784db88f8d"
+    },
+    "simplebackups": {
+      "key_count": 43,
+      "language_sha256": "2a903d256777cb6d0b91cc7d6dec767bb5fba7ee88546bd4575fd9b207b09e21",
+      "preserved_metadata_keys": [],
+      "project_notice_keys": [
+        "_comment"
+      ],
+      "review_evidence_sha256": "c577ce7e868695dc3936d11405374f4e6b87896bdc21f98ac5d6f002d830ec7c"
     },
     "sodium": {
       "key_count": 105,
@@ -208,5 +231,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.9.0"
+  "version": "0.10.0"
 }

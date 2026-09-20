@@ -1,0 +1,70 @@
+{
+  "language_sha256": "2a903d256777cb6d0b91cc7d6dec767bb5fba7ee88546bd4575fd9b207b09e21",
+  "namespace": "simplebackups",
+  "project_notices": {
+    "_comment": "Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese language entries revised or supplied. Original project: Simple Backups by MelanX; Apache-2.0. See NOTICE.md and LICENSES/SimpleBackups-Apache-2.0.txt."
+  },
+  "reviews": [
+    {
+      "accepted_keys": [
+        "simplebackups.backup_errors",
+        "simplebackups.backup_failed_continue",
+        "simplebackups.backup_failed_delete",
+        "simplebackups.backup_finished",
+        "simplebackups.backup_started",
+        "simplebackups.backups_paused",
+        "simplebackups.commands.error",
+        "simplebackups.commands.finished",
+        "simplebackups.commands.is_merging",
+        "simplebackups.commands.only_modified",
+        "simplebackups.configuration.backupChainsToKeep",
+        "simplebackups.configuration.backupFormat",
+        "simplebackups.configuration.backupType",
+        "simplebackups.configuration.captureLatestLog",
+        "simplebackups.configuration.collectErrors",
+        "simplebackups.configuration.commandsCheatsDisabled",
+        "simplebackups.configuration.compressionLevel",
+        "simplebackups.configuration.createSubDirs",
+        "simplebackups.configuration.deleteUnfinishedBackup",
+        "simplebackups.configuration.enabled",
+        "simplebackups.configuration.error_handling",
+        "simplebackups.configuration.fullBackupTimer",
+        "simplebackups.configuration.ignored_files",
+        "simplebackups.configuration.ignored_files_regex",
+        "simplebackups.configuration.ignored_paths",
+        "simplebackups.configuration.maxDiskSize",
+        "simplebackups.configuration.mc2discord",
+        "simplebackups.configuration.messagesForEveryone",
+        "simplebackups.configuration.mod_compat",
+        "simplebackups.configuration.noPlayerBackupCount",
+        "simplebackups.configuration.noPlayerBackupTimer",
+        "simplebackups.configuration.noPlayerBackups",
+        "simplebackups.configuration.onlyFavorites",
+        "simplebackups.configuration.outputPath",
+        "simplebackups.configuration.preCopy",
+        "simplebackups.configuration.saveAll",
+        "simplebackups.configuration.sbkAlgorithm",
+        "simplebackups.configuration.sendMessages",
+        "simplebackups.configuration.timer",
+        "simplebackups.configuration.to_ignore",
+        "simplebackups.configuration.useTickCounter",
+        "simplebackups.not_enough_space"
+      ],
+      "batch_id": "lang-SimpleBackups-26.1.5-simplebackups-b47a831a51-0001",
+      "decision": "accepted",
+      "review_sha256": "7d76725369dc30049788a4e67ca108849de1e2d35bc4c950a48e6b800cb0fe91",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "bfcdc1e76c76babbaf65c447c37e2a1706bfe43d2cf52b55d636bf25692fe7e4"
+    }
+  ],
+  "schema_version": 4,
+  "source": {
+    "jar_entry": "assets/simplebackups/lang/en_us.json",
+    "jar_sha256": "0b42165d9fc5381c4e99ae568deaa6728ba883f59a9f8fb37427fc7fd63b3b43",
+    "source_sha256": "d19b811d572b077ae6d127be3d2fc94878a603cf470c2b85777482d0fe13f079",
+    "version": "26.1.5"
+  }
+}

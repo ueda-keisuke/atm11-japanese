@@ -13,7 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.9.0'
+VERSION = '0.10.0'
+NOTICE_SHA256 = 'c5f7b263eb92e7c7cd2305434b74f6c0282e8549ff30d54a9244d2cc85478319'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': r'^lang/ja_jp\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -281,7 +282,19 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'charginggadgets': {'version': '1.16.1',
                      'jar_sha256': 'ccdea206eed498468abd301af253785dc9ac2e6bd8294c5289a07023a948f7a1',
                      'jar_entry': 'assets/charginggadgets/lang/en_us.json',
-                     'source_sha256': '8339631abc45e840c01fa7cbf5875256052ed5ebaa7af458c8fba1ae6141daa5'}}
+                     'source_sha256': '8339631abc45e840c01fa7cbf5875256052ed5ebaa7af458c8fba1ae6141daa5'},
+ 'curios': {'version': '15.0.0+26.1.2',
+            'jar_sha256': 'ea1e92cd9dbfb93d2d363e2aced406a1749a4ed3e47bf06cce463903a99fd267',
+            'jar_entry': 'assets/curios/lang/en_us.json',
+            'source_sha256': '2915b2028e204f160d8f2d180aaf150996903c539548a6acadfa3aaabe394f68'},
+ 'naturescompass': {'version': '26.1-3.3.0-neoforge',
+                    'jar_sha256': 'aa58cccc7c40230b75494d53fa21f008e0d76825c7881c5edbc59cf30abb79d5',
+                    'jar_entry': 'assets/naturescompass/lang/en_us.json',
+                    'source_sha256': '2312bf1655fb2bf8b0dd3fb27edd76659017d499c0a29190e39e2eab1759e9bd'},
+ 'simplebackups': {'version': '26.1.5',
+                   'jar_sha256': '0b42165d9fc5381c4e99ae568deaa6728ba883f59a9f8fb37427fc7fd63b3b43',
+                   'jar_entry': 'assets/simplebackups/lang/en_us.json',
+                   'source_sha256': 'd19b811d572b077ae6d127be3d2fc94878a603cf470c2b85777482d0fe13f079'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -314,7 +327,10 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'ironjetpacks': (55, '26847e092d60d1cdb6811364fa531fa3be736220baa74594ccda7ca8fe6fd92b'),
  'functionalstorage': (164, '5cb38a402b107fcdd1e571945061be664faac471f30f330a8ac6e5dcc77781f6'),
  'buildinggadgets2': (113, '86fa833b2f9490bac7e9be9a71410f45e143584d2bbc75b95151db02b4606dc1'),
- 'charginggadgets': (6, 'a835f0e45a8f7adc97ad0a6467e7119ff78df0f419e777ec38a871340ac70aed')}
+ 'charginggadgets': (6, 'a835f0e45a8f7adc97ad0a6467e7119ff78df0f419e777ec38a871340ac70aed'),
+ 'curios': (48, '48448bd37c4568fa7ea4a8abd4132ce112169de66c9f2c0a79fc50edbfad10a9'),
+ 'naturescompass': (44, '778e3d9cedd84969f9b5afc49b046a73c72ae72c4fa15875b33dd033c4e3d201'),
+ 'simplebackups': (43, '979b29e83d159105bfdeb7940003902c2de6ebbf8ecefc9c7b7057a191f026da')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -347,7 +363,14 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'ironjetpacks': [],
  'functionalstorage': [],
  'buildinggadgets2': [],
- 'charginggadgets': []}
+ 'charginggadgets': [],
+ 'curios': [],
+ 'naturescompass': ['_comment'],
+ 'simplebackups': []}
+PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
+                               'language entries revised or supplied. Original project: Simple Backups by '
+                               'MelanX; Apache-2.0. See NOTICE.md and '
+                               'LICENSES/SimpleBackups-Apache-2.0.txt.'}}
 LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba69450ff1dbf4b1e0fed3bbc08c',
  'LICENSES/Transmog-MIT.txt': 'a366506974a46752dbf54c187288b5d5de7f4570422b0cbacd4f5cd1dcb8f099',
  'LICENSES/JEI-MIT.txt': '108c93a97f3011c196b8226f5019a9c09ade318fe3a802be2f7f5ddb2c3a0d04',
@@ -385,7 +408,12 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/IronJetpacks-MIT.txt': 'b39f78eb5c0ea06ffd89f824925c86f712f27f663f976cd50727df6856f037a2',
  'LICENSES/FunctionalStorage-MIT.txt': 'b64ac86da57a720bed3d42256d4ed88cfca541b22c3f3167e0ab86b689c0072a',
  'LICENSES/BuildingGadgets2-MIT.txt': '85c1d2f248062d5a9d86f408a95ff453cce2da66da9983f4f2264b4f080c379f',
- 'LICENSES/ChargingGadgets-MIT.txt': '950d1ff370fd55e2dde8de824c0e2ed6cac7a656a7be9afc417b61ed6732347d'}
+ 'LICENSES/ChargingGadgets-MIT.txt': '950d1ff370fd55e2dde8de824c0e2ed6cac7a656a7be9afc417b61ed6732347d',
+ 'LICENSES/Curios-LGPL-3.0-or-later.txt': '951a45e06788cc01755e42838b801eee5229ce6cbd2405eee434cbed67c36844',
+ 'LICENSES/Curios-COPYING.txt': '8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b',
+ 'LICENSES/Curios-COPYING.LESSER.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118',
+ 'LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md': 'f32903cdd6843cbaf3c150b6e4e03f73d2c7e717dbdedc26b6cb399141c0bad3',
+ 'LICENSES/SimpleBackups-Apache-2.0.txt': 'cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -420,11 +448,16 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'ironjetpacks': ('LICENSES/IronJetpacks-MIT.txt',),
  'functionalstorage': ('LICENSES/FunctionalStorage-MIT.txt',),
  'buildinggadgets2': ('LICENSES/BuildingGadgets2-MIT.txt',),
- 'charginggadgets': ('LICENSES/ChargingGadgets-MIT.txt',)}
+ 'charginggadgets': ('LICENSES/ChargingGadgets-MIT.txt',),
+ 'curios': ('LICENSES/Curios-LGPL-3.0-or-later.txt',
+            'LICENSES/Curios-COPYING.txt',
+            'LICENSES/Curios-COPYING.LESSER.txt'),
+ 'naturescompass': ('LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md',),
+ 'simplebackups': ('LICENSES/SimpleBackups-Apache-2.0.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.9.0.zip',
+                'filename': 'ATM11-Japanese-0.10.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -457,7 +490,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'ironjetpacks',
                                'functionalstorage',
                                'buildinggadgets2',
-                               'charginggadgets'),
+                               'charginggadgets',
+                               'curios',
+                               'naturescompass',
+                               'simplebackups'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -495,8 +531,13 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/IronJetpacks-MIT.txt',
                              'LICENSES/FunctionalStorage-MIT.txt',
                              'LICENSES/BuildingGadgets2-MIT.txt',
-                             'LICENSES/ChargingGadgets-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.9.0: 33 namespaces / 2440 keys',
+                             'LICENSES/ChargingGadgets-MIT.txt',
+                             'LICENSES/Curios-LGPL-3.0-or-later.txt',
+                             'LICENSES/Curios-COPYING.txt',
+                             'LICENSES/Curios-COPYING.LESSER.txt',
+                             'LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md',
+                             'LICENSES/SimpleBackups-Apache-2.0.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.10.0: 36 namespaces / 2575 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -563,9 +604,12 @@ def validate_evidence(raw, namespace, language, language_sha256):
     evidence = parse(raw)
     policy = POLICIES[namespace]
     multisource = 'sources' in policy
+    project_notice = PROJECT_NOTICES.get(namespace)
     evidence_fields = {'schema_version', 'namespace', 'language_sha256', 'reviews'}
+    if project_notice is not None:
+        evidence_fields.update({'source', 'project_notices'})
     evidence_fields.update({'version', 'sources'} if multisource else {'source'})
-    schema = 3 if multisource else (2 if 'archive_chain' in policy else 1)
+    schema = 4 if project_notice is not None else (3 if multisource else (2 if 'archive_chain' in policy else 1))
     require(isinstance(evidence, dict) and set(evidence) == evidence_fields and
             type(evidence['schema_version']) is int and evidence['schema_version'] == schema,
             f'{namespace}: Unexpected review evidence schema')
@@ -576,6 +620,11 @@ def validate_evidence(raw, namespace, language, language_sha256):
     else:
         require(evidence['source'] == policy, f'{namespace}: Review source/version/hash does not match the pinned MOD')
         validate_nested_identity(namespace, evidence['source'])
+    if project_notice is not None:
+        require(evidence['project_notices'] == project_notice,
+                f'{namespace}: Project notice differs from the fixed Apache-4(b) notice')
+        require(all(language.get(key) == value for key, value in project_notice.items()),
+                f'{namespace}: Project notice language metadata must match the fixed notice')
     require(evidence['language_sha256'] == language_sha256, f'{namespace}: Review evidence language hash mismatch')
     reviews = evidence['reviews']
     require(isinstance(reviews, list) and bool(reviews), f'{namespace}: No independent review evidence')
@@ -608,7 +657,11 @@ def validate_evidence(raw, namespace, language, language_sha256):
                     f'{namespace}: Review batch is bound to the wrong source')
             accepted_by_source[sid].update(keys)
         accepted.update(keys)
-    require(accepted == set(language), f'{namespace}: Language keys must exactly match the independently accepted key union')
+    if project_notice is not None:
+        require(accepted == (set(language) - set(project_notice)),
+                f'{namespace}: Source review keys must exclude the project notice metadata key')
+    else:
+        require(accepted == set(language), f'{namespace}: Language keys must exactly match the independently accepted key union')
     for sid, keys in accepted_by_source.items():
         count, key_hash = MULTISOURCE_KEY_SETS[namespace][sid]
         actual_hash = digest(json.dumps(sorted(keys), ensure_ascii=False, separators=(',', ':')).encode())
@@ -625,7 +678,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.9.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.10.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']
@@ -635,11 +688,16 @@ def validated_files(root, package='collection'):
             f'{package}: Pack metadata/filter differs from the fixed policy')
     files = {'pack.mcmeta': pack_raw, 'release.json': release_raw,
              'README.md': read_file(root, 'README.md'), 'NOTICE.md': read_file(root, config['notice'])}
+    require(digest(files['NOTICE.md']) == NOTICE_SHA256, 'Credits, modification notices or license scopes changed')
     allowed_pack_files = {'pack.mcmeta'}
     for namespace, record in release['languages'].items():
-        require(isinstance(record, dict) and set(record) == {
+        expected_record_fields = {
             'language_sha256', 'key_count', 'preserved_metadata_keys', 'review_evidence_sha256',
-        }, f'{namespace}: Unexpected language release record')
+        }
+        if namespace in PROJECT_NOTICES:
+            expected_record_fields.add('project_notice_keys')
+        require(isinstance(record, dict) and set(record) == expected_record_fields,
+                f'{namespace}: Unexpected language release record')
         require(valid_hash(record['language_sha256']) and valid_hash(record['review_evidence_sha256']),
                 f'{namespace}: Missing language/review evidence SHA-256')
         name = f'assets/{namespace}/lang/ja_jp.json'
@@ -655,8 +713,13 @@ def validated_files(root, package='collection'):
         require(type(record['key_count']) is int and record['key_count'] == len(language), f'{namespace}: Key count mismatch')
         require(record['preserved_metadata_keys'] == PRESERVED_METADATA_KEYS[namespace],
                 f'{namespace}: Preserved metadata classification changed')
+        if namespace in PROJECT_NOTICES:
+            require(record['project_notice_keys'] == list(PROJECT_NOTICES[namespace]),
+                    f'{namespace}: Project notice key declaration changed')
         if namespace == 'jei':
             require(language['_comment'] == JEI_METADATA_VALUE, 'JEI metadata must remain verbatim')
+        if namespace == 'naturescompass':
+            require(language['_comment'] == 'STRINGS - PRECIPITATION', 'Nature’s Compass metadata must remain verbatim')
         if namespace == 'quarryplus':
             require(language['_comment'] == 'English lang file.', 'QuarryPlus metadata must remain verbatim')
         if namespace == 'jade':

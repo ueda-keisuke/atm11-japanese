@@ -1,12 +1,12 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.9.0 additions / 追加内容
+## 0.10.0 additions / 追加内容
 
-0.9.0では、Building Gadgets 2（1.4.6）の113項目とCharging Gadgets（1.16.1）の6項目を追加します。各言語JSONには原作のMIT条件が適用されます。原作の著作権表示とライセンス全文、出典、変更日、編集可能な日本語JSON、受理済みレビューの記録を同梱します。
+0.10.0では、Curios（15.0.0+26.1.2）の48項目、Nature's Compass（26.1-3.3.0-neoforge）の44項目（原文メタデータ1項目を含む）、Simple Backups（26.1.5）の43項目（Apache 4(b)改変通知1項目を含む）を追加します。各言語JSONには個別ライセンス条件、原作の著作権表示とライセンス全文、出典、変更日、編集可能な日本語JSON、受理済みレビューの記録を同梱します。
 
-Version 0.9.0 adds 113 Building Gadgets 2 keys and six Charging Gadgets keys in two separate editable language assets under their original MIT terms. Original copyright/license notices, pinned sources, modification date and accepted review provenance are included. Earlier namespaces and their individual license scopes are retained.
+Version 0.10.0 adds 48 Curios keys, 44 Nature's Compass entries (including one preserved original metadata entry), and 43 Simple Backups entries (including one Apache 4(b) project notice). Earlier namespaces and their individual license scopes are retained.
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.9.0 includes 2,440 keys across 33 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.10.0 includes 2,575 entries across 36 namespaces: 2,569 translations, five preserved original metadata entries and one Apache 4(b) project notice. The five original metadata entries are JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, and Nature's Compass `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -332,8 +332,32 @@ Target: **1.16.1**, 6 current English language keys. Modified **2026-09-20 (UTC)
 
 This six-key language scope excludes ConfigSpec-derived labels and the hardcoded menu title. It does not claim to cover every screen in the MOD.
 
+## Curios — `assets/curios/lang/ja_jp.json`
+
+**C4 / TheIllusiveC4.** LGPL-3.0-or-later: the complete texts are preserved as `LICENSES/Curios-LGPL-3.0-or-later.txt`, `LICENSES/Curios-COPYING.txt`, and `LICENSES/Curios-COPYING.LESSER.txt`.
+
+Source: https://github.com/TheIllusiveC4/Curios/tree/8f2f1321e4c3a005e16067aa4dd1eec200946dba
+
+Target: **15.0.0+26.1.2**, 48 current English-corresponding entries. The fixed English and existing Japanese assets match the installed JAR and official source byte-for-byte; the existing Japanese provenance is retained. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. The editable Japanese JSON and accepted review provenance are included. No Curios JAR, Java code, images or configuration is bundled.
+
+## Nature's Compass — `assets/naturescompass/lang/ja_jp.json`
+
+**ChaosTheDude.** CC BY-NC-SA 4.0: the complete original license is preserved in `LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md` and its noncommercial, attribution, modification-notice and ShareAlike terms apply.
+
+Source: https://github.com/MattCzyr/NaturesCompass/tree/fdb412eb41e615c7702dcedf8ea422c1aebf4216
+
+Target: **26.1-3.3.0-neoforge**, 44 entries: 43 Japanese language values and one preserved original `_comment` metadata entry (`STRINGS - PRECIPITATION`). The fixed English and existing Japanese assets match the installed JAR and official source byte-for-byte; no individual existing Japanese translator is named in the asset. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. No Nature's Compass JAR, code, images or configuration is bundled.
+
+## Simple Backups — `assets/simplebackups/lang/ja_jp.json`
+
+**MelanX.** Apache-2.0: the complete original license is preserved in `LICENSES/SimpleBackups-Apache-2.0.txt`.
+
+Source: https://github.com/ChaoticTrials/SimpleBackups/tree/e2fa606f297031a50dd569f53c94623a72168fd5
+
+Target: **26.1.5**, 43 entries: 42 Japanese language values and one project notice `_comment`. The notice reads: `Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese language entries revised or supplied. Original project: Simple Backups by MelanX; Apache-2.0. See NOTICE.md and LICENSES/SimpleBackups-Apache-2.0.txt.` It is an Apache 4(b) modification notice, not a translated game string. No upstream NOTICE file was found in the fixed JAR/source context. No Simple Backups JAR, code, saves, images or configuration is bundled.
+
 ## Project contributions and provenance
 
-`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage, Building Gadgets 2, Charging Gadgets), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
+`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage, Building Gadgets 2, Charging Gadgets), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, Curios, Nature's Compass, Simple Backups, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.

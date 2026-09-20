@@ -1,0 +1,73 @@
+{
+  "language_sha256": "9310cfff7d59b4a13e4946c41013227822d26b70dc1d256359fe166d34fff8d9",
+  "namespace": "curios",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "argument.curios.type.unknown",
+        "argument.entity.options.curios.description",
+        "commands.curios.add.success",
+        "commands.curios.clear.success",
+        "commands.curios.clearAll.success",
+        "commands.curios.drop.success",
+        "commands.curios.dropAll.success",
+        "commands.curios.lock.success",
+        "commands.curios.remove.success",
+        "commands.curios.replace.success",
+        "commands.curios.reset.success",
+        "commands.curios.set.success",
+        "commands.curios.unlock.success",
+        "curios.cosmetic",
+        "curios.identifier.back",
+        "curios.identifier.belt",
+        "curios.identifier.body",
+        "curios.identifier.bracelet",
+        "curios.identifier.charm",
+        "curios.identifier.curio",
+        "curios.identifier.hands",
+        "curios.identifier.head",
+        "curios.identifier.necklace",
+        "curios.identifier.ring",
+        "curios.modifiers.back",
+        "curios.modifiers.belt",
+        "curios.modifiers.body",
+        "curios.modifiers.bracelet",
+        "curios.modifiers.charm",
+        "curios.modifiers.curio",
+        "curios.modifiers.hands",
+        "curios.modifiers.head",
+        "curios.modifiers.necklace",
+        "curios.modifiers.ring",
+        "curios.modifiers.slots.plus",
+        "curios.modifiers.slots.plus.multiple",
+        "curios.modifiers.slots.take",
+        "curios.modifiers.slots.take.multiple",
+        "curios.name",
+        "curios.networking.failed",
+        "curios.slot",
+        "curios.tooltip.inactive",
+        "curios.tooltip.slot",
+        "gui.curios.page",
+        "gui.curios.toggle",
+        "gui.curios.toggle.cosmetics",
+        "key.curios.category",
+        "key.curios.open.desc"
+      ],
+      "batch_id": "lang-curios-neoforge-15.0.0+26.1.2-curios-a718d32497-0001",
+      "decision": "accepted",
+      "review_sha256": "b8b0d3ba1c4949d4f22b8bac64fb96419fa91c0de855e2b97e82f1376a5345bf",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "a2bdbc8eba731ff2bf2dbda73c9beaf8968945dea81e64c80c0c99b609e003c9"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/curios/lang/en_us.json",
+    "jar_sha256": "ea1e92cd9dbfb93d2d363e2aced406a1749a4ed3e47bf06cce463903a99fd267",
+    "source_sha256": "2915b2028e204f160d8f2d180aaf150996903c539548a6acadfa3aaabe394f68",
+    "version": "15.0.0+26.1.2"
+  }
+}
