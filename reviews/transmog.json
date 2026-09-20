@@ -1,0 +1,50 @@
+{
+  "language_sha256": "0118fe14b9864d722781bceb5b5e92c76ad3b4a49970f2b09674220c4ec641c9",
+  "namespace": "transmog",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "block.transmog.transmogrification_table",
+        "item.transmog.void_fragment",
+        "tag.item.transmog.transmog_fuels",
+        "transmog.config.disable_during_pvp_duration",
+        "transmog.config.disable_during_pvp_duration.label",
+        "transmog.config.disable_during_pvp_duration.tooltip",
+        "transmog.config.render",
+        "transmog.config.render.everywhere",
+        "transmog.config.render.everywhere.tooltip",
+        "transmog.config.render.in_world",
+        "transmog.config.render.in_world.tooltip",
+        "transmog.config.render.off",
+        "transmog.config.render.off.tooltip",
+        "transmog.config.tooltip",
+        "transmog.config.tooltip.full",
+        "transmog.config.tooltip.full.tooltip",
+        "transmog.config.tooltip.minimal",
+        "transmog.config.tooltip.minimal.tooltip",
+        "transmog.config.tooltip.none",
+        "transmog.config.tooltip.none.tooltip",
+        "transmog.config_title",
+        "transmog.creative_tab",
+        "transmog.transmog_container",
+        "transmog.transmog_description",
+        "transmog.transmog_hidden"
+      ],
+      "batch_id": "lang-transmog-neoforge-1.8.0+26.1-transmog-6b03d718e2-0001",
+      "decision": "accepted",
+      "review_sha256": "d388c88fbb47bef5e03916688e105e3f95dd8509cc08677595bab68637fedee1",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "27abc25565753606808bb25eca1063f169cf11bf178e957188ec00dad5296d52"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/transmog/lang/en_us.json",
+    "jar_sha256": "71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7",
+    "source_sha256": "89ebb4d6af7d4da87fafaa8e69534b29534a68e6af8532f6d5bc2ea88412be5f",
+    "version": "1.8.0+26.1"
+  }
+}

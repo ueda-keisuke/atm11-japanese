@@ -1,6 +1,19 @@
 {
-  "schema_version": 1,
-  "version": "0.1.0",
+  "languages": {
+    "jei": {
+      "display_key_count": 334,
+      "key_count": 335,
+      "language_sha256": "f324bb6ba6dfc1ea6d68893c00102b066989d38738ab85acac7b92e25d68478c",
+      "review_evidence_sha256": "a1a7b6dd295e1eec5283dbf6a7df4883f4fd7140d23199758880d54ea47fdec1"
+    },
+    "transmog": {
+      "display_key_count": 25,
+      "key_count": 25,
+      "language_sha256": "0118fe14b9864d722781bceb5b5e92c76ad3b4a49970f2b09674220c4ec641c9",
+      "review_evidence_sha256": "84bf1f28b127fe843cffef6f5cb6f54047626b72c0f8a06420c909c05ab6eedf"
+    }
+  },
   "review_status": "accepted",
-  "language_sha256": "0118fe14b9864d722781bceb5b5e92c76ad3b4a49970f2b09674220c4ec641c9"
+  "schema_version": 2,
+  "version": "0.2.0"
 }
