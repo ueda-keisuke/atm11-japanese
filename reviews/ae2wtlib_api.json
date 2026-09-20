@@ -1,0 +1,41 @@
+{
+  "language_sha256": "d5e77626a8f3ebd2023b91956536200c77609a645dc6b7ed6c1a9d2447eea78a",
+  "namespace": "ae2wtlib_api",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "chat.ae2wtlib.NetworkMismatch",
+        "chat.ae2wtlib.NetworkNotPowered",
+        "chat.ae2wtlib.NoQuantumBridge",
+        "chat.ae2wtlib.NoQuantumBridgeCard",
+        "chat.ae2wtlib.SingularityNotPresent"
+      ],
+      "batch_id": "nested-ae2wtlib_api-9d4f7d0087b58c18-0001",
+      "decision": "accepted",
+      "review_sha256": "221195375342bb09f46c37f61ce744799d1e22e00e0b84dca198419451a7aa0d",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "164b186d8b64cd2b776e2313024931d3810a22ab4443ea4f094134e7226ee30c"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/de.mari_023.ae2wtlib_api-26.1.1-beta.jar",
+        "sha256": "95f039edafe427a8f363afdc19df5b49e04c73bd90463e45b5c84251e104b148"
+      }
+    ],
+    "catalog_source_id": "9d4f7d0087b58c18f6bbf95f9b8a55fb7e99c23b8c79c82d9c717810d9d2f5e4",
+    "jar_entry": "assets/ae2wtlib_api/lang/en_us.json",
+    "jar_sha256": "9309564ee5f3640ddbcc55450e0727e5a7790488f3b82af350d3012960b18311",
+    "locale": "ja_jp",
+    "namespace": "ae2wtlib_api",
+    "source": "minecraft/mods/ae2wtlib-26.1.1-beta.jar",
+    "source_sha256": "0fda89f6cc1a08aa46279dd5e178fcced86df902cf11828f98c513e17b41e9c4",
+    "source_type": "nested_jar_lang",
+    "version": "26.1.1-beta"
+  }
+}

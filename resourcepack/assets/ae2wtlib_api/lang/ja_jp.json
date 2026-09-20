@@ -1,0 +1,7 @@
+{
+  "chat.ae2wtlib.NetworkMismatch": "量子ブリッジとワイヤレスアクセスポイントが別々のネットワークに接続されています",
+  "chat.ae2wtlib.NetworkNotPowered": "ネットワークに電力が供給されていません",
+  "chat.ae2wtlib.NoQuantumBridge": "量子ネットワークブリッジが見つかりません。読み込み済みチャンク内にありますか？",
+  "chat.ae2wtlib.NoQuantumBridgeCard": "量子ブリッジカードがありません",
+  "chat.ae2wtlib.SingularityNotPresent": "シンギュラリティがありません"
+}

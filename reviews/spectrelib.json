@@ -1,0 +1,37 @@
+{
+  "language_sha256": "c287ae0c56760a2f4c5dceaea93a57a6e595465017863c140c67e3bfca95a9b6",
+  "namespace": "spectrelib",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "spectrelib.networking.failed"
+      ],
+      "batch_id": "nested-spectrelib-5433924ad5d96615-0001",
+      "decision": "accepted",
+      "review_sha256": "df19973e9a266396ab80373af59d14bc407e1b5f1be606aa0cc979292bfa2a41",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "25a80340b5ab2530bf946edc71eedfabf5c36ecae44b4ea22f1ce31bb01fcbc1"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/spectrelib-neoforge-0.21.0+26.1.2.jar",
+        "sha256": "4b85c10c81f53e7c12978137ef77b71c39b14bde392bd120978934e65311366f"
+      }
+    ],
+    "catalog_source_id": "5433924ad5d96615f64114ec0258f97aeb6e465917696e0af9352312cf189f58",
+    "jar_entry": "assets/spectrelib/lang/en_us.json",
+    "jar_sha256": "23b7a63b3729dc590174ca0ca5740c22ddc93718ead6fa579a921d3e7fa5ac83",
+    "locale": "ja_jp",
+    "namespace": "spectrelib",
+    "source": "minecraft/mods/comforts-neoforge-15.0.0+26.1.2.jar",
+    "source_sha256": "9708a0bf7fefae32049dcd9af2ecd276ab35d01db65877fc22dbcc2031bed8ed",
+    "source_type": "nested_jar_lang",
+    "version": "0.21.0+26.1.2"
+  }
+}

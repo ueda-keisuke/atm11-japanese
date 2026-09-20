@@ -1,0 +1,111 @@
+{
+  "language_sha256": "16cc78432039369d11e5dc428aef30536a0e1a98bb83823f679af5d65b1851e2",
+  "namespace": "codedefinedgui",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "codedefinedgui.configuration.title",
+        "codedefinedgui.filter.attribute.add",
+        "codedefinedgui.filter.attribute.add.tooltip",
+        "codedefinedgui.filter.attribute.add_inverted",
+        "codedefinedgui.filter.attribute.add_inverted.tooltip",
+        "codedefinedgui.filter.attribute.added_by",
+        "codedefinedgui.filter.attribute.available",
+        "codedefinedgui.filter.attribute.has_enchantment",
+        "codedefinedgui.filter.attribute.has_fluid",
+        "codedefinedgui.filter.attribute.has_name",
+        "codedefinedgui.filter.attribute.in_tag",
+        "codedefinedgui.filter.attribute.inverted",
+        "codedefinedgui.filter.attribute.mode.deny",
+        "codedefinedgui.filter.attribute.mode.deny.tooltip",
+        "codedefinedgui.filter.attribute.mode.deny.tooltip.shift",
+        "codedefinedgui.filter.attribute.mode.match_all",
+        "codedefinedgui.filter.attribute.mode.match_all.tooltip",
+        "codedefinedgui.filter.attribute.mode.match_all.tooltip.shift",
+        "codedefinedgui.filter.attribute.mode.match_any",
+        "codedefinedgui.filter.attribute.mode.match_any.tooltip",
+        "codedefinedgui.filter.attribute.mode.match_any.tooltip.shift",
+        "codedefinedgui.filter.attribute.no_reference",
+        "codedefinedgui.filter.attribute.no_rules",
+        "codedefinedgui.filter.attribute.scroll_to_select",
+        "codedefinedgui.filter.attribute.standard.badly_damaged",
+        "codedefinedgui.filter.attribute.standard.blastable",
+        "codedefinedgui.filter.attribute.standard.compostable",
+        "codedefinedgui.filter.attribute.standard.consumable",
+        "codedefinedgui.filter.attribute.standard.damaged",
+        "codedefinedgui.filter.attribute.standard.enchanted",
+        "codedefinedgui.filter.attribute.standard.equipable",
+        "codedefinedgui.filter.attribute.standard.fluid_container",
+        "codedefinedgui.filter.attribute.standard.furnace_fuel",
+        "codedefinedgui.filter.attribute.standard.not_stackable",
+        "codedefinedgui.filter.attribute.standard.placeable",
+        "codedefinedgui.filter.attribute.standard.renamed",
+        "codedefinedgui.filter.attribute.standard.smeltable",
+        "codedefinedgui.filter.attribute.standard.smokable",
+        "codedefinedgui.filter.attribute.summary.mode",
+        "codedefinedgui.filter.button.done",
+        "codedefinedgui.filter.button.done.tooltip",
+        "codedefinedgui.filter.button.reset",
+        "codedefinedgui.filter.button.reset.tooltip",
+        "codedefinedgui.filter.list.ignore_data",
+        "codedefinedgui.filter.list.ignore_data.tooltip",
+        "codedefinedgui.filter.list.ignore_data.tooltip.shift",
+        "codedefinedgui.filter.list.mode.allow",
+        "codedefinedgui.filter.list.mode.allow.tooltip",
+        "codedefinedgui.filter.list.mode.allow.tooltip.shift",
+        "codedefinedgui.filter.list.mode.deny",
+        "codedefinedgui.filter.list.mode.deny.tooltip",
+        "codedefinedgui.filter.list.mode.deny.tooltip.shift",
+        "codedefinedgui.filter.list.respect_data",
+        "codedefinedgui.filter.list.respect_data.tooltip",
+        "codedefinedgui.filter.list.respect_data.tooltip.shift",
+        "codedefinedgui.filter.list.summary.ignore_data",
+        "codedefinedgui.filter.list.summary.mode",
+        "codedefinedgui.filter.list.summary.respect_data",
+        "codedefinedgui.filter.summary.more",
+        "codedefinedgui.tooltip.show_extended"
+      ],
+      "batch_id": "nested-codedefinedgui-059d2be0ba602452-0001",
+      "decision": "accepted",
+      "review_sha256": "b7521e698d313fb5e0e465c01a6dfd6a2113afd31eaaf670454687f4b8908ad5",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "646d1660b19cb5f96a9656e5b1994b2192e6407c6a83b502ec33fd57b85dfe58"
+    },
+    {
+      "accepted_keys": [
+        "item.codedefinedgui.attribute_filter",
+        "item.codedefinedgui.list_filter",
+        "itemGroup.codedefinedgui"
+      ],
+      "batch_id": "nested-codedefinedgui-059d2be0ba602452-0002",
+      "decision": "accepted",
+      "review_sha256": "251be673dfc1edd0bbc24631fdba6733889e08722b7083ddd11af8ee75fddb3b",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "bea4f677d0ab59966af3a9bb0e5ae9735e088c5285e8116704abb24920196464"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/codedefinedgui-26.1.2-neoforge-1.12.0.jar",
+        "sha256": "ef9704b03bf028fb060cbcd8daf470ec7a87ff3d433baf9703a73ed13a1834e4"
+      }
+    ],
+    "catalog_source_id": "059d2be0ba6024526cb6a9650d09640895c7b05b39dd262922173d2854aba776",
+    "jar_entry": "assets/codedefinedgui/lang/en_us.json",
+    "jar_sha256": "874c46d9cc5075b01d7e1b06485b7e2ad1e53adea6bdc270efeeaec3934bedfa",
+    "locale": "ja_jp",
+    "namespace": "codedefinedgui",
+    "source": "minecraft/mods/theurgy-26.1.2-neoforge-1.114.0.jar",
+    "source_sha256": "6ab41a3ebcc3d112956015914b8b98adbe88989d3e1acb1708552ca3e4bffd77",
+    "source_type": "nested_jar_lang",
+    "version": "1.12.0"
+  }
+}

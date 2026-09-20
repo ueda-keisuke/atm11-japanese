@@ -1,0 +1,43 @@
+{
+  "language_sha256": "758f6d1c6158507bd10e8e9cb99a0633d749ac0148dbfad3a35fe2b790d0021b",
+  "namespace": "apollib",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "config.apollib.back",
+        "config.apollib.back.tooltip",
+        "config.apollib.default",
+        "config.apollib.done",
+        "config.apollib.done.tooltip",
+        "config.apollib.export",
+        "config.apollib.export.tooltip"
+      ],
+      "batch_id": "nested-apollib-4f3afc5bd41b7643-0001",
+      "decision": "accepted",
+      "review_sha256": "68ab6d8da2c376cd05c66891e41e6ca12916923df2e7431a63e9708ef6ecfd25",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "a52b5d7fb68ae056cad77bc36687d69ef3d4ae5165a580f05d315243b229bcef"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/apollib-1.1.6-neoforge-26.1.jar",
+        "sha256": "565434f421a15d0c4eb4bfca1c646329c015f86aeda90501d4979f435a11a39e"
+      }
+    ],
+    "catalog_source_id": "4f3afc5bd41b764394c693646d1b319748d626aad3a6734787380574065abd8d",
+    "jar_entry": "assets/apollib/lang/en_us.json",
+    "jar_sha256": "ccb6692e30fba3e8cd88d58396d81053b455000b576f15b5e5fb00a24a1d8a3f",
+    "locale": "ja_jp",
+    "namespace": "apollib",
+    "source": "minecraft/mods/lithostitched-1.8.0+beta6-neoforge-26.1.jar",
+    "source_sha256": "b4c80cb60c370bd77bed5ff5eac4b24e218f31c63f006316ba385bd7f38ddd75",
+    "source_type": "nested_jar_lang",
+    "version": "1.1.6"
+  }
+}

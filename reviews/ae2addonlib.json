@@ -1,0 +1,47 @@
+{
+  "language_sha256": "32105efc2da91a0112d2ac17cfe9f506e4f053fa27d0b0626488125c1937f5d0",
+  "namespace": "ae2addonlib",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "gui.ae2addonlib.SetAmount",
+        "gui.tooltips.ae2addonlib.ClearButton",
+        "gui.tooltips.ae2addonlib.ClearFluidButtonHint",
+        "gui.tooltips.ae2addonlib.ClearSidesButtonHint",
+        "gui.tooltips.ae2addonlib.DirectionalOutput",
+        "gui.tooltips.ae2addonlib.DirectionalOutputHint",
+        "gui.tooltips.ae2addonlib.Disabled",
+        "gui.tooltips.ae2addonlib.Enabled",
+        "gui.tooltips.ae2addonlib.InvalidHexInput",
+        "gui.tooltips.ae2addonlib.TankAmount",
+        "gui.tooltips.ae2addonlib.TankEmpty"
+      ],
+      "batch_id": "nested-ae2addonlib-d8569804156631d1-0001",
+      "decision": "accepted",
+      "review_sha256": "2b1bf2420633721b016bebee10b78160da0ad506f2293ecc9d8946b90caaadcb",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "62f430b58a308d305d577a8bc0636fb1960ac5b8e5902a2a909a841596c823fe"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/ae2addonlib-26.1.3-alpha.jar",
+        "sha256": "15a8598e48acd2613b63d822cf416b36b1793cbca7c2a383828a1e0cbfd5ee5b"
+      }
+    ],
+    "catalog_source_id": "d8569804156631d1c882b17eff6ec06243100774c1517eafb8cb39c81694d85d",
+    "jar_entry": "assets/ae2addonlib/lang/en_us.json",
+    "jar_sha256": "fae810b62ecd1746ab9b74ba6e0b5242ab7c0e92d291704e4ea755c83230b233",
+    "locale": "ja_jp",
+    "namespace": "ae2addonlib",
+    "source": "minecraft/mods/AdvancedAE-26.1.7.jar",
+    "source_sha256": "2ea255e03c6e800750f90011148a2559b04090212fb881c1db0bfe718ee433c7",
+    "source_type": "nested_jar_lang",
+    "version": "26.1.3-alpha"
+  }
+}

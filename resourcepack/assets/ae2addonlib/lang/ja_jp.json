@@ -1,0 +1,13 @@
+{
+  "gui.ae2addonlib.SetAmount": "量を設定",
+  "gui.tooltips.ae2addonlib.ClearButton": "消去",
+  "gui.tooltips.ae2addonlib.ClearFluidButtonHint": "機械に残っている液体を排出します。",
+  "gui.tooltips.ae2addonlib.ClearSidesButtonHint": "機械の全方向への出力を無効にします。",
+  "gui.tooltips.ae2addonlib.DirectionalOutput": "出力方向",
+  "gui.tooltips.ae2addonlib.DirectionalOutputHint": "自動エクスポートを許可する方向を設定します。",
+  "gui.tooltips.ae2addonlib.Disabled": "無効",
+  "gui.tooltips.ae2addonlib.Enabled": "有効",
+  "gui.tooltips.ae2addonlib.InvalidHexInput": "16進数コードの入力が無効です",
+  "gui.tooltips.ae2addonlib.TankAmount": "%s / %s B",
+  "gui.tooltips.ae2addonlib.TankEmpty": "空"
+}

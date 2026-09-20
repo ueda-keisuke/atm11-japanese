@@ -1,0 +1,9 @@
+{
+  "config.apollib.back": "戻る",
+  "config.apollib.back.tooltip": "変更を保存せずにこの画面を閉じます。",
+  "config.apollib.default": "デフォルト: ",
+  "config.apollib.done": "保存して閉じる",
+  "config.apollib.done.tooltip": "変更を保存して画面を閉じます。",
+  "config.apollib.export": "エクスポート",
+  "config.apollib.export.tooltip": "現在の設定ファイルをクリップボードにコピーします。"
+}

@@ -1,0 +1,38 @@
+{
+  "language_sha256": "c5e90b1322784b2ddb6e3474669e13d805f163bbfdf942c98b9afe6f5d803914",
+  "namespace": "magicparticleslib",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "entity.magicparticleslib.branching_rift",
+        "entity.magicparticleslib.rift"
+      ],
+      "batch_id": "nested-magicparticleslib-7953948d057071bc-0001",
+      "decision": "accepted",
+      "review_sha256": "a546e25fcbca66ab92d86fbf046620f34d4c18aacb927919952695298cf5cfe7",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "1e21f93725cdfe76760dc901e04587911167d7ef9a84cfb4fdf751e42cddc312"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/magicparticleslib-26.1.2-neoforge-1.4.0.jar",
+        "sha256": "f3f4bc06d7df185427e2cc9943ff644a088900a52f723543b6638adbe27f9ac8"
+      }
+    ],
+    "catalog_source_id": "7953948d057071bc681d9a944a2917af52472bb4b548363a469af15f593dbd22",
+    "jar_entry": "assets/magicparticleslib/lang/en_us.json",
+    "jar_sha256": "874c46d9cc5075b01d7e1b06485b7e2ad1e53adea6bdc270efeeaec3934bedfa",
+    "locale": "ja_jp",
+    "namespace": "magicparticleslib",
+    "source": "minecraft/mods/theurgy-26.1.2-neoforge-1.114.0.jar",
+    "source_sha256": "b199308dbb7ee42194789852090099e168dfc0a51022bd7e484ac4bc917d9d65",
+    "source_type": "nested_jar_lang",
+    "version": "1.4.0"
+  }
+}

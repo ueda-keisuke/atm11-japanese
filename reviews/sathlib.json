@@ -1,0 +1,54 @@
+{
+  "language_sha256": "5fc1603596cf2b6815037f80c0c785a07497630904fa86320755eb70dc735b44",
+  "namespace": "sathlib",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "formatting.sathlib.curly_brackets",
+        "formatting.sathlib.round_brackets",
+        "formatting.sathlib.square_brackets",
+        "generic.sathlib.all",
+        "generic.sathlib.allow",
+        "generic.sathlib.allowed",
+        "generic.sathlib.any",
+        "generic.sathlib.denied",
+        "generic.sathlib.deny",
+        "generic.sathlib.disabled",
+        "generic.sathlib.enabled",
+        "generic.sathlib.none",
+        "generic.sathlib.off",
+        "generic.sathlib.on",
+        "generic.sathlib.supported",
+        "generic.sathlib.unsupported",
+        "input.sathlib.wheel.down",
+        "input.sathlib.wheel.up"
+      ],
+      "batch_id": "nested-sathlib-66f84f1cf694905f-0001",
+      "decision": "accepted",
+      "review_sha256": "4978e4b7119dd29f5ce310e885df8ed5b2061f699066e62508f52e6bd1a181a5",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "ba1b6dff1f784d4378538ffef9f5fb1033f77a9e1f21210e29d61e5fb7dd9717"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/sathlib-1.1.0+26.1.2.jar",
+        "sha256": "78afee725f643072f4fc04241afec64c2d0c1d66f4600df8d406c878f8c280e1"
+      }
+    ],
+    "catalog_source_id": "66f84f1cf694905f7d9d22748f1743b0f96d3850cb303ad3fc2f326740fcb65e",
+    "jar_entry": "assets/sathlib/lang/en_us.json",
+    "jar_sha256": "4a6be925d75625e4a09abbc62ccfe1b1b69e768e499b68fd55f5bc3b93026a2a",
+    "locale": "ja_jp",
+    "namespace": "sathlib",
+    "source": "minecraft/mods/crystalix-4.1.0+26.1.2.jar",
+    "source_sha256": "0e71b621896f1632fb3b182a155d167ba4473c8b5da4cb1fea36f159b57b44ab",
+    "source_type": "nested_jar_lang",
+    "version": "1.1.0+26.1.2"
+  }
+}

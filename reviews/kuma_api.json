@@ -1,0 +1,40 @@
+{
+  "language_sha256": "207e0856c59b6b08011add4320fa018eee7da5ddc222ed54b88fe70f39f749b4",
+  "namespace": "kuma_api",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "key.keyboard.modifier.alt",
+        "key.keyboard.modifier.control",
+        "key.keyboard.modifier.shift",
+        "key.keyboard.modifiers"
+      ],
+      "batch_id": "nested-kuma_api-3d88fa423967887f-0001",
+      "decision": "accepted",
+      "review_sha256": "d36437a435e0c68b51d2475faeba2e232d8cb8a0d0a46bb88d7d07a08e948fb9",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "da1efb1e879b2a0b422d4e03b9e055c99bbb58634bda4b6cfaad917a1da9595a"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/kuma-api-neoforge-26.1.2.2.jar",
+        "sha256": "95ea7006585360931ce4c6846d1234e81ed5e765cc234d0a4318d991ebe66abe"
+      }
+    ],
+    "catalog_source_id": "3d88fa423967887f252a260981711da259561217c2ad1af0a24330e61fa5e8d8",
+    "jar_entry": "assets/kuma_api/lang/en_us.json",
+    "jar_sha256": "aeb1d1962e9d2e1bc6345bd91bef9a6b3ab88cdff1495c8a360a6e711313fa37",
+    "locale": "ja_jp",
+    "namespace": "kuma_api",
+    "source": "minecraft/mods/balm-neoforge-26.1.2-26.1.2.13.jar",
+    "source_sha256": "86c470d8d1f378c93e3c10763f4df59267b3b392f6404c26a34f0351fb193aa1",
+    "source_type": "nested_jar_lang",
+    "version": "26.1.2.2"
+  }
+}

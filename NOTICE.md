@@ -1,6 +1,6 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.4.0 contains 1105 keys across 11 namespaces. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.5.0 contains 1702 keys across 22 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -122,8 +122,104 @@ Source: https://github.com/way2muchnoise/BetterAdvancements/tree/1fd067b4de74f82
 
 Target: **0.6.0.76**, 3 keys. Japanese values are revised/supplied. The exact language and license bytes match this official source; this is not a claim that the entire build 76 JAR was built from that commit. This free resource-pack supplement is not an official release and makes no ownership claim over the original work.
 
+## QuarryPlus — `assets/quarryplus/lang/ja_jp.json`
+
+**Copyright (C) 2012, 2013 yogpstop; Copyright (C) 2017–2024 Kotori316.** Author/credits: **Kotori316**. LGPL 3.0: `LICENSES/QuarryPlus-LGPL-3.0.txt`, with `LICENSES/GPL-3.0.txt`. This adaptation is not MIT.
+
+Source: https://github.com/Kotori316/QuarryPlus/tree/a758a34a27438a81b9a35038ccc1c77c586093f0
+
+Target: **26.12.160**, 240 current English keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: Japanese values are revised/supplied; `_comment` preserves `English lang file.` verbatim. Existing upstream Japanese is the source reference, not claimed as new work. The complete editable modified source is `assets/quarryplus/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository). Only this language asset is supplied, not the original JAR or code.
+
+Hardcoded QuarryPlus GUI labels and diagnostic messages remain partly untranslated. This resource pack cannot replace strings that do not consult language keys. The 240-key count does not assert coverage of all QuarryPlus player-facing text.
+
+## Code Defined GUI — `assets/codedefinedgui/lang/ja_jp.json`
+
+**Copyright 2026 klikli-dev; author Kli Kli.** The language asset and this Japanese adaptation use **CC BY 4.0**, full text `LICENSES/CC-BY-4.0.txt`: https://creativecommons.org/licenses/by/4.0/
+
+Source: https://github.com/klikli-dev/code-defined-gui/tree/cdb0b11e1001b742b9333af2d55ea6f636b0d736
+
+Target: **1.12.0**, 63 keys, selected inside Theurgy. Modified **2026-09-20 (UTC)**: Japanese GUI text is supplied; no Japanese asset existed in the selected upstream source. The fixed source's `REUSE.toml` explicitly assigns `src/generated/resources/**`, including this language asset, to CC BY 4.0. This file-specific license governs here; it is not the code's MIT grant. The upstream README's general CC BY-SA wording differs from its linked CC BY text and REUSE; this project follows the explicit file-specific annotation. No attribution or license notice is removed and no extra use restriction is added.
+
+## SathLib — `assets/sathlib/lang/ja_jp.json`
+
+**Satherov / SathLabs.** LGPL 3.0: `LICENSES/SathLib-LGPL-3.0.txt`, with `LICENSES/GPL-3.0.txt`.
+
+Source: https://github.com/SathLabs/SathLib/tree/2afb6bd1ba525e5cbb208e1772a53c1d3777d272
+
+Target: **1.1.0+26.1.2**, 18 keys, selected inside Crystalix. Modified **2026-09-20 (UTC)**: Japanese explanations/settings are supplied; upstream had no Japanese language file. The complete modified, human-readable source is `assets/sathlib/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository), licensed under LGPL 3.0. No Crystalix code, assets or JAR is included.
+
+## AE2AddonLib — `assets/ae2addonlib/lang/ja_jp.json`
+
+**Pedroksl.** This modified Japanese asset is distributed under **GPL 3.0**, full text `LICENSES/GPL-3.0.txt`, following the exact upstream repository LICENSE. It is not MIT.
+
+Source: https://github.com/pedroksl/AE2AddonLib/tree/5b48a86deea7ebf50bf95166f7b74a24057c90ac
+
+Target: **26.1.3-alpha**, 11 keys, selected inside Advanced AE. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: existing upstream Japanese is revised and missing current keys are supplied. The original Japanese source is retained as provenance; it is not all newly authored by this project. The complete editable modified source is `assets/ae2addonlib/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository).
+
+The original JAR metadata/gradle.properties says LGPL-3.0 while the exact official LICENSE contains GPLv3. The original source identity remains unchanged in the review record. This distribution applies GPLv3 to this JSON only, retaining the original metadata discrepancy in this notice. Unrelated namespace assets remain independent works in the collection; no extra restriction is imposed on their licenses.
+
+## AE2WTLib API — `assets/ae2wtlib_api/lang/ja_jp.json`
+
+**Copyright (c) 2021 mari_023**; authors **mari_023, Ridanisaurus**. MIT: `LICENSES/AE2WTLib-API-MIT.txt`.
+
+Source: https://github.com/Mari023/AE2WirelessTerminalLibrary/tree/16c325df8e68447388798beea83444051d4e2de7
+
+Target: **26.1.1-beta**, 5 API keys. Modified **2026-09-20 (UTC)**: Japanese API values are supplied; no Japanese file existed in the selected API source. This scope is the inner API language file only, not the outer `ae2wtlib` namespace, textures or JAR.
+
+## Kuma API — `assets/kuma_api/lang/ja_jp.json`
+
+**Copyright (c) 2024 BlayTheNinth.** MIT: `LICENSES/Kuma-API-MIT.txt`.
+
+Source: https://github.com/TwelveIterations/KumaAPI/tree/ebd356138b2aa8a7f85a0c93c5457ebf64fc16bd
+
+Target: **26.1.2.2**, 4 keys, selected inside Balm. Modified **2026-09-20 (UTC)**: Japanese API values are supplied; upstream had no Japanese language file. Only the API language asset is included, not Balm assets or the parent JAR.
+
+## Apollib — `assets/apollib/lang/ja_jp.json`
+
+**Copyright (c) 2026 Apollo.** MIT: `LICENSES/Apollib-MIT.txt`.
+
+Source: https://github.com/Apollounknowndev/Apollib/tree/cc459eb27192f41749167a3a52bbefa5574ac743
+
+Target: **1.1.6**, 7 keys, selected inside Lithostitched. Modified **2026-09-20 (UTC)**: Japanese settings values are supplied; upstream had no Japanese language file. Local English uses CRLF and official source uses LF, with matching JSON content. Parent Lithostitched assets and JAR are outside this scope.
+
+## Ender IO — Modded Conduits — `assets/enderio/lang/ja_jp.json`
+
+Original authors: **CrazyPants, tterrag, HenryLoenwind, MatthiasM, CyanideX, EpicSquid, Rover656, HypherionSA, liliandev, Ferri_Arnus, dphaldes**.
+
+The selected child metadata declares **CC0**; the official repository LICENSE is **Unlicense**. Both texts are retained as `LICENSES/CC0-1.0.txt` and `LICENSES/EnderIO-Unlicense.txt`. This notice preserves the original declarations and does not replace them with MIT.
+
+Source: https://github.com/Team-EnderIO/EnderIO/tree/d1fb8f797d6b8b421d6b5d45abee49d4822d9046
+
+Target: **9.0.5-alpha**, only **`conduit.enderio.rs` (1 key)** from the inner `com.enderio.enderio-modded-conduits-9.0.5-alpha.jar`. Modified **2026-09-20 (UTC)**: the Japanese value is revised/reviewed against the selected current English and original Japanese. This is not an EnderIO-wide translation. The original child Japanese file has additional keys which may remain in lower-priority resources; they are not added to this overlay. No whole EnderIO asset collection, parent JAR or child JAR is redistributed.
+
+## Magic Particles Lib — `assets/magicparticleslib/lang/ja_jp.json`
+
+**Copyright 2026 klikli-dev; author Kli Kli.** The language asset and its Japanese adaptation use **CC BY 4.0**, full text `LICENSES/CC-BY-4.0.txt`: https://creativecommons.org/licenses/by/4.0/
+
+Source: https://github.com/klikli-dev/magic-particles-lib/tree/ca615520afd23de078c256b3a47a086c22456a4c
+
+Target: **1.4.0**, 2 keys, selected inside Theurgy. Modified **2026-09-20 (UTC)**: Japanese entity names are supplied; no Japanese file existed upstream. `REUSE.toml` assigns this `src/main/resources/**` language asset to CC BY 4.0. Attribution, license and modification notices remain attached; no extra restriction is imposed. `LICENSES/MagicParticlesLib-MIT-Code.txt` retains the upstream MIT code-license text for context, but it does **not** relicense these language assets as MIT. No code or shaders are included.
+
+## SpectreLib — `assets/spectrelib/lang/ja_jp.json`
+
+**Copyright (C) 2022 Illusive Soulworks.** **LGPL-2.1-only**: full text `LICENSES/GNU-LGPL-2.1.txt`. Original copyright/license/third-party notices are preserved verbatim in `LICENSES/SpectreLib-Original-Notice.txt`.
+
+Source: https://github.com/illusivesoulworks/spectrelib/tree/58dc93dfa9bd26f573c02888c9807a679d6b500a
+
+Target: **0.21.0+26.1.2**, 1 key, selected inside Comforts. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: a Japanese networking-error template is supplied while retaining its argument. The complete editable modified source is `assets/spectrelib/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository), under LGPL-2.1-only.
+
+Original notice also credits **Forge Development LLC and contributors** for modified configuration-system portions under LGPL 2.1, and **TheElectronWill** for NightConfig under LGPL 3.0. Those notices are retained; this ZIP contains no Forge/NightConfig implementation or SpectreLib JAR. They do not change this language asset's LGPL-2.1-only scope. The LGPL 2.1 full text is the FSF license text maintained by SPDX, with the canonical license at https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+
+## Advanced AE — `assets/advanced_ae/lang/ja_jp.json`
+
+**Pedroksl.** Original project credits: **Ridanisaurus Rid** (texture style), **Jm³** and **Sea_Kerman** (models). Those images and models are not included. **LGPL 3.0**: `LICENSES/AdvancedAE-LGPL-3.0.md`, with `LICENSES/GPL-3.0.txt`.
+
+Source: https://github.com/pedroksl/AdvancedAE/tree/03d04eb70717591c33aeafbdb33656bd24267042
+
+Target: **26.1.7**, 245 keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: Japanese names, settings, explanations and search terms are revised/supplied. Existing Japanese originates in the same upstream source; it is not claimed as wholly new work. The complete modified, human-readable source is `assets/advanced_ae/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository), under LGPL 3.0. The separately identified AE2AddonLib child has its own GPL scope above. No JAR, Java code, model or texture is included.
+
 ## Project contributions and provenance
 
-`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config), plus the AppleSkin additions as described above. It **does not** apply to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
+`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib), plus the AppleSkin additions as described above. It **does not** apply to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.

@@ -1,0 +1,3 @@
+{
+  "spectrelib.networking.failed": "SpectreLibのネットワーク通信に失敗しました: %s"
+}

@@ -1,0 +1,37 @@
+{
+  "language_sha256": "686ca776305255efe3890cdb7b33977c8cbfa8a4b159951004c28ab897d908b3",
+  "namespace": "enderio",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "conduit.enderio.rs"
+      ],
+      "batch_id": "nested-enderio-00483ca34ce6de5b-0001",
+      "decision": "accepted",
+      "review_sha256": "714b32e3df753d8e9ff9114295b639050058e528b4248757180268d943e5935a",
+      "reviewer": {
+        "agent": "/root/jei_translator",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "0968dacc9c07c1b02efd0e00a35bf2198486a3e2e5d2c5d4120e17a52327c4f4"
+    }
+  ],
+  "schema_version": 2,
+  "source": {
+    "archive_chain": [
+      {
+        "entry": "META-INF/jarjar/com.enderio.enderio-modded-conduits-9.0.5-alpha.jar",
+        "sha256": "82cbd13953a91933768e22f77754820bf78b64db2b57bf38ab7f74b1a8fe61f1"
+      }
+    ],
+    "catalog_source_id": "00483ca34ce6de5bb9157dab5b0c931ea6dd6b63fbceabcd9eba8f2f78f7dfe2",
+    "jar_entry": "assets/enderio/lang/en_us.json",
+    "jar_sha256": "4f85d88bbc0db379d8b8de8c5fdf18d0e552ef438feedcf8331dcf2ef54e1929",
+    "locale": "ja_jp",
+    "namespace": "enderio",
+    "source": "minecraft/mods/enderio-9.0.5-alpha.jar",
+    "source_sha256": "dab0a712bbd62265c1e9af91e1049ec4bb997c91180ec27d311f25077c0dbbc0",
+    "source_type": "nested_jar_lang",
+    "version": "9.0.5-alpha"
+  }
+}
