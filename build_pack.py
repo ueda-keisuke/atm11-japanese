@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.11.0'
-NOTICE_SHA256 = 'ce4b39723886a987f060cf5dff6da08e01b76cd2a536590f8bc9aceeb399abb1'
+VERSION = '0.12.0'
+NOTICE_SHA256 = '6a753d47dbf73f148a92bb597b87a339747c43ae57c7be1ec5f4031a2c7a2948'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -332,7 +332,27 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'mysticalautomation': {'version': '2.0.6',
                         'jar_sha256': '439e00d8b33ecbd7eff71df8814f3d7dc797e87e36fdcd4f4c9f3e4980c6e1df',
                         'jar_entry': 'assets/mysticalautomation/lang/en_us.json',
-                        'source_sha256': 'f41e095e8ba6fab1c2ede01948d1e5be082169f171460490dc9e315092dda2bb'}}
+                        'source_sha256': 'f41e095e8ba6fab1c2ede01948d1e5be082169f171460490dc9e315092dda2bb'},
+ 'neoforge': {'version': '26.1.2.106',
+              'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776',
+              'jar_entry': 'assets/neoforge/lang/en_us.json',
+              'source_sha256': '0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6',
+              'source_type': 'runtime_jar_lang',
+              'source_contract_sha256': 'dc0e107016382faffd4c49a632b0f3a3a821a498b94917cd0c8b4198e69ad45f',
+              'namespace': 'neoforge',
+              'locale': 'ja_jp',
+              'runtime_artifact': {'maven_coordinate': 'net.neoforged:neoforge:26.1.2.106:universal',
+                                   'version': '26.1.2.106',
+                                   'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776'},
+              'scope_prefix': 'neoforge.configuration.'},
+ 'moreoverlays': {'version': '1.24.4',
+                  'jar_sha256': 'c493dc1570d008c5a9fb55466fc3b35b25a43d4250956a837365ea3648dc9df1',
+                  'jar_entry': 'assets/moreoverlays/lang/en_us.json',
+                  'source_sha256': 'f6c8ec1067f04b3db1ca5ef560ea6b135358266bf5035cd31e16f8c02d25d946'},
+ 'interdimensionalwirelesstransmitter': {'version': '26.1.2-1.0.1',
+                                         'jar_sha256': '9466a3992f0f27cc1faf0f560c260e1e5741d27977fe4f032ac7079f15f7a01b',
+                                         'jar_entry': 'assets/interdimensionalwirelesstransmitter/lang/en_us.json',
+                                         'source_sha256': '9f766ecb36ed67d014bbff30741bd8ea3c9e1aaea901de0d43b6ba6c771bee18'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -370,7 +390,11 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'naturescompass': (44, '778e3d9cedd84969f9b5afc49b046a73c72ae72c4fa15875b33dd033c4e3d201'),
  'simplebackups': (43, '979b29e83d159105bfdeb7940003902c2de6ebbf8ecefc9c7b7057a191f026da'),
  'elevatorid': (29, 'f284bd5235b6e454a8c6c168b210b31e126a0ac206e116840c148dc3244dbc38'),
- 'mysticalautomation': (42, '49b0b062ab7ac0b3c7bed6e7fb1e7f715977950a3a30611965d33d2b8cf97753')}
+ 'mysticalautomation': (42, '49b0b062ab7ac0b3c7bed6e7fb1e7f715977950a3a30611965d33d2b8cf97753'),
+ 'neoforge': (46, '0fb199c160060a593de5238cf97c8e02cd9096a36120a9c5ee6dff87c45aa454'),
+ 'moreoverlays': (40, '1618b941ba6d309322d6d68f6e0ecb81896fa8472f2afafc64f67d59856ea0b2'),
+ 'interdimensionalwirelesstransmitter': (10,
+                                         '38101869dc9d8dfcb8bc0105ca74eb29f1e6ece367a962f285ff8005d9963b62')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -408,7 +432,10 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'naturescompass': ['_comment'],
  'simplebackups': [],
  'elevatorid': [],
- 'mysticalautomation': []}
+ 'mysticalautomation': [],
+ 'neoforge': [],
+ 'moreoverlays': [],
+ 'interdimensionalwirelesstransmitter': []}
 PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
                                'language entries revised or supplied. Original project: Simple Backups by '
                                'MelanX; Apache-2.0. See NOTICE.md and '
@@ -457,7 +484,10 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md': 'f32903cdd6843cbaf3c150b6e4e03f73d2c7e717dbdedc26b6cb399141c0bad3',
  'LICENSES/SimpleBackups-Apache-2.0.txt': 'cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30',
  'LICENSES/ElevatorID-MIT.txt': '5463250e11d1f9515c17a6563244f6bc63820c264400dedde321f54dd348e36b',
- 'LICENSES/MysticalAutomation-MIT.txt': '99c858766d01eef611a38b234a2bba5ca9fa2c015e3c12c6da2f80fe3515341e'}
+ 'LICENSES/MysticalAutomation-MIT.txt': '99c858766d01eef611a38b234a2bba5ca9fa2c015e3c12c6da2f80fe3515341e',
+ 'LICENSES/NeoForge-LGPL-2.1.txt': 'a8746534d481c0d1046a1c6c02acc034231ad45b56f04ca35212e1f23e3f2712',
+ 'LICENSES/MoreOverlays-MIT.txt': '63ea7f78b45a1c18732a34d272b7dc6bc501e708386354b2dbdba68bc6e0b5de',
+ 'LICENSES/InterdimensionalWirelessTransmitter-MIT.txt': '132234f0de1d6bcd91e41a6b9d995d9022d1da093c2c94d131ba1adf4117fcc2'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -499,11 +529,14 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'naturescompass': ('LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md',),
  'simplebackups': ('LICENSES/SimpleBackups-Apache-2.0.txt',),
  'elevatorid': ('LICENSES/ElevatorID-MIT.txt',),
- 'mysticalautomation': ('LICENSES/MysticalAutomation-MIT.txt',)}
+ 'mysticalautomation': ('LICENSES/MysticalAutomation-MIT.txt',),
+ 'neoforge': ('LICENSES/NeoForge-LGPL-2.1.txt',),
+ 'moreoverlays': ('LICENSES/MoreOverlays-MIT.txt',),
+ 'interdimensionalwirelesstransmitter': ('LICENSES/InterdimensionalWirelessTransmitter-MIT.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.11.0.zip',
+                'filename': 'ATM11-Japanese-0.12.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -541,7 +574,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'naturescompass',
                                'simplebackups',
                                'elevatorid',
-                               'mysticalautomation'),
+                               'mysticalautomation',
+                               'neoforge',
+                               'moreoverlays',
+                               'interdimensionalwirelesstransmitter'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -586,8 +622,11 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/NaturesCompass-CC-BY-NC-SA-4.0.md',
                              'LICENSES/SimpleBackups-Apache-2.0.txt',
                              'LICENSES/ElevatorID-MIT.txt',
-                             'LICENSES/MysticalAutomation-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.11.0: 38 namespaces / 2650 entries',
+                             'LICENSES/MysticalAutomation-MIT.txt',
+                             'LICENSES/NeoForge-LGPL-2.1.txt',
+                             'LICENSES/MoreOverlays-MIT.txt',
+                             'LICENSES/InterdimensionalWirelessTransmitter-MIT.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.12.0: 41 namespaces / 2746 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -731,7 +770,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.11.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.12.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

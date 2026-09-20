@@ -1,0 +1,12 @@
+{
+  "advancements.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter": "異次元 >>パワー<<",
+  "advancements.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter.description": "異次元無線発信器で、距離の制限を受けずにディメンション間へネットワーク信号を送信する",
+  "block.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter": "異次元無線発信器",
+  "gui.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter.distance": "距離無制限",
+  "item.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter.help": "無線グリッドなどのアイテムでストレージネットワークに接続できます。距離に制限がなく、ディメンションをまたいで利用できます。",
+  "mod.interdimensional_wireless_transmitter": "異次元無線発信器",
+  "text.autoconfig.interdimensionalwirelesstransmitter.option.interdimensionalWirelessTransmitter": "異次元無線発信器",
+  "text.autoconfig.interdimensionalwirelesstransmitter.option.interdimensionalWirelessTransmitter.energyUsage": "エネルギー消費量",
+  "text.autoconfig.interdimensionalwirelesstransmitter.option.interdimensionalWirelessTransmitter.energyUsage.tooltip": "異次元無線発信器が消費するエネルギー。",
+  "text.autoconfig.interdimensionalwirelesstransmitter.option.interdimensionalWirelessTransmitter.tooltip": "異次元無線発信器の設定。"
+}

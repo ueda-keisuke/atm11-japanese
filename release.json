@@ -126,6 +126,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "89ec06a59073e8d3e84e0de0f0d1238d54ff8d8e1eb9e6b83886da7c00119600"
     },
+    "interdimensionalwirelesstransmitter": {
+      "key_count": 10,
+      "language_sha256": "4854eee6e5b07f62f636f89ebc12b717d15d2aa7046ffa7a827178e99b82d29d",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "b5e854ba40eefba57bb563f5010ebba684dd0681aa600dd9ca16188e9cf08de8"
+    },
     "ironjetpacks": {
       "key_count": 55,
       "language_sha256": "221ca737483d1be6755cf9e4b24ca9b5801d5ec85412795444abb4096377c99c",
@@ -161,6 +167,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "d6cd6c2afd626dbc52c570d8d8ede1d689b607103853d6328f62f393c72de138"
     },
+    "moreoverlays": {
+      "key_count": 40,
+      "language_sha256": "f34a1e87017731d49dff7284effb10f4a3047ea2d227402526ecdd67354057aa",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "89d660a04f109ceb1792c001509edd0a86c8bed4abd20e44ba679e11c5e3c6b9"
+    },
     "mysticalautomation": {
       "key_count": 42,
       "language_sha256": "057898fa2bdf977e6d83521cef907bfc40c0298d27ce87f63d0751d142849291",
@@ -174,6 +186,12 @@
         "_comment"
       ],
       "review_evidence_sha256": "1e3700b4685b54b0026d7a7d32309a9012210811058be413c18a8e53fd4d9896"
+    },
+    "neoforge": {
+      "key_count": 46,
+      "language_sha256": "02cd449f5c36777ac690f0b298a193cd1bea7e7571a4e1fd49599128e1421da7",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "2c1cd567d08a58cecbf702de2a5b69add1861ca8a7a6c5cad1c67bbb785cc18c"
     },
     "quarryplus": {
       "key_count": 240,
@@ -243,5 +261,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.11.0"
+  "version": "0.12.0"
 }

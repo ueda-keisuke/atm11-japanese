@@ -1,0 +1,65 @@
+{
+  "language_sha256": "f34a1e87017731d49dff7284effb10f4a3047ea2d227402526ecdd67354057aa",
+  "namespace": "moreoverlays",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "config.moreoverlays.category.chunkbounds",
+        "config.moreoverlays.category.itemsearch",
+        "config.moreoverlays.category.lightoverlay",
+        "config.moreoverlays.category.rendersettings",
+        "config.moreoverlays.category.searchoverlay",
+        "config.moreoverlays.chunkbounds.middle",
+        "config.moreoverlays.chunkbounds.radius",
+        "config.moreoverlays.lightoverlay.downrange",
+        "config.moreoverlays.lightoverlay.finishedmigration",
+        "config.moreoverlays.lightoverlay.hrange",
+        "config.moreoverlays.lightoverlay.ignorelayer",
+        "config.moreoverlays.lightoverlay.ignorespawnlist",
+        "config.moreoverlays.lightoverlay.savelevel",
+        "config.moreoverlays.lightoverlay.simplecheck",
+        "config.moreoverlays.lightoverlay.spawn_numbers",
+        "config.moreoverlays.lightoverlay.update_interval_frames",
+        "config.moreoverlays.lightoverlay.uprange",
+        "config.moreoverlays.rendersettings.chunk_edge_color",
+        "config.moreoverlays.rendersettings.chunk_grid_color",
+        "config.moreoverlays.rendersettings.chunk_line_thick",
+        "config.moreoverlays.rendersettings.chunk_mid_color",
+        "config.moreoverlays.rendersettings.spawn_always_color",
+        "config.moreoverlays.rendersettings.spawn_line_width",
+        "config.moreoverlays.rendersettings.spawn_night_color",
+        "config.moreoverlays.rendersettings.spawn_number_scale",
+        "config.moreoverlays.rendersettings.spawn_safe_color",
+        "config.moreoverlays.searchoverlay.custom_search",
+        "config.moreoverlays.searchoverlay.search_box_color",
+        "config.moreoverlays.searchoverlay.search_enabled",
+        "config.moreoverlays.searchoverlay.search_max_results",
+        "config.moreoverlays.searchoverlay.search_slot_alpha",
+        "config.moreoverlays.searchoverlay.search_slot_color",
+        "config.moreoverlays.searchoverlay.search_tooltip",
+        "gui.config.moreoverlays.reset_config",
+        "gui.config.moreoverlays.save",
+        "gui.config.moreoverlays.title",
+        "gui.config.moreoverlays.undo",
+        "key.moreoverlays.category",
+        "key.moreoverlays.chunkbounds.desc",
+        "key.moreoverlays.lightoverlay.desc"
+      ],
+      "batch_id": "lang-moreoverlays-1.24.4-mc26.1.2-neoforge-moreoverlays-c8da04dd38-0001",
+      "decision": "accepted",
+      "review_sha256": "a21671b7ff645409ef4d40c3aab05e41c752d04090ed708c2d21d6778df93729",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "e7b7e3ac0c6849f572d727794b2dd6697c6dabc4d47e4365c65bbec9ee77527c"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/moreoverlays/lang/en_us.json",
+    "jar_sha256": "c493dc1570d008c5a9fb55466fc3b35b25a43d4250956a837365ea3648dc9df1",
+    "source_sha256": "f6c8ec1067f04b3db1ca5ef560ea6b135358266bf5035cd31e16f8c02d25d946",
+    "version": "1.24.4"
+  }
+}

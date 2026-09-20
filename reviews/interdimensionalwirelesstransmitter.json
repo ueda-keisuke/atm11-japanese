@@ -1,0 +1,35 @@
+{
+  "language_sha256": "4854eee6e5b07f62f636f89ebc12b717d15d2aa7046ffa7a827178e99b82d29d",
+  "namespace": "interdimensionalwirelesstransmitter",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "advancements.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter",
+        "advancements.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter.description",
+        "block.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter",
+        "gui.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter.distance",
+        "item.interdimensionalwirelesstransmitter.interdimensional_wireless_transmitter.help",
+        "mod.interdimensional_wireless_transmitter",
+        "text.autoconfig.interdimensionalwirelesstransmitter.option.interdimensionalWirelessTransmitter",
+        "text.autoconfig.interdimensionalwirelesstransmitter.option.interdimensionalWirelessTransmitter.energyUsage",
+        "text.autoconfig.interdimensionalwirelesstransmitter.option.interdimensionalWirelessTransmitter.energyUsage.tooltip",
+        "text.autoconfig.interdimensionalwirelesstransmitter.option.interdimensionalWirelessTransmitter.tooltip"
+      ],
+      "batch_id": "lang-interdimensionalwirelesstransmitter-neoforge-26.1.2-1.0.1-interdimensionalwirelesstransmitter-0f7928f1c2-0001",
+      "decision": "accepted",
+      "review_sha256": "26868514ccddd031df95b9b6cc1f7ecfa445fd721176ea5da50ae12fdc3a8316",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "b4bc38ed9dc840730d54e811b9f190f16881c7935e056749e905b943920c0266"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/interdimensionalwirelesstransmitter/lang/en_us.json",
+    "jar_sha256": "9466a3992f0f27cc1faf0f560c260e1e5741d27977fe4f032ac7079f15f7a01b",
+    "source_sha256": "9f766ecb36ed67d014bbff30741bd8ea3c9e1aaea901de0d43b6ba6c771bee18",
+    "version": "26.1.2-1.0.1"
+  }
+}

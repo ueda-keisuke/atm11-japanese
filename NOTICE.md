@@ -1,12 +1,12 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.11.0 additions / 追加内容
+## 0.12.0 additions / 追加内容
 
-0.11.0では、ElevatorID（26.1-1.16.2）の29項目、Mystical Automation（2.0.6）の42項目、Charging Gadgets設定4項目を追加します。Curios、Nature's Compass、Simple Backupsを含む既存範囲は保持します。38のMOD・内包ライブラリ、2,650項目（翻訳2,644、原文メタデータ5、Apache 4(b)改変通知1）です。各言語JSONには個別ライセンス条件、原作の著作権表示とライセンス全文、出典、変更日、編集可能な日本語JSON、受理済みレビューの記録を同梱します。
+0.12.0では、NeoForge共通設定46項目、More Overlays Updatedの40項目、Interdimensional Wireless Transmitterの10項目を追加しています。既存範囲は保持します。41のMOD・ライブラリなど、2,746項目（翻訳2,740、原文メタデータ5、Apache 4(b)改変通知1）を収録します。独立レビューとNeoForgeの実装検証を完了し、ゲーム画面の目視確認は0件です。
 
-Version 0.11.0 adds 29 ElevatorID keys, 42 Mystical Automation keys, and four derived Charging Gadgets configuration entries. Earlier namespaces and their individual license scopes are retained.
+Version 0.12.0 adds 46 NeoForge configuration keys, 40 More Overlays Updated keys, and 10 Interdimensional Wireless Transmitter keys. Earlier namespaces and their individual license scopes are retained. Independent review and NeoForge implementation checks are complete; game-screen visual checks remain at 0.
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.11.0 contains 2,650 entries across 38 namespaces: 2,644 translations, five preserved original metadata entries and one Apache 4(b) project notice. The five original metadata entries are JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, and Nature's Compass `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.12.0 contains 2,746 entries across 41 namespaces: 2,740 translations, five preserved original metadata entries and one Apache 4(b) project notice. The five original metadata entries are JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, and Nature's Compass `_comment`. Game-screen visual checks for this release: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -330,7 +330,7 @@ Source: https://github.com/Direwolf20-MC/ChargingGadgets/tree/9e464f1c5fcdb5f02c
 
 Target: **1.16.1**, 6 current English language keys plus four derived configuration labels/tooltips in this release. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke: Japanese item names, action labels and explanations are revised or supplied. The current generated-client English source matches the installed MOD language bytes. The editable modified JSON and accepted review provenance are included; no MOD JAR, Java, images or private configuration is bundled.
 
-This release adds four ConfigSpec-derived labels/tooltips based on the fixed Charging Gadgets contract; the hardcoded menu title, part of the NeoForge common configuration UI, and the rest of the configuration screen remain outside scope. Adding four MOD-specific entries does not claim that the common UI is fully Japanese. The source range display says `> 0`, while the verified implementation accepts zero; this release does not present that display text as a corrected rule.
+The four ConfigSpec-derived Charging Gadgets labels/tooltips were added with the 0.11 language scope. Version 0.12 adds Japanese Range labels through the 46-key NeoForge common configuration scope. The hardcoded menu title, the remaining NeoForge language keys and the rest of the configuration screen remain outside scope; this does not claim that the common UI is fully Japanese. The source range display says `> 0`, while the verified implementation accepts zero; this release does not present that display text as a corrected rule.
 
 ## Curios — `assets/curios/lang/ja_jp.json`
 
@@ -372,8 +372,34 @@ Source: https://github.com/BlakeBr0/MysticalAutomation/tree/d108d5d91e6e620d9dba
 
 Target: **2.0.6**, 42 language entries. The fixed English and existing Japanese assets match the installed JAR and fixed source byte-for-byte. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. This release includes only the editable Japanese language asset; no JAR, Java code, configuration or other assets.
 
+## NeoForge configuration surface — `assets/neoforge/lang/ja_jp.json`
+
+**The NeoForged Team.** LGPL-2.1-only: the complete text is preserved as `LICENSES/NeoForge-LGPL-2.1.txt`.
+
+Fixed source: https://github.com/NeoForged/NeoForge/tree/dfe28573ea51212ebdc813783f3de80e8a8aa06c
+
+Target: **26.1.2.106**, 46 original NeoForge configuration UI keys. The installed universal JAR is not included. The existing NeoForge Japanese asset is upstream provenance. ATM11 Japanese project / ueda-keisuke revised these 46 entries on **2026-09-20 (UTC)** and provides the editable modified Japanese JSON. The remaining 220 NeoForge language keys, individual MOD-derived configuration strings and hardcoded UI are outside scope.
+
+Public provenance: `reviews/neoforge.json` records the original English language hash, universal-JAR hash, runtime artifact identity, modified Japanese language hash and accepted review references. The official source archive is https://maven.neoforged.net/releases/net/neoforged/neoforge/26.1.2.106/neoforge-26.1.2.106-sources.jar (SHA-256: `b66d4b0f22ff9b4d110c5a0d29a0cd3c496c3445dd2034bed225d4f56eac00af`). This release retains the complete LGPL text and The NeoForged Team attribution.
+
+## More Overlays Updated — `assets/moreoverlays/lang/ja_jp.json`
+
+**feldim2425, RiDGo8.** MIT: the complete original notice is preserved as `LICENSES/MoreOverlays-MIT.txt`.
+
+Fixed source: https://github.com/r8420/MoreOverlays-updated/tree/c8ad202050dc92ff94be1b7fe34903985c883932
+
+Target: **1.24.4**, 40 language keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. The editable modified Japanese JSON and accepted review provenance are included; no JAR, Java source, configuration or image is included.
+
+## Interdimensional Wireless Transmitter — `assets/interdimensionalwirelesstransmitter/lang/ja_jp.json`
+
+**Ultramega.** MIT: the complete original notice is preserved as `LICENSES/InterdimensionalWirelessTransmitter-MIT.txt`.
+
+Fixed source: https://github.com/starforcraft/Interdimensional-Wireless-Transmitter/tree/47e96d5f9e2674acefd4a95a14e913363f66ca12
+
+Target: **26.1.2-1.0.1**, 10 language keys. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / ueda-keisuke. The transmitter requires Refined Storage and provides cross-dimensional, unlimited-range network access; no Refined Storage assets, JAR, Java source, logo or textures are included. The editable modified Japanese JSON and accepted review provenance are included.
+
 ## Project contributions and provenance
 
-`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage, Building Gadgets 2, Charging Gadgets, ElevatorID, Mystical Automation), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, Curios, Nature's Compass, Simple Backups, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
+`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage, Building Gadgets 2, Charging Gadgets, ElevatorID, Mystical Automation, More Overlays Updated, Interdimensional Wireless Transmitter), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to NeoForge, Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, Curios, Nature's Compass, Simple Backups, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.

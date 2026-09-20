@@ -1,0 +1,81 @@
+{
+  "language_sha256": "02cd449f5c36777ac690f0b298a193cd1bea7e7571a4e1fd49599128e1421da7",
+  "namespace": "neoforge",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "neoforge.configuration.section.neoforge.client.toml",
+        "neoforge.configuration.section.neoforge.client.toml.title",
+        "neoforge.configuration.section.neoforge.common.toml",
+        "neoforge.configuration.section.neoforge.common.toml.title",
+        "neoforge.configuration.section.neoforge.server.toml",
+        "neoforge.configuration.section.neoforge.server.toml.title",
+        "neoforge.configuration.title",
+        "neoforge.configuration.uitext.breadcrumb.order",
+        "neoforge.configuration.uitext.breadcrumb.separator",
+        "neoforge.configuration.uitext.client",
+        "neoforge.configuration.uitext.common",
+        "neoforge.configuration.uitext.filenametooltip",
+        "neoforge.configuration.uitext.listelement",
+        "neoforge.configuration.uitext.listelementdown",
+        "neoforge.configuration.uitext.listelementremove",
+        "neoforge.configuration.uitext.listelementup",
+        "neoforge.configuration.uitext.longstring",
+        "neoforge.configuration.uitext.newlistelement",
+        "neoforge.configuration.uitext.notlan",
+        "neoforge.configuration.uitext.notloaded",
+        "neoforge.configuration.uitext.notonline",
+        "neoforge.configuration.uitext.rangetooltip",
+        "neoforge.configuration.uitext.reset",
+        "neoforge.configuration.uitext.reset.tooltip",
+        "neoforge.configuration.uitext.restart.game.text",
+        "neoforge.configuration.uitext.restart.game.title",
+        "neoforge.configuration.uitext.restart.return",
+        "neoforge.configuration.uitext.restart.return.tooltip",
+        "neoforge.configuration.uitext.restart.server.text",
+        "neoforge.configuration.uitext.restart.server.title",
+        "neoforge.configuration.uitext.section",
+        "neoforge.configuration.uitext.sectiontext",
+        "neoforge.configuration.uitext.server",
+        "neoforge.configuration.uitext.startup",
+        "neoforge.configuration.uitext.title",
+        "neoforge.configuration.uitext.title.client",
+        "neoforge.configuration.uitext.title.common",
+        "neoforge.configuration.uitext.title.server",
+        "neoforge.configuration.uitext.title.startup",
+        "neoforge.configuration.uitext.type.client",
+        "neoforge.configuration.uitext.type.common",
+        "neoforge.configuration.uitext.type.server",
+        "neoforge.configuration.uitext.type.startup",
+        "neoforge.configuration.uitext.undo",
+        "neoforge.configuration.uitext.undo.tooltip",
+        "neoforge.configuration.uitext.unsupportedelement"
+      ],
+      "batch_id": "runtime-neoforge-config-26.1.2.106-0001",
+      "decision": "accepted",
+      "review_sha256": "cc5eef1aa030acdff243969b0cf31a6fb575d8d288f5e32a07d162c13411d6e1",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "f95bf96458980d20660ecb5c0de899a3a343827875f93f069a093f7b692e0f2d"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/neoforge/lang/en_us.json",
+    "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+    "locale": "ja_jp",
+    "namespace": "neoforge",
+    "runtime_artifact": {
+      "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+      "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+      "version": "26.1.2.106"
+    },
+    "scope_prefix": "neoforge.configuration.",
+    "source_contract_sha256": "dc0e107016382faffd4c49a632b0f3a3a821a498b94917cd0c8b4198e69ad45f",
+    "source_sha256": "0de53ccd56b413c56aab33292618709e936360985c749623783121dab49cbad6",
+    "source_type": "runtime_jar_lang",
+    "version": "26.1.2.106"
+  }
+}
