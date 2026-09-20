@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.25.0'
-NOTICE_SHA256 = '2e96340351ef8ae08390ae993d9aa7c91415ca19cad0d19b111030b83e25cece'
+VERSION = '0.26.0'
+NOTICE_SHA256 = 'b230d2b195d5bc2830d54f1bd4e54321ab5d7effb2e506aaa049d2ced55e2f4a'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -674,7 +674,7 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'measurements': (21, '8047458ebed154364b00808a67539f10a8ae9dbc9fac10d5350ebf4b9d6033a9'),
  'mininggadgets': (86, '90ca5207f6d593dd8786ad93b2a10de8d11c6e423b8826ea59606fd9e74feca2'),
  'balm': (53, 'cd75f07dde765ab106baa0afa77974c874f8417db5f8cb15d7930c524cec868a'),
- 'ae2': (719, '634b5c2bca771e706e4c0997c4fe40eb6a032a271dcc74102ade889b69695cf4')}
+ 'ae2': (1018, 'de69224b3d6cfb6d4b01301d6d4286524f7cfb80da21b5ab81b615e4e95eed5b')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -874,7 +874,7 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.25.0.zip',
+                'filename': 'ATM11-Japanese-0.26.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -992,7 +992,7 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/MiningGadgets-MIT.txt',
                              'LICENSES/Balm-Apache-2.0.txt',
                              'LICENSES/Balm-NOTICE.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.25.0: 55 namespaces / 4688 entries',
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.26.0: 55 namespaces / 4987 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -1138,7 +1138,7 @@ def validate_evidence(raw, namespace, language, language_sha256):
     require(evidence['language_sha256'] == language_sha256, f'{namespace}: Review evidence language hash mismatch')
     reviews = evidence['reviews']
     require(isinstance(reviews, list) and bool(reviews), f'{namespace}: No independent review evidence')
-    accepted, seen_reviews, seen_batches = set(), set(), set()
+    accepted, seen_reviews, seen_batches = set(), set(), {}
     accepted_by_source = {sid: set() for sid in policy['sources']} if multisource else {}
     for review in reviews:
         fields = {'batch_id', 'review_sha256', 'submission_sha256', 'reviewer', 'decision', 'accepted_keys'}
@@ -1146,9 +1146,8 @@ def validate_evidence(raw, namespace, language, language_sha256):
             fields.add('source_id')
         require(isinstance(review, dict) and set(review) == fields, f'{namespace}: Unexpected review record schema')
         batch = review['batch_id']
-        require(isinstance(batch, str) and (batch in SFM_BATCH_IDS if namespace == 'sfm' else re.fullmatch('[A-Za-z0-9_.+-]+', batch)) and batch not in seen_batches,
-                f'{namespace}: Invalid/duplicate review batch')
-        seen_batches.add(batch)
+        require(isinstance(batch, str) and (batch in SFM_BATCH_IDS if namespace == 'sfm' else re.fullmatch('[A-Za-z0-9_.+-]+', batch)) ,
+                f'{namespace}: Invalid review batch')
         require(valid_hash(review['review_sha256']) and valid_hash(review['submission_sha256']),
                 f'{namespace}: Missing review/submission SHA-256')
         require(review['review_sha256'] not in seen_reviews, f'{namespace}: Duplicate independent review')
@@ -1157,6 +1156,11 @@ def validate_evidence(raw, namespace, language, language_sha256):
         require(isinstance(reviewer, dict) and set(reviewer) == {'agent', 'model'} and
                 all(isinstance(v, str) and v.strip() for v in reviewer.values()), f'{namespace}: Missing reviewer identity')
         require(isinstance(review['decision'], str) and review['decision'] in {'accepted', 'partial'}, f'{namespace}: Review does not accept keys')
+        if batch in seen_batches:
+            require(seen_batches[batch] == review['decision'] == 'partial',
+                    f'{namespace}: Repeated batches must contain only disjoint partial reviews')
+        else:
+            seen_batches[batch] = review['decision']
         keys = review['accepted_keys']
         require(isinstance(keys, list) and bool(keys) and all(isinstance(k, str) for k in keys) and
                 len(keys) == len(set(keys)), f'{namespace}: Invalid/duplicate accepted keys')
@@ -1188,7 +1192,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.25.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.26.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']
