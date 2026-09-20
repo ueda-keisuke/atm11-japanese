@@ -18,6 +18,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "9e29212dfdfee402a3c3c1742fd67a20267d98bf87cd1e5f3713dfd81c046795"
     },
+    "ae2wtlib": {
+      "key_count": 44,
+      "language_sha256": "880201dfe553a3b5a4d2447c6df6402c3f6af7a1fd1d882fba5bbe47921ba4e6",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "7f1ace9cebebe8b2700acbe01b8d735b65091c7a3c3a433d4bee7de662ee1573"
+    },
     "ae2wtlib_api": {
       "key_count": 5,
       "language_sha256": "d5e77626a8f3ebd2023b91956536200c77609a645dc6b7ed6c1a9d2447eea78a",
@@ -194,10 +200,10 @@
       "review_evidence_sha256": "a1a7b6dd295e1eec5283dbf6a7df4883f4fd7140d23199758880d54ea47fdec1"
     },
     "keybindbundles": {
-      "key_count": 26,
-      "language_sha256": "5fe83378139a30f1c744dc328c8787f43fb8b68202af6d52e698594445e45d75",
+      "key_count": 29,
+      "language_sha256": "a5babe02f329169168131488cc64769be83a50cd92702b76ffa7ba311446747e",
       "preserved_metadata_keys": [],
-      "review_evidence_sha256": "9e6e956a8d45b0fd2c167e011d39afab899185414be3e4f3270689bbc3c8ee22"
+      "review_evidence_sha256": "5d9892ec264de5ba4a538cd16ff5d67d8d01ad8b3bfb9efa387a16635e621787"
     },
     "kuma_api": {
       "key_count": 4,
@@ -216,6 +222,14 @@
       "language_sha256": "f9eb79a690eb6f69136e0e35e7ade9d0618c367f339877d755ebf72fbe8f6853",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "c8c1b1153cf8fe0d50f47c3f20eb6fac619390c75ca2a0970bc9f2e8eead8d40"
+    },
+    "measurements": {
+      "key_count": 15,
+      "language_sha256": "8c716e7aee85f4817d1d82e5d01c6c92ba0032654f9739de9624647adc57567e",
+      "preserved_metadata_keys": [
+        "_comment"
+      ],
+      "review_evidence_sha256": "0294534a637f2ab1555ccb1bdd320aaf7a85e7146b2c5c9d3457401e958ce6f6"
     },
     "moreoverlays": {
       "key_count": 40,
@@ -329,5 +343,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.15.0"
+  "version": "0.16.0"
 }

@@ -1,0 +1,69 @@
+{
+  "language_sha256": "880201dfe553a3b5a4d2447c6df6402c3f6af7a1fd1d882fba5bbe47921ba4e6",
+  "namespace": "ae2wtlib",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "ae2wtlib.configuration.always_show_terminal_selector",
+        "ae2wtlib.configuration.magnet_card_range",
+        "gui.ae2wtlib.Magnet",
+        "gui.ae2wtlib.allow",
+        "gui.ae2wtlib.copy_insert",
+        "gui.ae2wtlib.copy_pickup",
+        "gui.ae2wtlib.craft_if_missing.text",
+        "gui.ae2wtlib.creativetab",
+        "gui.ae2wtlib.current_terminal",
+        "gui.ae2wtlib.deny",
+        "gui.ae2wtlib.insert_filter",
+        "gui.ae2wtlib.magnet.text",
+        "gui.ae2wtlib.magnet_settings_title",
+        "gui.ae2wtlib.magnetcard",
+        "gui.ae2wtlib.magnetcard.desc.inv",
+        "gui.ae2wtlib.magnetcard.desc.me",
+        "gui.ae2wtlib.magnetcard.desc.me_no_magnet",
+        "gui.ae2wtlib.magnetcard.desc.off",
+        "gui.ae2wtlib.magnetcard.hotkey",
+        "gui.ae2wtlib.off",
+        "gui.ae2wtlib.on",
+        "gui.ae2wtlib.pick_block.text",
+        "gui.ae2wtlib.pickup_filter",
+        "gui.ae2wtlib.pickup_to_me.text",
+        "gui.ae2wtlib.restock",
+        "gui.ae2wtlib.restock.text",
+        "gui.ae2wtlib.slot.magnetcard.desc",
+        "gui.ae2wtlib.switch",
+        "gui.ae2wtlib.terminal_empty",
+        "gui.ae2wtlib.trash",
+        "gui.ae2wtlib.wireless_terminal_settings_title",
+        "item.ae2wtlib.magnet_card",
+        "item.ae2wtlib.magnet_card.desc",
+        "item.ae2wtlib.quantum_bridge_card",
+        "item.ae2wtlib.quantum_bridge_card.desc",
+        "item.ae2wtlib.wireless_pattern_access_terminal",
+        "item.ae2wtlib.wireless_pattern_encoding_terminal",
+        "item.ae2wtlib.wireless_universal_terminal",
+        "item.ae2wtlib.wireless_universal_terminal.desc",
+        "key.ae2.ae2wtlib_magnet",
+        "key.ae2.ae2wtlib_restock",
+        "key.ae2.ae2wtlib_stow",
+        "key.ae2.wireless_pattern_access_terminal",
+        "key.ae2.wireless_pattern_encoding_terminal"
+      ],
+      "batch_id": "lang-ae2wtlib-26.1.1-beta-ae2wtlib-a9b801da6a-0001",
+      "decision": "accepted",
+      "review_sha256": "9a6ad0a13df2e3226a91252268f23845d304de8c50363adf783008d8fad33786",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "09554e0be9ef1e7588725fdf22a832a37e63dfbc69d0290fc97c30dbdcb70220"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/ae2wtlib/lang/en_us.json",
+    "jar_sha256": "9309564ee5f3640ddbcc55450e0727e5a7790488f3b82af350d3012960b18311",
+    "source_sha256": "aab41084febf12df6f99358a2bf51c1434107e133d6fda1f13445edba14ecd34",
+    "version": "26.1.1-beta"
+  }
+}

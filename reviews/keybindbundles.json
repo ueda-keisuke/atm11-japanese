@@ -1,7 +1,23 @@
 {
-  "language_sha256": "5fe83378139a30f1c744dc328c8787f43fb8b68202af6d52e698594445e45d75",
+  "language_sha256": "a5babe02f329169168131488cc64769be83a50cd92702b76ffa7ba311446747e",
   "namespace": "keybindbundles",
   "reviews": [
+    {
+      "accepted_keys": [
+        "keybindbundles.configuration.clipMouseToMenu.tooltip",
+        "keybindbundles.configuration.ignoreInvalidKeyChecks.tooltip",
+        "keybindbundles.configuration.triggerKeymappingOnRelease.tooltip"
+      ],
+      "batch_id": "derived-keybindbundles-config-0001",
+      "decision": "accepted",
+      "review_sha256": "04cf6cf8e39196cdce11954e6963f27652662ae3cc259372c3879a5827f99b4c",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "configuration",
+      "submission_sha256": "2429ac7b46fcc39980dbca22741d0a9d3a898d7c8c681ca0e8de50624d01ffb6"
+    },
     {
       "accepted_keys": [
         "box.keybindbundles.bundle_name",
@@ -38,14 +54,61 @@
         "agent": "/root/distribution_audit",
         "model": "gpt-5.6-luna"
       },
+      "source_id": "lang",
       "submission_sha256": "3ded5dfeca833b14a05585a9e7125bc7438eabeadc5355b696376c3f7ac8dc9b"
     }
   ],
-  "schema_version": 1,
-  "source": {
-    "jar_entry": "assets/keybindbundles/lang/en_us.json",
-    "jar_sha256": "8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b",
-    "source_sha256": "12c471f276b91698b06356a395275aaa02ddd49b46febd8e9e7610e90673da68",
-    "version": "2.0.0"
-  }
+  "schema_version": 3,
+  "sources": {
+    "configuration": {
+      "class_hashes": {
+        "com/matyrobbrt/keybindbundles/KBClientConfig.class": "a01b938891120f78b180b902b031dca93353b41ad25f7ab0c0253a1754f7afd1",
+        "com/matyrobbrt/keybindbundles/KeyBindBundleManager$RadialKeyMapping.class": "cecd64f3059a979765cff68c8dff22bfcedf7f3979daff08267768e472d78d33",
+        "com/matyrobbrt/keybindbundles/KeyBindBundleManager.class": "20c1afd304c82ff41ea6dc20b43e644b0aee23e459fb6d84384fd19853232d0e"
+      },
+      "english_contract": [
+        {
+          "en": "Set to true to clip the mouse within the bounds of the radial menu of bundles",
+          "key": "keybindbundles.configuration.clipMouseToMenu.tooltip",
+          "name": "clipMouseToMenu"
+        },
+        {
+          "en": "If set to true, the keymapping hovered in a bundle menu will be automatically triggered (without needing a click) upon release of the bundle key",
+          "key": "keybindbundles.configuration.triggerKeymappingOnRelease.tooltip",
+          "name": "triggerKeymappingOnRelease"
+        },
+        {
+          "en": "ONLY USE THIS IF YOU KNOW WHAT YOU'RE DOING\nIgnore invalid key checks in InputConstants#isKeyDown",
+          "key": "keybindbundles.configuration.ignoreInvalidKeyChecks.tooltip",
+          "name": "ignoreInvalidKeyChecks"
+        }
+      ],
+      "jar_entry": "com/matyrobbrt/keybindbundles/KBClientConfig.class",
+      "jar_sha256": "8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b",
+      "runtime_dependencies": {
+        "neoforge": {
+          "class_hashes": {
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen$ConfigurationSectionScreen.class": "5e7c94bf81f50a8395f2b9aefb3ddc2530d87cd914293b94f29da776a2a86aeb",
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen$TranslationChecker.class": "881f89a229127ddf3a484b7591e8131b6a54014361d3379a19bb7c1cf2ecda32",
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen.class": "283430e120dc0157d645189b544652e875b72bc2c312a0acfe975a8a326343e4",
+            "net/neoforged/neoforge/common/ModConfigSpec$Builder.class": "a9dc9214b2758279c74321d673e5568e2214f52cb23e0fc6d5f08bd0a5c6610b",
+            "net/neoforged/neoforge/common/ModConfigSpec.class": "2070549e5f38a01747bd1e7e114f20a68c0813fe81f7bc65ee5cc5b90f4c0a4d"
+          },
+          "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+          "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+          "version": "26.1.2.106"
+        }
+      },
+      "source_contract_sha256": "03b77faf4f3e3e4a7118c6517e175cf206a382af3d6831f82fe4b80118d184b3",
+      "source_sha256": "a01b938891120f78b180b902b031dca93353b41ad25f7ab0c0253a1754f7afd1",
+      "source_type": "derived_jar_lang"
+    },
+    "lang": {
+      "jar_entry": "assets/keybindbundles/lang/en_us.json",
+      "jar_sha256": "8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b",
+      "source_sha256": "12c471f276b91698b06356a395275aaa02ddd49b46febd8e9e7610e90673da68",
+      "source_type": "jar_lang"
+    }
+  },
+  "version": "2.0.0"
 }

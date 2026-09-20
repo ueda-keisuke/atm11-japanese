@@ -1,0 +1,40 @@
+{
+  "language_sha256": "8c716e7aee85f4817d1d82e5d01c6c92ba0032654f9739de9624647adc57567e",
+  "namespace": "measurements",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "_comment",
+        "item.measurements.tape_measure",
+        "measurements.configuration.client",
+        "measurements.configuration.lineColor",
+        "measurements.configuration.lineWidth",
+        "measurements.configuration.lineWidthMax",
+        "measurements.configuration.textColor",
+        "measurements.configuration.textSize",
+        "text.autoconfig.measurements.option.client",
+        "text.autoconfig.measurements.option.client.lineColor",
+        "text.autoconfig.measurements.option.client.lineWidth",
+        "text.autoconfig.measurements.option.client.lineWidthMax",
+        "text.autoconfig.measurements.option.client.textColor",
+        "text.autoconfig.measurements.option.client.textSize",
+        "text.autoconfig.measurements.title"
+      ],
+      "batch_id": "lang-Measurements-neoforge-26.1-4.0.0-measurements-7958c5666b-0001",
+      "decision": "accepted",
+      "review_sha256": "0dc22256206addd7f6b0bfaad65b8ead8e51e20786ff6387ffdc1711d6d432e5",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "75a7cae1715f14b92ae4b118e94fc2d30025bc4621f440289ed8c5083f27e944"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/measurements/lang/en_us.json",
+    "jar_sha256": "e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11",
+    "source_sha256": "59ee60e9642c729a8f9458de17a739498d9574a7e9c59aa6a7bd06420143c2fe",
+    "version": "4.0.0"
+  }
+}

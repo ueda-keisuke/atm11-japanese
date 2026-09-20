@@ -1,12 +1,12 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.15.0 additions / 追加内容
+## 0.16.0 additions / 追加内容
 
-0.15.0では、KeyBind Bundlesの26項目、In World Recipesの38項目、Mystical Agriculture Tiered Crystalsの40項目を追加しています。既存の47対象は保持します。全50対象・3,542項目（翻訳3,523、原文メタデータ18、Apache 4(b)改変通知1）を収録します。ゲーム画面の目視確認は0件です。
+0.16.0では、KeyBind Bundlesの設定説明3項目、AE2WTLibの通常言語44項目、Measurementsの14訳と原文コメント1項目を追加しています。追加は62項目（翻訳61・メタデータ1）です。KeyBind Bundlesの既存26項目と、他の既存49対象の言語データを保持します。全52対象・3,604項目（翻訳3,584、原文メタデータ19、Apache 4(b)改変通知1）を収録します。ゲーム画面の目視確認は0件です。
 
-Version 0.15.0 adds 26 KeyBind Bundles entries, 38 In World Recipes entries and 40 Mystical Agriculture Tiered Crystals entries. Earlier language/review files and their individual license scopes are retained. Independent language review, format checks and native resource-loader checks are separate from game-screen visual checks, which remain at 0.
+Version 0.16.0 adds 62 source entries: three KeyBind Bundles configuration descriptions, 44 AE2WTLib entries, and 14 Measurements translations plus one preserved source comment. KeyBind Bundles now has 29 entries; the other 49 previously included namespaces retain their language data. Independent review and native component/loader checks remain distinct from game-screen visual checks, which are at 0.
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.15.0 contains 3,542 entries across 50 namespaces: 3,523 translations, 18 preserved original metadata entries and one Apache 4(b) project notice. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.16.0 contains 3,604 entries across 52 namespaces: 3,584 translations, 19 preserved original metadata entries and one Apache 4(b) project notice. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries, plus Measurements `_comment`. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -476,7 +476,7 @@ Installed version: 2.0.0. JAR SHA-256: `8e16eb32f49d55e7b106d6fd406bdd395d56ad0d
 
 Only this language overlay is included. MOD JARs, Java code, textures, models and unrelated upstream assets are not distributed. The listed language keys do not establish complete coverage of every screen.
 
-The three NeoForge configuration descriptions derived from ConfigSpec comments are outside these 26 English language-file keys and remain pending. Their configuration labels are included.
+Version 0.16 adds three separately reviewed NeoForge configuration descriptions derived from the fixed source [KBClientConfig.java](https://github.com/MatyrobbrtMods/KeyBindBundles/blob/6bb50828ff552a719dc0a472d53be4bb3740ee45/src/main/java/com/matyrobbrt/keybindbundles/KBClientConfig.java). They retain the same original MIT license. The ordinary 26 language values are unchanged. The modified source is editable JSON; the Java source, class and MOD JAR are not distributed. Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20 (UTC).
 
 ## In World Recipes — `assets/inworldrecipes/lang/ja_jp.json`
 
@@ -507,3 +507,27 @@ Installed version: 1.8.0. JAR SHA-256: `e38d08da7a43249d281dbc4aabae37cca59e980a
 Only this language overlay is included. MOD JARs, Java code, textures, models and unrelated upstream assets are not distributed. The listed language keys do not establish complete coverage of every screen.
 
 The crystal item tooltips build translation keys by concatenating formatting, English tier-conversion text or a remaining-use label with a value. Those generated strings are outside these 40 fixed language keys; the normal language overlay does not translate them. No crystal behavior or source code is changed.
+
+## AE2 Wireless Terminal Library — `assets/ae2wtlib/lang/ja_jp.json`
+
+**Copyright (c) 2021 mari_023. Authors: mari_023, Ridanisaurus.** The complete original MIT text is retained at `LICENSES/AE2WTLib-MIT.txt`; this editable Japanese language adaptation retains MIT.
+
+Fixed source: https://github.com/Mari023/AE2WirelessTerminalLibrary/tree/16c325df8e68447388798beea83444051d4e2de7
+
+Upstream [English language source](https://github.com/Mari023/AE2WirelessTerminalLibrary/blob/16c325df8e68447388798beea83444051d4e2de7/src/main/resources/assets/ae2wtlib/lang/en_us.json). Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: revised or supplied the Japanese language values in this 44-entry scope. Editable source is included in the ZIP and in `resourcepack/assets/ae2wtlib/lang/ja_jp.json`. Original JARs, Java code, images and unrelated assets are excluded.
+
+Installed version: 26.1.1-beta. JAR SHA-256: `9309564ee5f3640ddbcc55450e0727e5a7790488f3b82af350d3012960b18311`. English entry SHA-256: `aab41084febf12df6f99358a2bf51c1434107e133d6fda1f13445edba14ecd34`. Full MIT license SHA-256: `d61e8472fd606169227d467eae0fc46341256dc54ed05837df050b29ad0297ba`. Fixed source English is byte-identical to the installed English entry.
+
+[Existing Japanese and its contributors](https://github.com/Mari023/AE2WirelessTerminalLibrary/blob/16c325df8e68447388798beea83444051d4e2de7/src/main/resources/assets/ae2wtlib/lang/ja_jp.json) remain credited. Existing Japanese SHA-256: `7ce962a2ec7e080a5998cff8f8f1c3fc02d06e9d7626ec03d15529007f1d0841`; its 38-entry source matches the installed JAR byte-for-byte. The separately included `ae2wtlib_api` five-key adaptation retains its previous scope and evidence.
+
+## Measurements — `assets/measurements/lang/ja_jp.json`
+
+**Copyright (c) 2021 Mrbysco.** The complete original MIT text is retained at `LICENSES/Measurements-MIT.txt`; this editable Japanese language adaptation retains MIT.
+
+Fixed source: https://github.com/Mrbysco/Measurements/tree/72406856f7e26e83e38f220def86a7d3a69246b0
+
+Upstream [English language source](https://github.com/Mrbysco/Measurements/blob/72406856f7e26e83e38f220def86a7d3a69246b0/common/src/main/resources/assets/measurements/lang/en_us.json). Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: revised or supplied the Japanese language values in this 15-entry scope. Editable source is included in the ZIP and in `resourcepack/assets/measurements/lang/ja_jp.json`. Original JARs, Java code, images and unrelated assets are excluded.
+
+Installed version: 4.0.0. JAR SHA-256: `e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11`. English entry SHA-256: `59ee60e9642c729a8f9458de17a739498d9574a7e9c59aa6a7bd06420143c2fe`. Full MIT license SHA-256: `ded3792ee1ef728cec734993688f87ec6bf8cd050cdee99ed46613433becfa18`. Fixed source English is byte-identical to the installed English entry.
+
+The installed JAR contains no Japanese language file. The English file contains three `_comment` section markers; the final value `NeoForge Config` is retained once, matching Minecraft’s parser. This yields 14 Japanese translations and one original metadata entry, not 15 translations. Derived configuration descriptions and hardcoded display text are outside this language-file scope.

@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.15.0'
-NOTICE_SHA256 = '5074d75ef59d6115085eabeb596bc9d5aae36b0c48c38ca7095cda80ade4d13c'
+VERSION = '0.16.0'
+NOTICE_SHA256 = '4597ea7b741868984c8a9696039f2c409eeb8ddd4ad2d1b3cb3186ab3b51fadf'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -378,9 +378,46 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
                                    'jar_entry': 'assets/refinedstorage_quartz_arsenal/lang/en_us.json',
                                    'source_sha256': '83bb43ab5a611522ace3a4ac70f099a28c82b1a70fea3ab571dfffad84eb5f39'},
  'keybindbundles': {'version': '2.0.0',
-                    'jar_sha256': '8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b',
-                    'jar_entry': 'assets/keybindbundles/lang/en_us.json',
-                    'source_sha256': '12c471f276b91698b06356a395275aaa02ddd49b46febd8e9e7610e90673da68'},
+                    'sources': {'lang': {'jar_sha256': '8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b',
+                                         'jar_entry': 'assets/keybindbundles/lang/en_us.json',
+                                         'source_sha256': '12c471f276b91698b06356a395275aaa02ddd49b46febd8e9e7610e90673da68',
+                                         'source_type': 'jar_lang'},
+                                'configuration': {'jar_sha256': '8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b',
+                                                  'jar_entry': 'com/matyrobbrt/keybindbundles/KBClientConfig.class',
+                                                  'source_sha256': 'a01b938891120f78b180b902b031dca93353b41ad25f7ab0c0253a1754f7afd1',
+                                                  'source_type': 'derived_jar_lang',
+                                                  'source_contract_sha256': '03b77faf4f3e3e4a7118c6517e175cf206a382af3d6831f82fe4b80118d184b3',
+                                                  'class_hashes': {'com/matyrobbrt/keybindbundles/KBClientConfig.class': 'a01b938891120f78b180b902b031dca93353b41ad25f7ab0c0253a1754f7afd1',
+                                                                   'com/matyrobbrt/keybindbundles/KeyBindBundleManager$RadialKeyMapping.class': 'cecd64f3059a979765cff68c8dff22bfcedf7f3979daff08267768e472d78d33',
+                                                                   'com/matyrobbrt/keybindbundles/KeyBindBundleManager.class': '20c1afd304c82ff41ea6dc20b43e644b0aee23e459fb6d84384fd19853232d0e'},
+                                                  'runtime_dependencies': {'neoforge': {'class_hashes': {'net/neoforged/neoforge/client/gui/ConfigurationScreen$ConfigurationSectionScreen.class': '5e7c94bf81f50a8395f2b9aefb3ddc2530d87cd914293b94f29da776a2a86aeb',
+                                                                                                         'net/neoforged/neoforge/client/gui/ConfigurationScreen$TranslationChecker.class': '881f89a229127ddf3a484b7591e8131b6a54014361d3379a19bb7c1cf2ecda32',
+                                                                                                         'net/neoforged/neoforge/client/gui/ConfigurationScreen.class': '283430e120dc0157d645189b544652e875b72bc2c312a0acfe975a8a326343e4',
+                                                                                                         'net/neoforged/neoforge/common/ModConfigSpec$Builder.class': 'a9dc9214b2758279c74321d673e5568e2214f52cb23e0fc6d5f08bd0a5c6610b',
+                                                                                                         'net/neoforged/neoforge/common/ModConfigSpec.class': '2070549e5f38a01747bd1e7e114f20a68c0813fe81f7bc65ee5cc5b90f4c0a4d'},
+                                                                                        'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776',
+                                                                                        'maven_coordinate': 'net.neoforged:neoforge:26.1.2.106:universal',
+                                                                                        'version': '26.1.2.106'}},
+                                                  'english_contract': [{'key': 'keybindbundles.configuration.clipMouseToMenu.tooltip',
+                                                                        'en': 'Set to true to clip the mouse '
+                                                                              'within the bounds of the '
+                                                                              'radial menu of bundles',
+                                                                        'name': 'clipMouseToMenu'},
+                                                                       {'key': 'keybindbundles.configuration.triggerKeymappingOnRelease.tooltip',
+                                                                        'en': 'If set to true, the '
+                                                                              'keymapping hovered in a '
+                                                                              'bundle menu will be '
+                                                                              'automatically triggered '
+                                                                              '(without needing a click) '
+                                                                              'upon release of the bundle '
+                                                                              'key',
+                                                                        'name': 'triggerKeymappingOnRelease'},
+                                                                       {'key': 'keybindbundles.configuration.ignoreInvalidKeyChecks.tooltip',
+                                                                        'en': 'ONLY USE THIS IF YOU KNOW '
+                                                                              "WHAT YOU'RE DOING\n"
+                                                                              'Ignore invalid key checks in '
+                                                                              'InputConstants#isKeyDown',
+                                                                        'name': 'ignoreInvalidKeyChecks'}]}}},
  'inworldrecipes': {'version': '2.5.1',
                     'jar_sha256': '1fd0898a0e593368828e652be86857216e569479514893eae7233051d0d96876',
                     'jar_entry': 'assets/inworldrecipes/lang/en_us.json',
@@ -388,7 +425,15 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'matc': {'version': '1.8.0',
           'jar_sha256': 'e38d08da7a43249d281dbc4aabae37cca59e980a925c4a52f5a830950386c777',
           'jar_entry': 'assets/matc/lang/en_us.json',
-          'source_sha256': '112e94d9717a11e2db109f91724c53b44ce1cbc82ac805665397659a2ad9471d'}}
+          'source_sha256': '112e94d9717a11e2db109f91724c53b44ce1cbc82ac805665397659a2ad9471d'},
+ 'ae2wtlib': {'version': '26.1.1-beta',
+              'jar_sha256': '9309564ee5f3640ddbcc55450e0727e5a7790488f3b82af350d3012960b18311',
+              'jar_entry': 'assets/ae2wtlib/lang/en_us.json',
+              'source_sha256': 'aab41084febf12df6f99358a2bf51c1434107e133d6fda1f13445edba14ecd34'},
+ 'measurements': {'version': '4.0.0',
+                  'jar_sha256': 'e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11',
+                  'jar_entry': 'assets/measurements/lang/en_us.json',
+                  'source_sha256': '59ee60e9642c729a8f9458de17a739498d9574a7e9c59aa6a7bd06420143c2fe'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -437,9 +482,11 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'dimstorage': (36, 'e189469735447e92ccb27207644b6cc5493f7b6ab797816ffd4f6b8a2048fc10'),
  'stepcrafter': (80, 'd874eee788d8af8267292a7659b2dbab94a6c7b090bc162f7bef7af25ad864d1'),
  'refinedstorage_quartz_arsenal': (23, '3a0235d95e238a19fbd7e969fb24fbae3978ff9993b11efd21d91893abed3463'),
- 'keybindbundles': (26, '62860b61aa47d370387753108c398e9216dca7f93c758c86504d6b6e632ec297'),
+ 'keybindbundles': (29, '10bfa2a54f7f09d3bab32337b976a4a5345dcef5d088a67cf1e7a35a8d4802a9'),
  'inworldrecipes': (38, 'fe114c770cfdc5a174e14fa805d0a53621c774706129215b45c43910d9c04597'),
- 'matc': (40, '831e3f35c21e5bfd5d916edc6d49421f476c5f475d0742fe1a18197d93f27f83')}
+ 'matc': (40, '831e3f35c21e5bfd5d916edc6d49421f476c5f475d0742fe1a18197d93f27f83'),
+ 'ae2wtlib': (44, '0675310a8c56a6662d6e29447ff018f6c3ece14aac39bbfc1336474f3288aca4'),
+ 'measurements': (15, '756adfd29c6caff22cb93740fe22c53ce74baa9bb07583c70f71a18e90427ac0')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -501,7 +548,9 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'refinedstorage_quartz_arsenal': [],
  'keybindbundles': [],
  'inworldrecipes': [],
- 'matc': []}
+ 'matc': [],
+ 'ae2wtlib': [],
+ 'measurements': ['_comment']}
 PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
                                'language entries revised or supplied. Original project: Simple Backups by '
                                'MelanX; Apache-2.0. See NOTICE.md and '
@@ -562,7 +611,9 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/RefinedStorageQuartzArsenal-MIT.md': '4f332ed10b4b214c0397a37b0344aa5fd4517ea5631e580c6b43676f92ad9f4e',
  'LICENSES/KeyBindBundles-MIT.txt': '39b326c42567abc3d4273a67b062c3434fdfc7fa29a2b86a76f9cf41d30171d5',
  'LICENSES/InWorldRecipes-MIT.txt': '46daa0bbd05e4249dc930a44059f7abe1e4d36d8a355d8cb840fd190f6df430b',
- 'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt': '285d661d5a712ee320753bd6e33319bbc95ad947cf97c35844552d3817b070e1'}
+ 'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt': '285d661d5a712ee320753bd6e33319bbc95ad947cf97c35844552d3817b070e1',
+ 'LICENSES/AE2WTLib-MIT.txt': 'd61e8472fd606169227d467eae0fc46341256dc54ed05837df050b29ad0297ba',
+ 'LICENSES/Measurements-MIT.txt': 'ded3792ee1ef728cec734993688f87ec6bf8cd050cdee99ed46613433becfa18'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -616,11 +667,13 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'refinedstorage_quartz_arsenal': ('LICENSES/RefinedStorageQuartzArsenal-MIT.md',),
  'keybindbundles': ('LICENSES/KeyBindBundles-MIT.txt',),
  'inworldrecipes': ('LICENSES/InWorldRecipes-MIT.txt',),
- 'matc': ('LICENSES/MysticalAgricultureTieredCrystals-MIT.txt',)}
+ 'matc': ('LICENSES/MysticalAgricultureTieredCrystals-MIT.txt',),
+ 'ae2wtlib': ('LICENSES/AE2WTLib-MIT.txt',),
+ 'measurements': ('LICENSES/Measurements-MIT.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.15.0.zip',
+                'filename': 'ATM11-Japanese-0.16.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -670,7 +723,9 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'refinedstorage_quartz_arsenal',
                                'keybindbundles',
                                'inworldrecipes',
-                               'matc'),
+                               'matc',
+                               'ae2wtlib',
+                               'measurements'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -727,8 +782,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/RefinedStorageQuartzArsenal-MIT.md',
                              'LICENSES/KeyBindBundles-MIT.txt',
                              'LICENSES/InWorldRecipes-MIT.txt',
-                             'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.15.0: 50 namespaces / 3542 entries',
+                             'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt',
+                             'LICENSES/AE2WTLib-MIT.txt',
+                             'LICENSES/Measurements-MIT.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.16.0: 52 namespaces / 3604 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -743,11 +800,15 @@ MULTISOURCE_KEY_SETS = {'ironjetpacks': {'lang': (41, '4b7816adcd5c0095ae9c4bd9e
                   'materials': (14, 'b0760708c228ba12372bdb443ff216c737362b4ddfd1b19391a84e25e472caef')},
  'charginggadgets': {'lang': (6, 'a835f0e45a8f7adc97ad0a6467e7119ff78df0f419e777ec38a871340ac70aed'),
                      'configuration': (4,
-                                       'b60ea67d7f9865875bd666c410997e46545d61a68cff2147966b83288b7e923f')}}
+                                       'b60ea67d7f9865875bd666c410997e46545d61a68cff2147966b83288b7e923f')},
+ 'keybindbundles': {'lang': (26, '62860b61aa47d370387753108c398e9216dca7f93c758c86504d6b6e632ec297'),
+                    'configuration': (3, '6b47107a7220137579a20a4a61ffad7835f1749a2d033b332b1ad7e8d81561a2')}}
 MULTISOURCE_BATCHES = {'lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0001': 'lang',
  'derived-ironjetpacks-materials-0001': 'materials',
  'lang-charginggadgets-1.16.1-charginggadgets-74380f08f3-0001': 'lang',
- 'derived-charginggadgets-config-0001': 'configuration'}
+ 'derived-charginggadgets-config-0001': 'configuration',
+ 'lang-keybindbundles-2.0.0-keybindbundles-648c3aa5a9-0001': 'lang',
+ 'derived-keybindbundles-config-0001': 'configuration'}
 
 
 SFM_BATCH_IDS = ('lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0001',
@@ -891,7 +952,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.15.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.16.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']
@@ -934,6 +995,8 @@ def validated_files(root, package='collection'):
                     'Enchantment Descriptions original metadata must remain verbatim')
         if namespace == 'jei':
             require(language['_comment'] == JEI_METADATA_VALUE, 'JEI metadata must remain verbatim')
+        if namespace == 'measurements':
+            require(language['_comment'] == 'NeoForge Config', 'Measurements metadata must remain verbatim')
         if namespace == 'naturescompass':
             require(language['_comment'] == 'STRINGS - PRECIPITATION', 'Nature’s Compass metadata must remain verbatim')
         if namespace == 'quarryplus':
