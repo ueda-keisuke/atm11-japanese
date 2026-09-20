@@ -1,7 +1,26 @@
 {
-  "language_sha256": "8c716e7aee85f4817d1d82e5d01c6c92ba0032654f9739de9624647adc57567e",
+  "language_sha256": "85dada80d8cd22e31054f4c33e3427b2de43b4a7cf6186bac44f0fe2cf2275dd",
   "namespace": "measurements",
   "reviews": [
+    {
+      "accepted_keys": [
+        "measurements.configuration.client.tooltip",
+        "measurements.configuration.lineColor.tooltip",
+        "measurements.configuration.lineWidth.tooltip",
+        "measurements.configuration.lineWidthMax.tooltip",
+        "measurements.configuration.textColor.tooltip",
+        "measurements.configuration.textSize.tooltip"
+      ],
+      "batch_id": "derived-measurements-config-0001",
+      "decision": "accepted",
+      "review_sha256": "fa28e25af045483229f1cf955938fa8bb5440ba90e9594102c7dbaea5ba643cf",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "configuration",
+      "submission_sha256": "8a779a402319762ea25801f86ba23443951a1efa06480d2812ab3f3316ac0f30"
+    },
     {
       "accepted_keys": [
         "_comment",
@@ -27,14 +46,79 @@
         "agent": "/root/extendedae_review",
         "model": "gpt-5.6-luna"
       },
+      "source_id": "lang",
       "submission_sha256": "75a7cae1715f14b92ae4b118e94fc2d30025bc4621f440289ed8c5083f27e944"
     }
   ],
-  "schema_version": 1,
-  "source": {
-    "jar_entry": "assets/measurements/lang/en_us.json",
-    "jar_sha256": "e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11",
-    "source_sha256": "59ee60e9642c729a8f9458de17a739498d9574a7e9c59aa6a7bd06420143c2fe",
-    "version": "4.0.0"
-  }
+  "schema_version": 3,
+  "sources": {
+    "configuration": {
+      "class_hashes": {
+        "com/mrbysco/measurements/MeasurementsNeoForge.class": "d3e646d17519b27b6f1617b96d1cbe942c5408ed4fe71128ca84dc733db9a9ca",
+        "com/mrbysco/measurements/client/MeasurementBox.class": "416c33639ba9ddfaa7c2d859716945b4443c60ed8764d670ed39351ff3f0f2a7",
+        "com/mrbysco/measurements/config/LineColor.class": "4dd94a59b5d8f9771ba7663b6db9ba28dbb34f54b683e0ba6a1d5dc1df4411f4",
+        "com/mrbysco/measurements/config/MeasurementConfig$Client.class": "391996891b345ecd9f72644e3d82100e724ec2a587240f3b863cbfe0a19e8c99",
+        "com/mrbysco/measurements/config/MeasurementConfig.class": "a64e1ba350e2126ee54693ce7883884ac375c54f8195ea0abafbafc8320da726",
+        "com/mrbysco/measurements/config/TextColor.class": "73323c37550ecb90efa4aba76d8c4015cb5b27c8c75a9c0a28fab74b3bc551d4"
+      },
+      "english_contract": [
+        {
+          "en": "Client settings",
+          "key": "measurements.configuration.client.tooltip",
+          "name": "client"
+        },
+        {
+          "en": "Set line color. [Default: YELLOW]\nAllowed Values: RANDOM, WHITE, ORANGE, MAGENTA, LIGHT_BLUE, YELLOW, LIME, PINK, GRAY, LIGHT_GRAY, CYAN, PURPLE, BLUE, BROWN, GREEN, RED, BLACK",
+          "key": "measurements.configuration.lineColor.tooltip",
+          "name": "lineColor"
+        },
+        {
+          "en": "Set text color. [Default: YELLOW]\nAllowed Values: RANDOM, XYZRGB, WHITE, ORANGE, MAGENTA, LIGHT_BLUE, YELLOW, LIME, PINK, GRAY, LIGHT_GRAY, CYAN, PURPLE, BLUE, BROWN, GREEN, RED, BLACK",
+          "key": "measurements.configuration.textColor.tooltip",
+          "name": "textColor"
+        },
+        {
+          "en": "Set text size [Default: 0.02]",
+          "key": "measurements.configuration.textSize.tooltip",
+          "name": "textSize"
+        },
+        {
+          "en": "Set line width (thickness). [Default: 2]",
+          "key": "measurements.configuration.lineWidth.tooltip",
+          "name": "lineWidth"
+        },
+        {
+          "en": "Set line width when further away (thickness). [Default: 2]",
+          "key": "measurements.configuration.lineWidthMax.tooltip",
+          "name": "lineWidthMax"
+        }
+      ],
+      "jar_entry": "com/mrbysco/measurements/config/MeasurementConfig$Client.class",
+      "jar_sha256": "e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11",
+      "runtime_dependencies": {
+        "neoforge": {
+          "class_hashes": {
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen$ConfigurationSectionScreen.class": "5e7c94bf81f50a8395f2b9aefb3ddc2530d87cd914293b94f29da776a2a86aeb",
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen$TranslationChecker.class": "881f89a229127ddf3a484b7591e8131b6a54014361d3379a19bb7c1cf2ecda32",
+            "net/neoforged/neoforge/client/gui/ConfigurationScreen.class": "283430e120dc0157d645189b544652e875b72bc2c312a0acfe975a8a326343e4",
+            "net/neoforged/neoforge/common/ModConfigSpec$Builder.class": "a9dc9214b2758279c74321d673e5568e2214f52cb23e0fc6d5f08bd0a5c6610b",
+            "net/neoforged/neoforge/common/ModConfigSpec.class": "2070549e5f38a01747bd1e7e114f20a68c0813fe81f7bc65ee5cc5b90f4c0a4d"
+          },
+          "jar_sha256": "b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776",
+          "maven_coordinate": "net.neoforged:neoforge:26.1.2.106:universal",
+          "version": "26.1.2.106"
+        }
+      },
+      "source_contract_sha256": "e006de77ab0c061e552a96a9d15c2433975ddd4bcfb06cdfee9819f176dd629c",
+      "source_sha256": "391996891b345ecd9f72644e3d82100e724ec2a587240f3b863cbfe0a19e8c99",
+      "source_type": "derived_jar_lang"
+    },
+    "lang": {
+      "jar_entry": "assets/measurements/lang/en_us.json",
+      "jar_sha256": "e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11",
+      "source_sha256": "59ee60e9642c729a8f9458de17a739498d9574a7e9c59aa6a7bd06420143c2fe",
+      "source_type": "jar_lang"
+    }
+  },
+  "version": "4.0.0"
 }

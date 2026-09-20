@@ -224,12 +224,18 @@
       "review_evidence_sha256": "c8c1b1153cf8fe0d50f47c3f20eb6fac619390c75ca2a0970bc9f2e8eead8d40"
     },
     "measurements": {
-      "key_count": 15,
-      "language_sha256": "8c716e7aee85f4817d1d82e5d01c6c92ba0032654f9739de9624647adc57567e",
+      "key_count": 21,
+      "language_sha256": "85dada80d8cd22e31054f4c33e3427b2de43b4a7cf6186bac44f0fe2cf2275dd",
       "preserved_metadata_keys": [
         "_comment"
       ],
-      "review_evidence_sha256": "0294534a637f2ab1555ccb1bdd320aaf7a85e7146b2c5c9d3457401e958ce6f6"
+      "review_evidence_sha256": "ee0fd0e40691a1c8bdb1d8e12e22ceed90f9ffc5dffb669034d2e70699c86f3f"
+    },
+    "mininggadgets": {
+      "key_count": 86,
+      "language_sha256": "921ae9406f63b516f776a7ae234463bafc3bec584b8682997ec21f7bf7c27f76",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "c1a80ae153fa4d934c5a6fb22653e2d9193fa6bbe6e858c7638f821fa1712b26"
     },
     "moreoverlays": {
       "key_count": 40,
@@ -343,5 +349,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.16.0"
+  "version": "0.17.0"
 }

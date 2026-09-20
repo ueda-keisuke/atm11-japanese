@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.16.0'
-NOTICE_SHA256 = '4597ea7b741868984c8a9696039f2c409eeb8ddd4ad2d1b3cb3186ab3b51fadf'
+VERSION = '0.17.0'
+NOTICE_SHA256 = '0b4832fdda2fe12549dbc77c126a5aac1fcd23635028edfc269d87ea998accb4'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -431,9 +431,65 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_entry': 'assets/ae2wtlib/lang/en_us.json',
               'source_sha256': 'aab41084febf12df6f99358a2bf51c1434107e133d6fda1f13445edba14ecd34'},
  'measurements': {'version': '4.0.0',
-                  'jar_sha256': 'e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11',
-                  'jar_entry': 'assets/measurements/lang/en_us.json',
-                  'source_sha256': '59ee60e9642c729a8f9458de17a739498d9574a7e9c59aa6a7bd06420143c2fe'}}
+                  'sources': {'lang': {'jar_sha256': 'e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11',
+                                       'jar_entry': 'assets/measurements/lang/en_us.json',
+                                       'source_sha256': '59ee60e9642c729a8f9458de17a739498d9574a7e9c59aa6a7bd06420143c2fe',
+                                       'source_type': 'jar_lang'},
+                              'configuration': {'source_sha256': '391996891b345ecd9f72644e3d82100e724ec2a587240f3b863cbfe0a19e8c99',
+                                                'jar_entry': 'com/mrbysco/measurements/config/MeasurementConfig$Client.class',
+                                                'jar_sha256': 'e72dadf160dce841d3c395138938eaee0ce09b9986bb7c1d5d3591c27752af11',
+                                                'source_type': 'derived_jar_lang',
+                                                'source_contract_sha256': 'e006de77ab0c061e552a96a9d15c2433975ddd4bcfb06cdfee9819f176dd629c',
+                                                'class_hashes': {'com/mrbysco/measurements/MeasurementsNeoForge.class': 'd3e646d17519b27b6f1617b96d1cbe942c5408ed4fe71128ca84dc733db9a9ca',
+                                                                 'com/mrbysco/measurements/client/MeasurementBox.class': '416c33639ba9ddfaa7c2d859716945b4443c60ed8764d670ed39351ff3f0f2a7',
+                                                                 'com/mrbysco/measurements/config/LineColor.class': '4dd94a59b5d8f9771ba7663b6db9ba28dbb34f54b683e0ba6a1d5dc1df4411f4',
+                                                                 'com/mrbysco/measurements/config/MeasurementConfig$Client.class': '391996891b345ecd9f72644e3d82100e724ec2a587240f3b863cbfe0a19e8c99',
+                                                                 'com/mrbysco/measurements/config/MeasurementConfig.class': 'a64e1ba350e2126ee54693ce7883884ac375c54f8195ea0abafbafc8320da726',
+                                                                 'com/mrbysco/measurements/config/TextColor.class': '73323c37550ecb90efa4aba76d8c4015cb5b27c8c75a9c0a28fab74b3bc551d4'},
+                                                'runtime_dependencies': {'neoforge': {'class_hashes': {'net/neoforged/neoforge/client/gui/ConfigurationScreen$ConfigurationSectionScreen.class': '5e7c94bf81f50a8395f2b9aefb3ddc2530d87cd914293b94f29da776a2a86aeb',
+                                                                                                       'net/neoforged/neoforge/client/gui/ConfigurationScreen$TranslationChecker.class': '881f89a229127ddf3a484b7591e8131b6a54014361d3379a19bb7c1cf2ecda32',
+                                                                                                       'net/neoforged/neoforge/client/gui/ConfigurationScreen.class': '283430e120dc0157d645189b544652e875b72bc2c312a0acfe975a8a326343e4',
+                                                                                                       'net/neoforged/neoforge/common/ModConfigSpec$Builder.class': 'a9dc9214b2758279c74321d673e5568e2214f52cb23e0fc6d5f08bd0a5c6610b',
+                                                                                                       'net/neoforged/neoforge/common/ModConfigSpec.class': '2070549e5f38a01747bd1e7e114f20a68c0813fe81f7bc65ee5cc5b90f4c0a4d'},
+                                                                                      'jar_sha256': 'b37e097292d6631cf2ff6c3d6d1ad63dc9ce704eae198d49f1bd48baeb5e7776',
+                                                                                      'maven_coordinate': 'net.neoforged:neoforge:26.1.2.106:universal',
+                                                                                      'version': '26.1.2.106'}},
+                                                'english_contract': [{'key': 'measurements.configuration.client.tooltip',
+                                                                      'en': 'Client settings',
+                                                                      'name': 'client'},
+                                                                     {'key': 'measurements.configuration.lineColor.tooltip',
+                                                                      'en': 'Set line color. [Default: '
+                                                                            'YELLOW]\n'
+                                                                            'Allowed Values: RANDOM, WHITE, '
+                                                                            'ORANGE, MAGENTA, LIGHT_BLUE, '
+                                                                            'YELLOW, LIME, PINK, GRAY, '
+                                                                            'LIGHT_GRAY, CYAN, PURPLE, BLUE, '
+                                                                            'BROWN, GREEN, RED, BLACK',
+                                                                      'name': 'lineColor'},
+                                                                     {'key': 'measurements.configuration.textColor.tooltip',
+                                                                      'en': 'Set text color. [Default: '
+                                                                            'YELLOW]\n'
+                                                                            'Allowed Values: RANDOM, XYZRGB, '
+                                                                            'WHITE, ORANGE, MAGENTA, '
+                                                                            'LIGHT_BLUE, YELLOW, LIME, PINK, '
+                                                                            'GRAY, LIGHT_GRAY, CYAN, PURPLE, '
+                                                                            'BLUE, BROWN, GREEN, RED, BLACK',
+                                                                      'name': 'textColor'},
+                                                                     {'key': 'measurements.configuration.textSize.tooltip',
+                                                                      'en': 'Set text size [Default: 0.02]',
+                                                                      'name': 'textSize'},
+                                                                     {'key': 'measurements.configuration.lineWidth.tooltip',
+                                                                      'en': 'Set line width (thickness). '
+                                                                            '[Default: 2]',
+                                                                      'name': 'lineWidth'},
+                                                                     {'key': 'measurements.configuration.lineWidthMax.tooltip',
+                                                                      'en': 'Set line width when further '
+                                                                            'away (thickness). [Default: 2]',
+                                                                      'name': 'lineWidthMax'}]}}},
+ 'mininggadgets': {'version': '1.19.3',
+                   'jar_sha256': '40423957c456cd17e833413baf72749cdf9ff72ed443ce2141bb9467c55811fb',
+                   'jar_entry': 'assets/mininggadgets/lang/en_us.json',
+                   'source_sha256': 'ba93c4ee8e6b4b79cce8c80ede93d1a9499a7f856a70d8e90528827dfc821e75'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -486,7 +542,8 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'inworldrecipes': (38, 'fe114c770cfdc5a174e14fa805d0a53621c774706129215b45c43910d9c04597'),
  'matc': (40, '831e3f35c21e5bfd5d916edc6d49421f476c5f475d0742fe1a18197d93f27f83'),
  'ae2wtlib': (44, '0675310a8c56a6662d6e29447ff018f6c3ece14aac39bbfc1336474f3288aca4'),
- 'measurements': (15, '756adfd29c6caff22cb93740fe22c53ce74baa9bb07583c70f71a18e90427ac0')}
+ 'measurements': (21, '8047458ebed154364b00808a67539f10a8ae9dbc9fac10d5350ebf4b9d6033a9'),
+ 'mininggadgets': (86, '90ca5207f6d593dd8786ad93b2a10de8d11c6e423b8826ea59606fd9e74feca2')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -550,7 +607,8 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'inworldrecipes': [],
  'matc': [],
  'ae2wtlib': [],
- 'measurements': ['_comment']}
+ 'measurements': ['_comment'],
+ 'mininggadgets': []}
 PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
                                'language entries revised or supplied. Original project: Simple Backups by '
                                'MelanX; Apache-2.0. See NOTICE.md and '
@@ -613,7 +671,8 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/InWorldRecipes-MIT.txt': '46daa0bbd05e4249dc930a44059f7abe1e4d36d8a355d8cb840fd190f6df430b',
  'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt': '285d661d5a712ee320753bd6e33319bbc95ad947cf97c35844552d3817b070e1',
  'LICENSES/AE2WTLib-MIT.txt': 'd61e8472fd606169227d467eae0fc46341256dc54ed05837df050b29ad0297ba',
- 'LICENSES/Measurements-MIT.txt': 'ded3792ee1ef728cec734993688f87ec6bf8cd050cdee99ed46613433becfa18'}
+ 'LICENSES/Measurements-MIT.txt': 'ded3792ee1ef728cec734993688f87ec6bf8cd050cdee99ed46613433becfa18',
+ 'LICENSES/MiningGadgets-MIT.txt': '42b3f44053eb125558a79195b0e143272895c83123c06bd7166b50195e2822c1'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -669,11 +728,12 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'inworldrecipes': ('LICENSES/InWorldRecipes-MIT.txt',),
  'matc': ('LICENSES/MysticalAgricultureTieredCrystals-MIT.txt',),
  'ae2wtlib': ('LICENSES/AE2WTLib-MIT.txt',),
- 'measurements': ('LICENSES/Measurements-MIT.txt',)}
+ 'measurements': ('LICENSES/Measurements-MIT.txt',),
+ 'mininggadgets': ('LICENSES/MiningGadgets-MIT.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.16.0.zip',
+                'filename': 'ATM11-Japanese-0.17.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -725,7 +785,8 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'inworldrecipes',
                                'matc',
                                'ae2wtlib',
-                               'measurements'),
+                               'measurements',
+                               'mininggadgets'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -784,8 +845,9 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/InWorldRecipes-MIT.txt',
                              'LICENSES/MysticalAgricultureTieredCrystals-MIT.txt',
                              'LICENSES/AE2WTLib-MIT.txt',
-                             'LICENSES/Measurements-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.16.0: 52 namespaces / 3604 entries',
+                             'LICENSES/Measurements-MIT.txt',
+                             'LICENSES/MiningGadgets-MIT.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.17.0: 53 namespaces / 3696 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -802,13 +864,17 @@ MULTISOURCE_KEY_SETS = {'ironjetpacks': {'lang': (41, '4b7816adcd5c0095ae9c4bd9e
                      'configuration': (4,
                                        'b60ea67d7f9865875bd666c410997e46545d61a68cff2147966b83288b7e923f')},
  'keybindbundles': {'lang': (26, '62860b61aa47d370387753108c398e9216dca7f93c758c86504d6b6e632ec297'),
-                    'configuration': (3, '6b47107a7220137579a20a4a61ffad7835f1749a2d033b332b1ad7e8d81561a2')}}
+                    'configuration': (3, '6b47107a7220137579a20a4a61ffad7835f1749a2d033b332b1ad7e8d81561a2')},
+ 'measurements': {'lang': (15, '756adfd29c6caff22cb93740fe22c53ce74baa9bb07583c70f71a18e90427ac0'),
+                  'configuration': (6, '5c6a64be5f0313241f5bf239ab90424d1d5d9f19761559d2107737c03e146a41')}}
 MULTISOURCE_BATCHES = {'lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0001': 'lang',
  'derived-ironjetpacks-materials-0001': 'materials',
  'lang-charginggadgets-1.16.1-charginggadgets-74380f08f3-0001': 'lang',
  'derived-charginggadgets-config-0001': 'configuration',
  'lang-keybindbundles-2.0.0-keybindbundles-648c3aa5a9-0001': 'lang',
- 'derived-keybindbundles-config-0001': 'configuration'}
+ 'derived-keybindbundles-config-0001': 'configuration',
+ 'lang-Measurements-neoforge-26.1-4.0.0-measurements-7958c5666b-0001': 'lang',
+ 'derived-measurements-config-0001': 'configuration'}
 
 
 SFM_BATCH_IDS = ('lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0001',
@@ -952,7 +1018,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.16.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.17.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']
