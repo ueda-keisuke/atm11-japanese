@@ -1,0 +1,51 @@
+{
+  "language_sha256": "d392162d8ee2137c62185094ce99a0f7d10beb312e003154b0cd9cd7dc75d17a",
+  "namespace": "toolbelt",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "item.toolbelt.belt",
+        "item.toolbelt.pouch",
+        "key.toolbelt.category",
+        "key.toolbelt.cycle.left",
+        "key.toolbelt.cycle.right",
+        "key.toolbelt.open",
+        "key.toolbelt.slot",
+        "text.toolbelt",
+        "text.toolbelt.config.anvil_upgrading",
+        "text.toolbelt.config.belt_item_scale",
+        "text.toolbelt.config.category.client_display",
+        "text.toolbelt.config.category.client_menu",
+        "text.toolbelt.config.category.common_general",
+        "text.toolbelt.config.click_outside_bounds",
+        "text.toolbelt.config.clip_mouse_to_circle",
+        "text.toolbelt.config.custom_belt_slot_mode",
+        "text.toolbelt.config.display_empty_slots",
+        "text.toolbelt.config.enable_grid_crafting",
+        "text.toolbelt.config.enable_sewing_kit_support",
+        "text.toolbelt.config.release_to_swap",
+        "text.toolbelt.config.show_belt_on_players",
+        "text.toolbelt.empty",
+        "text.toolbelt.extract",
+        "text.toolbelt.insert",
+        "text.toolbelt.swap",
+        "text.toolbelt.tooltip"
+      ],
+      "batch_id": "lang-ToolBelt-26.1.2-2.9.5-toolbelt-ba03fc3596-0001",
+      "decision": "accepted",
+      "review_sha256": "9d9342e18b3666732e88435b22e0c6336598c518629320c3ade52b37d93bc859",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "4cbc7c5ab412d991f780e0ccabbc5e6b148b1ac4ebdec846108200b579ba08dd"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/toolbelt/lang/en_us.json",
+    "jar_sha256": "5df697905865a66f681c7c0f74cc4c44e5ed1b03c1a5bf64901b25d6e9c439e2",
+    "source_sha256": "ac5f07c4506f6069c2570402a8f70ebb37f2a61cdc2358355743e8049124a4f6",
+    "version": "2.9.5"
+  }
+}

@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.7.0'
+VERSION = '0.8.0'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': r'^lang/ja_jp\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -192,21 +192,88 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
                 'jar_entry': 'assets/extendedae/lang/en_us.json',
                 'source_sha256': 'e179f160074aa4d920d915ae407361f52a95f2488879a521c6f2215916361915'},
  'comforts': {'version': '15.0.0+26.1.2',
-             'jar_sha256': '23b7a63b3729dc590174ca0ca5740c22ddc93718ead6fa579a921d3e7fa5ac83',
-             'jar_entry': 'assets/comforts/lang/en_us.json',
-             'source_sha256': '2e5684aa3ef4c81a71483f87aa7e3bc0cc506b60a85c65e617ccf2a9c22015a8'},
+              'jar_sha256': '23b7a63b3729dc590174ca0ca5740c22ddc93718ead6fa579a921d3e7fa5ac83',
+              'jar_entry': 'assets/comforts/lang/en_us.json',
+              'source_sha256': '2e5684aa3ef4c81a71483f87aa7e3bc0cc506b60a85c65e617ccf2a9c22015a8'},
  'crafting_on_a_stick': {'version': '26.1-1.1',
-             'jar_sha256': '9dca3e70948d916cc3aa3f0dad78601158459022a657d30efeb0a805af97ca74',
-             'jar_entry': 'assets/crafting_on_a_stick/lang/en_us.json',
-             'source_sha256': 'c5b31af2e30db8265842ceb77c49864606687f32b88d9d6f05f6951e65cbafb0'},
+                         'jar_sha256': '9dca3e70948d916cc3aa3f0dad78601158459022a657d30efeb0a805af97ca74',
+                         'jar_entry': 'assets/crafting_on_a_stick/lang/en_us.json',
+                         'source_sha256': 'c5b31af2e30db8265842ceb77c49864606687f32b88d9d6f05f6951e65cbafb0'},
  'toastcontrol': {'version': '26.1.2-10.0.0',
-             'jar_sha256': '49360b62f67194edac35342fc44d3413ae84392cafe341ba4de1ebac6fa95242',
-             'jar_entry': 'assets/toastcontrol/lang/en_us.json',
-             'source_sha256': '44bbd0c2ade0837af7320755e9b6f8ac2e8b80005ffecef5baa7dd9ef00aefb5'},
+                  'jar_sha256': '49360b62f67194edac35342fc44d3413ae84392cafe341ba4de1ebac6fa95242',
+                  'jar_entry': 'assets/toastcontrol/lang/en_us.json',
+                  'source_sha256': '44bbd0c2ade0837af7320755e9b6f8ac2e8b80005ffecef5baa7dd9ef00aefb5'},
  'betteradvancedtooltips': {'version': '2601.1.0-build.9',
-             'jar_sha256': '1aef8ecc6f1b6c1952fed84c0302101019b2eb43c27d254152913b05a675143f',
-             'jar_entry': 'assets/betteradvancedtooltips/lang/en_us.json',
-             'source_sha256': '2b7e12c60a5ab2179773bc68a85747605c657eed02627197a2c4eca05f7a2f9e'}}
+                            'jar_sha256': '1aef8ecc6f1b6c1952fed84c0302101019b2eb43c27d254152913b05a675143f',
+                            'jar_entry': 'assets/betteradvancedtooltips/lang/en_us.json',
+                            'source_sha256': '2b7e12c60a5ab2179773bc68a85747605c657eed02627197a2c4eca05f7a2f9e'},
+ 'toolbelt': {'version': '2.9.5',
+              'jar_sha256': '5df697905865a66f681c7c0f74cc4c44e5ed1b03c1a5bf64901b25d6e9c439e2',
+              'jar_entry': 'assets/toolbelt/lang/en_us.json',
+              'source_sha256': 'ac5f07c4506f6069c2570402a8f70ebb37f2a61cdc2358355743e8049124a4f6'},
+ 'cucumber': {'version': '26.1.2-9.0.6',
+              'jar_sha256': 'ad82d0a19f97086b8913029f2fbf10ad25ff591de4ac11e0776caa6dd1e8f9ed',
+              'jar_entry': 'assets/cucumber/lang/en_us.json',
+              'source_sha256': '40a6b16009febde352dce6a281eb8020923c3a271fdc1bb0f6f06eb877e03d0d'},
+ 'ironjetpacks': {'version': '9.0.3',
+                  'sources': {'lang': {'jar_sha256': 'cf8df68bbde624ade6b47733c30c4b34faee1e6f26ead4220b77cf32de9b01f8',
+                                       'jar_entry': 'assets/ironjetpacks/lang/en_us.json',
+                                       'source_sha256': '1bb63988fb281ce7cd5db7c922bc14203f41a5ce0f5aefe76b14d9cffd15c43b',
+                                       'source_type': 'jar_lang'},
+                              'materials': {'jar_sha256': 'cf8df68bbde624ade6b47733c30c4b34faee1e6f26ead4220b77cf32de9b01f8',
+                                            'jar_entry': 'com/blakebr0/ironjetpacks/registry/Jetpack.class',
+                                            'source_sha256': 'df217f4269e0922d0a65d04e7bddd159a3f067287889a9090642082bbb09f9bb',
+                                            'source_type': 'derived_jar_lang',
+                                            'source_contract_sha256': 'c3e51fc6fd9ccbcd23c882ff08062b215bf718796bfc9ab0b885a8271af7da3d',
+                                            'class_hashes': {'com/blakebr0/ironjetpacks/item/ComponentItem.class': 'cf7e80a4f06f241f4d452731a6437acedbc373d4a4a4c186ad44ecdbdf5c36c0',
+                                                             'com/blakebr0/ironjetpacks/item/JetpackItem.class': '4685873695b62f46325b8663dd3e6605e588896cb4e7a366dc8a563e45ec18d6',
+                                                             'com/blakebr0/ironjetpacks/registry/Jetpack.class': 'df217f4269e0922d0a65d04e7bddd159a3f067287889a9090642082bbb09f9bb'},
+                                            'english_contract': [{'key': 'jetpack.bronze.name',
+                                                                  'en': 'Bronze',
+                                                                  'name': 'bronze'},
+                                                                 {'key': 'jetpack.copper.name',
+                                                                  'en': 'Copper',
+                                                                  'name': 'copper'},
+                                                                 {'key': 'jetpack.creative.name',
+                                                                  'en': 'Creative',
+                                                                  'name': 'creative'},
+                                                                 {'key': 'jetpack.diamond.name',
+                                                                  'en': 'Diamond',
+                                                                  'name': 'diamond'},
+                                                                 {'key': 'jetpack.electrum.name',
+                                                                  'en': 'Electrum',
+                                                                  'name': 'electrum'},
+                                                                 {'key': 'jetpack.emerald.name',
+                                                                  'en': 'Emerald',
+                                                                  'name': 'emerald'},
+                                                                 {'key': 'jetpack.gold.name',
+                                                                  'en': 'Gold',
+                                                                  'name': 'gold'},
+                                                                 {'key': 'jetpack.invar.name',
+                                                                  'en': 'Invar',
+                                                                  'name': 'invar'},
+                                                                 {'key': 'jetpack.iron.name',
+                                                                  'en': 'Iron',
+                                                                  'name': 'iron'},
+                                                                 {'key': 'jetpack.platinum.name',
+                                                                  'en': 'Platinum',
+                                                                  'name': 'platinum'},
+                                                                 {'key': 'jetpack.silver.name',
+                                                                  'en': 'Silver',
+                                                                  'name': 'silver'},
+                                                                 {'key': 'jetpack.steel.name',
+                                                                  'en': 'Steel',
+                                                                  'name': 'steel'},
+                                                                 {'key': 'jetpack.stone.name',
+                                                                  'en': 'Stone',
+                                                                  'name': 'stone'},
+                                                                 {'key': 'jetpack.wood.name',
+                                                                  'en': 'Wood',
+                                                                  'name': 'wood'}]}}},
+ 'functionalstorage': {'version': '1.6.1',
+                       'jar_sha256': 'cfd016afdc427f0ba6a3e11aad61112ee0458f43f32a33fa4f4fb576ea6c2254',
+                       'jar_entry': 'assets/functionalstorage/lang/en_us.json',
+                       'source_sha256': '2b1c7483a10a3711a4acbbd605b420b0acc90ab066e1bd5532402308d9b9591e'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -233,7 +300,11 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
  'comforts': (84, '8b7e5b99c3567710c38e3c018ce2403ad6fa90567c43f3afb30cbfc14836a631'),
  'crafting_on_a_stick': (14, 'dc7eb09f7d91088d2ab87c9cecfdca4099c91510c3c64406dc43ce1b18de1e81'),
  'toastcontrol': (2, '52d71e9e1e5d64b49ed5072bcb695885afbe469b612b6f63e6a53a7390a9a6c1'),
- 'betteradvancedtooltips': (5, '2aa164afe03073e3b01048d93a8abc21365dba77310d9fadc9247720ad1f9094')}
+ 'betteradvancedtooltips': (5, '2aa164afe03073e3b01048d93a8abc21365dba77310d9fadc9247720ad1f9094'),
+ 'toolbelt': (26, 'a6565085cec975fc3572244b15fff8999620d0b0bae9ab5fe5da3ae834ab1d38'),
+ 'cucumber': (16, '81383395782e852a51817af84ee8ef509aac51c605a324a8c47ecab80d0124cb'),
+ 'ironjetpacks': (55, '26847e092d60d1cdb6811364fa531fa3be736220baa74594ccda7ca8fe6fd92b'),
+ 'functionalstorage': (164, '5cb38a402b107fcdd1e571945061be664faac471f30f330a8ac6e5dcc77781f6')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -260,7 +331,11 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
  'comforts': [],
  'crafting_on_a_stick': [],
  'toastcontrol': [],
- 'betteradvancedtooltips': []}
+ 'betteradvancedtooltips': [],
+ 'toolbelt': [],
+ 'cucumber': [],
+ 'ironjetpacks': [],
+ 'functionalstorage': []}
 LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba69450ff1dbf4b1e0fed3bbc08c',
  'LICENSES/Transmog-MIT.txt': 'a366506974a46752dbf54c187288b5d5de7f4570422b0cbacd4f5cd1dcb8f099',
  'LICENSES/JEI-MIT.txt': '108c93a97f3011c196b8226f5019a9c09ade318fe3a802be2f7f5ddb2c3a0d04',
@@ -292,7 +367,11 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/Comforts-COPYING.LESSER.txt': 'e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118',
  'LICENSES/CraftingOnAStick-GPL-3.0.txt': '3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986',
  'LICENSES/ToastControl-MIT.txt': '418c2a244f332d6f802e3a8785aa3d431e05e42788ca49e60e214ca3beb02b1f',
- 'LICENSES/BetterAdvancedTooltips-MIT.txt': '9edb55b1a18dd84104002f0299ce42f6bf3dbf10269e3e288c80e57db46d1b90'}
+ 'LICENSES/BetterAdvancedTooltips-MIT.txt': '9edb55b1a18dd84104002f0299ce42f6bf3dbf10269e3e288c80e57db46d1b90',
+ 'LICENSES/ToolBelt-BSD-3-Clause.txt': 'fc522363d94e4b83668ead1e71a90fc89d8e4fc60f2263fa4162089783ef2c1b',
+ 'LICENSES/Cucumber-MIT.txt': 'b39f78eb5c0ea06ffd89f824925c86f712f27f663f976cd50727df6856f037a2',
+ 'LICENSES/IronJetpacks-MIT.txt': 'b39f78eb5c0ea06ffd89f824925c86f712f27f663f976cd50727df6856f037a2',
+ 'LICENSES/FunctionalStorage-MIT.txt': 'b64ac86da57a720bed3d42256d4ed88cfca541b22c3f3167e0ab86b689c0072a'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -316,14 +395,20 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'spectrelib': ('LICENSES/SpectreLib-Original-Notice.txt', 'LICENSES/GNU-LGPL-2.1.txt'),
  'advanced_ae': ('LICENSES/AdvancedAE-LGPL-3.0.md', 'LICENSES/GPL-3.0.txt'),
  'extendedae': ('LICENSES/ExtendedAE-LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt'),
- 'comforts': ('LICENSES/Comforts-LGPL-3.0-or-later.txt', 'LICENSES/Comforts-COPYING.txt', 'LICENSES/Comforts-COPYING.LESSER.txt'),
+ 'comforts': ('LICENSES/Comforts-LGPL-3.0-or-later.txt',
+              'LICENSES/Comforts-COPYING.txt',
+              'LICENSES/Comforts-COPYING.LESSER.txt'),
  'crafting_on_a_stick': ('LICENSES/CraftingOnAStick-GPL-3.0.txt',),
  'toastcontrol': ('LICENSES/ToastControl-MIT.txt',),
- 'betteradvancedtooltips': ('LICENSES/BetterAdvancedTooltips-MIT.txt',)}
+ 'betteradvancedtooltips': ('LICENSES/BetterAdvancedTooltips-MIT.txt',),
+ 'toolbelt': ('LICENSES/ToolBelt-BSD-3-Clause.txt',),
+ 'cucumber': ('LICENSES/Cucumber-MIT.txt',),
+ 'ironjetpacks': ('LICENSES/IronJetpacks-MIT.txt',),
+ 'functionalstorage': ('LICENSES/FunctionalStorage-MIT.txt',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.7.0.zip',
+                'filename': 'ATM11-Japanese-0.8.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -350,7 +435,11 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'comforts',
                                'crafting_on_a_stick',
                                'toastcontrol',
-                               'betteradvancedtooltips'),
+                               'betteradvancedtooltips',
+                               'toolbelt',
+                               'cucumber',
+                               'ironjetpacks',
+                               'functionalstorage'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -382,8 +471,12 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/Comforts-COPYING.LESSER.txt',
                              'LICENSES/CraftingOnAStick-GPL-3.0.txt',
                              'LICENSES/ToastControl-MIT.txt',
-                             'LICENSES/BetterAdvancedTooltips-MIT.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.7.0: 27 namespaces / 2060 keys',
+                             'LICENSES/BetterAdvancedTooltips-MIT.txt',
+                             'LICENSES/ToolBelt-BSD-3-Clause.txt',
+                             'LICENSES/Cucumber-MIT.txt',
+                             'LICENSES/IronJetpacks-MIT.txt',
+                             'LICENSES/FunctionalStorage-MIT.txt'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.8.0: 31 namespaces / 2321 keys',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -392,6 +485,14 @@ JEI_METADATA_VALUE = 'Debug (for a debug mode, do not need translation)'
 # not the English metadata or prose. No source JAR is needed to rebuild this pack.
 JADE_ORIGINAL_JA_SHA256 = '381f227a22a7eb5cbf69c864752bd4fe72ea00f77ceed54df6b57b48550ba6b7'
 JADE_METADATA_VALUE_SHA256 = 'e3cf5492749f2d1c3f333017f1aa6094138d2b02cd308c41432e25e2c51ad89a'
+
+
+MULTISOURCE_KEY_SETS = {'ironjetpacks': {'lang': (41,
+                           '4b7816adcd5c0095ae9c4bd9ece59e54a00660e2ffec9ab89fc6cdc6553196b7'),
+                  'materials': (14,
+                                'b0760708c228ba12372bdb443ff216c737362b4ddfd1b19391a84e25e472caef')}}
+MULTISOURCE_BATCHES = {'lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0001': 'lang',
+ 'derived-ironjetpacks-materials-0001': 'materials'}
 
 
 def require(condition, message):
@@ -440,20 +541,31 @@ def validate_nested_identity(namespace, source):
 
 def validate_evidence(raw, namespace, language, language_sha256):
     evidence = parse(raw)
-    require(isinstance(evidence, dict) and set(evidence) == {
-        'schema_version', 'namespace', 'source', 'language_sha256', 'reviews',
-    } and type(evidence['schema_version']) is int and evidence['schema_version'] == (2 if 'archive_chain' in POLICIES[namespace] else 1), f'{namespace}: Unexpected review evidence schema')
-    require(evidence['namespace'] == namespace and evidence['source'] == POLICIES[namespace],
-            f'{namespace}: Review source/version/hash does not match the pinned MOD')
-    validate_nested_identity(namespace, evidence['source'])
+    policy = POLICIES[namespace]
+    multisource = 'sources' in policy
+    evidence_fields = {'schema_version', 'namespace', 'language_sha256', 'reviews'}
+    evidence_fields.update({'version', 'sources'} if multisource else {'source'})
+    schema = 3 if multisource else (2 if 'archive_chain' in policy else 1)
+    require(isinstance(evidence, dict) and set(evidence) == evidence_fields and
+            type(evidence['schema_version']) is int and evidence['schema_version'] == schema,
+            f'{namespace}: Unexpected review evidence schema')
+    require(evidence['namespace'] == namespace, f'{namespace}: Review namespace mismatch')
+    if multisource:
+        require(evidence['version'] == policy['version'] and evidence['sources'] == policy['sources'],
+                f'{namespace}: Normal/derived source identity or English contract changed')
+    else:
+        require(evidence['source'] == policy, f'{namespace}: Review source/version/hash does not match the pinned MOD')
+        validate_nested_identity(namespace, evidence['source'])
     require(evidence['language_sha256'] == language_sha256, f'{namespace}: Review evidence language hash mismatch')
     reviews = evidence['reviews']
     require(isinstance(reviews, list) and bool(reviews), f'{namespace}: No independent review evidence')
     accepted, seen_reviews, seen_batches = set(), set(), set()
+    accepted_by_source = {sid: set() for sid in policy['sources']} if multisource else {}
     for review in reviews:
-        require(isinstance(review, dict) and set(review) == {
-            'batch_id', 'review_sha256', 'submission_sha256', 'reviewer', 'decision', 'accepted_keys',
-        }, f'{namespace}: Unexpected review record schema')
+        fields = {'batch_id', 'review_sha256', 'submission_sha256', 'reviewer', 'decision', 'accepted_keys'}
+        if multisource:
+            fields.add('source_id')
+        require(isinstance(review, dict) and set(review) == fields, f'{namespace}: Unexpected review record schema')
         batch = review['batch_id']
         require(isinstance(batch, str) and re.fullmatch('[A-Za-z0-9_.+-]+', batch) and batch not in seen_batches,
                 f'{namespace}: Invalid/duplicate review batch')
@@ -470,8 +582,19 @@ def validate_evidence(raw, namespace, language, language_sha256):
         require(isinstance(keys, list) and bool(keys) and all(isinstance(k, str) for k in keys) and
                 len(keys) == len(set(keys)), f'{namespace}: Invalid/duplicate accepted keys')
         require(not accepted.intersection(keys), f'{namespace}: Overlapping review key assignments')
+        if multisource:
+            sid = review['source_id']
+            require(isinstance(sid, str) and sid in accepted_by_source and MULTISOURCE_BATCHES.get(batch) == sid,
+                    f'{namespace}: Review batch is bound to the wrong source')
+            accepted_by_source[sid].update(keys)
         accepted.update(keys)
     require(accepted == set(language), f'{namespace}: Language keys must exactly match the independently accepted key union')
+    for sid, keys in accepted_by_source.items():
+        count, key_hash = MULTISOURCE_KEY_SETS[namespace][sid]
+        actual_hash = digest(json.dumps(sorted(keys), ensure_ascii=False, separators=(',', ':')).encode())
+        require(len(keys) == count and actual_hash == key_hash,
+                f'{namespace}/{sid}: Accepted keys differ from this source contract')
+
 
 
 def validated_files(root, package='collection'):
@@ -482,7 +605,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.7.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.8.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

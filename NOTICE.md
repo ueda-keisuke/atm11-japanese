@@ -1,10 +1,58 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.7.0 contains 2060 keys across 27 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
+## 0.8.0 additions / 追加内容
+
+Version 0.8.0 adds four language-only, editable JSON files under four independently licensed scopes. ToolBelt 2.9.5 remains under BSD-3-Clause; Cucumber 26.1.2-9.0.6, Iron Jetpacks 9.0.3 and Functional Storage 1.6.1 retain their original MIT terms. The complete applicable license texts, fixed source identities and accepted review records are included. Iron Jetpacks normal and derived sources remain separate; the derived entries are bound to the fixed class contract described below.
+
+0.8.0では、4つの独立したライセンス範囲に対応する編集可能な言語JSONを追加します。ToolBelt 2.9.5にはBSD-3-Clause、Cucumber 26.1.2-9.0.6、Iron Jetpacks 9.0.3、Functional Storage 1.6.1には各原作のMIT条件が適用されます。適用されるライセンス全文、固定sourceの識別情報、受理済みreview記録を同梱します。Iron Jetpacksの通常sourceとderived sourceは分離し、derivedの項目は下記の固定クラス契約に結び付けています。
+
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.8.0 includes 2,321 keys across 31 namespaces. Four metadata keys are preserved rather than newly translated: JEI `_comment`, Jade `__comment` / `jade.metadata`, and QuarryPlus `_comment`. Game-screen visual checks for this version: **0**. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
 This is not an official release or endorsement by the original authors or translators. No MOD JARs, Java code, quests, worlds, images, logos, private logs or backups are included. The parent JAR identities below establish provenance only; they grant no rights to unrelated parent assets.
+
+## ToolBelt — `assets/toolbelt/lang/ja_jp.json`
+
+**Copyright (c) 2024, David Quintana <gigaherz@gmail.com>.** BSD-3-Clause: `LICENSES/ToolBelt-BSD-3-Clause.txt`. The original BSD notice and conditions remain applicable; this project does not relicense ToolBelt as MIT.
+
+Fixed source: https://github.com/gigaherz/ToolBelt/tree/66be987684d5e9dab7825c73d35da3bca3b0b2ea
+
+Upstream language sources: [English](https://raw.githubusercontent.com/gigaherz/ToolBelt/66be987684d5e9dab7825c73d35da3bca3b0b2ea/src/main/resources/assets/toolbelt/lang/en_us.json), [existing Japanese](https://raw.githubusercontent.com/gigaherz/ToolBelt/66be987684d5e9dab7825c73d35da3bca3b0b2ea/src/main/resources/assets/toolbelt/lang/ja_jp.json).
+
+Target: **2.9.5**, 26 keys. The selected English and existing Japanese assets are bound to this fixed source and installed JAR by the fixed source and JAR identities; line endings differ but normalized text matches. Existing upstream Japanese provenance is retained; no named Japanese contributor was recorded in the fixed evidence. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / **ueda-keisuke**. The complete editable modified source is `assets/toolbelt/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository). The original JAR, code and other assets are not included.
+
+## Cucumber — `assets/cucumber/lang/ja_jp.json`
+
+**Copyright (c) 2018 BlakeBr0.** MIT: `LICENSES/Cucumber-MIT.txt`.
+
+Fixed source: https://github.com/BlakeBr0/Cucumber/tree/0716111611f9d334c34043bb391697261383a5c9
+
+Upstream language sources: [English](https://raw.githubusercontent.com/BlakeBr0/Cucumber/0716111611f9d334c34043bb391697261383a5c9/src/main/resources/assets/cucumber/lang/en_us.json), [existing Japanese](https://raw.githubusercontent.com/BlakeBr0/Cucumber/0716111611f9d334c34043bb391697261383a5c9/src/main/resources/assets/cucumber/lang/ja_jp.json).
+
+Target: **26.1.2-9.0.6**, 16 keys. The English and existing Japanese assets match the fixed source and installed JAR byte-for-byte. Existing upstream Japanese provenance is retained; no named Japanese contributor was recorded in the fixed evidence. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / **ueda-keisuke**. The complete editable modified source is `assets/cucumber/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository). No Cucumber JAR, code or other assets are included.
+
+## Iron Jetpacks — `assets/ironjetpacks/lang/ja_jp.json`
+
+**Copyright (c) 2018 BlakeBr0.** MIT: `LICENSES/IronJetpacks-MIT.txt`.
+
+Fixed source: https://github.com/BlakeBr0/IronJetpacks/tree/601f96aaa8b1d389d7b5d587ca68dc6b68fe9a15
+
+Upstream language sources: [English](https://raw.githubusercontent.com/BlakeBr0/IronJetpacks/601f96aaa8b1d389d7b5d587ca68dc6b68fe9a15/src/main/resources/assets/ironjetpacks/lang/en_us.json), [existing Japanese](https://raw.githubusercontent.com/BlakeBr0/IronJetpacks/601f96aaa8b1d389d7b5d587ca68dc6b68fe9a15/src/main/resources/assets/ironjetpacks/lang/ja_jp.json).
+
+Target: **9.0.3**, 41 normal English-corresponding keys. Existing upstream Japanese provenance and the fixed English/Japanese source hashes are retained. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / **ueda-keisuke**. The complete editable modified source is `assets/ironjetpacks/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository).
+
+The separate 14 material-prefix entries are derived from the installed `com/blakebr0/ironjetpacks/registry/Jetpack.class` `getDisplayName`/name contract, not from the 41-key English language JSON. They are bound to the immutable derived contract SHA `c3e51fc6fd9ccbcd23c882ff08062b215bf718796bfc9ab0b885a8271af7da3d` and the fixed class/source hashes in `reviews/ironjetpacks.json`. The original name-generation code is [Jetpack.java](https://github.com/BlakeBr0/IronJetpacks/blob/601f96aaa8b1d389d7b5d587ca68dc6b68fe9a15/src/main/java/com/blakebr0/ironjetpacks/registry/Jetpack.java). The contract supplies the current material names and the original method's fallback/composition behavior; it does not distribute the class or live configuration. The 14 entries are independently reviewed and included in the same editable `assets/ironjetpacks/lang/ja_jp.json` file. No Iron Jetpacks JAR, Java code, class, configuration, image or model is included.
+
+## Functional Storage — `assets/functionalstorage/lang/ja_jp.json`
+
+**Copyright (c) 2021 Buuz135, Rid.** MIT: `LICENSES/FunctionalStorage-MIT.txt`.
+
+Fixed source: https://github.com/Buuz135/FunctionalStorage/tree/9945d211c9bb2f45a8dfb14c2bab28742b02acde
+
+Upstream language sources: [English](https://raw.githubusercontent.com/Buuz135/FunctionalStorage/9945d211c9bb2f45a8dfb14c2bab28742b02acde/src/generated/resources/assets/functionalstorage/lang/en_us.json), [existing Japanese](https://raw.githubusercontent.com/Buuz135/FunctionalStorage/9945d211c9bb2f45a8dfb14c2bab28742b02acde/src/main/resources/assets/functionalstorage/lang/ja_jp.json).
+
+Target: **1.6.1**, 164 current English-corresponding keys. The fixed English asset and 135-key existing Japanese asset match the installed JAR and fixed source; existing Japanese provenance is retained and current values are revised or supplied. Modified **2026-09-20 (UTC)** by ATM11 Japanese project / **ueda-keisuke**. The complete editable modified source is `assets/functionalstorage/lang/ja_jp.json` in this ZIP (`resourcepack/` in the repository). No Functional Storage JAR, Java code or other assets are included.
 
 ## Transmog — `assets/transmog/lang/ja_jp.json`
 
@@ -266,6 +314,6 @@ Target: **2601.1.0-build.9**, 5 keys. No upstream Japanese asset was found; Japa
 
 ## Project contributions and provenance
 
-`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips), plus the AppleSkin additions as described above. It **does not** apply to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
+`LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.

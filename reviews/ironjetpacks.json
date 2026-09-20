@@ -1,0 +1,181 @@
+{
+  "language_sha256": "221ca737483d1be6755cf9e4b24ca9b5801d5ec85412795444abb4096377c99c",
+  "namespace": "ironjetpacks",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "jetpack.bronze.name",
+        "jetpack.copper.name",
+        "jetpack.creative.name",
+        "jetpack.diamond.name",
+        "jetpack.electrum.name",
+        "jetpack.emerald.name",
+        "jetpack.gold.name",
+        "jetpack.invar.name",
+        "jetpack.iron.name",
+        "jetpack.platinum.name",
+        "jetpack.silver.name",
+        "jetpack.steel.name",
+        "jetpack.stone.name",
+        "jetpack.wood.name"
+      ],
+      "batch_id": "derived-ironjetpacks-materials-0001",
+      "decision": "accepted",
+      "review_sha256": "864efb5282cbffe99c7d2e942c08c50848d42161b9292b295f721fac832abd9f",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "materials",
+      "submission_sha256": "75516e840ef1f6c1b5c5ad6e92719790cdfe711cb2f50d28534724864911fe61"
+    },
+    {
+      "accepted_keys": [
+        "item.ironjetpacks.advanced_coil",
+        "item.ironjetpacks.basic_coil",
+        "item.ironjetpacks.capacitor",
+        "item.ironjetpacks.cell",
+        "item.ironjetpacks.elite_coil",
+        "item.ironjetpacks.jetpack",
+        "item.ironjetpacks.strap",
+        "item.ironjetpacks.thruster",
+        "item.ironjetpacks.ultimate_coil",
+        "itemGroup.ironjetpacks",
+        "keybind.ironjetpacks.ascend",
+        "keybind.ironjetpacks.decrement_throttle",
+        "keybind.ironjetpacks.descend",
+        "keybind.ironjetpacks.engine",
+        "keybind.ironjetpacks.hover",
+        "keybind.ironjetpacks.hud",
+        "keybind.ironjetpacks.increment_throttle",
+        "subtitle.ironjetpacks.jetpack",
+        "tooltip.ironjetpacks.change_throttle",
+        "tooltip.ironjetpacks.engine",
+        "tooltip.ironjetpacks.fuel_usage",
+        "tooltip.ironjetpacks.horizontal_speed",
+        "tooltip.ironjetpacks.hover",
+        "tooltip.ironjetpacks.hover_ascend_speed",
+        "tooltip.ironjetpacks.hover_descend_speed",
+        "tooltip.ironjetpacks.hover_speed",
+        "tooltip.ironjetpacks.hud",
+        "tooltip.ironjetpacks.infinite",
+        "tooltip.ironjetpacks.jetpack_id",
+        "tooltip.ironjetpacks.off",
+        "tooltip.ironjetpacks.on",
+        "tooltip.ironjetpacks.sprint_fuel_modifier",
+        "tooltip.ironjetpacks.sprint_modifier",
+        "tooltip.ironjetpacks.sprint_vertical_modifier",
+        "tooltip.ironjetpacks.throttle",
+        "tooltip.ironjetpacks.tier",
+        "tooltip.ironjetpacks.toggle_engine",
+        "tooltip.ironjetpacks.toggle_hover",
+        "tooltip.ironjetpacks.toggle_hud",
+        "tooltip.ironjetpacks.vertical_acceleration",
+        "tooltip.ironjetpacks.vertical_speed"
+      ],
+      "batch_id": "lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0001",
+      "decision": "accepted",
+      "review_sha256": "531dd01be7febf1c19b0be9a33fb065062c198a085c0e840fb1af29398981adf",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "source_id": "lang",
+      "submission_sha256": "8342b6adab95a333938f47955e1cc509941c5c39328e13da8eff065594b67fe7"
+    }
+  ],
+  "schema_version": 3,
+  "sources": {
+    "lang": {
+      "jar_entry": "assets/ironjetpacks/lang/en_us.json",
+      "jar_sha256": "cf8df68bbde624ade6b47733c30c4b34faee1e6f26ead4220b77cf32de9b01f8",
+      "source_sha256": "1bb63988fb281ce7cd5db7c922bc14203f41a5ce0f5aefe76b14d9cffd15c43b",
+      "source_type": "jar_lang"
+    },
+    "materials": {
+      "class_hashes": {
+        "com/blakebr0/ironjetpacks/item/ComponentItem.class": "cf7e80a4f06f241f4d452731a6437acedbc373d4a4a4c186ad44ecdbdf5c36c0",
+        "com/blakebr0/ironjetpacks/item/JetpackItem.class": "4685873695b62f46325b8663dd3e6605e588896cb4e7a366dc8a563e45ec18d6",
+        "com/blakebr0/ironjetpacks/registry/Jetpack.class": "df217f4269e0922d0a65d04e7bddd159a3f067287889a9090642082bbb09f9bb"
+      },
+      "english_contract": [
+        {
+          "en": "Bronze",
+          "key": "jetpack.bronze.name",
+          "name": "bronze"
+        },
+        {
+          "en": "Copper",
+          "key": "jetpack.copper.name",
+          "name": "copper"
+        },
+        {
+          "en": "Creative",
+          "key": "jetpack.creative.name",
+          "name": "creative"
+        },
+        {
+          "en": "Diamond",
+          "key": "jetpack.diamond.name",
+          "name": "diamond"
+        },
+        {
+          "en": "Electrum",
+          "key": "jetpack.electrum.name",
+          "name": "electrum"
+        },
+        {
+          "en": "Emerald",
+          "key": "jetpack.emerald.name",
+          "name": "emerald"
+        },
+        {
+          "en": "Gold",
+          "key": "jetpack.gold.name",
+          "name": "gold"
+        },
+        {
+          "en": "Invar",
+          "key": "jetpack.invar.name",
+          "name": "invar"
+        },
+        {
+          "en": "Iron",
+          "key": "jetpack.iron.name",
+          "name": "iron"
+        },
+        {
+          "en": "Platinum",
+          "key": "jetpack.platinum.name",
+          "name": "platinum"
+        },
+        {
+          "en": "Silver",
+          "key": "jetpack.silver.name",
+          "name": "silver"
+        },
+        {
+          "en": "Steel",
+          "key": "jetpack.steel.name",
+          "name": "steel"
+        },
+        {
+          "en": "Stone",
+          "key": "jetpack.stone.name",
+          "name": "stone"
+        },
+        {
+          "en": "Wood",
+          "key": "jetpack.wood.name",
+          "name": "wood"
+        }
+      ],
+      "jar_entry": "com/blakebr0/ironjetpacks/registry/Jetpack.class",
+      "jar_sha256": "cf8df68bbde624ade6b47733c30c4b34faee1e6f26ead4220b77cf32de9b01f8",
+      "source_contract_sha256": "c3e51fc6fd9ccbcd23c882ff08062b215bf718796bfc9ab0b885a8271af7da3d",
+      "source_sha256": "df217f4269e0922d0a65d04e7bddd159a3f067287889a9090642082bbb09f9bb",
+      "source_type": "derived_jar_lang"
+    }
+  },
+  "version": "9.0.3"
+}

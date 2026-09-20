@@ -1,0 +1,41 @@
+{
+  "language_sha256": "cc5ec3e41b7d5cd3d7c1e7cc8d82770085a53537bcf7a5601ba72f7eef16fe27",
+  "namespace": "cucumber",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "message.cucumber.filled_energy",
+        "message.cucumber.filled_energy_error",
+        "subtitle.cucumber.watering_can",
+        "tooltip.cucumber.block_tags",
+        "tooltip.cucumber.data_components",
+        "tooltip.cucumber.empty",
+        "tooltip.cucumber.filled",
+        "tooltip.cucumber.fluid_tags",
+        "tooltip.cucumber.hold_alt_for_data_components",
+        "tooltip.cucumber.hold_ctrl_for_tags",
+        "tooltip.cucumber.hold_shift_for_info",
+        "tooltip.cucumber.item_tags",
+        "tooltip.cucumber.not_yet_implemented",
+        "tooltip.cucumber.one_use_left",
+        "tooltip.cucumber.unlimited_uses",
+        "tooltip.cucumber.uses_left"
+      ],
+      "batch_id": "lang-Cucumber-26.1.2-9.0.6-cucumber-5a83f1bf1c-0001",
+      "decision": "accepted",
+      "review_sha256": "1a9b1b602c65043719a947798ba503e9188a934238785c28a1c8e0e0667ce2a1",
+      "reviewer": {
+        "agent": "/root/distribution_audit",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "e6313a7e4803c6a58fff60b0dbc2221002f3ce8a7992521ebf861b173fdd9fb0"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/cucumber/lang/en_us.json",
+    "jar_sha256": "ad82d0a19f97086b8913029f2fbf10ad25ff591de4ac11e0776caa6dd1e8f9ed",
+    "source_sha256": "40a6b16009febde352dce6a281eb8020923c3a271fdc1bb0f6f06eb877e03d0d",
+    "version": "26.1.2-9.0.6"
+  }
+}

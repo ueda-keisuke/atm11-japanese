@@ -1,0 +1,18 @@
+{
+  "message.cucumber.filled_energy": "この%sのエネルギーを満タンにしました！",
+  "message.cucumber.filled_energy_error": "この%sにはエネルギーを充填できません。",
+  "subtitle.cucumber.watering_can": "ジョウロ",
+  "tooltip.cucumber.block_tags": "ブロックタグ：",
+  "tooltip.cucumber.data_components": "データコンポーネント：",
+  "tooltip.cucumber.empty": "空",
+  "tooltip.cucumber.filled": "満杯",
+  "tooltip.cucumber.fluid_tags": "流体タグ：",
+  "tooltip.cucumber.hold_alt_for_data_components": "ALTを押すとデータコンポーネントを表示",
+  "tooltip.cucumber.hold_ctrl_for_tags": "CTRLを押すとタグを表示",
+  "tooltip.cucumber.hold_shift_for_info": "§e§oSHIFT §r§7を押すと情報を表示",
+  "tooltip.cucumber.item_tags": "アイテムタグ：",
+  "tooltip.cucumber.not_yet_implemented": "未実装",
+  "tooltip.cucumber.one_use_left": "1回使用可能",
+  "tooltip.cucumber.unlimited_uses": "使用回数無制限",
+  "tooltip.cucumber.uses_left": "%s回使用可能"
+}

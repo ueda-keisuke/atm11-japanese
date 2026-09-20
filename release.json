@@ -72,6 +72,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "ec06ba0124a3daaabacd7da8d51ec4cde65614dcdc3e2e4da5fd783038a58099"
     },
+    "cucumber": {
+      "key_count": 16,
+      "language_sha256": "cc5ec3e41b7d5cd3d7c1e7cc8d82770085a53537bcf7a5601ba72f7eef16fe27",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "669ee250fea251a176ff74bbe760d742760813d5e56abba22bffb3480c1073f5"
+    },
     "cumulus_menus": {
       "key_count": 35,
       "language_sha256": "2530dc371ed96cda4e9e78962e3ef8d593b5064b858786befd26c03e3b7cb524",
@@ -89,6 +95,18 @@
       "language_sha256": "469fc3207341db636b92ce3b3dd7936bbb7553d6252b9c9c0b973a0691a6f37a",
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "0157efe651f98ac895bc6a0778f55a8c90483c7d602f69bd5f6083b2c55584fe"
+    },
+    "functionalstorage": {
+      "key_count": 164,
+      "language_sha256": "18c0528cbedb0239d169069383bff45870c0da4fde44ad0af4bdb9b153d4fa6b",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "89ec06a59073e8d3e84e0de0f0d1238d54ff8d8e1eb9e6b83886da7c00119600"
+    },
+    "ironjetpacks": {
+      "key_count": 55,
+      "language_sha256": "221ca737483d1be6755cf9e4b24ca9b5801d5ec85412795444abb4096377c99c",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "709914c99ebe5810147d398df5d49fe6ae9970d879bad24b2f1c1183636f5cd9"
     },
     "jade": {
       "key_count": 496,
@@ -163,6 +181,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "3c3655097dbaf6e3a033e8e71f1234e04cbfaa800b9c0465384cc66a2bb25f52"
     },
+    "toolbelt": {
+      "key_count": 26,
+      "language_sha256": "d392162d8ee2137c62185094ce99a0f7d10beb312e003154b0cd9cd7dc75d17a",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "39e3ab47eaec9f42afaa26aac63cbff6828dcd068b009a2f0975ef5e9e8b17ef"
+    },
     "transmog": {
       "key_count": 25,
       "language_sha256": "0118fe14b9864d722781bceb5b5e92c76ad3b4a49970f2b09674220c4ec641c9",
@@ -172,5 +196,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.7.0"
+  "version": "0.8.0"
 }
