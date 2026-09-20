@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.13.0'
-NOTICE_SHA256 = '4a65967204bda1311f62318fbe0604e8ede560b62f4154d9ab7ff18a563a9d66'
+VERSION = '0.14.0'
+NOTICE_SHA256 = '225248388a63155e5bc402e73459cc1774a3b543669090f1a98d630ef201dd33'
 TRANSMOG_FILTER = {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}
 POLICIES = {'transmog': {'version': '1.8.0+26.1',
               'jar_sha256': '71236a1adcec1a6186828c49dd22d330054db30f7372b8d8be25a1c58d704ba7',
@@ -364,7 +364,19 @@ POLICIES = {'transmog': {'version': '1.8.0+26.1',
  'sfm': {'version': '4.34.0',
          'jar_sha256': 'cace8809600cea007dbe5c73dc04c2f780375547ec0717a1ec8c25d991140bf1',
          'jar_entry': 'assets/sfm/lang/en_us.json',
-         'source_sha256': '64189966cbcaf6714a4d56f0dcca9e057e70ce7a413fc466325d2bf1cdb0b090'}}
+         'source_sha256': '64189966cbcaf6714a4d56f0dcca9e057e70ce7a413fc466325d2bf1cdb0b090'},
+ 'dimstorage': {'version': '10.0.1',
+                'jar_sha256': 'e6808c0fe40f671dd0625c9ab612fd75fe5453a528a58580f13c21a0b93c7511',
+                'jar_entry': 'assets/dimstorage/lang/en_us.json',
+                'source_sha256': '4713de32d6f9833840fad59f9f56b0f036715e5846270c5694c49b5f3c057eeb'},
+ 'stepcrafter': {'version': '26.1.2-1.0.3',
+                 'jar_sha256': '78a5392cf562e75bf803937f6f41d28b51aba3c474e1c95f5aab5ec265abee30',
+                 'jar_entry': 'assets/stepcrafter/lang/en_us.json',
+                 'source_sha256': '2184445666a7b0571b923e0f090a8359e9153dfd2408f41c263a8ee71694c293'},
+ 'refinedstorage_quartz_arsenal': {'version': '2.0.6',
+                                   'jar_sha256': '4e1bd12aa644320195553e76edbdb159150dd51db6268f532544206567ef165a',
+                                   'jar_entry': 'assets/refinedstorage_quartz_arsenal/lang/en_us.json',
+                                   'source_sha256': '83bb43ab5a611522ace3a4ac70f099a28c82b1a70fea3ab571dfffad84eb5f39'}}
 KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e4f6f08c81562ff'),
  'jei': (335, 'd937bcace1710a07a4c1a156d35b1f4046f9663ab67f9b8e534ce6c87e5a2907'),
  'appleskin': (22, '69aad68d780252788180e59a29c4e3a4457f47fc29ad3a2cf920ac1fb4ae332c'),
@@ -409,7 +421,10 @@ KEY_SETS = {'transmog': (25, 'b369562a850d8b4f2fdf4c3065d0582904bc886a63b675b92e
                                          '38101869dc9d8dfcb8bc0105ca74eb29f1e6ece367a962f285ff8005d9963b62'),
  'enchdesc': (183, '8f93f7f6d72674769987ed1d0c46cfc17eb9c0c8389c9b95a2e40cace11001dc'),
  'extremesoundmuffler': (93, 'ae57eb6617344d60e2c8c265c3033bf6c62103a62b0570f958419b60c083fdfb'),
- 'sfm': (277, '12961d780fd822177c6d9f7a9e72520e1b289a6a798e9c60e8e894c4e349bc78')}
+ 'sfm': (277, '12961d780fd822177c6d9f7a9e72520e1b289a6a798e9c60e8e894c4e349bc78'),
+ 'dimstorage': (36, 'e189469735447e92ccb27207644b6cc5493f7b6ab797816ffd4f6b8a2048fc10'),
+ 'stepcrafter': (80, 'd874eee788d8af8267292a7659b2dbab94a6c7b090bc162f7bef7af25ad864d1'),
+ 'refinedstorage_quartz_arsenal': (23, '3a0235d95e238a19fbd7e969fb24fbae3978ff9993b11efd21d91893abed3463')}
 PRESERVED_METADATA_KEYS = {'transmog': [],
  'jei': ['_comment'],
  'appleskin': [],
@@ -465,7 +480,10 @@ PRESERVED_METADATA_KEYS = {'transmog': [],
               '__support_stalwart_dungeons',
               '_comment'],
  'extremesoundmuffler': [],
- 'sfm': []}
+ 'sfm': [],
+ 'dimstorage': [],
+ 'stepcrafter': [],
+ 'refinedstorage_quartz_arsenal': []}
 PROJECT_NOTICES = {'simplebackups': {'_comment': 'Modified by ATM11 Japanese project / ueda-keisuke on 2026-09-20: Japanese '
                                'language entries revised or supplied. Original project: Simple Backups by '
                                'MelanX; Apache-2.0. See NOTICE.md and '
@@ -520,7 +538,10 @@ LICENSES = {'LICENSES/Project-MIT.txt': '14e77f04a42df608a6346aeacb757acf56aaba6
  'LICENSES/InterdimensionalWirelessTransmitter-MIT.txt': '132234f0de1d6bcd91e41a6b9d995d9022d1da093c2c94d131ba1adf4117fcc2',
  'LICENSES/EnchantmentDescriptions-LGPL-2.1.txt': 'a7bb85ecc913dadfba4cef7af27d2789094bdfb9e46d86b0cd8f917ba4e64e23',
  'LICENSES/ExtremeSoundMuffler-LGPL-3.0.txt': 'ca25c1e642be3f3fc0576de17a5003df44305d5282a5e0c6cf0999cc75438ec0',
- 'LICENSES/SuperFactoryManager-MPL-2.0.txt': '1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5'}
+ 'LICENSES/SuperFactoryManager-MPL-2.0.txt': '1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5',
+ 'LICENSES/DimStorage-AGPL-3.0.txt': '8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef',
+ 'LICENSES/StepCrafter-MIT.txt': '976da1a41c4b86061101f101832ac3d904d95c6836554f5a260c202338b5427d',
+ 'LICENSES/RefinedStorageQuartzArsenal-MIT.md': '4f332ed10b4b214c0397a37b0344aa5fd4517ea5631e580c6b43676f92ad9f4e'}
 NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'jei': ('LICENSES/JEI-MIT.txt',),
  'appleskin': ('LICENSES/AppleSkin-Unlicense.txt',),
@@ -568,11 +589,14 @@ NAMESPACE_LICENSES = {'transmog': ('LICENSES/Transmog-MIT.txt',),
  'interdimensionalwirelesstransmitter': ('LICENSES/InterdimensionalWirelessTransmitter-MIT.txt',),
  'enchdesc': ('LICENSES/EnchantmentDescriptions-LGPL-2.1.txt',),
  'extremesoundmuffler': ('LICENSES/ExtremeSoundMuffler-LGPL-3.0.txt', 'LICENSES/GPL-3.0.txt'),
- 'sfm': ('LICENSES/SuperFactoryManager-MPL-2.0.txt',)}
+ 'sfm': ('LICENSES/SuperFactoryManager-MPL-2.0.txt',),
+ 'dimstorage': ('LICENSES/DimStorage-AGPL-3.0.txt',),
+ 'stepcrafter': ('LICENSES/StepCrafter-MIT.txt',),
+ 'refinedstorage_quartz_arsenal': ('LICENSES/RefinedStorageQuartzArsenal-MIT.md',)}
 PACKAGES = {'collection': {'directory': 'resourcepack',
                 'release': 'release.json',
                 'notice': 'NOTICE.md',
-                'filename': 'ATM11-Japanese-0.13.0.zip',
+                'filename': 'ATM11-Japanese-0.14.0.zip',
                 'namespaces': ('transmog',
                                'jei',
                                'appleskin',
@@ -616,7 +640,10 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                                'interdimensionalwirelesstransmitter',
                                'enchdesc',
                                'extremesoundmuffler',
-                               'sfm'),
+                               'sfm',
+                               'dimstorage',
+                               'stepcrafter',
+                               'refinedstorage_quartz_arsenal'),
                 'licenses': ('LICENSES/Project-MIT.txt',
                              'LICENSES/Transmog-MIT.txt',
                              'LICENSES/JEI-MIT.txt',
@@ -667,8 +694,11 @@ PACKAGES = {'collection': {'directory': 'resourcepack',
                              'LICENSES/InterdimensionalWirelessTransmitter-MIT.txt',
                              'LICENSES/EnchantmentDescriptions-LGPL-2.1.txt',
                              'LICENSES/ExtremeSoundMuffler-LGPL-3.0.txt',
-                             'LICENSES/SuperFactoryManager-MPL-2.0.txt'),
-                'pack': {'pack': {'description': 'ATM11 日本語改善 0.13.0: 44 namespaces / 3299 entries',
+                             'LICENSES/SuperFactoryManager-MPL-2.0.txt',
+                             'LICENSES/DimStorage-AGPL-3.0.txt',
+                             'LICENSES/StepCrafter-MIT.txt',
+                             'LICENSES/RefinedStorageQuartzArsenal-MIT.md'),
+                'pack': {'pack': {'description': 'ATM11 日本語改善 0.14.0: 47 namespaces / 3438 entries',
                                   'min_format': [84, 0],
                                   'max_format': [84, 0]},
                          'filter': {'block': [{'namespace': '^transmog$', 'path': '^lang/ja_jp\\.json$'}]}}}}
@@ -690,7 +720,11 @@ MULTISOURCE_BATCHES = {'lang-IronJetpacks-26.1.2-9.0.3-ironjetpacks-99d5e6d83d-0
  'derived-charginggadgets-config-0001': 'configuration'}
 
 
-SFM_BATCH_IDS = ('lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0001', 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0002', 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0003', 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0004', 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0005')
+SFM_BATCH_IDS = ('lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0001',
+ 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0002',
+ 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0003',
+ 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0004',
+ 'lang-Super Factory Manager (SFM)-MC26.1.2-4.34.0-sfm-c0005bc889-0005')
 ENCHDESC_METADATA_VALUES = {'__comment_jei': 'JEI Compat',
  '__support_betterarcheology': 'https://www.curseforge.com/minecraft/mc-mods/better-archeology',
  '__support_create_stuff': 'https://www.curseforge.com/minecraft/mc-mods/create-stuff-additions',
@@ -827,7 +861,7 @@ def validated_files(root, package='collection'):
             type(release['schema_version']) is int and release['schema_version'] == 3,
             'Unexpected release manifest schema')
     require(release['review_status'] == 'accepted', 'Independent language review is pending; no ZIP generated')
-    require(release['version'] == VERSION, 'This builder prepares version 0.13.0; earlier releases remain immutable')
+    require(release['version'] == VERSION, 'This builder prepares version 0.14.0; earlier releases remain immutable')
     require(isinstance(release['languages'], dict) and set(release['languages']) == set(config['namespaces']),
             f'{package}: Only the fixed package namespaces are permitted')
     directory = config['directory']

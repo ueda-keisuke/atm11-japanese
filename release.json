@@ -102,6 +102,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "f6e3f8ecaec89e587927dff2de53a875ffbf042238ef3b0692031e07cf368ea7"
     },
+    "dimstorage": {
+      "key_count": 36,
+      "language_sha256": "1231a12e0b9681367e7e8deda39aa5ae5af9e6f0c4549fa81383494e2b968506",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "3f977ba9560dcc472ea0c8bfa449ccdf6bd9e7e79d700f6b5c182fba12ad645d"
+    },
     "elevatorid": {
       "key_count": 29,
       "language_sha256": "7b40513b4731dac81c9dfd385d1c854b44461da2c26b04995fcce585fcc20757",
@@ -227,6 +233,12 @@
       ],
       "review_evidence_sha256": "9c892c8b2664d6565010eaf59e8b10c49b512582d8347d6cadaf2e35c2745163"
     },
+    "refinedstorage_quartz_arsenal": {
+      "key_count": 23,
+      "language_sha256": "6e115e10c3d2233f0c3d3916130947c1f74778daf97fc189a79627a00e809c06",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "1805427badd6187f9691f499665aece935661de2d4beffdfe2947cd8e0613792"
+    },
     "resourcefulconfig": {
       "key_count": 32,
       "language_sha256": "8000de98cbda25fe01fc6fc26314723bccd7daf4f4c3f8b4417cc94726ee6a76",
@@ -272,6 +284,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "94d0b05837e44e2bf7c8aa106e44dbf31c359cd1e75645d6f39386ea6e252a99"
     },
+    "stepcrafter": {
+      "key_count": 80,
+      "language_sha256": "578e196ee6fd6fd8e5995a96709eeb43365447fd704cf8309c79617129ebfe4c",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "a245f6e6a786f2d0e75988e04b7e77ca539008af81d8b83394b29373afdf127d"
+    },
     "toastcontrol": {
       "key_count": 2,
       "language_sha256": "471b1a2621ee50069904b062186e3bf76fac4c2470479b9a8a0879be10df8cfd",
@@ -293,5 +311,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.13.0"
+  "version": "0.14.0"
 }

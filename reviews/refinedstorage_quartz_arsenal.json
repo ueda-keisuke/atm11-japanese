@@ -1,0 +1,48 @@
+{
+  "language_sha256": "6e115e10c3d2233f0c3d3916130947c1f74778daf97fc189a79627a00e809c06",
+  "namespace": "refinedstorage_quartz_arsenal",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "item.refinedstorage_quartz_arsenal.creative_wireless_crafting_grid",
+        "item.refinedstorage_quartz_arsenal.wireless_crafting_grid",
+        "key.category.refinedstorage_quartz_arsenal.keymappings",
+        "key.refinedstorage_quartz_arsenal.open_wireless_crafting_grid",
+        "mod.refinedstorage_quartz_arsenal",
+        "refinedstorage_quartz_arsenal.configuration.section.refinedstorage_quartz_arsenal.common.toml",
+        "refinedstorage_quartz_arsenal.configuration.section.refinedstorage_quartz_arsenal.common.toml.title",
+        "refinedstorage_quartz_arsenal.configuration.title",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.autocraftingEnergyUsage",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.autocraftingEnergyUsage.tooltip",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.clearMatrixEnergyUsage",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.clearMatrixEnergyUsage.tooltip",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.craftingEnergyUsage",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.craftingEnergyUsage.tooltip",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.energyCapacity",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.energyCapacity.tooltip",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.openEnergyUsage",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.openEnergyUsage.tooltip",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.recipeTransferEnergyUsage",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.recipeTransferEnergyUsage.tooltip",
+        "text.autoconfig.refinedstorage_quartz_arsenal.option.wirelessCraftingGrid.tooltip",
+        "text.autoconfig.refinedstorage_quartz_arsenal.title"
+      ],
+      "batch_id": "lang-refinedstorage-quartz-arsenal-neoforge-2.0.6-refinedstorage_quartz_arsenal-17268c24fa-0001",
+      "decision": "accepted",
+      "review_sha256": "9840094b1fcdc4ef61466e22ee3e7dcfe93ddbcd48eb49f9f19bdb9c67f3c2c6",
+      "reviewer": {
+        "agent": "/root/comforts_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "5527afd4c3804af2fcdae903c3fc7d30a7ac7845ad860c2d23e8b895df6b1ffa"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/refinedstorage_quartz_arsenal/lang/en_us.json",
+    "jar_sha256": "4e1bd12aa644320195553e76edbdb159150dd51db6268f532544206567ef165a",
+    "source_sha256": "83bb43ab5a611522ace3a4ac70f099a28c82b1a70fea3ab571dfffad84eb5f39",
+    "version": "2.0.6"
+  }
+}

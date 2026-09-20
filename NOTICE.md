@@ -1,12 +1,12 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.13.0 additions / 追加内容
+## 0.14.0 additions / 追加内容
 
-0.13.0では、Enchantment Descriptionsの訳文170項目と原文メタデータ13項目、Extreme Sound Mufflerの93項目、Super Factory Managerの277項目を追加しています。既存の41対象は保持します。全44対象・3,299項目（翻訳3,280、原文メタデータ18、Apache 4(b)改変通知1）を収録します。ゲーム画面の目視確認は0件です。
+0.14.0では、DimStorageの36項目、Step Crafterの80項目、Refined Storage - Quartz Arsenalの23項目を追加しています。既存の44対象は保持します。全47対象・3,438項目（翻訳3,419、原文メタデータ18、Apache 4(b)改変通知1）を収録します。ゲーム画面の目視確認は0件です。
 
-Version 0.13.0 adds 183 Enchantment Descriptions entries (170 translations and 13 original metadata entries), 93 Extreme Sound Muffler entries, and 277 Super Factory Manager entries. Earlier language/review files and their individual license scopes are retained. Independent language review, format checks and native resource-loader checks are separate from game-screen visual checks, which remain at 0.
+Version 0.14.0 adds 36 DimStorage entries, 80 Step Crafter entries and 23 Refined Storage - Quartz Arsenal entries. Earlier language/review files and their individual license scopes are retained. Independent language review, format checks and native resource-loader checks are separate from game-screen visual checks, which remain at 0.
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.13.0 contains 3,299 entries across 44 namespaces: 3,280 translations, 18 preserved original metadata entries and one Apache 4(b) project notice. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.14.0 contains 3,438 entries across 47 namespaces: 3,419 translations, 18 preserved original metadata entries and one Apache 4(b) project notice. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
@@ -427,3 +427,39 @@ Target: **4.34.0**, 277 current English language keys from the installed JAR. En
 `LICENSES/Project-MIT.txt` applies to this project's build script, original project documentation, and its additions to the MIT namespaces (Transmog, JEI, Controlling, Searchables, Resourceful Config, AE2WTLib API, Kuma API, Apollib, Toast Control, Better Advanced Tooltips, Cucumber, Iron Jetpacks, Functional Storage, Building Gadgets 2, Charging Gadgets, ElevatorID, Mystical Automation, More Overlays Updated, Interdimensional Wireless Transmitter), plus the AppleSkin additions as described above. It **does not** apply to ToolBelt, whose BSD-3-Clause notice remains applicable, or to NeoForge, Jade, AE2 Network Analyzer, Cumulus Menus, Sodium, Better Advancements, QuarryPlus, Code Defined GUI, SathLib, AE2AddonLib, EnderIO, Magic Particles Lib, SpectreLib, Advanced AE, ExtendedAE, Comforts, Crafting on a Stick, Curios, Nature's Compass, Simple Backups, Enchantment Descriptions, Extreme Sound Muffler, Super Factory Manager, their adaptations, or quoted/upstream license texts. Original notices remain applicable to original material.
 
 `release.json` binds the language bytes and review summaries. Each `reviews/<namespace>.json` identifies exact original source/JAR hashes, independently accepted keys, reviewer and review/submission hashes. Nested sources also bind the parent JAR, every archive member/hash and catalog source ID. These are provenance records, not digital signatures or proof that every game screen has been visually tested.
+
+## DimStorage — `assets/dimstorage/lang/ja_jp.json`
+
+Original project: **Edivad99**. Upstream credits: **Thegaarnik**. The complete upstream GNU Affero General Public License version 3 is retained at `LICENSES/DimStorage-AGPL-3.0.txt`. This project's modified language file is provided under **AGPL version 3**. This applies to the DimStorage language work; it does not relicense other independently licensed namespace files in this aggregate.
+
+Fixed source: https://github.com/Edivad99/DimStorage/tree/38a8f7bfe2935b68f8ff9eff90f0dd85e97841bc
+
+Upstream language sources: [English](https://github.com/Edivad99/DimStorage/blob/38a8f7bfe2935b68f8ff9eff90f0dd85e97841bc/src/generated/resources/assets/dimstorage/lang/en_us.json), [existing Japanese and its contributors](https://github.com/Edivad99/DimStorage/blob/38a8f7bfe2935b68f8ff9eff90f0dd85e97841bc/src/main/resources/assets/dimstorage/lang/ja_jp.json).
+
+Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: revised or supplied the 36 Japanese language entries against the installed 10.0.1 English source, retaining keys and formatting. The existing Japanese source and its contributors remain credited. The complete modified language source is the readable, editable JSON included in this ZIP and in `resourcepack/assets/dimstorage/lang/ja_jp.json` in this repository; no compiled form of it is substituted. The public builder used to assemble the ZIP is `build_pack.py`. Recipients may modify and redistribute this language work under the included AGPL version 3 terms. No additional restriction is imposed on this work by the collection. This language-only overlay requires the separately installed original MOD; MOD JARs, Java code, textures and models are not included. No warranty is provided, as stated in the included license.
+
+Installed source JAR SHA-256: `e6808c0fe40f671dd0625c9ab612fd75fe5453a528a58580f13c21a0b93c7511`. English entry SHA-256: `4713de32d6f9833840fad59f9f56b0f036715e5846270c5694c49b5f3c057eeb`. Existing Japanese entry SHA-256: `8828e5d62e0561a71e97ca4d065f1705a8092386a77216a8305f0b96ddef3bac`. Both language entries match the fixed source byte-for-byte. Full license SHA-256: `8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef`.
+
+## Step Crafter — `assets/stepcrafter/lang/ja_jp.json`
+
+**Copyright (c) 2025 Starforcraft.** Author: **Ultramega**. MIT: full original text retained at `LICENSES/StepCrafter-MIT.txt`; the Japanese language adaptation retains MIT.
+
+Fixed source: https://github.com/starforcraft/Step-Crafter/tree/99ca4e98b28995060363ed1f4c275c9daab51480
+
+Upstream [English language source](https://github.com/starforcraft/Step-Crafter/blob/99ca4e98b28995060363ed1f4c275c9daab51480/common/src/main/resources/assets/stepcrafter/lang/en_us.json). The installed JAR contains no Japanese language file. Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: supplied 80 Japanese language entries. One speed-multiplier explanation corrects the upstream words “slot upgrade”: the installed implementation counts Refined Storage Speed Upgrades for speed, and counts Slot Upgrades separately for filter rows. The formula identifiers and translation key are retained. This is a wording correction only; no MOD code or behavior is changed.
+
+Installed version: 26.1.2-1.0.3. JAR SHA-256: `78a5392cf562e75bf803937f6f41d28b51aba3c474e1c95f5aab5ec265abee30`. English entry SHA-256: `2184445666a7b0571b923e0f090a8359e9153dfd2408f41c263a8ee71694c293`. Fixed source English SHA-256: `de1facacb33443f6d17ed9c5e3d58ca555e1978726c363715617b981389abe69`; parsed keys and values match, while serialization bytes differ. Full license SHA-256: `976da1a41c4b86061101f101832ac3d904d95c6836554f5a260c202338b5427d`.
+
+Only the editable language overlay is included. Refined Storage parent language assets, JARs, Java code, textures and models are excluded.
+
+## Refined Storage - Quartz Arsenal — `assets/refinedstorage_quartz_arsenal/lang/ja_jp.json`
+
+**Copyright © 2024 - 2026 Refined Mods.** MIT: the full original license is retained at `LICENSES/RefinedStorageQuartzArsenal-MIT.md`; the Japanese language adaptation retains MIT.
+
+Fixed source: https://github.com/refinedmods/refinedstorage-quartz-arsenal/tree/a1bafea4d8eaf38ca791b2454c33d1249442300d
+
+Upstream language sources: [English](https://github.com/refinedmods/refinedstorage-quartz-arsenal/blob/a1bafea4d8eaf38ca791b2454c33d1249442300d/refinedstorage-quartz-arsenal-common/src/main/resources/assets/refinedstorage_quartz_arsenal/lang/en_us.json), [existing Japanese and its contributors](https://github.com/refinedmods/refinedstorage-quartz-arsenal/blob/a1bafea4d8eaf38ca791b2454c33d1249442300d/refinedstorage-quartz-arsenal-common/src/main/resources/assets/refinedstorage_quartz_arsenal/lang/ja_jp.json).
+
+Modified by ATM11 Japanese project / ueda-keisuke on **2026-09-20 (UTC)**: revised or supplied the 23 Japanese language entries, checking capacity and per-operation energy descriptions against their consumers. Existing Japanese language contributors remain credited through the fixed source above. Installed version: 2.0.6. JAR SHA-256: `4e1bd12aa644320195553e76edbdb159150dd51db6268f532544206567ef165a`. English entry SHA-256: `83bb43ab5a611522ace3a4ac70f099a28c82b1a70fea3ab571dfffad84eb5f39`. Existing Japanese entry SHA-256: `32cc7fbb3739ae203fa69ffb034a4d6ea2a0684799c2f7e14cb564b1d2170bf9`. Both language entries match the fixed source byte-for-byte. Full license SHA-256: `4f332ed10b4b214c0397a37b0344aa5fd4517ea5631e580c6b43676f92ad9f4e`.
+
+Only the editable language overlay is included; Refined Storage parent assets, JARs, Java code, textures and models are not distributed. The 23 keys do not claim coverage of every inherited or hardcoded interface.

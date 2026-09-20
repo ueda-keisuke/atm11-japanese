@@ -1,0 +1,61 @@
+{
+  "language_sha256": "1231a12e0b9681367e7e8deda39aa5ae5af9e6f0c4549fa81383494e2b968506",
+  "namespace": "dimstorage",
+  "reviews": [
+    {
+      "accepted_keys": [
+        "advancements.dimstorage.dimensional_chest",
+        "advancements.dimstorage.dimensional_chest.desc",
+        "advancements.dimstorage.dimensional_tablet",
+        "advancements.dimstorage.dimensional_tablet.desc",
+        "advancements.dimstorage.dimensional_tank",
+        "advancements.dimstorage.dimensional_tank.desc",
+        "advancements.dimstorage.root",
+        "advancements.dimstorage.root.desc",
+        "block.dimstorage.dimensional_chest",
+        "block.dimstorage.dimensional_tank",
+        "config.jade.plugin_dimstorage.dim_block_base",
+        "config.jade.plugin_dimstorage.dim_tank",
+        "gui.dimstorage.amount",
+        "gui.dimstorage.change",
+        "gui.dimstorage.collecting",
+        "gui.dimstorage.eject",
+        "gui.dimstorage.empty",
+        "gui.dimstorage.frequency",
+        "gui.dimstorage.gas",
+        "gui.dimstorage.idle",
+        "gui.dimstorage.liquid",
+        "gui.dimstorage.locked",
+        "gui.dimstorage.luminosity",
+        "gui.dimstorage.no",
+        "gui.dimstorage.owner",
+        "gui.dimstorage.temperature",
+        "gui.dimstorage.yes",
+        "item.dimstorage.dim_core",
+        "item.dimstorage.dim_wall",
+        "item.dimstorage.dimensional_tablet",
+        "item.dimstorage.solid_dim_core",
+        "message.dimstorage.bind_dimchest",
+        "message.dimstorage.changeAutoCollect",
+        "message.dimstorage.for_details",
+        "message.dimstorage.hold",
+        "message.dimstorage.press"
+      ],
+      "batch_id": "lang-DimStorage-26.1.2-10.0.1-dimstorage-2493983468-0001",
+      "decision": "accepted",
+      "review_sha256": "68d55defdbc0db399fa1287e4e31a3c13933c4d3ad0742a2585d46e7d4edff72",
+      "reviewer": {
+        "agent": "/root/extendedae_review",
+        "model": "gpt-5.6-luna"
+      },
+      "submission_sha256": "e2db415bec561d897c12977c92c5a7a797a306e2fe13a66ab0965b9ff521a07d"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "jar_entry": "assets/dimstorage/lang/en_us.json",
+    "jar_sha256": "e6808c0fe40f671dd0625c9ab612fd75fe5453a528a58580f13c21a0b93c7511",
+    "source_sha256": "4713de32d6f9833840fad59f9f56b0f036715e5846270c5694c49b5f3c057eeb",
+    "version": "10.0.1"
+  }
+}
