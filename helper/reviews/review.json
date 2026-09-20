@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "batch_id": "helper-quarryplus-gui-0001",
+  "submission": "localization/translations/helper/quarryplus_gui_01.json",
+  "submission_sha256": "66f563e0d09bcf1ae1c4631d8c1e7a558c034f9c750581d39ff08e2d8c8a10fd",
+  "source_sha256": "8a5320218e5d43fc9810402b7f64e3d2782752da148f8703c8a58976c8708835",
+  "reviewer": {
+    "agent": "/root/distribution_audit",
+    "model": "gpt-5.6-luna"
+  },
+  "decision": "accepted",
+  "accepted_keys": [
+    "atm11_japanese_helper.quarryplus.chunk_marker.size",
+    "atm11_japanese_helper.quarryplus.chunk_marker.top_increase",
+    "atm11_japanese_helper.quarryplus.chunk_marker.top_decrease",
+    "atm11_japanese_helper.quarryplus.chunk_marker.bottom_increase",
+    "atm11_japanese_helper.quarryplus.chunk_marker.bottom_decrease",
+    "atm11_japanese_helper.quarryplus.module.modules",
+    "atm11_japanese_helper.quarryplus.placer.pulse",
+    "atm11_japanese_helper.quarryplus.placer.break_only",
+    "atm11_japanese_helper.quarryplus.placer.place_only"
+  ],
+  "issues": [],
+  "notes": [
+    "契約ファイルの9キー、指定されたQuarryPlus原JavaのChunkMarkerScreen／ModuleScreen／PlacerScreenを照合した。",
+    "「上端+」「上端-」はmaxYの増減、「下端+」「下端-」はminYの増減に対応し、+／-の意味とボタン順を保持している。Shift 16、Control 4、通常1の変更量は表示文の翻訳対象外であり、変更されていない。",
+    "「サイズ」「モジュール」「パルス」「破壊のみ」「設置のみ」は各画面見出し・モード表示として意味が明確で、固定44pxボタンに配慮した簡潔な値になっている。ただし実画面での幅や読み上げは測定・確認していない。",
+    "9キーすべて受理。helper source、contract、ゲーム画面、翻訳本文は変更していない。"
+  ]
+}

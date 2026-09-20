@@ -1,0 +1,13 @@
+{
+  "atm11_japanese_helper.quarryplus.chunk_marker.size": "Size",
+  "atm11_japanese_helper.quarryplus.chunk_marker.top_increase": "Top+",
+  "atm11_japanese_helper.quarryplus.chunk_marker.top_decrease": "Top-",
+  "atm11_japanese_helper.quarryplus.chunk_marker.bottom_increase": "Bottom+",
+  "atm11_japanese_helper.quarryplus.chunk_marker.bottom_decrease": "Bottom-",
+  "atm11_japanese_helper.quarryplus.module.modules": "Modules",
+  "atm11_japanese_helper.quarryplus.placer.pulse": "Pulse",
+  "atm11_japanese_helper.quarryplus.placer.break_only": "Break Only",
+  "atm11_japanese_helper.quarryplus.placer.place_only": "Place Only",
+  "atm11_japanese_helper.mininggadgets.precision_mode.enabled": "Precision Mode: Enabled",
+  "atm11_japanese_helper.mininggadgets.precision_mode.disabled": "Precision Mode: Disabled"
+}

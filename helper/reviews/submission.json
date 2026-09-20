@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "batch_id": "helper-quarryplus-gui-0001",
+  "source": "localization/helper-mod/language-contract.json",
+  "source_sha256": "8a5320218e5d43fc9810402b7f64e3d2782752da148f8703c8a58976c8708835",
+  "locale": "ja_jp",
+  "entries": {
+    "atm11_japanese_helper.quarryplus.chunk_marker.size": "サイズ",
+    "atm11_japanese_helper.quarryplus.chunk_marker.top_increase": "上端+",
+    "atm11_japanese_helper.quarryplus.chunk_marker.top_decrease": "上端-",
+    "atm11_japanese_helper.quarryplus.chunk_marker.bottom_increase": "下端+",
+    "atm11_japanese_helper.quarryplus.chunk_marker.bottom_decrease": "下端-",
+    "atm11_japanese_helper.quarryplus.module.modules": "モジュール",
+    "atm11_japanese_helper.quarryplus.placer.pulse": "パルス",
+    "atm11_japanese_helper.quarryplus.placer.break_only": "破壊のみ",
+    "atm11_japanese_helper.quarryplus.placer.place_only": "設置のみ"
+  },
+  "reviewedKeys": [
+    "atm11_japanese_helper.quarryplus.chunk_marker.size",
+    "atm11_japanese_helper.quarryplus.chunk_marker.top_increase",
+    "atm11_japanese_helper.quarryplus.chunk_marker.top_decrease",
+    "atm11_japanese_helper.quarryplus.chunk_marker.bottom_increase",
+    "atm11_japanese_helper.quarryplus.chunk_marker.bottom_decrease",
+    "atm11_japanese_helper.quarryplus.module.modules",
+    "atm11_japanese_helper.quarryplus.placer.pulse",
+    "atm11_japanese_helper.quarryplus.placer.break_only",
+    "atm11_japanese_helper.quarryplus.placer.place_only"
+  ],
+  "notes": [],
+  "worker": {"agent": "/root/jei_translator", "model": "gpt-5.6-luna"}
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "batch_id": "helper-mininggadgets-precision-0001",
+  "source": "localization/helper-0.2-candidate/mining-language-contract.json",
+  "source_sha256": "fb91437b485dac7bc291e72dd7e7d54341a673df1c158eaad53d1064fd5ff52a",
+  "locale": "ja_jp",
+  "entries": {
+    "atm11_japanese_helper.mininggadgets.precision_mode.enabled": "精密モード：有効",
+    "atm11_japanese_helper.mininggadgets.precision_mode.disabled": "精密モード：無効"
+  },
+  "english_fallback": {
+    "atm11_japanese_helper.mininggadgets.precision_mode.enabled": "Precision Mode: Enabled",
+    "atm11_japanese_helper.mininggadgets.precision_mode.disabled": "Precision Mode: Disabled"
+  },
+  "reviewedKeys": [
+    "atm11_japanese_helper.mininggadgets.precision_mode.enabled",
+    "atm11_japanese_helper.mininggadgets.precision_mode.disabled"
+  ],
+  "source_proof": {
+    "installed_jar": "minecraft/mods/mininggadgets-1.19.3.jar",
+    "installed_jar_sha256": "40423957c456cd17e833413baf72749cdf9ff72ed443ce2141bb9467c55811fb",
+    "target_class": "com/direwolf20/mininggadgets/client/screens/MiningSettingScreen.class",
+    "target_class_sha256": "3b431f9b858bc95984dcdb48550f158ce503c1df5896d2e014a297ef8a571b53",
+    "official_source_commit": "e36293a76d26f2bf5bf535e8483b8e505a890f59",
+    "source_file_sha256": "b12f2b6b13c002e3f50ba3c1957a18e7358cbcf5064179ee8d4015189a87fe76",
+    "consumer_probe": "localization/qa/wave-17-consumer-context/argument-result.json",
+    "consumer_probe_sha256": "535755d7a5b6a32e460fe08c99fd789e1e8b0665c0e75c2bf2d0bedb239e595c",
+    "consumer_argument": "Boolean precision state passed to tooltip.screen.precision_mode; helper captions select enabled/disabled without rendering true/false."
+  },
+  "notes": [
+    "These two helper-only captions describe the current Precision Mode state; the original Mining Gadgets 86-key language JSON is unchanged.",
+    "精密モード is retained as the established feature term; 有効/無効 are complete current-state captions and do not expose Java Boolean literals.",
+    "This is a language candidate only. No helper source/lang asset, build, import, selection, public release, or game files were changed.",
+    "The candidate records the language contract for the separate helper implementation; it does not claim that the Mixin, class-hash guard, or visual QA is complete."
+  ],
+  "worker": {
+    "agent": "/root/extendedae_review",
+    "model": "gpt-5.6-luna"
+  }
+}

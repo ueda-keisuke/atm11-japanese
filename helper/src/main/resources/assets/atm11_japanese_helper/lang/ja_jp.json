@@ -1,0 +1,13 @@
+{
+  "atm11_japanese_helper.quarryplus.chunk_marker.size": "サイズ",
+  "atm11_japanese_helper.quarryplus.chunk_marker.top_increase": "上端+",
+  "atm11_japanese_helper.quarryplus.chunk_marker.top_decrease": "上端-",
+  "atm11_japanese_helper.quarryplus.chunk_marker.bottom_increase": "下端+",
+  "atm11_japanese_helper.quarryplus.chunk_marker.bottom_decrease": "下端-",
+  "atm11_japanese_helper.quarryplus.module.modules": "モジュール",
+  "atm11_japanese_helper.quarryplus.placer.pulse": "パルス",
+  "atm11_japanese_helper.quarryplus.placer.break_only": "破壊のみ",
+  "atm11_japanese_helper.quarryplus.placer.place_only": "設置のみ",
+  "atm11_japanese_helper.mininggadgets.precision_mode.enabled": "精密モード：有効",
+  "atm11_japanese_helper.mininggadgets.precision_mode.disabled": "精密モード：無効"
+}

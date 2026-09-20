@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "batch_id": "helper-mininggadgets-precision-0001",
+  "mod_id": "atm11_japanese_helper",
+  "helper_version": "0.2.0-dev",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.106",
+  "mininggadgets": "1.19.3",
+  "source_jar": "mininggadgets-1.19.3.jar",
+  "source_jar_sha256": "40423957c456cd17e833413baf72749cdf9ff72ed443ce2141bb9467c55811fb",
+  "language_namespace": "atm11_japanese_helper",
+  "language_asset": "assets/atm11_japanese_helper/lang/{locale}.json",
+  "english_contract": [
+    {
+      "key": "atm11_japanese_helper.mininggadgets.precision_mode.enabled",
+      "en_us": "Precision Mode: Enabled",
+      "target_class": "com.direwolf20.mininggadgets.client.screens.MiningSettingScreen",
+      "target_class_sha256": "3b431f9b858bc95984dcdb48550f158ce503c1df5896d2e014a297ef8a571b53",
+      "source": {
+        "repository": "https://github.com/Direwolf20-MC/MiningGadgets",
+        "commit": "e36293a76d26f2bf5bf535e8483b8e505a890f59",
+        "source_url": "https://github.com/Direwolf20-MC/MiningGadgets/blob/e36293a76d26f2bf5bf535e8483b8e505a890f59/src/main/java/com/direwolf20/mininggadgets/client/screens/MiningSettingScreen.java",
+        "file_sha256": "b12f2b6b13c002e3f50ba3c1957a18e7358cbcf5064179ee8d4015189a87fe76"
+      },
+      "context": "Complete precision-mode button caption for true (enabled). The original consumer formats Boolean as literal true/false; these helper fallback captions name the same state.",
+      "source_key": "mininggadgets.tooltip.screen.precision_mode",
+      "source_template": "Precision Mode: %1$d"
+    },
+    {
+      "key": "atm11_japanese_helper.mininggadgets.precision_mode.disabled",
+      "en_us": "Precision Mode: Disabled",
+      "target_class": "com.direwolf20.mininggadgets.client.screens.MiningSettingScreen",
+      "target_class_sha256": "3b431f9b858bc95984dcdb48550f158ce503c1df5896d2e014a297ef8a571b53",
+      "source": {
+        "repository": "https://github.com/Direwolf20-MC/MiningGadgets",
+        "commit": "e36293a76d26f2bf5bf535e8483b8e505a890f59",
+        "source_url": "https://github.com/Direwolf20-MC/MiningGadgets/blob/e36293a76d26f2bf5bf535e8483b8e505a890f59/src/main/java/com/direwolf20/mininggadgets/client/screens/MiningSettingScreen.java",
+        "file_sha256": "b12f2b6b13c002e3f50ba3c1957a18e7358cbcf5064179ee8d4015189a87fe76"
+      },
+      "context": "Complete precision-mode button caption for false (disabled). The original consumer formats Boolean as literal true/false; these helper fallback captions name the same state.",
+      "source_key": "mininggadgets.tooltip.screen.precision_mode",
+      "source_template": "Precision Mode: %1$d"
+    }
+  ],
+  "notes": [
+    "The labels reflect the current toggle state, not the next action.",
+    "Both initial construction and the click callback must select the corresponding state caption.",
+    "This is a language contract for a helper code fix; it is distinct from the 86-key primary language overlay."
+  ],
+  "candidate_sha256": "d739072c3fc122e07b29248c2646ae2a5c77c11a57f07d5aa376563cc354b9a8"
+}

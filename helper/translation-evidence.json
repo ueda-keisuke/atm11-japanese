@@ -1,0 +1,47 @@
+{
+  "schema_version": 2,
+  "contributions": {
+    "quarryplus": {
+      "contract": {
+        "path": "language-contract.json",
+        "sha256": "8a5320218e5d43fc9810402b7f64e3d2782752da148f8703c8a58976c8708835"
+      },
+      "submission": {
+        "path": "reviews/submission.json",
+        "sha256": "66f563e0d09bcf1ae1c4631d8c1e7a558c034f9c750581d39ff08e2d8c8a10fd",
+        "original_reference": "localization/translations/helper/quarryplus_gui_01.json"
+      },
+      "review": {
+        "path": "reviews/review.json",
+        "sha256": "57d5f025dd1faa0ff248cac44886ca47a2439a35a37abd17036c2271cb133074",
+        "original_reference": "localization/reviews/quarryplus_gui_01.review.json"
+      },
+      "batch_id": "helper-quarryplus-gui-0001",
+      "original_contract": "localization/helper-mod/language-contract.json",
+      "key_count": 9
+    },
+    "mininggadgets": {
+      "batch_id": "helper-mininggadgets-precision-0001",
+      "original_contract": "localization/helper-0.2-candidate/mining-language-contract.json",
+      "key_count": 2,
+      "contract": {
+        "path": "mining-language-contract.json",
+        "sha256": "fb91437b485dac7bc291e72dd7e7d54341a673df1c158eaad53d1064fd5ff52a"
+      },
+      "submission": {
+        "path": "reviews/mining-submission.json",
+        "sha256": "87e56aef0df7c154381ca57f83e193492ce21cff4d9ba9628d899742654f9c1d",
+        "original_reference": "localization/translations/helper/mininggadgets_precision_01.json"
+      },
+      "review": {
+        "path": "reviews/mining-review.json",
+        "sha256": "61af3bc90510f063620678c53af61e366c3e10e1aae67b13962ff3b604c7a57b",
+        "original_reference": "localization/reviews/mininggadgets_precision_01.review.json"
+      }
+    }
+  },
+  "assets": {
+    "src/main/resources/assets/atm11_japanese_helper/lang/en_us.json": "0bb0ee527d6271d0d16a62d1f6349b1695e87a87c24a8585278bf0454450bc2f",
+    "src/main/resources/assets/atm11_japanese_helper/lang/ja_jp.json": "3dc986866b9d4a17dc5046bdc8f216be877ca2249d5650f70d23296a84a9443b"
+  }
+}

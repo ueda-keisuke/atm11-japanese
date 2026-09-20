@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "batch_id": "helper-mininggadgets-precision-0001",
+  "submission": "localization/translations/helper/mininggadgets_precision_01.json",
+  "submission_sha256": "87e56aef0df7c154381ca57f83e193492ce21cff4d9ba9628d899742654f9c1d",
+  "source_sha256": "fb91437b485dac7bc291e72dd7e7d54341a673df1c158eaad53d1064fd5ff52a",
+  "reviewer": {"agent": "/root/comforts_review", "model": "gpt-5.6-luna"},
+  "decision": "accepted",
+  "accepted_keys": [
+    "atm11_japanese_helper.mininggadgets.precision_mode.enabled",
+    "atm11_japanese_helper.mininggadgets.precision_mode.disabled"
+  ],
+  "issues": [],
+  "notes": [
+    "契約の2キー、固定MiningSettingScreenの初期表示と切替後Button.setMessageの両方を照合した。初期値・反転後のBoolean状態を有効／無効へ対応させる意味が明確である。",
+    "「精密モード：有効」「精密モード：無効」は現在の状態を表す自然なUIラベルで、次の操作やJavaのtrue/falseを誤って示さない。精密モードの既存用語も保持している。",
+    "2キーにplaceholderはなく、契約の英語fallbackとキー・namespaceは一致する。元のMining Gadgets 86キー言語JSONやBoolean payloadの動作は変更しない。",
+    "実装側は別途、固定クラスhashをguardし、initとlambda$init$6のexact precision key/Boolean呼出しだけを対象にする必要がある。これは本レビューの受理範囲外で、ゲーム画面QAも未実施。",
+    "Evidence: localization/qa/mininggadgets-precision-candidate/evidence-record.json（javap SHA-256 1e2acfc0e4dd43eff605e08cc0777ff290eb452a78e372e5e540d11c23b9f735）。"
+  ]
+}

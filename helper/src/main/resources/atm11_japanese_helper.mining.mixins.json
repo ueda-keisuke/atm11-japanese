@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8.7",
+  "package": "dev.atm11.japanesehelper.mixin",
+  "plugin": "dev.atm11.japanesehelper.ExactMiningGuard",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["MiningSettingScreenMixin"],
+  "injectors": {"defaultRequire": 1}
+}

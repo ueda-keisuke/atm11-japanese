@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "mod_id": "atm11_japanese_helper",
+  "helper_version": "0.1.0",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.106",
+  "quarryplus": "26.12.160",
+  "source_jar": "AdditionalEnchantedMiner-26.1.2-neoforge-26.12.160.jar",
+  "source_jar_sha256": "905b0c1ea644923cf97a8c55a5187233214ca274371a066439fd5a56ed0056e8",
+  "language_namespace": "atm11_japanese_helper",
+  "language_asset": "assets/atm11_japanese_helper/lang/{locale}.json",
+  "english_contract": [
+    {
+      "key": "atm11_japanese_helper.quarryplus.chunk_marker.size",
+      "en_us": "Size",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java",
+        "line": 41,
+        "file_sha256": "a457a96b7c33c79833111cf2ec735684c0dcc351f5de7e33146831ab4e410fe3",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java#L41"
+      },
+      "target_class": "com.yogpc.qp.machine.marker.ChunkMarkerScreen",
+      "target_class_sha256": "c944d814c8cc12a82ff83050ece6516ad31f7bc0a9c07fc6c6144ed99eca45ce",
+      "target_method": "extractLabels",
+      "context": "Chunk Marker screen heading; GuiGraphicsExtractor.text receives a String directly.",
+      "implementation_notes": [
+        "The same constant is separately passed to Font.width; layout width must change with the displayed text."
+      ]
+    },
+    {
+      "key": "atm11_japanese_helper.quarryplus.chunk_marker.top_increase",
+      "en_us": "Top+",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java",
+        "line": 61,
+        "file_sha256": "a457a96b7c33c79833111cf2ec735684c0dcc351f5de7e33146831ab4e410fe3",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java#L61"
+      },
+      "target_class": "com.yogpc.qp.machine.marker.ChunkMarkerScreen",
+      "target_class_sha256": "c944d814c8cc12a82ff83050ece6516ad31f7bc0a9c07fc6c6144ed99eca45ce",
+      "target_method": "init",
+      "context": "IndexedButton 2: increase maxY. onPress uses index, not displayed text.",
+      "implementation_notes": [
+        "Fixed width 44; default narration uses the button message.",
+        "Shift step 16, Control step 4, otherwise step 1; these behaviors must remain unchanged."
+      ]
+    },
+    {
+      "key": "atm11_japanese_helper.quarryplus.chunk_marker.top_decrease",
+      "en_us": "Top-",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java",
+        "line": 63,
+        "file_sha256": "a457a96b7c33c79833111cf2ec735684c0dcc351f5de7e33146831ab4e410fe3",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java#L63"
+      },
+      "target_class": "com.yogpc.qp.machine.marker.ChunkMarkerScreen",
+      "target_class_sha256": "c944d814c8cc12a82ff83050ece6516ad31f7bc0a9c07fc6c6144ed99eca45ce",
+      "target_method": "init",
+      "context": "IndexedButton 3: decrease maxY, clamped to minY. onPress uses index, not displayed text.",
+      "implementation_notes": [
+        "Fixed width 44; default narration uses the button message.",
+        "Shift step 16, Control step 4, otherwise step 1; these behaviors must remain unchanged."
+      ]
+    },
+    {
+      "key": "atm11_japanese_helper.quarryplus.chunk_marker.bottom_increase",
+      "en_us": "Bottom+",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java",
+        "line": 65,
+        "file_sha256": "a457a96b7c33c79833111cf2ec735684c0dcc351f5de7e33146831ab4e410fe3",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java#L65"
+      },
+      "target_class": "com.yogpc.qp.machine.marker.ChunkMarkerScreen",
+      "target_class_sha256": "c944d814c8cc12a82ff83050ece6516ad31f7bc0a9c07fc6c6144ed99eca45ce",
+      "target_method": "init",
+      "context": "IndexedButton 4: increase minY, clamped to maxY. onPress uses index, not displayed text.",
+      "implementation_notes": [
+        "Fixed width 44; default narration uses the button message.",
+        "Shift step 16, Control step 4, otherwise step 1; these behaviors must remain unchanged."
+      ]
+    },
+    {
+      "key": "atm11_japanese_helper.quarryplus.chunk_marker.bottom_decrease",
+      "en_us": "Bottom-",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java",
+        "line": 67,
+        "file_sha256": "a457a96b7c33c79833111cf2ec735684c0dcc351f5de7e33146831ab4e410fe3",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/marker/ChunkMarkerScreen.java#L67"
+      },
+      "target_class": "com.yogpc.qp.machine.marker.ChunkMarkerScreen",
+      "target_class_sha256": "c944d814c8cc12a82ff83050ece6516ad31f7bc0a9c07fc6c6144ed99eca45ce",
+      "target_method": "init",
+      "context": "IndexedButton 5: decrease minY. onPress uses index, not displayed text.",
+      "implementation_notes": [
+        "Fixed width 44; default narration uses the button message.",
+        "Shift step 16, Control step 4, otherwise step 1; these behaviors must remain unchanged."
+      ]
+    },
+    {
+      "key": "atm11_japanese_helper.quarryplus.module.modules",
+      "en_us": "Modules",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/module/ModuleScreen.java",
+        "line": 30,
+        "file_sha256": "59606962347566b7503ab47b01d99b14601ebb07928a5b3da1f08a1fb212a14b",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/module/ModuleScreen.java#L30"
+      },
+      "target_class": "com.yogpc.qp.machine.module.ModuleScreen",
+      "target_class_sha256": "df10b5e8c8c9c368a43993b3587636288f1b25138bfaeb70f346884162669210",
+      "target_method": "extractLabels",
+      "context": "Quarry module screen heading drawn directly as a String.",
+      "implementation_notes": [
+        "A distinct translatable key quarryplus.gui.adv_quarry.modules exists elsewhere but this code does not query it."
+      ]
+    },
+    {
+      "key": "atm11_japanese_helper.quarryplus.placer.pulse",
+      "en_us": "Pulse",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/placer/PlacerScreen.java",
+        "line": 43,
+        "file_sha256": "978ac2c553b6aec4cb624f40ff801d83ff36b23918459e0d89e818bd67dba19f",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/placer/PlacerScreen.java#L43"
+      },
+      "target_class": "com.yogpc.qp.machine.placer.PlacerScreen",
+      "target_class_sha256": "90a3b507f7c940d44f1e1d2e3ecd786462aab41eaaeff8edae17c7e095c86867",
+      "target_method": "renderModeLabel",
+      "context": "Placer screen mode labels. Pulse is always drawn; Break Only/Place Only are selected by canBreak/canPlace.",
+      "implementation_notes": [
+        "Empty strings in this method are deliberate blank labels, not missing translations."
+      ]
+    },
+    {
+      "key": "atm11_japanese_helper.quarryplus.placer.break_only",
+      "en_us": "Break Only",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/placer/PlacerScreen.java",
+        "line": 49,
+        "file_sha256": "978ac2c553b6aec4cb624f40ff801d83ff36b23918459e0d89e818bd67dba19f",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/placer/PlacerScreen.java#L49"
+      },
+      "target_class": "com.yogpc.qp.machine.placer.PlacerScreen",
+      "target_class_sha256": "90a3b507f7c940d44f1e1d2e3ecd786462aab41eaaeff8edae17c7e095c86867",
+      "target_method": "renderModeLabel",
+      "context": "Placer screen mode labels. Pulse is always drawn; Break Only/Place Only are selected by canBreak/canPlace.",
+      "implementation_notes": [
+        "Empty strings in this method are deliberate blank labels, not missing translations."
+      ]
+    },
+    {
+      "key": "atm11_japanese_helper.quarryplus.placer.place_only",
+      "en_us": "Place Only",
+      "source": {
+        "path": "localization/work/upstream-context/quarryplus-26.12.160/common/src/main/java/com/yogpc/qp/machine/placer/PlacerScreen.java",
+        "line": 50,
+        "file_sha256": "978ac2c553b6aec4cb624f40ff801d83ff36b23918459e0d89e818bd67dba19f",
+        "source_url": "https://github.com/Kotori316/QuarryPlus/blob/a758a34a27438a81b9a35038ccc1c77c586093f0/common/src/main/java/com/yogpc/qp/machine/placer/PlacerScreen.java#L50"
+      },
+      "target_class": "com.yogpc.qp.machine.placer.PlacerScreen",
+      "target_class_sha256": "90a3b507f7c940d44f1e1d2e3ecd786462aab41eaaeff8edae17c7e095c86867",
+      "target_method": "renderModeLabel",
+      "context": "Placer screen mode labels. Pulse is always drawn; Break Only/Place Only are selected by canBreak/canPlace.",
+      "implementation_notes": [
+        "Empty strings in this method are deliberate blank labels, not missing translations."
+      ]
+    }
+  ],
+  "japanese_status": "not_authored_by_engineering_task; requires independent author/review",
+  "constraints": [
+    "Translate only these nine display labels. Do not remove +/- meaning. Buttons keep width 44 and indices 2..5.",
+    "No placeholders in these nine English values. No game logic changes.",
+    "Generator notification, diagnostic chat and three placer mode arguments are outside this helper scope."
+  ]
+}
