@@ -9,7 +9,7 @@ import shutil
 import subprocess
 import sys
 import zipfile
-from build import HERE, checked_inputs, checked_package, sha
+from build import HERE, checked_inputs, checked_package, check_charger_runtime, sha
 
 
 def strict_bytes(raw):
@@ -67,12 +67,16 @@ def main():
     parser.add_argument('--measurements-jar', type=Path, required=True)
     parser.add_argument('--java-home', type=Path)
     parser.add_argument('--language-pack', type=Path, required=True)
+    parser.add_argument('--jei-jar', type=Path, required=True)
     parser.add_argument('--ae2-jar', type=Path, required=True)
     args = parser.parse_args()
     java, libraries, quarry, mining, measurements, version, toolchain, measurements_runtime, generation_runtime, ae2, fluix_runtime = checked_inputs(
         args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(),
         args.measurements_jar.resolve(), args.ae2_jar.resolve(),
         args.java_home.resolve() if args.java_home else None)
+    jei = args.jei_jar.resolve()
+    charger_contract = strict_bytes((HERE / 'charger-repair-contract.json').read_bytes())
+    charger_runtime = check_charger_runtime(charger_contract, ae2, jei)
     build = HERE / 'build'
     repair = json.loads((HERE / 'neoforge-repair-contract.json').read_bytes())
     overlay = args.language_pack.resolve()
@@ -87,9 +91,14 @@ def main():
             hashlib.sha1(vanilla_raw).hexdigest() != vanilla_contract['sha1'] or
             sha(vanilla_raw) != vanilla_contract['sha256']):
         raise ValueError('Contract-pinned vanilla Japanese language asset is missing or changed')
-    expected_overlay = '6fc49ec4a647b107ca8c80400604ca0d11e919d0ebb7b12635bee7224ce8bcc5'
+    expected_overlay = 'c978599b81ba24a8a04ae0d085e6fce7271af734e786608931cf776dca7350fb'
     if sha(overlay.read_bytes()) != expected_overlay or repair['verification_overlay']['sha256'] != expected_overlay:
-        raise ValueError('Expected the separately obtained, fixed public 0.24 Japanese language pack')
+        raise ValueError('Expected the separately obtained, fixed public 0.27 Japanese language pack')
+    if charger_contract['verification_overlay']['sha256'] != expected_overlay:
+        raise ValueError('Charger and Generation fixtures must use the same fixed overlay')
+    with zipfile.ZipFile(overlay) as archive:
+        if strict_bytes(archive.read('assets/ae2/lang/ja_jp.json'))[charger_contract['target_key']] != charger_contract['reviewed_japanese_value']:
+            raise ValueError('Charger reviewed language value differs')
     neoforge = next(p for p in libraries if p.name == 'neoforge-26.1.2.106-universal.jar')
     release_inputs = json.loads((HERE / 'release-inputs.json').read_text())
     jar = build / release_inputs['artifact']
@@ -124,7 +133,7 @@ def main():
         for local, label in ((HERE, '<SOURCE_ROOT>'), (build.resolve(), '<BUILD_ROOT>'),
                              (args.prism_root.resolve(), '<PRISM_ROOT>'),
                              (quarry, '<QUARRY_JAR>'), (mining, '<MINING_JAR>'),
-                             (measurements, '<MEASUREMENTS_JAR>'), (ae2, '<AE2_JAR>'),
+                             (measurements, '<MEASUREMENTS_JAR>'), (ae2, '<AE2_JAR>'), (jei, '<JEI_JAR>'),
                              (vanilla_ja, '<VANILLA_JA>'), (overlay, '<LANGUAGE_PACK>'), (java.parent, '<JAVA_HOME>')):
             output = output.replace(quote(str(local)), label).replace(str(local), label)
         (build / (name + '.log')).write_text(output)
@@ -140,7 +149,7 @@ def main():
                 raise SystemExit(result.returncode)
         return {'exit_code': result.returncode, 'log_sha256': sha(output.encode()), 'expected_failure': bool(expected_error)}
 
-    inputs = {str(p): sha(p.read_bytes()) for p in [jar, quarry, mining, measurements, ae2, overlay, vanilla_ja, *libraries]}
+    inputs = {str(p): sha(p.read_bytes()) for p in [jar, quarry, mining, measurements, ae2, jei, overlay, vanilla_ja, *libraries]}
     results = {}
     results['transform'] = run('transform', 'helpertest.TransformHarness', [build / 'transformed'])
     transform_log = (build / 'transform.log').read_text()
@@ -293,7 +302,7 @@ def main():
                         raise ValueError('Measurements transformed enum contract missing in ' + mode)
     # The pre-Fluix verifier remains exactly the frozen 35-case surface.
     # Applied Energistics 2 Fluix template repair: nine isolated cases from prototype-v2.
-    fluix_cp = os.pathsep.join(map(str, [test_classes, jar, quarry, mining, measurements, ae2, *libraries]))
+    fluix_cp = os.pathsep.join(map(str, [test_classes, jar, quarry, mining, measurements, ae2, jei, *libraries]))
     fluix_results = {}
     def fluix_case(name, side='CLIENT', mode='normal', extra=(), expected_error=None, classpath=fluix_cp):
         fluix_results[name] = run('fluix-' + name, 'helpertest.FluixHarness',
@@ -333,6 +342,47 @@ def main():
     fluix_case('ae2-absent', side='SERVER', mode='ae2-absent', classpath=os.pathsep.join(map(str, [test_classes, jar, *libraries])))
     if len(fluix_results) != 9:
         raise ValueError('Expected exactly nine Fluix verification scenarios')
+    # Actual AE2/JEI Charger consumer plus feature-local missing/changed input guards.
+    charger_paths = [test_classes, jar, quarry, mining, measurements, ae2, jei, *libraries]
+    charger_results = {}
+    def charger_case(name, side='CLIENT', mode='positive', paths=charger_paths, jvm_args=(), expected_error=None):
+        result = run('charger-' + name, 'helpertest.ChargerHarness',
+                     [build / ('charger-' + name), side, mode, ae2, overlay],
+                     classpath=os.pathsep.join(map(str, paths)), jvm_args=jvm_args,
+                     expected_error=expected_error)
+        if expected_error is None:
+            path = build / ('charger-' + name) / 'result.json'
+            detail = strict_bytes(path.read_bytes())
+            if detail.get('pass') is not True:
+                raise ValueError('Charger native report failed: ' + name)
+            result['report_sha256'] = sha(path.read_bytes())
+            result['detail'] = detail
+        charger_results[name] = result
+    charger_case('client')
+    charger_case('server', side='SERVER')
+    charger_case('ae2-absent', mode='ae2-absent', paths=[p for p in charger_paths if p != ae2])
+    charger_case('jei-absent', mode='jei-absent', paths=[p for p in charger_paths if p != jei])
+    charger_case('server-no-jei', side='SERVER', paths=[p for p in charger_paths if p != jei])
+    charger_case('server-no-ae2-jei', side='SERVER', mode='ae2-absent', paths=[p for p in charger_paths if p not in (ae2, jei)])
+    for mode in ['changed-descriptor', 'changed-access', 'changed-constant', 'changed-recipe', 'changed-call']:
+        charger_case(mode, mode=mode, expected_error='Charger createWidgets changed before transformation')
+    for mod, original_jar in [('ae2', ae2), ('jei', jei)]:
+        for member in charger_contract['sources'][mod]['classes']:
+            simple = member.rsplit('/', 1)[-1].removesuffix('.class')
+            # Only the Mixin service resource is hidden; actual fixture bytes are still readable.
+            charger_case(simple + '-missing', mode='guard-disabled',
+                         jvm_args=['-Datm11.helper.hideResourcePrefix=' + member])
+            with zipfile.ZipFile(original_jar) as archive:
+                raw = archive.read(member)
+            source = (simple.split('$', 1)[0] + '.java').encode()
+            if raw.count(source) != 1:
+                raise ValueError('Unexpected Charger fixture source-name constant: ' + member)
+            fixture = build / ('charger-' + simple + '-raw-fixture')
+            target = fixture / member; target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(raw.replace(source, source[:-1] + b'X'))
+            charger_case(simple + '-rawchanged', mode='guard-disabled', paths=[fixture, *charger_paths])
+    if len(charger_results) != 25:
+        raise ValueError('Expected exactly twenty-five Charger scenarios')
     generation_cp = os.pathsep.join(map(str, [test_classes, jar, *libraries]))
     generation_details = {}
     def generation_case(name, side='SERVER', mode='normal', prefix=(), jvm_args=(), expected_error=None):
@@ -381,7 +431,7 @@ def main():
         raise ValueError('Verification input changed during verification')
     input_labels = {str(jar): '<HELPER_JAR>', str(quarry): '<QUARRY_JAR>',
                     str(mining): '<MINING_JAR>', str(measurements): '<MEASUREMENTS_JAR>',
-                    str(ae2): '<AE2_JAR>', str(overlay): '<LANGUAGE_PACK>',
+                    str(ae2): '<AE2_JAR>', str(jei): '<JEI_JAR>', str(overlay): '<LANGUAGE_PACK>',
                     str(vanilla_ja): '<VANILLA_JA>'}
     for library in libraries:
         input_labels[str(library)] = '<PRISM_LIBRARY>/' + library.name
@@ -399,7 +449,10 @@ def main():
                'optional_feature_isolation_modes': list(modes),
                'measurements_guard_modes': list(measurements_modes),
                'legacy_case_count': legacy_case_count, 'legacy_case_count_expected': 35,
-               'case_count': legacy_case_count + len(fluix_results), 'fluix_case_count': len(fluix_results),
+               'case_count': legacy_case_count + len(fluix_results) + len(charger_results),
+               'charger_scenario_count': len(charger_results), 'charger_scenarios': charger_results,
+               'charger_runtime_guards': charger_runtime, 'charger_contract_sha256': sha((HERE / 'charger-repair-contract.json').read_bytes()),
+               'jei_jar_sha256': sha(jei.read_bytes()), 'fluix_case_count': len(fluix_results),
                'input_files_unchanged': True,
                'input_hashes_before': before_sanitized, 'input_hashes_after': after_sanitized,
 

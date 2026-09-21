@@ -11,8 +11,8 @@ import sys
 import zipfile
 
 HERE = Path(__file__).resolve().parent
-RELEASE_INPUTS_SHA256 = '3ff6fce757ff28db2cf30b2eec19cf1a1759a62e47168b6836c879199d25cc38'
-HELPER_VERSION = '0.5.0-dev'
+RELEASE_INPUTS_SHA256 = '79ffe392e1e29ee0aadb3d9d6d7650f6a709996bd0474e9978b969761ad55b0c'
+HELPER_VERSION = '0.6.0-dev'
 
 
 def sha(data):
@@ -238,6 +238,28 @@ def check_fluix_runtime(contract, libraries, ae2):
             'runtime_scope': 'AE2 Fluix template consumer and fixed five recipe additions; no new language keys. Recipe and language SHA checks are build/verification checks and do not monitor runtime datapack reloads.'}
 
 
+
+def check_charger_runtime(contract, ae2, jei):
+    """Pin separately obtained AE2/JEI binaries and the seven optional CLIENT guard classes."""
+    require(contract.get('schema_version') == 1 and contract.get('feature') == 'ae2_jei_charger_required_power', 'Wrong Charger repair contract')
+    require(contract.get('target_key') == 'ae2.rei_jei_integration.charger_required_power' and contract.get('new_translation_keys') == 0, 'Unexpected Charger language contract')
+    observed = {}
+    for mod, jar, count in [('ae2', ae2, 4), ('jei', jei, 3)]:
+        source = contract['sources'][mod]
+        require(jar.is_file() and sha(jar.read_bytes()) == source['sha256'], 'Original ' + mod + ' JAR SHA256 differs for Charger')
+        require(len(source['classes']) == count, 'Wrong Charger class guard count')
+        with zipfile.ZipFile(jar) as archive:
+            for member, expected in source['classes'].items():
+                require(archive.namelist().count(member) == 1 and sha(archive.read(member)) == expected, 'Charger class SHA256 differs: ' + member)
+                observed[member] = expected
+            if mod == 'ae2':
+                en = json.loads(archive.read('assets/ae2/lang/en_us.json'))
+                require(en[contract['target_key']] == '%d turns or %d AE', 'AE2 existing required-power template changed')
+    return dict(source_jar_sha256={mod: row['sha256'] for mod, row in contract['sources'].items()}, classes=observed,
+                target_key=contract['target_key'], new_translation_keys=0, client_only=True,
+                runtime_guard_scope=contract['runtime_guard_scope'], source_commit=contract['source_commit'])
+
+
 def checked_inputs(prism, quarry, mining, measurements, ae2, java_home=None):
     release, contracts = checked_package()
     for feature, jar in (('quarryplus', quarry), ('mininggadgets', mining), ('measurements', measurements)):
@@ -309,7 +331,7 @@ def jar_bytes(classes):
             'JapaneseHelper', 'Labels', 'ExactQuarryGuard', 'ExactMiningGuard', 'ExactMeasurementsGuard', 'ExactGenerationGuard', 'mixin/GenerationBarMixin',
             'ExactFluixGuard', 'mixin/FluixTemplateMixin', 'mixin/MiningSettingScreenMixin', 'mixin/ChunkMarkerScreenMixin', 'mixin/ModuleScreenMixin',
             'mixin/PlacerScreenMixin', 'mixin/MeasurementsLineColorMixin', 'mixin/MeasurementsTextColorMixin'))
-    expected.add('atm11_japanese_helper.ae2.fluix.mixins.json')
+    expected.update({'atm11_japanese_helper.ae2.fluix.mixins.json', 'atm11_japanese_helper.ae2.charger.mixins.json', 'dev/atm11/japanesehelper/ExactChargerGuard.class', 'dev/atm11/japanesehelper/mixin/ChargerCategoryMixin.class'})
     if set(entries) != expected:
         raise ValueError('Unexpected or missing helper JAR members: ' + str(set(entries) ^ expected))
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_STORED) as z:
@@ -327,16 +349,19 @@ def main():
     parser.add_argument('--quarry-jar', type=Path, required=True, help='Original QuarryPlus 26.12.160 JAR obtained separately')
     parser.add_argument('--mining-jar', type=Path, required=True, help='Original Mining Gadgets 1.19.3 JAR obtained separately')
     parser.add_argument('--measurements-jar', type=Path, required=True, help='Original Measurements 4.0.0 JAR obtained separately')
+    parser.add_argument('--jei-jar', type=Path, required=True, help='Original JEI 29.36.0.96 JAR obtained separately')
     parser.add_argument('--ae2-jar', type=Path, required=True, help='Original Applied Energistics 2 26.1.10-beta JAR obtained separately')
     parser.add_argument('--java-home', type=Path, help='Existing JDK 25.0.1 home (needed outside reference macOS layout)')
     parser.add_argument('--verify', action='store_true', help='Run the offline real-Mixin transform harness after building')
-    parser.add_argument('--language-pack', type=Path, help='Separately downloaded ATM11-Japanese-0.24.0.zip; required with --verify')
+    parser.add_argument('--language-pack', type=Path, help='Separately downloaded ATM11-Japanese-0.27.0.zip; required with --verify')
     args = parser.parse_args()
     if args.verify and args.language_pack is None:
         parser.error('--verify requires --language-pack for accepted Japanese consumer fixtures')
     java, libraries, quarry, mining, measurements, version, toolchain, runtime, generation_runtime, ae2, fluix_runtime = checked_inputs(
         args.prism_root.resolve(), args.quarry_jar.resolve(), args.mining_jar.resolve(),
         args.measurements_jar.resolve(), args.ae2_jar.resolve(), args.java_home.resolve() if args.java_home else None)
+    jei = args.jei_jar.resolve()
+    charger_runtime = check_charger_runtime(strict(HERE / 'charger-repair-contract.json'), ae2, jei)
     build = HERE / 'build'
     build.mkdir(exist_ok=True)
     classes = build / 'classes'
@@ -361,6 +386,8 @@ def main():
               'generation_repair_runtime_contract': generation_runtime,
               'ae2_jar_sha256': sha(ae2.read_bytes()),
               'fluix_runtime_guards': fluix_runtime,
+              'charger_runtime_guards': charger_runtime,
+              'jei_jar_sha256': sha(jei.read_bytes()),
               'label_count': 46,
               'source_files': {p.relative_to(HERE).as_posix(): sha(p.read_bytes())
                                for base in ('src', 'LICENSES') for p in sorted((HERE / base).rglob('*')) if p.is_file()},
@@ -372,6 +399,7 @@ def main():
                    '--quarry-jar', str(args.quarry_jar.resolve()), '--mining-jar', str(args.mining_jar.resolve()),
                    '--measurements-jar', str(args.measurements_jar.resolve()),
                    '--ae2-jar', str(args.ae2_jar.resolve()),
+                   '--jei-jar', str(jei),
                    '--language-pack', str(args.language_pack.resolve())]
         if args.java_home:
             command += ['--java-home', str(args.java_home.resolve())]

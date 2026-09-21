@@ -4,9 +4,9 @@ license="LGPL-3.0-only"
 
 [[mods]]
 modId="atm11_japanese_helper"
-version="0.5.0-dev"
+version="0.6.0-dev"
 displayName="ATM11 Japanese Helper (development)"
-description='''Provides independently guarded Japanese display helpers for existing features and a Fluix smithing-template material-row repair for fixed AE2 26.1.10-beta. No new language keys are added. Development release; no in-game visual QA.'''
+description='''Provides independently guarded Japanese display helpers for existing features a Fluix smithing-template material-row repair and a client-side JEI Charger label repair for fixed AE2 26.1.10-beta / JEI 29.36.0.96. No new language keys are added. Development release; no in-game visual QA.'''
 
 [[mixins]]
 config="atm11_japanese_helper.mixins.json"
@@ -58,3 +58,13 @@ modId="ae2"
 type="optional"
 versionRange="[0,)"
 side="BOTH"
+
+[[mixins]]
+config="atm11_japanese_helper.ae2.charger.mixins.json"
+
+[[dependencies.atm11_japanese_helper]]
+modId="jei"
+type="optional"
+versionRange="[0,)"
+ordering="AFTER"
+side="CLIENT"

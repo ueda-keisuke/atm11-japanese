@@ -1,4 +1,4 @@
-# ATM11 Japanese Helper 0.5.0-dev — notices and source scope
+# ATM11 Japanese Helper 0.6.0-dev — notices and source scope
 
 Modified by ATM11 Japanese project / ueda-keisuke, 2026-09-20 (UTC).
 New helper Java source is provided under LGPL-3.0-only. Complete LGPL-3.0 and
@@ -52,16 +52,20 @@ The Fluix repair is source-scoped to Applied Energistics 2 commit `3a051bb473de0
 
 The fixed AE2 source JAR SHA-256 is `8412a2208e56989b90e783e0a594c91a955ab8785d7d020fa4d8f342346110f2`. The guarded AE2 target class SHA-256 is `8dc05256c85429b1e4df18e36e5c8bdb93fc4171056cd1eb21a55461ad2b7e1c`; the guarded Minecraft superclass SHA-256 is `bd22e7bf41ed0f44b61808bb350489be81b463b68de429fc806ae9811d646b83`. The five fixed Fluix tool recipes use `ae2:fluix_block` as their addition. AE2 source, JAR, classes, recipes and assets are not distributed.
 
-The separate ATM11-Japanese 0.24.0 language pack supplies the referenced existing CC0 key (`block.ae2.fluix_block`) and has SHA-256 `6fc49ec4a647b107ca8c80400604ca0d11e919d0ebb7b12635bee7224ce8bcc5`. That language permission does not grant permission to redistribute AE2 code or assets.
+The separate ATM11-Japanese 0.27.0 language pack supplies the referenced existing CC0 key (`block.ae2.fluix_block`) and has SHA-256 `c978599b81ba24a8a04ae0d085e6fce7271af734e786608931cf776dca7350fb`. That language permission does not grant permission to redistribute AE2 code or assets.
 
-The helper's runtime guard disables only Fluix when AE2 or the target classes are missing or mismatched. If the pre-apply constructor shape differs, the guard reports an `InvalidMixinException`; this is a verification/startup failure for the incompatible transformation, not a claim that the old shape remains safe. Execution results are supplied separately in the release asset `VERIFICATION-helper-0.5.0-dev.json`.
+The helper's runtime guard disables only Fluix when AE2 or the target classes are missing or mismatched. If the pre-apply constructor shape differs, the guard reports an `InvalidMixinException`; this is a verification/startup failure for the incompatible transformation, not a claim that the old shape remains safe. Execution results are supplied separately in the release asset `VERIFICATION-helper-0.6.0-dev.json`.
 
-The 0.5 source package fixes 62 source/evidence files; the extra AE2 input is required only to build and verify the optional Fluix feature.
+The formal 0.6 source package file set is fixed by SOURCE_PACKAGE_FILES.json and release-inputs.json. AE2 and JEI are separate build/verification inputs; neither original JAR is distributed. The public27 language overlay used for verification is pinned to SHA-256 `c978599b81ba24a8a04ae0d085e6fce7271af734e786608931cf776dca7350fb`.
 
-All five features are independently guarded by exact upstream class
+The AE2 Charger repair reuses the existing `ae2.rei_jei_integration.charger_required_power` key for the literal output of the fixed `ChargerCategory$1.createWidgets` call. It does not add a translation key or change the turns/AE values. The client-side feature requires AE2 and JEI; absent dependencies, SERVER, or any of the seven guarded class hashes being missing or mismatched disables only this repair. A changed pre-apply shape raises `InvalidMixinException` and may abort loading. The actual CLIENT fixture uses null font/drawable and does not perform GUI rendering; no dedicated server is launched.
+
+The Charger guard uses seven runtime class hashes. Whole AE2/JEI JAR hashes are build-time input checks only. The formal verification runner covers the 35 retained legacy cases, 9 Fluix cases and 25 Charger cases (69 total). Execution results are supplied separately in VERIFICATION-helper-0.6.0-dev.json; the source package alone is not evidence that those checks ran.
+
+All six features are independently guarded by exact upstream class
 hashes. A missing or hash-mismatched raw target disables only that feature. Changes detected immediately before transformation can instead reject loading with an error. The original MOD JARs
 are neither modified nor included. English fallback and forty-six independently
-reviewed Japanese labels are included; `translation-evidence.json` binds the three
+reviewed Japanese labels are included; no new language key is added for Charger; `translation-evidence.json` binds the three
 separate source contracts and reviews in the corresponding source package.
 
 Build-time/runtime dependencies are referenced, not bundled: Minecraft/NeoForge,

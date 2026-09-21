@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "feature": "ae2_jei_charger_required_power",
+  "kind": "consumer_literal_to_existing_key_no_new_translation_keys",
+  "sources": {
+    "ae2": {
+      "filename": "appliedenergistics2-26.1.10-beta.jar",
+      "sha256": "8412a2208e56989b90e783e0a594c91a955ab8785d7d020fa4d8f342346110f2",
+      "classes": {
+        "appeng/client/integrations/jei/ChargerCategory$1.class": "f6cbae643d580de1b29d6e33847b8d08b5e119f655901cb6d3f451d0f8be45ea",
+        "appeng/client/integrations/jei/ChargerCategory.class": "911c8342d717332af44a4895869aa22a2046df9c0a2efda39200c8733c2b4e1e",
+        "appeng/client/integrations/jei/widgets/WidgetFactory.class": "97e20b685495fb3b88324ccc0ce85d0f530b35dbd44830d8590c6faf5b8415bc",
+        "appeng/client/integrations/jei/widgets/Label.class": "6402ea1d3b0f43c6a9f39d7d425adb54dabd123f59c017d64f959fffc1e8414c"
+      }
+    },
+    "jei": {
+      "filename": "jei-26.1.2-neoforge-29.36.0.96.jar",
+      "sha256": "a4ac2d91b2f86e56275316ac185208d275edcca6d975998a93cc6e604910c07d",
+      "classes": {
+        "mezz/jei/api/gui/drawable/IDrawable.class": "18948a204b8fddd3fddb3e2adcb52d4d099a442e9e1eee8a7ca3312f0cbe5cb5",
+        "mezz/jei/api/helpers/IJeiHelpers.class": "23468a4af4c3740f467f14a2675cdfdf1c6330afc4d0644585730f1e93f87baf",
+        "mezz/jei/api/gui/builder/IRecipeLayoutBuilder.class": "248bb91f4f0952dbe747b42248481299840d588008a0179c80a2c7a37cfda26e"
+      }
+    }
+  },
+  "source_commit": "3a051bb473de0b8fd329b39db4262f731d17e7e5",
+  "source_url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/tree/3a051bb473de0b8fd329b39db4262f731d17e7e5",
+  "target_class": "appeng.client.integrations.jei.ChargerCategory$1",
+  "target_method": "createWidgets(Lappeng/client/integrations/jei/widgets/WidgetFactory;Ljava/util/List;)V",
+  "source_call": "net/minecraft/network/chat/Component.literal(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;",
+  "target_key": "ae2.rei_jei_integration.charger_required_power",
+  "compiled_concat_recipe": "\u0001 turns or 1600 AE",
+  "compiled_turns": 10,
+  "argument_types": [
+    "java.lang.Integer",
+    "java.lang.Integer"
+  ],
+  "language_key_existing": true,
+  "new_translation_keys": 0,
+  "language_assets_changed": false,
+  "reviewed_japanese_value": "%d回転または%d AE",
+  "accepted_review_sha256": "58046fad05a09f09137a44d620d6b0bebabe8080591356fed3e9e810ccdb207c",
+  "accepted_submission_sha256": "19d047f299dc398bbdcf13982fcc15380868dd663cb41dba1d44abcaca83f553",
+  "verification_overlay": {
+    "filename": "ATM11-Japanese-0.27.0.zip",
+    "sha256": "c978599b81ba24a8a04ae0d085e6fce7271af734e786608931cf776dca7350fb",
+    "url": "https://github.com/ueda-keisuke/atm11-japanese/releases/download/v0.27.0/ATM11-Japanese-0.27.0.zip",
+    "purpose": "Separately obtained reviewed language fixture; never bundled."
+  },
+  "runtime_guard_scope": "Seven raw class SHA256 checks; target createWidgets owner/access/descriptor/opcodes/indy recipe rechecked before application. Whole JAR hashes apply to build and verification only. Identical pinned classes in another JAR remain eligible.",
+  "side": "CLIENT only; SERVER does not select this mixin",
+  "fallback": "Nonmatching input or int overflow returns original literal; normal Minecraft English language fallback is retained.",
+  "limitations": "Offline actual createWidgets/WidgetFactory.label/Label constructor and styles, Unsafe fixtures with null font/drawable; no bounds/draw/GUI/game/world or dedicated-server launch."
+}

@@ -1,6 +1,6 @@
-# ATM11 日本語表示補助 MOD 0.5.0-dev
+# ATM11 日本語表示補助 MOD 0.6.0-dev
 
-言語ファイルを参照しない表示を日本語化し、NeoForgeのチャンク生成進捗エラー表示へ不足していた引数を渡す補助MODです。0.5.0-devでは、既存の0.4機能と46個のラベルを維持し、AE2のFluix Upgrade鍛冶型の材料表示を修復します。
+言語ファイルを参照しない表示を日本語化し、NeoForgeのチャンク生成進捗エラー表示へ不足していた引数を渡す補助MODです。0.6.0-devでは、既存の46個のラベルと従来の修正を維持し、AE2のFluix Upgrade鍛冶型の材料表示とAE2/JEI Charger表示を修復します。Charger修復は既存キーを再利用し、新しい翻訳キーを追加しません。
 QuarryPlusの画面ラベル9項目、Mining Gadgetsの精密モード2項目、Measurementsの色選択35項目を対象にします。
 日本語の訳文は、作成担当とは別の担当が原文と表示処理に照らして確認しています。
 ATM11全体の日本語化が完了したものではありません。0.4で追加した修正は新しい翻訳キーを追加せず、NeoForgeの既存キー `commands.neoforge.chunkgen.progress_bar_errors` を使います。
@@ -12,13 +12,13 @@ ATM11全体の日本語化が完了したものではありません。0.4で追
 ## 対応環境と導入
 
 - Minecraft **26.1.2** / NeoForge **26.1.2.106**。
-- QuarryPlus **26.12.160**、Mining Gadgets **1.19.3**、Measurements **4.0.0** の固定クラスを対象にします。Applied Energistics 2 **26.1.10-beta** はFluix機能だけの任意依存です。
+- QuarryPlus **26.12.160**、Mining Gadgets **1.19.3**、Measurements **4.0.0** の固定クラスを対象にします。Applied Energistics 2 **26.1.10-beta** はFluixとCharger機能の任意依存です。Chargerにはクライアント側JEI **29.36.0.96** も必要です。
   それぞれのMODに対応する機能を独立して有効にします。
   対象クラスが異なる版では、そのMOD向けの修正を適用しません。
 - 元のMODとゲームは、利用者が別途正規に入手してください。
 
 ゲームを終了し、以前の `atm11-japanese-helper-*.jar` があれば取り除いたうえで、
-`atm11-japanese-helper-0.5.0-dev.jar` をインスタンスの `minecraft/mods` へ入れます。
+`atm11-japanese-helper-0.6.0-dev.jar` をインスタンスの `minecraft/mods` へ入れます。
 Minecraftの言語を日本語にしてください。通常のリソースパックと併用できます。
 本補助MODには、対象46ラベルの日本語と英語の代替表示を含みます。
 解除するには、ゲームを終了して本補助MODのJARだけを取り除きます。
@@ -47,10 +47,16 @@ AE2の固定された `FluixSmithingTemplateItem` が `SmithingTemplateItem` へ
 
 AE2 JARがない場合、対象クラスまたは `SmithingTemplateItem` のハッシュが一致しない場合はFluix機能だけを無効にします。対象クラスが見つかっても、Mixin適用前のコンストラクター形状が変わっていれば `InvalidMixinException` による検証失敗となり、起動を続けて不正な変換を使うことはありません。
 
+## AE2 Charger機能
+
+AE2のJEI Chargerカテゴリが生成する `10 turns or 1600 AE` の直書きComponentを、既存キー `ae2.rei_jei_integration.charger_required_power` と数値引数へ置き換えます。回転数とAE量は変更しません。対象は固定した `ChargerCategory$1.createWidgets(WidgetFactory,List)` の1箇所です。
+
+Charger修復はAE2とJEIが両方存在し、7つの対象/API class hashと呼出し形が一致した場合だけクライアント側へ適用します。AE2またはJEIがない場合、SERVER側、対象classの欠落・変更時は適用しません。Mixin適用前の形状変更は `InvalidMixinException` による検証失敗です。元のAE2/JEI JARはビルド入力として別途取得しますが、補助MODには同梱しません。
+
 ## ソースから再生成する
 
 Python 3.11以上、JDK 25.0.1、正規に入手した対応版のゲーム・NeoForgeライブラリと
-元の3つのMOD JARとAE2 JARを用意します。正式なソースパッケージは62ファイルを固定し、AE2入力はビルド時に必須ですが、ゲーム実行時のAE2機能は任意です。Prism Launcherのライブラリ相対パスと固定ハッシュは
+元の3つのMOD JAR、AE2 JAR、JEI JARを用意します。正式なソースパッケージのファイル集合は `SOURCE_PACKAGE_FILES.json` と `release-inputs.json` で固定し、AE2/JEI入力はビルド・検証時に必須ですが、ゲーム実行時のFluix/Charger機能は任意です。Prism Launcherのライブラリ相対パスと固定ハッシュは
 `dependencies.lock.json` に記録しています。スクリプトは外部ファイルをダウンロードしません。
 
 ```sh
@@ -60,16 +66,17 @@ python3 build.py \
   --mining-jar "/path/to/mininggadgets-1.19.3.jar" \
   --measurements-jar "/path/to/Measurements-neoforge-26.1-4.0.0.jar" \
   --ae2-jar "/path/to/appliedenergistics2-26.1.10-beta.jar" \
-  --language-pack "/path/to/ATM11-Japanese-0.24.0.zip" \
+  --jei-jar "/path/to/jei-26.1.2-neoforge-29.36.0.96.jar" \
+  --language-pack "/path/to/ATM11-Japanese-0.27.0.zip" \
   --java-home "/path/to/jdk-25.0.1" \
   --verify
 ```
 
 `--prism-root` は `libraries/` を含むディレクトリです。
-`--verify` には別途取得した日本語改善パック0.24.0（SHA-256 `6fc49ec4a647b107ca8c80400604ca0d11e919d0ebb7b12635bee7224ce8bcc5`）と、Prismの `assets/objects` にあるMinecraft 26.1.2の日本語資産が必要です。`--language-pack`で指定してください。
+`--verify` には別途取得した日本語改善パック0.27.0（SHA-256 `c978599b81ba24a8a04ae0d085e6fce7271af734e786608931cf776dca7350fb`）と、Prismの `assets/objects` にあるMinecraft 26.1.2の日本語資産が必要です。`--language-pack`で指定してください。
 このZIPはNeoForgeとAE2の修正後の日本語を確認するために使い、補助MODへ同梱・インストールはしません。
-出力は `build/atm11-japanese-helper-0.5.0-dev.jar` です。
-ビルド時には4つの元MODが必要ですが、ゲームでの使用時はそれぞれ任意です。
+出力は `build/atm11-japanese-helper-0.6.0-dev.jar` です。
+ビルド時にはQuarryPlus、Mining Gadgets、Measurements、AE2、JEIの入力が必要ですが、ゲームでの使用時は対象機能ごとに任意です。
 固定の依存ファイルと原クラス、独立レビュー、翻訳資産、ソースのハッシュを確認し、
 出力が `release-inputs.json` の参照JARと完全に一致した場合だけ成功します。
 時刻・ファイル順・属性・無圧縮方式を固定しています。
@@ -111,30 +118,30 @@ MOD全体を一律にMITとして配布するものではありません。
 記録中の `localization/...` は原記録の識別子で、ビルド時に外部ワークスペースを参照するパスではありません。
 `/root/...` はエージェント識別子です。個人のホームディレクトリは含みません。
 
-AE2の `--verify` 検査も、実際のMixin変換前に対象クラスと親クラスの固定ハッシュ、コンストラクター形状、5レシピと資産のハッシュを確認します。対象クラスが欠落または不一致ならFluix機能を無効にし、適用前の形状変更は検証失敗として扱います。実行結果はリリースに添付する `VERIFICATION-helper-0.5.0-dev.json` を参照してください。
+AE2の `--verify` 検査も、実際のMixin変換前に対象クラスと親クラスの固定ハッシュ、コンストラクター形状、5レシピと資産のハッシュを確認します。Chargerでは7つのruntime class hashとAE2/JEI JARのbuild-time hashを別に確認します。対象クラスが欠落または不一致ならFluix機能を無効にし、適用前の形状変更は検証失敗として扱います。実行結果はリリースに添付する `VERIFICATION-helper-0.6.0-dev.json` を参照してください。
 
 ## English
 
-Development helper 0.5.0-dev for nine QuarryPlus GUI labels, the enabled/disabled
-precision-mode captions in Mining Gadgets, 35 Measurements color-selector captions, and an optional AE2 Fluix smithing-template repair. Target: Minecraft 26.1.2, NeoForge 26.1.2.106,
+Development helper 0.6.0-dev for nine QuarryPlus GUI labels, the enabled/disabled
+precision-mode captions in Mining Gadgets, 35 Measurements color-selector captions, and an optional AE2 Fluix smithing-template repair and an optional AE2/JEI Charger label repair. Target: Minecraft 26.1.2, NeoForge 26.1.2.106,
 QuarryPlus 26.12.160, Mining Gadgets 1.19.3 and Measurements 4.0.0. Each optional feature has an independent
 exact-class hash guard; an absent or different MOD disables only its corresponding feature. It also repairs the
 missing error-count argument in NeoForge's existing chunk-generation progress message on the server that runs the command.
 That repair adds no translation key. English fallback and forty-six independently reviewed Japanese captions are included.
 
-Close the game, remove any older helper JAR, and put `atm11-japanese-helper-0.5.0-dev.jar`
-in the client instance's `minecraft/mods` directory. Select Japanese. The three client display features do not require server installation. The optional AE2 Fluix repair targets AE2 26.1.10-beta. Missing or mismatched raw target/superclass hashes disable that feature. A constructor changed before transformation raises InvalidMixinException and can abort loading; it is not a graceful feature skip.
+Close the game, remove any older helper JAR, and put `atm11-japanese-helper-0.6.0-dev.jar`
+in the client instance's `minecraft/mods` directory. Select Japanese. The three client display features do not require server installation. The optional AE2 Fluix and JEI Charger repairs target AE2 26.1.10-beta and JEI 29.36.0.96. Charger reuses the existing AE2 translation key and adds no new key. Missing or mismatched raw target/superclass hashes disable that feature. A constructor changed before transformation raises InvalidMixinException and can abort loading; it is not a graceful feature skip.
 The NeoForge error-count repair must be installed on a dedicated server to affect that server's command output; a client-only installation
 cannot repair a remote server. Remove this JAR while the game is closed to uninstall. The original MOD JARs
 are not modified. The ordinary Japanese language resource pack is distributed separately.
 
-Use the command above with your own legitimate MOD and AE2 JARs, Prism libraries and JDK 25.0.1
-to reproduce the fixed artifact. For `--verify`, also obtain the published ATM11-Japanese-0.24.0.zip separately
+Use the command above with your own legitimate MOD, AE2 and JEI JARs, Prism libraries and JDK 25.0.1
+to reproduce the fixed artifact. For `--verify`, also obtain the published ATM11-Japanese-0.27.0.zip separately
 and supply it through `--language-pack`; it is used only as an accepted Japanese test fixture and is not bundled or installed.
-The AE2 JAR is a required build input but is optional at runtime; no original binaries are bundled or downloaded.
+The AE2 and JEI JARs are required build inputs but their runtime features are optional; no original binaries are bundled or downloaded.
 `--verify` runs real Mixin and native language/component checks without starting the game;
 it is not a test of full screen initialization, clicking, packet delivery, rendering or layout.
-Game-screen visual verification remains absent in this development release. See the separate `VERIFICATION-helper-0.5.0-dev.json` release asset for execution results.
+The offline verifier covers 69 scenarios (35 retained legacy, 9 Fluix and 25 Charger scenarios). Execution results accompany the release in `VERIFICATION-helper-0.6.0-dev.json`. This development source package alone is not evidence of execution; game-screen visual verification remains absent.
 The Measurements checks use NeoForge's actual caption formatter and update callback,
 with in-memory TOML round trips. They set the option's value field directly; they do not
 execute `OptionInstance.set`, the MeasurementBox constructor, or live GUI interaction.
