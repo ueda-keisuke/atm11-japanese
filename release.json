@@ -81,6 +81,12 @@
       "preserved_metadata_keys": [],
       "review_evidence_sha256": "a858a8ba6e1f8234e8897af69cf1822d86950a29532d51c4534e51dbb06c3201"
     },
+    "cloth-config2": {
+      "key_count": 49,
+      "language_sha256": "0a12744f7f625562bce9120dd4d32d51e200938070903b04d450ef330cdb81ea",
+      "preserved_metadata_keys": [],
+      "review_evidence_sha256": "2553d232b6d6eedb27f8557c088d8f51c363efa93eda2130f950f7970aab05c6"
+    },
     "codedefinedgui": {
       "key_count": 63,
       "language_sha256": "16cc78432039369d11e5dc428aef30536a0e1a98bb83823f679af5d65b1851e2",
@@ -370,5 +376,5 @@
   },
   "review_status": "accepted",
   "schema_version": 3,
-  "version": "0.27.0"
+  "version": "0.28.0"
 }

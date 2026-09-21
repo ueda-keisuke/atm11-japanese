@@ -1,6 +1,24 @@
 # 出典・変更・ライセンスの適用範囲 / Credits, changes and license scopes
 
-## 0.27.0 additions / 今回の追加範囲
+## 0.28.0 additions / 今回の追加範囲
+
+Cloth Config 26.1.154の固定sourceに照合した言語JSONを49項目追加・更新しました。45項目の既存日本語を見直し、4項目は導入済み日本語がなかったため追加しています。実ゲーム画面の目視確認は0件です。
+
+### Cloth Config / `assets/cloth-config2/lang/ja_jp.json`
+
+- Upstream: [Cloth Config](https://github.com/shedaniel/cloth-config), author **shedaniel**.
+- Fixed official branch: `refs/heads/v26.1`; resolved full commit [`48614681f2b39740c1316247499c0cac2d92b524`](https://github.com/shedaniel/cloth-config/commit/48614681f2b39740c1316247499c0cac2d92b524). The official repository did not advertise a separate `v26.1` tag.
+- Installed JAR: `cloth-config-26.1.154.jar`, SHA-256 `d9147c8549fedad478bd18e2ddeef172ef290a081f80bd4d242d54e027ecd9d8`. Fixed source archive SHA-256: `e73e20fada2822d5101f2578e09c99af41b0043bea10020d6b49ae20ece290d2`.
+- Original English: `assets/cloth-config2/lang/en_us.json`, SHA-256 `b29f7dbb4be31ff84bdb11890d4795c0565c76a92e062d893ebfdf730ff83c9e`, byte-identical to the fixed source. The upstream Japanese source/JAR member has SHA-256 `6b438102ebc3aac6291243449dd06eab5c84234d842826061db0d5e528be73ee`; it contains 45 existing values.
+- Modified editable source: `assets/cloth-config2/lang/ja_jp.json`, 49 entries. Modified by ATM11 Japanese project / **ueda-keisuke** on **2026-09-21 (UTC)**. Keys, § formatting codes and `%s`, `%d`, `%1$s`, `%2$s`, `%3$s` placeholders are retained structurally.
+- License: **GNU LGPL version 3.0-or-later**; the upstream `HEADER` permits version 3 or any later version, and this release selects the exact version-3 text. The fixed source HEADER SHA-256 is `6c80e3e835c214708173720d7674ef7bd19ee1ef2919e785d64abd0cc3ca2d34`. The exact upstream `LICENSE.md` is supplied as `LICENSES/ClothConfig-LGPL-3.0.md`, SHA-256 `c084d3d0560c3731716fc2f2d7993647953810bba5d880e2aa2290d1c66d18d6` (7,680 bytes). Because LGPLv3 incorporates GPLv3 terms, the complete existing `LICENSES/GPL-3.0.txt` is reused, SHA-256 `3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986`.
+- Scope: language JSON only. No Cloth Config JAR, Java/source archive, icons, textures or other assets are included; this notice does not grant rights to the upstream binary or source. The exact source, key review and provenance evidence are recorded privately for the release gate.
+
+## English: Cloth Config addition
+
+Version 0.28.0 adds or revises 49 Cloth Config 26.1.154 language entries: 45 existing Japanese values and 4 previously missing values. The fixed official branch `refs/heads/v26.1` resolves to commit `48614681f2b39740c1316247499c0cac2d92b524`; the installed English and Japanese members match the fixed source. The distribution contains only the editable `assets/cloth-config2/lang/ja_jp.json`, not the JAR, Java/source archive, icons, textures or other assets. The language adaptation preserves the upstream LGPL 3.0-or-later permission and selects the exact version-3 text; the complete exact upstream license and the incorporated GPLv3 text, attribution and modification notice are included in `LICENSES/`. Game-screen visual QA remains 0.
+
+## 0.27.0 additions / 前版の追加範囲
 
 GuideME 26.1.12-betaの言語JSON全36項目を追加しました。設定とガイド画面の操作を対象とし、ガイド本文・画像・MOD本体は含みません。翻訳者とは別の担当によるレビュー済みです。ゲーム画面の目視確認は0件です。
 
@@ -14,16 +32,22 @@ GuideME 26.1.12-betaの言語JSON全36項目を追加しました。設定とガ
 - The GuideME language adaptation is supplied under **GNU LGPL version 3**. Complete texts: `LICENSES/GuideME-LGPL-3.0.txt` and the incorporated `LICENSES/GPL-3.0.txt`. Upstream notices are retained in `LICENSES/GuideME-NOTICE.txt`, `LICENSES/GuideME-markdown-LICENSE.txt`, `LICENSES/GuideME-META-INF-LICENSE.txt`, and `LICENSES/GuideME-META-INF-NOTICE.txt`. These dependency notices do not mean dependency code is bundled.
 - Scope: language JSON only. GuideME binaries, Java code, guide Markdown, logos, images and other assets are not included. This language-only distribution does not claim a license for unrelated assets. Game-screen visual QA remains 0.
 
+## 現行の別配布helper / Current separate helper
+
+公開済みのhelper-v0.6.0-devは、既存46ラベルを維持し、QuarryPlus 9項目、Mining Gadgets 2項目、Measurements 35項目、クライアント側のAE2/JEI Charger修正、GenerationBar修正を別配布で提供します。言語パックだけではコードに直書きされたCharger表示を変更できません。検証記録の69ケースは従来35・Fluix 9・Charger 25です。Charger修正はクライアント側、GenerationBar修正は実行側サーバーにも必要です。ゲーム画面・専用サーバーの実起動と目視確認は含みません。helperのJARとソースはこの言語ZIPに含めず、専用リリースで配布します。
+
+English: The separate helper-v0.6.0-dev retains 46 captions and provides QuarryPlus (9), Mining Gadgets (2), Measurements (35) and client-side AE2/JEI Charger repairs. The language pack alone cannot replace the hardcoded Charger text. Its 69 offline cases are 35 legacy, 9 Fluix and 25 Charger; visual/game/server lifecycle checks remain unverified.
+
 ## 0.26.0 additions / 前版の追加範囲
 
-AE2は299項目を追加し、対象バージョンの英語言語ファイルにある全1,018キーを収録しました。言語ファイルの範囲を揃えたもので、AE2やATM11のすべての表示が日本語になることを保証するものではありません。チャージャーのレシピ画面に出る「10 turns or 1600 AE」はコード内の固定文なので、このパックでは置き換わりません。今回の追加分は41の書式検査と18の結合検査を通しています。ゲーム画面の目視確認は未実施です。補助MOD 0.5.0-devは引き続き別配布です。
+AE2は299項目を追加し、対象バージョンの英語言語ファイルにある全1,018キーを収録しました。言語ファイルの範囲を揃えたもので、AE2やATM11のすべての表示が日本語になることを保証するものではありません。チャージャーのレシピ画面に出る「10 turns or 1600 AE」はコード内の固定文なので、このパックでは置き換わりません。今回の追加分は41の書式検査と18の結合検査を通しています。ゲーム画面の目視確認は未実施です。補助MOD 0.5.0-devは当時の記録です。現在の別配布helper-v0.6.0-devを参照してください。
 
-Version 0.26.0 adds 299 independently reviewed AE2 entries, bringing the overlay to all 1,018 keys in the fixed English language JSON for AE2 26.1.10-beta. This is language-file coverage, not complete runtime or ATM11 coverage. The Charger recipe label "10 turns or 1600 AE" is hardcoded and remains English. The added scope passes 41 offline formatting checks and 18 composition checks. These distinguish actual Minecraft/AE2 consumer methods from source-shaped fixtures; they do not establish game-screen, world or full MOD lifecycle verification. The separate helper 0.5.0-dev is unchanged and is not bundled.
+Version 0.26.0 adds 299 independently reviewed AE2 entries, bringing the overlay to all 1,018 keys in the fixed English language JSON for AE2 26.1.10-beta. This is language-file coverage, not complete runtime or ATM11 coverage. The Charger recipe label "10 turns or 1600 AE" is hardcoded and remains English. The added scope passes 41 offline formatting checks and 18 composition checks. These distinguish actual Minecraft/AE2 consumer methods from source-shaped fixtures; they do not establish game-screen, world or full MOD lifecycle verification. The separate helper 0.5.0-dev reference is historical; the current separate helper is helper-v0.6.0-dev and is not bundled.
 
 
 
-ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.27.0 contains 5,023 entries across 56 namespaces: 5,002 translations, 19 preserved original metadata entries and two project notices. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries, plus Measurements `_comment`. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-20 (UTC)**.
-This is the 0.27.0 release documentation. Game-screen visual QA remains 0, and FML early-loader pack application is unverified.
+ATM11 Japanese project / **ueda-keisuke** provides this unofficial Japanese language collection for Minecraft 26.1.2 / NeoForge 26.1.2.106. Version 0.28.0 contains 5,072 entries across 57 namespaces: 5,051 translations, 19 preserved original metadata entries and two project notices. The original metadata comprises JEI `_comment`, Jade `__comment` / `jade.metadata`, QuarryPlus `_comment`, Nature's Compass `_comment`, and Enchantment Descriptions `_comment`, `__comment_jei` and 11 `__support_*` entries, plus Measurements `_comment`. Changes comprise Japanese names, descriptions, narration and search terms, with the metadata and project-notice exceptions below. Language modification date: **2026-09-21 (UTC)**.
+This is the 0.28.0 release documentation. Game-screen visual QA remains 0, and FML early-loader pack application is unverified.
 
 Each `assets/<namespace>/lang/ja_jp.json` is a separate, human-readable, editable language work. The ZIP is a distribution container: the files are not merged into a single language asset or linked program. Individual licenses remain applicable to their respective files, including our Japanese adaptations. No collection-wide MIT grant or additional collection-wide noncommercial restriction is imposed on independently licensed files. Redistributing the complete collection requires compliance with all included works' terms.
 
